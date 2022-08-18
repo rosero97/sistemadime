@@ -10,7 +10,7 @@ body {
 }
 
 body#hambu{
-    background-image:url("Hamburguesa.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("../imagenes/Hamburguesa.jpg");
     background-size: 102%;
 }
 
@@ -241,3 +241,43 @@ a:hover, a:active{
     justify-content: center;  
     align-items: center;  
 }
+
+.nombre {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+#der {
+    position: relative;
+    display: inline-block;
+}
+  
+.nombre1-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.nombre1-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.nombre1-content a:hover {
+    background-color: #f1f1f1;
+}
+  
+#der:hover .nombre1-content {
+    display: block;
+}
+  
