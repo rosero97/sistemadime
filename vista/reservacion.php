@@ -91,53 +91,55 @@
                     <div class="col" id="informacion">
                         joserosero@gmail.com
                     </div>
-                </div>    
-                <div class="row">
-                    <div class="col-md-3" id="informacion1">
-                        <label for="observaciones" class="">Observaciones</label>
-                    </div>
-                     <div class="col-md-9">    
-                        <textarea id="colobser" name="colobser" rows="2" cols="100%" autofocus ></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col" id="segparte1">
-                                Numero de mesa
-                            </div>
-                            <div class="col" id="segparte">
-                                <input type="number" id="nmesa" name="nmesa">
-                            </div>
+                </div><br><br>
+                <table class="table table-striped-columns">
+                    <div class="row">
+                        <div class="col-md-3" id="informacion1">
+                            <label for="observaciones" class="">Observaciones</label>
                         </div>
-                        <div class="row">
-                            <div class="col" id="segparte1">
-                                Numero de personas
-                            </div>
-                            <div class="col" id="segparte">
-                                <input type="number" id="nper" name="nper">
-                            </div>
-                        </div>                                               
-                    </div>
-                    <div class="col-md-6" id="segparte">
-                        <div class="row">
-                            <div class="col" id="segparte">
-                                Dia de la reserva
-                            </div>
-                            <div class="col" id="segparte">
-                                <input type="date" id="fecha" name="fecha">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col" id="segparte">
-                               Hora de la reserva 
-                            </div>
-                            <div class="col" id="segparte">
-                                <input type="time" id="hora" name="hora"> 
-                             </div>                      
+                        <div class="col-md-9">    
+                            <textarea id="colobser" name="colobser" rows="2" cols="100%" autofocus ></textarea>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col" id="segparte1">
+                                    Numero de mesa
+                                </div>
+                                <div class="col" id="segparte">
+                                    <input type="number" id="nmesa" name="nmesa">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col" id="segparte1">
+                                    Numero de personas
+                                </div>
+                                <div class="col" id="segparte">
+                                    <input type="number" id="nper" name="nper">
+                                </div>
+                            </div>                                               
+                        </div>
+                        <div class="col-md-6" id="segparte">
+                            <div class="row">
+                                <div class="col" id="segparte">
+                                    Dia de la reserva
+                                </div>
+                                <div class="col" id="segparte">
+                                    <input type="date" id="fecha" name="fecha">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col" id="segparte">
+                                Hora de la reserva 
+                                </div>
+                                <div class="col" id="segparte">
+                                    <input type="time" id="hora" name="hora"> 
+                                </div>                      
+                            </div>
+                        </div>               
+                    </div>
+                </table>
             </div>
             <div class="container">
                 <div class="row">
