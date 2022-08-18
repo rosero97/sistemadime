@@ -51,10 +51,10 @@
                         </div>
                     </div>
                     <div id="der1">
-                        <a href="reservacion.html" target="">Hacer reservacion</a>
+                        <a href="reservacion.php" target="">Hacer reservacion</a>
                     </div>
                     <div id="der1">
-                        <a href="agendar_reserva.html" target="">Mis reservaciones</a>
+                        <a href="agendar_reserva.php" target="">Mis reservaciones</a>
                     </div>
                     <div id="der1">
                         <a href="menu.html" target="">Mira nuestro menu</a>

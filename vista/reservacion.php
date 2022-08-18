@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div><br><br>
-        <form action="agendar_reserva.html" method="post">
+        <form action="agendar_reserva.php" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col" id="segparte1">

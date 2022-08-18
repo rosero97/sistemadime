@@ -138,6 +138,14 @@ a:hover, a:active{
     padding: 2px;
 }
 
+#current_date{
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+    color: black;
+    padding: 2px;
+}
+
 #informacion1{
     background-color: #b91817;
     border: 2px solid black;

@@ -8,6 +8,13 @@
     <link href="../config/estilos.css" rel="Stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <?php
+        $mesa = $_POST ["nmesa"];
+        $personas = $_POST ["nper"];
+        $obs = $_POST ["colobser"];
+        $fecha = $_POST ["fecha"];
+        $hora = $_POST ["hora"];
+    ?>
 </head>
 <body id="hambu">
     <div class="center">
@@ -120,7 +127,7 @@
             <div class="col-md-4">
             </div>
             <div class="col-md-4">
-                <a href="cliente1.html">Volver</a>
+                <a href="cliente1.php">Volver</a>
             </div>
             <div class="col-md-4">               
             </div>            
