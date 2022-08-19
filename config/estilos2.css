@@ -10,7 +10,7 @@ body {
 }
 
 body#hambu{
-    background-image:url("Hamburguesa.jpg");
+    background-image:url("../imagenes/Hamburguesa.jpg");
     background-size: 102%;
 }
 
