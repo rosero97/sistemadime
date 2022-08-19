@@ -202,17 +202,17 @@ body {
 .item-1 {
     z-index: 2;
     opacity: 1;
-    background: url('3img.jpg');
+    background: url('../imagenes/3img.jpg');
     background-size: contain;
 }
 
 .item-2 {
-    background: url('klk.jpg');
+    background: url('../imagenes/klk.jpg');
     background-size: contain;
 }
 
 .item-3 {
-    background: url('2img.jpg');
+    background: url('../imagenes/2img.jpg');
     background-size: contain;
 }
 
