@@ -31,12 +31,10 @@
             </div>
             <div class="col-md-3">
                 <div id="der">
-                    <button id="nom" class="nombre">Jose Angel Rosero Orozco <i class="fa-solid fa-user"></i></button>
-                    <div class="nombre1-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
+                <button id="nom" class="nombre"><i class="fa-solid fa-user fa-5x"></i></button>
+                        <div class="nombre1-content">
+                            <a href="usuario.php">Jose Angel Rosero Orozco</a>
+                        </div>
                 </div>
             </div>
         </div><br><br>   

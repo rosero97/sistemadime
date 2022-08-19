@@ -100,7 +100,7 @@ div #der2{
     margin-right: 20px;
 }
 
-a:link, a:visited{
+/*a:link, a:visited{
     background-color: #b91817;
     color: white;
     text-decoration: none;
@@ -121,7 +121,7 @@ a:hover, a:active{
     color: white;
     border-radius: 10px;
 }
-
+*/
 #numero_reservacion{
     background-color: #b91817;
     border:none;
