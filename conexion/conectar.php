@@ -7,14 +7,31 @@ class conexion{
     private $db ="digitals_menu";
 
     public function conectando(){
-        $con =mysqly_connect($this->$servidor, $this->$usuario, $this->$password, $this->$db) or die ("Error al conectar con la base de datos contactese con el administraor");
+        $con = mysqly_conectar($this->$servidor, $this->$usuario, $this->$password, $this->$db) or die ("Error al conectar con la base de datos contactese con el administraor");
         return $con;
     }
 }
-
+/*
 $obj = new conexion();
     if($obj->conectando()){
         echo "esta conectado";
     }
+*/
 //no me funciono aun
+//La parte de abajo si funcina
+/*
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db = "digitals_menu";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $db);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+*/
 ?>

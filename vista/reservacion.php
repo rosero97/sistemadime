@@ -106,7 +106,7 @@
                                     Numero de mesa
                                 </div>
                                 <div class="col" id="segparte">
-                                    <input type="number" id="nmesa" name="nmesa">
+                                    <input type="number" id="nmesa" name="nmesa" min="1" max="8">
                                 </div>
                             </div>
                             <div class="row">
@@ -114,7 +114,7 @@
                                     Numero de personas
                                 </div>
                                 <div class="col" id="segparte">
-                                    <input type="number" id="nper" name="nper">
+                                    <input type="number" id="nper" name="nper" min="1" max="13">
                                 </div>
                             </div>                                               
                         </div>
@@ -124,7 +124,7 @@
                                     Dia de la reserva
                                 </div>
                                 <div class="col" id="segparte">
-                                    <input type="date" id="fecha" name="fecha">
+                                    <input type="date" name="fecha" id="fecha"  required min=<?php $hoy=date("Y-m-d"); echo $hoy;?> >
                                 </div>
                             </div>
                             <div class="row">
@@ -132,7 +132,7 @@
                                 Hora de la reserva 
                                 </div>
                                 <div class="col" id="segparte">
-                                    <input type="time" id="hora" name="hora"> 
+                                    <input type="time" id="hora" name="hora" min="11:00" max="21:00"> 
                                 </div>                      
                             </div>
                         </div>               
