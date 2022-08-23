@@ -1,5 +1,5 @@
 <?php
- 
+/* 
 class conexion{
     private $servidor ="localhost";
     private $usuario ="root";
@@ -11,7 +11,7 @@ class conexion{
         return $con;
     }
 }
-/*
+
 $obj = new conexion();
     if($obj->conectando()){
         echo "esta conectado";
@@ -19,7 +19,7 @@ $obj = new conexion();
 */
 //no me funciono aun
 //La parte de abajo si funcina
-/*
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -33,5 +33,5 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
-*/
+
 ?>

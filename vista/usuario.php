@@ -1,3 +1,12 @@
+<?php
+include("../conexion/conectar.php");
+
+$sql = "SELECT ide_persona, nombre_completo, direccion, correo, celular FROM persona WHERE correo = 'carlos@correo.com'";
+
+$resultado = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($resultado)
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,7 +33,7 @@
            <tbody>
                 <tr>
                     <td>Nombre Completo</td>
-                    <td>Jose Angel Rosero Orozco</td>
+                    <td><?php echo $row["nombre_completo"]?></td>
                     <td>
                         <a href="usuario_nombre.php" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <button ><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
@@ -33,7 +42,7 @@
                 </tr>
                 <tr>
                     <td>Identificacion</td>
-                    <td>1015486515</td>
+                    <td><?php echo $row["ide_persona"]?></td>
                     <td>
                         <a href="usuario_id.php">
                             <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
@@ -41,8 +50,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Telefono</td>
-                    <td>3103867812</td>
+                    <td>Celular</td>
+                    <td><?php echo $row["celular"]?></td>
                     <td>
                         <a href="usuario_cel.php">
                             <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
@@ -51,7 +60,7 @@
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>joserosero@gmail.com</td>
+                    <td><?php echo $row["correo"]?></td>
                     <td>
                         <a href="usuario_email.php">
                             <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
@@ -60,7 +69,7 @@
                 </tr>
                 <tr>
                     <td>Direccion</td>
-                    <td>Calle 45 Sur # 51 - 29G</td>
+                    <td><?php echo $row["direccion"]?></td>
                     <td>
                         <a href="usuario_dir.php">
                             <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>

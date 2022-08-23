@@ -34,6 +34,7 @@
                 <button id="nom" class="nombre"><i class="fa-solid fa-user fa-5x"></i></button>
                         <div class="nombre1-content">
                             <a href="usuario.php">Jose Angel Rosero Orozco</a>
+                            <a href="../index.html">Salir</a>
                         </div>
                 </div>
             </div>
