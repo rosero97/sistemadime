@@ -32,20 +32,21 @@ if($_POST){
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Digite el numero de mesa</span>
                         <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        
                     </div>
                 </tr>
             </tbody>          
         </table>
+        <div style="text-align:right;"> 
+        <a href="mesas.php">
+            <button type="button"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+        </a>        
+        <button type="submit" name="guarda"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+    </div>
+    
     </form>
     <br>
-    <div style="text-align:right;"> 
-        <a href="mesas.php">
-            <button><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
-        </a>        
-        <a href="">
-            <button><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
-        </a>        
-    </div>
+    
   </div>
 </body>
 </html>
