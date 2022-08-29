@@ -6,8 +6,10 @@ if($_POST)
     $obj->control = $_POST['control'];
     
 }
+$obj = new conexion();
+ $c=$obj->conectando();
+                                     
 $sql = "SELECT COUNT(*) AS totalRegistros FROM num_menu";
-$c = $conn ;
 $resultado = mysqli_query($c, $sql);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
@@ -97,9 +99,10 @@ if(isset($_POST['search'])){
             <div>
                         <tr>
                             <td>
-                                <a href="agregar_mes.php">
-                                    <button><i class="fa fa-plus-square-o" aria-hidden="true"> Agregar</i></button>
-                                </a>
+                                <a href="agregar_mesa.php">
+                                    <button type="button"><i class="fa fa-plus-square-o" aria-hidden="true"> Agregar</i></button>
+                                </a>    
+                                
                             </td>
                             <td>
                                 <a href="#"><button><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
