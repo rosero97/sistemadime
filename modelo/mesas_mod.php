@@ -1,11 +1,15 @@
 <?php
-    class num_menu{
+   
+    
+class num_menu{
 
                     public $mesa;
                     
 
                     function agregar(){
-                                        $c = $conn ;
+                       
+                                        $obj = new conexion();
+                                        $c=$obj->conectando();
                                         $query = "select * from num_menu where num_mesa = '$this->mesa'";
                                         $ejecuta = mysqli_query($c, $query);
                                         if(mysqli_fetch_array($ejecuta)){
