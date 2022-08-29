@@ -1,6 +1,7 @@
 <?php
-include('../modelo/mesas_mod.php');
+include('../modelo/mesa_mod.php');
 $obj = new num_menu();
+
 if($_POST){
 
     $obj->mesa = $_POST['mesa'];
