@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Lista usuarios</title>
+	<title>Nuevo cliente</title>
 	<!-- Normalize V8.0.1 -->
 	<link rel="stylesheet" href="./css/normalize.css">
 	<!-- Bootstrap V4.3 -->
@@ -17,7 +17,7 @@
 	<!-- Sweet Alert V8.13.0 JS file-->
 	<script src="./js/sweetalert2.min.js" ></script>
 	<!-- jQuery Custom Content Scroller V3.1.5 -->
-	<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">	
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
 </head>
@@ -76,71 +76,80 @@
 			<!-- Page header -->
 			<div class="full-box page-header">
 				<h3 class="text-left">
-					<i class="fas fa-clipboard-list fa-fw"></i> &nbsp; MODIFICAR MENU
-				</h3>			
-			</div>		
-			<!-- Content -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-2" id="menu">                
-						<img src="../../imagenes/menu1.jpg" alt="" width="100%" height="auto">              
-					</div>
-					<div class="col-md-2">
-						<p id="menu1">Hamburguesa<br><br>• Pan<br>• Beicon<br>• Queso <br>• Cebolla <br>• Pepinillo<br>• Tomate <br>• Lechuga <br><i class="fa-solid fa-pen-clip"></i></p>
-					</div>
-					<div class="col-md-2" id="menu">
-						<img src="../../imagenes/menu2.jpg" alt="" width="100%" height="auto">
-					</div>
-					<div class="col-md-2">
-						<p id="menu1">Tacos<br><br> • Carne ternera<br> • Cebolla pequeña<br> • Chile verde<br> • Chile seco<br> • Orégano<br> • Cilantro<br> • Tortillas de maíz<br><i class="fa-solid fa-pen-clip"></i></p>
-					</div>
-					<div class="col-md-2" id="menu">
-						<img src="../../imagenes/menu3.jpg" alt="" width="100%" height="auto">
-					</div>
-					<div class="col-md-2">
-					  <p id="menu1">Sandwich<br><br>• Pan de molde<br>• Queso<br>• Filetes de pollo<br>• Lonchas bacon<br>• Lechuga fresca<br>• Lonchas de jamón<br> cocido<br>• Rodajas tomate<br><i class="fa-solid fa-pen-clip"></i></p>  
-					</div>
-				</div><br><br>
-				<div class="row">
-					<div class="col-md-2">
-						<img src="../../imagenes/menu4.jpg" alt="" width="100%" height="auto">
-					</div>
-					<div class="col-md-2">
-						<p id="menu1">Burrito<br><br>• Tortillas de trigo<br>• Carne cerdo<br>• Pimiento verde<br>• Pimiento rojo<br>• Frijoles cocidos<br>• Queso rallado<br>• Pepinillos<br><i class="fa-solid fa-pen-clip"></i></p>
-					</div>
-					<div class="col-md-2">
-						<img src="../../imagenes/menu5.jpg" alt="" width="100%" height="auto">
-					</div>
-					<div class="col-md-2">
-						<p id="menu1">Brazo de reina<br><br>• Huevo<br><br>• Harina de trigo<br>• Dulce de leche<br>• Arandanos<br>• Mermelada<br>• Frambuesas<br><i class="fa-solid fa-pen-clip"></i></p>
-					</div>
-					<div class="col-md-2">
-						<img src="../../imagenes/menu6.jpg" alt="" width="100%" height="auto">
-					</div>
-					<div class="col-md-2">
-						<p id="menu1">Ensalada de pollo<br><br>• Pimiento rojo<br> • Lechuga fresca<br> • Tomates cherry<br>• Pechuga de pollo <br>• Aceitunas negras<br> rebanadas.<br><i class="fa-solid fa-pen-clip"></i></p>
-					</div>
-				</div>
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center">
-						<li class="page-item disabled">
-							<a class="page-link" href="#" tabindex="-1">Previous</a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Next</a>
-						</li>
-					</ul>
-				</nav>
+					<i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CLIENTE
+				</h3>
+				<p class="text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem odit amet asperiores quis minus, dolorem repellendus optio doloremque error a omnis soluta quae magnam dignissimos, ipsam, temporibus sequi, commodi accusantium!
+				</p>
 			</div>
+			<div class="container-fluid">
+				<ul class="full-box list-unstyled page-nav-tabs">
+					<li>
+						<a class="active" href="#"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR CLIENTE</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE CLIENTES</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR CLIENTE</a>
+					</li>
+				</ul>	
+			</div>			
+			<!-- Content here-->
+			<div class="container-fluid">
+				<form action="" class="form-neon" autocomplete="off">
+					<fieldset>
+						<legend><i class="fas fa-user"></i> &nbsp; Información básica</legend>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="cliente_dni" class="bmd-label-floating">DNI</label>
+										<input type="text" pattern="[a-zA-Z0-9-]{1,27}" class="form-control" id="cliente_dni" id="cliente_dni" maxlength="27">
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="cliente_nombre" class="bmd-label-floating">Nombre</label>
+										<input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,40}" class="form-control" name="cliente_nombre" id="cliente_nombre" maxlength="40">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="cliente_apellido" class="bmd-label-floating">Apellido</label>
+										<input type="text" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,40}" class="form-control" name="cliente_apellido" id="cliente_apellido" maxlength="40">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="cliente_telefono" class="bmd-label-floating">Teléfono</label>
+										<input type="text" pattern="[0-9()+]{1,20}" class="form-control" name="cliente_telefono" id="cliente_telefono" maxlength="20">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label for="cliente_direccion" class="bmd-label-floating">Dirección</label>
+										<input type="text" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ#- ]{1,150}" class="form-control" name="cliente_direccion" id="cliente_direccion" maxlength="150">
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<br><br><br>
+					<p class="text-center" style="margin-top: 40px;">
+						<button type="reset" class="btn btn-raised btn-secondary btn-sm"><i class="fas fa-paint-roller"></i> &nbsp; LIMPIAR</button>
+						&nbsp; &nbsp;
+						<button type="submit" class="btn btn-raised btn-info btn-sm"><i class="far fa-save"></i> &nbsp; GUARDAR</button>
+					</p>
+				</form>
+			</div>	
 		</section>
 	</main>	
 	<!--=============================================
 	=            Include JavaScript files           =
 	==============================================-->
-	<!-- jQuery V3.4.1 -->	<script src="./js/jquery-3.4.1.min.js" ></script>
+	<!-- jQuery V3.4.1 -->
+	<script src="./js/jquery-3.4.1.min.js" ></script>
 	<!-- popper -->
 	<script src="./js/popper.min.js" ></script>
 	<!-- Bootstrap V4.3 -->
