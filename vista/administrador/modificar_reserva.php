@@ -1,9 +1,22 @@
+<?php 
+
+include("../../conexion/conectar.php");
+//include("../../controlador/mesas_con.php");
+
+//$obj = new num_menu();
+if($_POST){
+
+    $obj->mesa = $_POST['mesa'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Lista de items</title>
+    <title>Modificar reservacion</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -20,6 +33,8 @@
     <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="./css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -45,13 +60,13 @@
 							<a href="usuarioadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
 						</li>
 						<li>
-							<a href="reservaciones.html"><i class="fas fa-pallet fa-fw"></i> &nbsp; Reservaciones</a>						
+							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fas fa-file-invoice-dollar fa-fw"></i> &nbsp; Mesas</a>					
+							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.html"><i class="fas  fa-user-secret fa-fw"></i> &nbsp; Menu</a>				
+							<a href="menu2.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
 							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
@@ -75,36 +90,30 @@
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; VER RESERVACIONES
+                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; MODIFICAR RESERVACION
                 </h3>
             </div>
-            <div class="container-fluid">
-                <ul class="full-box list-unstyled page-nav-tabs">
-                    <li>
-                        <a href="#"><i class="fas fa-plus fa-fw"></i> &nbsp; AGREGAR ITEM</a>
-                    </li>
-                    <li>
-                        <a class="active" href="#"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE ITEMS</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR ITEM</a>
-                    </li>
-                </ul>
-            </div>     
-            <!--CONTENT-->
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center">
-						<li class="page-item disabled">
-							<a class="page-link" href="#" tabindex="-1">Previous</a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Next</a>
-						</li>
-					</ul>
-				</nav>
+            <div class="container shadow p-3 mb-5 bg-body rounded">
+            <form action="" name="agregar_mesa" method="POST" >
+                <table>
+                    <tbody>
+                        <tr>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
+                                <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                
+                            </div>
+                        </tr>
+                    </tbody>          
+                </table>
+                <div style="text-align:right;"> 
+                    <a href="mesas.php">
+                        <button type="button"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                    </a>        
+                    <button type="submit" name="modifica"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                </div>
+            </div>
+            </form>
         </section>
     </main>  	
 	<!--=============================================

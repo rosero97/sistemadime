@@ -1,12 +1,18 @@
 <?php 
 
 include("../../conexion/conectar.php");
-include("../../controlador/mesas_con.php");
+//include("../../controlador/#");
 
-$obj = new num_menu();
+//$obj = new num_menu();
 if($_POST){
 
-    $obj->mesa = $_POST['mesa'];
+    $obj->reserva = $_POST['n_reserva'];
+    $obj1->fecha = $_POST['fecha_hora'];
+    $obj2->mesa = $_POST['num_mesa'];
+    $obj3->personas = $_POST['num_personas'];
+    $obj4->encargado = $_POST['ide_encargado'];
+    $obj5->cliente = $_POST['ide_cliente'];
+
 }
 
 ?>
@@ -16,7 +22,7 @@ if($_POST){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Modificar mesa</title>
+    <title>Agregar mesa</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -90,30 +96,50 @@ if($_POST){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; MODIFICAR MESA
+                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; AGREGAR RESERVACION
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="agregar_mesa" method="POST" >
+            <form action="" name="agregar_reserva" method="POST" >
                 <table>
                     <tbody>
                         <tr>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
-                                <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                
+                                <span class="input-group-text" id="inputGroup-sizing-default">Numero de reservacion</span>
+                                <input type="text" id="n_reserva" name="n_reserva" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="El numero se genera automaticamente">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Ingrese la fecha y hora</span>
+                                <input type="text" id="fecha_hora" name="fecha_hora" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Ingrese el numero de mesa</span>
+                                <input type="text" id="num_mesa" name="num_mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Ingrese el numero de personas</span>
+                                <input type="text" id="num_personas" name="num_personas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Ingrese el id del encargado</span>
+                                <input type="text" id="ide_encargado" name="ide_encargado" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Ingrese el id del cliente</span>
+                                <input type="text" id="ide_cliente" name="ide_cliente" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                         </tr>
                     </tbody>          
                 </table>
-                <div style="text-align:right;"> 
-                    <a href="mesas.php">
-                        <button type="button"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
-                    </a>        
-                    <button type="submit" name="modifica"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
-                </div>
+            <div style="text-align:right;"> 
+                <a href="reservaciones.php">
+                    <button type="button"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                </a>        
+                <button type="submit" name="guarda"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
             </div>
             </form>
+            <br>
+            </div>
         </section>
     </main>  	
 	<!--=============================================

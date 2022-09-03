@@ -1,11 +1,6 @@
 <?php
 include("../../conexion/conectar.php");
 
-if($_POST)
-{
-    $obj->control = $_POST['control'];
-    
-}
 $obj = new conexion();
  $c=$obj->conectando();
                                      
@@ -43,11 +38,11 @@ if(isset($_POST['search'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Lista de prestamos</title>
+    <title>Mesas</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="./css/bootstrap.min.css">-->
     <!-- Bootstrap Material Design V4.0 -->
     <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
     <!-- Font Awesome V5.9.0 -->
@@ -60,6 +55,8 @@ if(isset($_POST['search'])){
     <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="./css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -85,13 +82,13 @@ if(isset($_POST['search'])){
 							<a href="usuarioadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
 						</li>
 						<li>
-							<a href="reservaciones.html"><i class="fas fa-pallet fa-fw"></i> &nbsp; Reservaciones</a>						
+							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fas fa-file-invoice-dollar fa-fw"></i> &nbsp; Mesas</a>					
+							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.html"><i class="fas  fa-user-secret fa-fw"></i> &nbsp; Menu</a>				
+							<a href="menu2.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
 							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
@@ -145,12 +142,12 @@ if(isset($_POST['search'])){
 							<td><?php echo $arreglo2[0] ?></td>
 							<td>
 								<a href="modificar_mesa.php">
-									<button type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
+									<button type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button>
 								</a>
 							</td>
 							<td>
 								<a href="eliminar_mesa.php">
-									<button type="button"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+									<button type="button"><i class="fa fa-trash-o" aria-hidden="true"> </i></button>
 								</a>
 							</td>
 						</tr>
