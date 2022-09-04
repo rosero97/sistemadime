@@ -1,11 +1,10 @@
 <?php
-include("../../conexion/conectar.php");
+include("../conexion/conectar.php");
 
-$obj = new conexion();
- $c=$obj->conectando();
-                                     
-$sql = "SELECT COUNT(*) AS totalRegistros FROM num_menu";
-$resultado = mysqli_query($c, $sql);
+$conet = new Conexion();
+$c = $conet->conectando();         
+$query = "SELECT COUNT(*) AS totalRegistros FROM num_menu";
+$resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
 //echo $totalRegistros;
@@ -88,7 +87,7 @@ if(isset($_POST['search'])){
 							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
 							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
@@ -109,104 +108,102 @@ if(isset($_POST['search'])){
                     <i class="fas fa-power-off"></i>
                 </a>
             </nav>
-            <!-- Page header -->
+            <!-- Page header -->	
             <div class="full-box page-header">
                 <h3 class="text-left">
                     <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; MODIFICAR MESAS
                 </h3>              
             </div>
+			<div class="container shadow p-3 mb-5 bg-body rounded " >
 			<!--CONTENT-->	
-            <form action="" name="num_menu" method="POST">
-				<table class="table table-bordered" style="text-align: center;">
-					<thead>
-						<tr>
-							<th style="color: black;">Numero de mesa</th>
-							<th style="color: black;">Modificar</th>
-							<th style="color: black;">Eliminar</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php
-							if($arreglo2==0){
-							//echo "No existen Registros";
-						?>
-							<div class="alert alert-success" role="alert">
-								<?php echo "No hay registros" ?>
-							</div>
-							<?php 
-								}   
-							else{
-								do{   
-						?> 
-						<tr>
-							<td><?php echo $arreglo2[0] ?></td>
-							<td>
-								<a href="modificar_mesa.php">
-									<button type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button>
-								</a>
-							</td>
-							<td>
-								<a href="eliminar_mesa.php">
-									<button type="button"><i class="fa fa-trash-o" aria-hidden="true"> </i></button>
-								</a>
-							</td>
-						</tr>
-						<?php
-								}while($arreglo2 = mysqli_fetch_array($resultado2));
-							}
-						?>
-					
-					</tbody>
-				</table>
-				<div>
+				<form action="" name="num_menu" method="POST">
+					<table class="table ">
+						<thead>
 							<tr>
-								<td>
+								<th>
 									<a href="agregar_mesa.php">
-										<button type="button"><i class="fa fa-plus-square-o" aria-hidden="true"> Agregar</i></button>
-									</a>    
-									
+										<button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>                   
+									</a>
+								</th>
+							</tr>
+						</thead>
+					</table>
+					<table class="table table-striped" style="text-align: center;">
+						<tbody>
+							<tr class="table-primary">
+								<th style="color: black;">Numero de mesa</th>
+								<th style="color: black;">Modificar</th>
+								<th style="color: black;">Eliminar</th>
+							</tr>
+							<?php
+								if($arreglo2==0){
+								//echo "No existen Registros";
+							?>
+								<div class="alert alert-success" role="alert">
+									<?php echo "No hay registros" ?>
+								</div>
+								<?php 
+									}   
+								else{
+									do{   
+							?> 
+							<tr>
+								<td><?php echo $arreglo2[0] ?></td>
+								<td>
+									<a href="modificar_mesa.php">
+										<button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button>
+									</a>
 								</td>
 								<td>
-									<a href="#"><button><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+									<a href="eliminar_mesa.php">
+										<button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"> </i></button>
+									</a>
 								</td>
 							</tr>
-						</div> 
-				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-end">
-						<?php 
-						if($pagina!=1){
-						?>
-						<li class="page-item ">
-							<a class="page-link" href="?pagina=<?php echo 1; ?>"><</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="?pagina=<?php echo $pagina-1; ?>"><<</a>
-						</li>
-						<?php
-						}
-						for($i=1; $i<=$totalPaginas; $i++){
-							if($i==$pagina){
-								echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
-							}
-							else{
-								echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>'; 
-							}
-						}
-						if($pagina !=$totalPaginas){
-						?>
+							<?php
+									}while($arreglo2 = mysqli_fetch_array($resultado2));
+								}
+							?>
 						
-						<li class="page-item">
-							<a class="page-link" href="?pagina=<?php echo $pagina+1; ?>">>></a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="?pagina=<?php echo $totalPaginas; ?>">></a>
-						</li>
-						<?php
-						}
-						?>
-					</ul>
-				</nav> 
-			</form> 		
+						</tbody>
+					</table>
+					<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-end">
+							<?php 
+							if($pagina!=1){
+							?>
+							<li class="page-item ">
+								<a class="page-link" href="?pagina=<?php echo 1; ?>"><</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="?pagina=<?php echo $pagina-1; ?>"><<</a>
+							</li>
+							<?php
+							}
+							for($i=1; $i<=$totalPaginas; $i++){
+								if($i==$pagina){
+									echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
+								}
+								else{
+									echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>'; 
+								}
+							}
+							if($pagina !=$totalPaginas){
+							?>
+							
+							<li class="page-item">
+								<a class="page-link" href="?pagina=<?php echo $pagina+1; ?>">>></a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="?pagina=<?php echo $totalPaginas; ?>">></a>
+							</li>
+							<?php
+							}
+							?>
+						</ul>
+					</nav> 
+				</form> 
+			</div>		
         </section>
     </main>
 	<!--=============================================

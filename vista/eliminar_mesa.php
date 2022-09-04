@@ -1,7 +1,7 @@
 <?php 
 
-include("../../conexion/conectar.php");
-include("../../controlador/mesas_con.php");
+include("../conexion/conectar.php");
+include("../controlador/mesas_con.php");
 
 $obj = new num_menu();
 if($_POST){
@@ -16,7 +16,7 @@ if($_POST){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Modificar mesa</title>
+    <title>Eliminar mesa</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -57,7 +57,7 @@ if($_POST){
 							<a href="administrador.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
 						</li>
 						<li>
 							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -66,7 +66,7 @@ if($_POST){
 							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
 							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
@@ -90,7 +90,7 @@ if($_POST){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; MODIFICAR MESA
+                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; ELIMINAR MESA
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
@@ -99,21 +99,21 @@ if($_POST){
                     <tbody>
                         <tr>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Quiere eliminar este numero de mesa</span>
                                 <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                
                             </div>
                         </tr>
                     </tbody>          
                 </table>
                 <div style="text-align:right;"> 
                     <a href="mesas.php">
-                        <button type="button"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                     </a>        
-                    <button type="submit" name="modifica"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                    <button type="submit" name="elimina" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
                 </div>
-            </div>
             </form>
+            <br> 
+            </div>
         </section>
     </main>  	
 	<!--=============================================
