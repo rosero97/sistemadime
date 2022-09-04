@@ -78,7 +78,7 @@ if(isset($_POST['search'])){
 							<a href="administrador.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
 						</li>
 						<li>
 							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp; Reservaciones</a>						
