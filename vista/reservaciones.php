@@ -1,11 +1,15 @@
 <?php
-include("../../conexion/conectar.php");
+include("../conexion/conectar.php");
 
-$obj = new conexion();
- $c=$obj->conectando();
-                                     
-$sql = "SELECT COUNT(*) AS totalRegistros FROM numero_reservacion";
-$resultado = mysqli_query($c, $sql);
+if($_POST)
+{
+    $obj->n_reservacion = $_POST['n_reservacion'];
+
+}
+$conet = new Conexion();
+$c = $conet->conectando();   
+$query="SELECT COUNT(*) AS totalRegistros FROM numero_reservacion";
+$resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
 //echo $totalRegistros;
@@ -23,14 +27,15 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="select * from numero_reservacion where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN encargado e ON n.ide_encargado = e.t_encargado INNER JOIN cliente c ON n.ide_cliente = c.t_cliente where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
-    $query2="select * from numero_reservacion limit $desde,$maximoRegistros ";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN encargado e ON n.ide_encargado = e.t_encargado INNER JOIN cliente c ON n.ide_cliente = c.t_cliente limit $desde,$maximoRegistros ";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +84,7 @@ if(isset($_POST['search'])){
 							<a href="administrador.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.html"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
 						</li>
 						<li>
 							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -88,7 +93,7 @@ if(isset($_POST['search'])){
 							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.html"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
 							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
@@ -115,46 +120,27 @@ if(isset($_POST['search'])){
                     <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; VER RESERVACIONES
                 </h3>
             </div>
-			<table class="table ">
-                <thead>
-                    <tr>
-                        <th>
-                            <a href="agregar_reserva.php">
-                                <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>                   
-                            </a>
-                        </th>                      
-                    </tr>
-                </thead>
-            </table> 
 			<div class="container shadow p-3 mb-5 bg-body rounded " >
 					<form action="" name="numero_reservacion" method="POST">
 						<nav class="navbar navbar-expand-lg bg-light">
 							<div class="container-fluid">
 								<form class="d-flex" role="search">
-									<input class="form-control me-2" type="search" name="nombreCategorias"  placeholder="Digite el Nombre o Código de la Categoria" aria-label="Search">
+									<input class="form-control me-2" type="search" name="n_reservacion"  placeholder="Digite el Nombre o Código de la Reservacion" aria-label="Search">
 									 <button class="btn btn-outline-success" name="search"  type="submit"> Buscar</button>
 								</form>
 							</div>
 						</nav>
 						<br>
 						<div class="table-responsive">
-							<table class="table table-bordered table-sm shadow p-3 mb-5 bg-body rounded">
-								<thead>
-									<tr>
-										<td colspan="9" class="p-3 mb-2 bg-primary text-white"><h5>Lista de Categorias</h5></td>
-									</tr>
-								</thead>
+							<table class="table table-striped" style="text-align: center;">
 								<tbody >
-									<tr class="table-secondary">
+									<tr class="table-primary">
 										<td>Reservacion N°</td>
 										<td>Fecha y Hora</td>
 										<td>Numero de mesa</td>
 										<td>Numero de personas</td>
 										<td>Encargado</td>
-										<td>Cliente</td>
-										<td>Detalles</td>
-										<td>Modificar</td>
-										<td>Eliminar</td>
+										<td>Cliente</td>	
 									</tr>
 										<?php
 											if($arreglo2==0){
@@ -173,17 +159,8 @@ if(isset($_POST['search'])){
 										<td><?php echo $arreglo2[1] ?></td>
 										<td><?php echo $arreglo2[2] ?></td>
 										<td><?php echo $arreglo2[3] ?></td>
-										<td><?php echo $arreglo2[4] ?></td>
-										<td><?php echo $arreglo2[5] ?></td>
-										<td><a href="">
-											<button type="button" class="btn btn-info"><i class="fa fa-question-circle-o" aria-hidden="true"></i></button></a>
-										</td>
-										<td><a href="modificar_reserva.php">
-											<button type="button" class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
-										</td>
-										<td><a href="">
-											<button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
-										</td>								
+										<td><?php echo $arreglo2["ide_encargado"] ?></td>
+										<td><?php echo $arreglo2["ide_cliente"] ?></td>							
 									</tr>
 									<?php
 										}while($arreglo2 = mysqli_fetch_array($resultado2));
