@@ -100,6 +100,9 @@ if($_POST){
                         <tr>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite el numero de mesa</span>
+                                <input type="text" id="num_mesa" name="num_mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el numero de mesa</span>
                                 <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 
                             </div>

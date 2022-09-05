@@ -6,8 +6,20 @@ include("../controlador/mesas_con.php");
 $obj = new num_menu();
 if($_POST){
 
+    $obj->num_mesa = $_POST['num_mesa'];
     $obj->mesa = $_POST['mesa'];
 }
+$key=$_GET['key'];
+echo $key;
+$obj = new conexion();
+$c=$obj->conectando();
+$sql="select * from num_menu where num_mesa='$key' ";
+$rs=mysqli_query($c,$sql);
+$array=mysqli_fetch_row($rs);
+$obj->num_mesa = $array[0];
+$obj->mesa = $array[1];
+echo $obj->num_mesa;
+echo $obj->mesa;
 
 ?>
 
@@ -100,7 +112,9 @@ if($_POST){
                         <tr>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
-                                <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
+                                <input type="text" id="mesa" name="mesa" value="<?php echo $obj->mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 
                             </div>
                         </tr>

@@ -131,7 +131,8 @@ if(isset($_POST['search'])){
 					<table class="table table-striped" style="text-align: center;">
 						<tbody>
 							<tr class="table-primary">
-								<th style="color: black;">Numero de mesa</th>
+								<th style="color: black;">Numero</th>
+								<th style="color: black;">mesa</th>
 								<th style="color: black;">Modificar</th>
 								<th style="color: black;">Eliminar</th>
 							</tr>
@@ -149,8 +150,11 @@ if(isset($_POST['search'])){
 							?> 
 							<tr>
 								<td><?php echo $arreglo2[0] ?></td>
+								<td><?php echo $arreglo2[1] ?></td>
 								<td>
-									<a href="modificar_mesa.php">
+									<a href="<?php if($arreglo2[0]<>""){
+                                     echo "modificar_mesa.php?key=".urlencode($arreglo2[0]);
+                                }?>">
 										<button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button>
 									</a>
 								</td>

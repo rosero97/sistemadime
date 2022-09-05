@@ -4,6 +4,7 @@ $obj = new num_menu();
 
 if($_POST){
 
+    $obj->num_mesa = $_POST['num_mesa'];
     $obj->mesa = $_POST['mesa'];
 }
 
