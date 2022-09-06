@@ -27,11 +27,11 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN encargado e ON n.ide_encargado = e.t_encargado INNER JOIN cliente c ON n.ide_cliente = c.t_cliente where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN encargado e ON n.ide_encargado = e.t_encargado INNER JOIN cliente c ON n.ide_cliente = c.t_cliente INNER JOIN num_menu m ON n.mesa_id=m.mesa_id where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN encargado e ON n.ide_encargado = e.t_encargado INNER JOIN cliente c ON n.ide_cliente = c.t_cliente limit $desde,$maximoRegistros ";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN encargado e ON n.ide_encargado = e.t_encargado INNER JOIN cliente c ON n.ide_cliente = c.t_cliente INNER JOIN num_menu m ON n.mesa_id=m.mesa_id limit $desde,$maximoRegistros ";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }
@@ -157,7 +157,7 @@ if(isset($_POST['search'])){
 									<tr>
 										<td><?php echo $arreglo2[0] ?></td>
 										<td><?php echo $arreglo2[1] ?></td>
-										<td><?php echo $arreglo2[2] ?></td>
+										<td><?php echo $arreglo2["num_mesa"] ?></td>
 										<td><?php echo $arreglo2[3] ?></td>
 										<td><?php echo $arreglo2["ide_encargado"] ?></td>
 										<td><?php echo $arreglo2["ide_cliente"] ?></td>							

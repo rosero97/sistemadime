@@ -13,7 +13,7 @@ $key=$_GET['key'];
 echo $key;
 $obj = new conexion();
 $c=$obj->conectando();
-$sql="select * from num_menu where num_mesa='$key' ";
+$sql="select * from num_menu where mesa_id='$key' ";
 $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
 $obj->num_mesa = $array[0];
@@ -106,16 +106,17 @@ echo $obj->mesa;
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="agregar_mesa" method="POST" >
+            <form action="" name="modificar_mesa" method="POST" >
                 <table>
                     <tbody>
                         <tr>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
-                                <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Este es el numero de id de la mesa</span>
+                                <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
+                            </div>
+                            <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
                                 <input type="text" id="mesa" name="mesa" value="<?php echo $obj->mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                
                             </div>
                         </tr>
                     </tbody>          

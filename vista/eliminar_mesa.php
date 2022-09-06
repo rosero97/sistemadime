@@ -6,8 +6,20 @@ include("../controlador/mesas_con.php");
 $obj = new num_menu();
 if($_POST){
 
+    $obj->num_mesa = $_POST['num_mesa'];
     $obj->mesa = $_POST['mesa'];
 }
+$key=$_GET['key'];
+echo $key;
+$obj = new conexion();
+$c=$obj->conectando();
+$sql="select * from num_menu where mesa_id='$key' ";
+$rs=mysqli_query($c,$sql);
+$array=mysqli_fetch_row($rs);
+$obj->num_mesa = $array[0];
+$obj->mesa = $array[1];
+echo $obj->num_mesa;
+echo $obj->mesa;
 
 ?>
 
@@ -94,13 +106,17 @@ if($_POST){
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="agregar_mesa" method="POST" >
+            <form action="" name="eliminar_mesa" method="POST" >
                 <table>
                     <tbody>
                         <tr>
                             <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Este es el numero de id de la mesa</span>
+                                <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
+                            </div>
+                            <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Quiere eliminar este numero de mesa</span>
-                                <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" id="mesa" name="mesa" value="<?php echo $obj->mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
                             </div>
                         </tr>
                     </tbody>          
@@ -109,7 +125,7 @@ if($_POST){
                     <a href="mesas.php">
                         <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                     </a>        
-                    <button type="submit" name="elimina" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                    <button type="submit" name="elimina" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
                 </div>
             </form>
             <br> 

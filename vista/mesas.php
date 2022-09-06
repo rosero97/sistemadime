@@ -154,12 +154,14 @@ if(isset($_POST['search'])){
 								<td>
 									<a href="<?php if($arreglo2[0]<>""){
                                      echo "modificar_mesa.php?key=".urlencode($arreglo2[0]);
-                                }?>">
+                                	}?>">
 										<button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button>
 									</a>
 								</td>
 								<td>
-									<a href="eliminar_mesa.php">
+									<a href="<?php if($arreglo2[0]<>""){
+                                     echo "eliminar_mesa.php?key=".urlencode($arreglo2[0]);
+                                	}?>">
 										<button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"> </i></button>
 									</a>
 								</td>
