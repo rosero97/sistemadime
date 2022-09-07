@@ -124,8 +124,10 @@ echo $obj->mesa;
                 <div style="text-align:right;"> 
                     <a href="mesas.php">
                         <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
-                    </a>        
-                    <button type="submit" name="elimina" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+                    </a>
+                    <a href="mesas.php">
+                        <button type="submit" name="elimina" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+                    </a>       
                 </div>
             </form>
             <br> 

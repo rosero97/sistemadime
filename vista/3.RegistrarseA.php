@@ -1,10 +1,14 @@
+<?php
+include("../modelo/registro_admin.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../config/styles_Rea.css">
+    <link rel="stylesheet" href="../config/styles_Rea.css">
     <title>Registro administrador</title>
 </head>
 <body>
@@ -20,22 +24,17 @@
             <div class="square" style="--i:4;"></div>
             <div class="container">
                 <div class="form">
-                    <form action="5.Confirmacion.html" method="post">
+                    <form action="../modelo/registro_admin.php" method="post">
                         <h3>Registrate en Digital's Menú</h3>
                         <div class="inputBox">
-                            <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese primer nombre" required>
-                            <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese segundo nombre">
+                            <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" required>
                         </div>
                         <div class="inputBox">
-                            <input type="text" name ="apellidos" id="apellidos" placeholder=" Ingrese primer apellido" required>
-                            <input type="text" name ="apellidos" id="apellidos" placeholder=" Ingrese segundo apellido">
-                        </div>
-                        <div class="inputBox">
-                            <label>Tipo de Documento:</label>
-                            <select>
-                                <option>CC</option>
-                                <option>TI</option>
-                                <option>CE</option>
+                            <label fot="tipodoc">Tipo de Documento:</label>
+                            <select name="tipodoc">
+                                <option value= "1">CC</option>
+                                <option value= "2">TI</option>
+                                <option value= "3">CE</option>
                             </select>
                             <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" required>
                         </div>
@@ -46,16 +45,13 @@
                             <input type="tel" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
                         </div>
                         <div class="inputBox">
-                            <input type="text" name ="dirección" id="dirección" placeholder=" Ingrese su dirección" required>
-                        </div>
-                        <div class="inputBox">
                             <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" required>
                         </div>
                         <div class="inputBox">
                             <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña"required>      
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Registrarse" id="Fregi">
+                            <input type="submit" value="Registrarse" id="Registrarse" name="Registrarse">
                         </div>
                     </form>
                 </div>
