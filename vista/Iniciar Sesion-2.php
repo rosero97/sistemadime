@@ -1,3 +1,7 @@
+<?php 
+include("../modelo/iniciar_admin.php")
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,9 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión Administrador</title>
-    <link rel="stylesheet" href="../../config/style1.css">
+    <link rel="stylesheet" href="../config/style1.css">
         <div class="hola mundo">
-            <center><img src="../../imagenes/digital-.png" alt=""></center>
+            <center><img src="../imagenes/digital-.png" alt=""></center>
         </div>
         
     </div>
@@ -15,10 +19,10 @@
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="1.Tipo_Registro.html">Registrarse</a></li>
-                    <li><a href="1.tipo_iniciar.html">Iniciar Sesion</a></li>
-                    <li><a href="../inicio/Ayuda.html">ayuda</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="login/1.Tipo_Registro.html">Registrarse</a></li>
+                    <li><a href="login/1.tipo_iniciar.html">Iniciar Sesion</a></li>
+                    <li><a href="inicio/Ayuda.html">ayuda</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,7 +32,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../../config/login.css">
+    <link rel="stylesheet" href="../config/login.css">
 </head><!DOCTYPE html>
 <html lang="es">
 <body>
@@ -45,18 +49,18 @@
             <div class="container">
                 <div class="form">
                     <h2>Iniciar Sesión</h2>
-                    <form action="../administrador.html">
+                    <form action="../modelo/iniciar_admin.php" method="post">
                         <div class="inputBox">
-                            <input type="email" placeholder="Correo electronico" required/>
+                            <input type="email" name="correo" placeholder="Correo electronico" required/>
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Contraseña" required/>
+                            <input type="password" name="contraseña" placeholder="Contraseña" required/>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Iniciar Sesion" />
+                            <input type="submit" name="iniciar" value="Iniciar Sesion" />
                         </div>
                         <p class="forget">
-                            ¿Has olvidado tu contraseña? <a href="recuperar.html">Recuperar contraseña</a>
+                            ¿Has olvidado tu contraseña? <a href="login/recuperar.html">Recuperar contraseña</a>
                         </p>
 
                         </p>
