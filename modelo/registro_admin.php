@@ -26,6 +26,13 @@ if(isset($_POST['Registrarse'])){
 
         $consulta3="INSERT INTO `encargado` (`t_encargado`, `ide_encargado`) VALUES (NULL, '$numerodoc')";
 
+        $verificar_correo = mysqli_query($con, "SELECT * FROM persona WHERE correo='$correo'");
+
+        if(mysqli_num_rows ($verificar_correo) >0 ){
+            echo "<script 'text/javascript'>alert('El correo esta registrado, porfavor intente con otro.'); window.location.href='../vista/3.RegistrarseA.php';</script>";
+            exit();
+        }
+
         $resultado=mysqli_query($con, $consulta);
         $resultado2=mysqli_query($con, $consulta2);
         $resultado3=mysqli_query($con, $consulta3);

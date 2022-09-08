@@ -33,8 +33,8 @@ include("../modelo/registro_admin.php");
                             <label fot="tipodoc">Tipo de Documento:</label>
                             <select name="tipodoc">
                                 <option value= "1">CC</option>
-                                <option value= "2">TI</option>
-                                <option value= "3">CE</option>
+                                <option value= "2">CE</option>
+                                <option value= "3">TI</option>
                             </select>
                             <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" required>
                         </div>

@@ -65,7 +65,7 @@ class num_menu{
                                              ";
                                              echo $update;
                                              mysqli_query($c,$update);
-                                             echo "<script> alert('La mesa fue Eliminada del sistema')</script>";
+                                             echo "<script> alert('La mesa fue Eliminada del sistema'); window.location.href='../vista/mesas.php';</script>";
                                              
                                           }
 
