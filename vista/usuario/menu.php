@@ -30,7 +30,7 @@
 		<section class="full-box nav-lateral">
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
-      <figure class="full-box nav-lateral-avatar">
+            <figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
@@ -74,23 +74,56 @@
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR ID
+                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENU
                 </h3>              
             </div>
-			<div class="container shadow p-3 mb-5 bg-body rounded">
-        <h2 style="text-align: center;">Modificar</h2>
-        <br>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Digite su numero de documento</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <br>
-        <div style="text-align:right;"> 
-          <a href="usuario.php"><button><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>        
-          <a href="usuario.php"><button><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>        
-        </div>
-			</div>
-    </section>
+			
+            <div class="container shadow p-3 mb-5 bg-body rounded">
+                <div class="row">
+                    <a href="reservacion.php">Hacer reservacion</a>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-2" id="menu">                
+                        <img src="../../imagenes/menu1.jpg" alt="" width="100%" height="auto">              
+                    </div>
+                    <div class="col-md-2">
+                        <p id="menu1">Hamburguesa<br><br>• Pan<br>• Beicon<br>• Queso <br>• Cebolla <br>• Pepinillo<br>• Tomate <br>• Lechuga</p> 
+                    </div>
+                    <div class="col-md-2" id="menu">
+                        <img src="../../imagenes/menu2.jpg" alt="" width="100%" height="auto">
+                    </div>
+                    <div class="col-md-2">
+                        <p id="menu1">Tacos<br><br> • Carne ternera<br> • Cebolla pequeña<br> • Chile verde<br> • Chile seco<br> • Orégano<br> • Cilantro<br> • Tortillas de maíz</p>
+                    </div>
+                    <div class="col-md-2" id="menu">
+                        <img src="../../imagenes/menu3.jpg" alt="" width="100%" height="auto">
+                    </div>
+                    <div class="col-md-2">
+                      <p id="menu1">Sandwich<br><br>• Pan de molde<br>• Queso<br>• Filetes de pollo<br>• Lonchas bacon<br>• Lechuga fresca<br>• Lonchas de jamón<br> cocido<br>• Rodajas tomate</p>  
+                    </div>
+                </div><br><br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="../../imagenes/menu4.jpg" alt="" width="100%" height="auto">
+                    </div>
+                    <div class="col-md-2">
+                        <p id="menu1">Burrito<br><br>• Tortillas de trigo<br>• Carne cerdo<br>• Pimiento verde<br>• Pimiento rojo<br>• Frijoles cocidos<br>• Queso rallado<br>• Pepinillos</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="../../imagenes/menu5.jpg" alt="" width="100%" height="auto">
+                    </div>
+                    <div class="col-md-2">
+                        <p id="menu1">Brazo de reina<br><br>• Huevo<br><br>• Harina de trigo<br>• Dulce de leche<br>• Arandanos<br>• Mermelada<br>• Frambuesas</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="../../imagenes/menu6.jpg" alt="" width="100%" height="auto">
+                    </div>
+                    <div class="col-md-2">
+                        <p id="menu1">Ensalada de pollo<br><br>• Pimiento rojo<br> • Lechuga fresca<br> • Tomates cherry<br>• Pechuga de pollo <br>• Aceitunas negras<br> rebanadas.</p>
+                    </div>
+                </div>
+            </div> 
+        </section>
     </main>
     <!--=============================================
 	=            Include JavaScript files           =
