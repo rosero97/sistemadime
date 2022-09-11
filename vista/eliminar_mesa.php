@@ -47,6 +47,7 @@ echo $obj->mesa;
     <link rel="stylesheet" href="./css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="../config/js/validacion.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -126,7 +127,7 @@ echo $obj->mesa;
                         <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                     </a>
                     <a href="mesas.php">
-                        <button type="submit" name="elimina" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+                        <button type="submit" name="elimina" onclick="return validar_eliminar_mesa(this.form)" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
                     </a>       
                 </div>
             </form>

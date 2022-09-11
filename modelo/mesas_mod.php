@@ -12,7 +12,7 @@ class num_menu{
                        
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from num_menu where mesa_id = '$this->mesa'";
+                                          $query = "select * from num_menu where num_mesa = '$this->mesa'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
                                              echo "<script> alert('La Mesa ya Existe en el Sistema')</script>";
