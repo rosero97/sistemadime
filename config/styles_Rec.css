@@ -1,13 +1,8 @@
 #nombres{
-    width: 180px;
+    width: 406px;
     height: 15px;
 }
- 
-#apellidos{
-    width: 180px;
-    height: 15px;
-}
- 
+
 select{
     height: 25px;
 }
