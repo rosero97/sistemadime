@@ -1,3 +1,6 @@
+<?php 
+    include("../../modelo/registro_usuario.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,17 +23,14 @@
             <div class="square" style="--i:4;"></div>
             <div class="container">
                 <div class="form">
-                    <form action="5.Confirmacion.html" method="post">
+                    <form action="5.Confirmacion.html" method="post" action="php/registro_usuario.php">
                         <h3>Registrate en Digital's Menú</h3>
                         <div class="inputBox">
-                            <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese primer nombre" required>
-                            <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese segundo nombre">
+                            <input type="text" name ="nombres completos" id="nombres" placeholder="nombres completos" required>
+                           
                         </div>
-                        <div class="inputBox">
-                            <input type="text" name ="apellidos" id="apellidos" placeholder=" Ingrese primer apellido" required>
-                            <input type="text" name ="apellidos" id="apellidos" placeholder=" Ingrese segundo apellido">
-                        </div>
-                        <div class="inputBox">
+                        
+                        <div class="inputBox" name="tipo_doc">
                             <label>Tipo de Documento:</label>
                             <select>
                                 <option>CC</option>
@@ -44,9 +44,6 @@
                         </div>
                         <div class="inputBox">
                             <input type="tel" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" name ="dirección" id="dirección" placeholder=" Ingrese su dirección" required>
                         </div>
                         <div class="inputBox">
                             <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" required>
