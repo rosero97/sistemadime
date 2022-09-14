@@ -78,20 +78,11 @@
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-                <form action="agendar_reserva.php" method="post">
-                    <div class="container">
+                <table>
+                    <thead>
+                        <h3 style="text-align: center;">Datos de la reservacion</h3>
+                    </thead><br>           
                         <div class="row">
-                            <div class="col" id="segparte1">
-                                Datos de la reservacion 
-                            </div>     
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3" id="informacion1">
-                                Identificacion
-                            </div>
-                            <div class="col" id="informacion">
-                                1001095170
-                            </div>
                             <div class="col-md-3" id="informacion1">
                                 Fecha
                             </div>
@@ -104,98 +95,68 @@
                                     document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
                                 </script>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3" id="informacion1">
-                                Cliente
-                            </div>
-                            <div class="col" id="informacion">
-                                José Angel Rosero Orozco
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3" id="informacion1">
-                                Direccion
-                            </div>
-                            <div class="col" id="informacion">
-                                Calle 45 Sur # 51 - 29G
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3" id="informacion1">
-                                Telefono
-                            </div>
-                            <div class="col" id="informacion">
-                                3103867812 
-                            </div>
-                            <div class="col-md-3" id="informacion1">
-                                Email
-                            </div>
-                            <div class="col" id="informacion">
-                                joserosero@gmail.com
-                            </div>
-                        </div><br><br>
-                        <table class="table table-striped-columns">
-                            <div class="row">
-                                <div class="col-md-3" id="informacion1">
-                                    <label for="observaciones" class="">Observaciones</label>
-                                </div>
-                                <div class="col-md-9">    
-                                    <textarea id="colobser" name="colobser" rows="2" cols="100%" autofocus ></textarea>
+                        </div><br>
+                    <tbody>
+                        <tr>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Cliente</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" value="José Angel Rosero Orozco" readonly >
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col" id="segparte1">
-                                            Numero de mesa
-                                        </div>
-                                        <div class="col" id="segparte">
-                                            <input type="number" id="nmesa" name="nmesa" min="1" max="8">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col" id="segparte1">
-                                            Numero de personas
-                                        </div>
-                                        <div class="col" id="segparte">
-                                            <input type="number" id="nper" name="nper" min="1" max="13">
-                                        </div>
-                                    </div>   
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Celular</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" value="3103867812" readonly >
                                 </div>
-                                <div class="col-md-6" id="segparte">
-                                    <div class="row">
-                                        <div class="col" id="segparte">
-                                            Dia de la reserva
-                                        </div>
-                                        <div class="col" id="segparte">
-                                            <input type="date" name="fecha" id="fecha"  required min=<?php $hoy=date("Y-m-d"); echo $hoy;?> >
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col" id="segparte">
-                                        Hora de la reserva 
-                                        </div>
-                                        <div class="col" id="segparte">
-                                            <input type="time" id="hora" name="hora" min="11:00" max="21:00"> 
-                                        </div>                      
-                                    </div>
-                                </div>               
                             </div>
-                        </table>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Correo</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="" value="joserosero@gmail.com" readonly >
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Observaciones</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Numero de mesa</label>
+                                <div class="col-sm-10">
+                                <input type="number" class="form-control" id="" min="1" max="13">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
+                                <div class="col-sm-10">
+                                <input type="number" class="form-control" id="" min="1" max="13">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
+                                <div class="col-sm-10">
+                                <input type="date" class="form-control" id="" min=<?php $hoy=date("Y-m-d"); echo $hoy;?>>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Hora de la reserva</label>
+                                <div class="col-sm-10">
+                                <input type="time" class="form-control" id="" min="11:00" max="21:00">
+                                </div>
+                            </div>
+                        </tr>
+                    </tbody>          
+                </table>
+                <div class="row" style="text-align: center;">
+                    <div class="col">
+                        <a href="agendar_reserva.php"><button class="btn btn-primary"><i class="fa fa-share-square-o" aria-hidden="true"> Enviar</i></button></a>
                     </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col" id="der2">
-                                <input type="submit" id="Consultar" name="submit" value="Consultar" onclick="alert('Su reservacion fue exitosa')"/>
-                            </div>
-                            <div class="col-md-6" id="der2">
-                                <a href="mesas.html" target="">Vista previa de las mesas</a>
-                            </div>
-                        </div>
-                    </div>   
-                </form>  
-			</div>
+                    <div class="col">
+                        <a href="mesas.html"><button class="btn btn-success"><i class="fa fa-table" aria-hidden="true"> Mesas</i></button></a>
+                    </div>
+                </div>
         </section>
     </main>
     <!--=============================================

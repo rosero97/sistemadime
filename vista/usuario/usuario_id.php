@@ -86,8 +86,8 @@
         </div>
         <br>
         <div style="text-align:right;"> 
-          <a href="usuario.php"><button><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>        
-          <a href="usuario.php"><button><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>        
+          <a href="usuario.php"><button class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>        
+          <a href="usuario.php"><button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>        
         </div>
 			</div>
     </section>

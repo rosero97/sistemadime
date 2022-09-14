@@ -30,7 +30,7 @@
 		<section class="full-box nav-lateral">
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
-      <figure class="full-box nav-lateral-avatar">
+				<figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
@@ -74,23 +74,55 @@
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR CORREO
+                <i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; RESERVACIONES
                 </h3>              
             </div>
-			<div class="container shadow p-3 mb-5 bg-body rounded">
-        <h2 style="text-align: center;">Modificar</h2>
-        <br>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Digite su correo electroico</span>
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <br>
-        <div style="text-align:right;"> 
-          <a href="usuario.php"><button class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>        
-          <a href="usuario.php"><button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>        
-        </div>
-      </div>
-    </section>
+            <div class="container shadow p-3 mb-5 bg-body rounded">   
+                <table class="table table-striped" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th style="color: black;">Fecha</th>
+                            <th style="color: black;">°Reservacion</th>
+                            <th style="color: black;">Cliente</th>
+                            <th style="color: black;">Identificacion</th>
+                            <th style="color: black;">Celular</th>
+                            <th style="color: black;">Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fecha</td>
+                            <td>001</td>
+                            <td>Jose Angel Rosero Orozco</td>
+                            <td>1001095170</td>
+                            <td>3103867812</td>
+                            <td>joserosero@gmail.com</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th style="color: black;">°Mesa</th>
+                            <th style="color: black;">°Personas</th>
+                            <th style="color: black;">Observaciones</th>
+                            <th style="color: black;">Dia de la reserva</th>
+                            <th style="color: black;">Hora de la reserva</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>Ninguna</td>
+                            <td>2022/09/18</td>
+                            <td>15:00</td>
+                        </tr>
+                    </tbody>
+                </table><br> 
+                <div style="text-align: center;">
+                    <a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                </div>
+            </div>
+        </section>
     </main>
     <!--=============================================
 	=            Include JavaScript files           =

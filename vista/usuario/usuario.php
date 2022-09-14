@@ -86,13 +86,11 @@ $row = mysqli_fetch_assoc($resultado)
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR USUARIO
+                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; CONFIGURACION
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-                <h2 style="text-align: center;">Configuracion</h2>
-                <br>
-                <table class="table table-bordered" style="text-align: center;">
+                <table class="table table-striped" style="text-align: center;">
                     <thead>
                         <tr>
                             <th style="color: black;">Nombre del dato</th>
@@ -105,8 +103,8 @@ $row = mysqli_fetch_assoc($resultado)
                             <td>Nombre Completo</td>
                             <td><?php echo $row["nombre_completo"]?></td>
                             <td>
-                                <a href="usuario_nombre.php" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    <button ><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
+                                <a href="usuario_nombre.php">
+                                    <button  class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
                         </tr>
@@ -115,7 +113,7 @@ $row = mysqli_fetch_assoc($resultado)
                             <td><?php echo $row["ide_persona"]?></td>
                             <td>
                                 <a href="usuario_id.php">
-                                    <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
+                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
                         </tr>
@@ -124,7 +122,7 @@ $row = mysqli_fetch_assoc($resultado)
                             <td><?php echo $row["celular"]?></td>
                             <td>
                                 <a href="usuario_cel.php">
-                                    <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
+                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
                         </tr>
@@ -133,7 +131,7 @@ $row = mysqli_fetch_assoc($resultado)
                             <td><?php echo $row["correo"]?></td>
                             <td>
                                 <a href="usuario_email.php">
-                                    <button><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button>
+                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
                         </tr>
@@ -142,10 +140,10 @@ $row = mysqli_fetch_assoc($resultado)
                 <div style="text-align:center;">
                     <tr>
                         <td>
-                            <a href="cliente1.php"><button><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                            <a href="cliente1.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
                         </td>
                         <td>
-                            <a href="cliente1.php"><button><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>
+                            <a href="cliente1.php"><button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>
                         </td>
                     </tr>
                 </div>

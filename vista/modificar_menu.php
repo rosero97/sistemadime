@@ -145,7 +145,7 @@ echo $obj->ida;
                             <br>
                             <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Id del administrador</span>
-                                <input type="text" id="ida" value="<?php echo $obj->ida?>" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="En este espacio se incuira su id" >    
+                                <input type="text" id="ida" value="<?php echo $obj->ida?>" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="En este espacio se incuira su id" >    
                             </div>
                         </tr>
                     </tbody>          

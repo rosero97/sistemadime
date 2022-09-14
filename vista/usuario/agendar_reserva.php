@@ -1,11 +1,3 @@
-<?php
-    $mesa = $_POST ["nmesa"];
-    $personas = $_POST ["nper"];
-    $obs = $_POST ["colobser"];
-    $fecha = $_POST ["fecha"];
-    $hora = $_POST ["hora"];
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -86,82 +78,46 @@
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">   
-                <div>
-                    Martes, 05 de abril de 2022
+                <table class="table table-striped" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th style="color: black;">Numero de reservacion</th>
+                            <th style="color: black;">Fecha</th>
+                            <th style="color: black;">Vista</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reserva 1</td>
+                            <td>2022/09/18</td>
+                            <td>
+                                <a href="vista_reserva.php">
+                                    <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br> 
+                <div style="text-align: center;">
+                    <a href="cliente1.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
                 </div>
-                <div>
-                    Reservacion
-                </div>
-                <div>
-                    N: 0001
-                </div>
-                <div>
-                    Cliente
-                </div>
-                <div>
-                    Jose Angel Rosero Orozco
-                </div>
-                <div>
-                    Identificacion
-                </div>
-                <div>
-                    1001095170
-                </div>
-                <div>
-                    Telefono
-                </div>
-                <div>
-                    3103867812
-                </div>
-                <div>
-                    Email
-                </div>
-                <div>
-                    joserosero@gmail.com
-                </div>
-                <div>
-                    Numero de mesa
-                </div>
-                <div>
-                    <?php
-                        echo "$mesa";
-                    ?>
-                </div>
-                <div>
-                    Numero de personas
-                </div>
-                <div>
-                    <?php
-                        echo "$personas";
-                    ?>
-                </div>
-                <div>
-                    Observacciones
-                </div>
-                <div>
-                    <?php
-                        echo "$obs";
-                    ?>    
-                </div>
-                <div>
-                    Dia de la reserva
-                </div>
-                <div>
-                    <?php
-                        echo "$fecha";
-                    ?>
-                </div>
-                <div>
-                    Hora de la reserva
-                </div>
-                <div>
-                    <?php
-                        echo "$hora";
-                    ?>
-                </div>
-                <div>
-                    <a href="cliente1.php">Volver</a>
-                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </section>
     </main>
