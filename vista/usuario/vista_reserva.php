@@ -77,50 +77,44 @@
                 <i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; RESERVACIONES
                 </h3>              
             </div>
-            <div class="container shadow p-3 mb-5 bg-body rounded">   
-                <table class="table table-striped" style="text-align: center;">
-                    <thead>
-                        <tr>
-                            <th style="color: black;">Fecha</th>
-                            <th style="color: black;">°Reservacion</th>
-                            <th style="color: black;">Cliente</th>
-                            <th style="color: black;">Identificacion</th>
-                            <th style="color: black;">Celular</th>
-                            <th style="color: black;">Correo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Fecha</td>
-                            <td>001</td>
-                            <td>Jose Angel Rosero Orozco</td>
-                            <td>1001095170</td>
-                            <td>3103867812</td>
-                            <td>joserosero@gmail.com</td>
-                        </tr>
-                    </tbody>
-                    <thead>
-                        <tr>
-                            <th style="color: black;">°Mesa</th>
-                            <th style="color: black;">°Personas</th>
-                            <th style="color: black;">Observaciones</th>
-                            <th style="color: black;">Dia de la reserva</th>
-                            <th style="color: black;">Hora de la reserva</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>Ninguna</td>
-                            <td>2022/09/18</td>
-                            <td>15:00</td>
-                        </tr>
-                    </tbody>
-                </table><br> 
-                <div style="text-align: center;">
-                    <a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
-                </div>
+            <div class="container shadow p-3 mb-5 bg-body rounded">
+                <div class="table-responsive">
+                    <table class="table table-striped" style="text-align: center;">
+                        <thead>
+                            <tr>
+                                <th style="color: black;">Fecha</th>
+                                <th style="color: black;">°Reservacion</th>
+                                <th style="color: black;">Cliente</th>
+                                <th style="color: black;">Identificacion</th>
+                                <th style="color: black;">Celular</th>
+                                <th style="color: black;">Correo</th>
+                                <th style="color: black;">°Mesa</th>
+                                <th style="color: black;">°Personas</th>
+                                <th style="color: black;">Observaciones</th>
+                                <th style="color: black;">Dia de la reserva</th>
+                                <th style="color: black;">Hora de la reserva</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fecha</td>
+                                <td>001</td>
+                                <td>Jose Angel Rosero Orozco</td>
+                                <td>1001095170</td>
+                                <td>3103867812</td>
+                                <td>joserosero@gmail.com</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>Ninguna</td>
+                                <td>2022/09/18</td>
+                                <td>15:00</td>
+                            </tr>
+                        </tbody>
+                    </table><br> 
+                    <div style="text-align: center;">
+                        <a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                    </div>
+                </div>   
             </div>
         </section>
     </main>
