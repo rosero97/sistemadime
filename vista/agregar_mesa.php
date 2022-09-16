@@ -114,12 +114,12 @@ if($_POST){
                 <a href="mesas.php">
                     <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                 </a>        
-                <button type="submit" name="guarda" onclick="return validar_agregar_mesa(this.form)" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                <button type="submit" name="guarda" class="btn btn-primary" onclick="return validar_agregar_mesa(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
             </div>
             </form>
             <br>
             </div>
-        </sectphp
+    </section>
     </main>  	
 	<!--=============================================
 	=            Include JavaScript files           =

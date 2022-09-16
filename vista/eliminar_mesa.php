@@ -127,7 +127,7 @@ echo $obj->mesa;
                         <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                     </a>
                     <a href="mesas.php">
-                        <button type="submit" name="elimina" onclick="return validar_eliminar_mesa(this.form)" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+                        <button type="submit" name="elimina" class="btn btn-primary" onclick="return validar_eliminar_mesa(this.form)" ><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
                     </a>       
                 </div>
             </form>
