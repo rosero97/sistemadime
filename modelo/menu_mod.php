@@ -34,7 +34,7 @@ class menu{
                                           )";
                                           echo $insertar;
                                           mysqli_query($c,$insertar);
-                                          echo "<script> alert('El plato fue Creado en el Sistema')</script>";
+                                          echo "<script> alert('El plato fue Creado en el Sistema'); window.location.href='../vista/menu2.php';</script>";
                                             
                                         }
                     }
@@ -52,17 +52,17 @@ class menu{
                                              $ruta = '../imagenes/'.$_FILES['imagen']['name'];
                                              move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta);
                                              $update = "update menu set
-                                                                                    num_menu='$this->num_menu',
+                                                                                    id_menu='$this->num_menu',
                                                                                     nombre='$this->nombre',
                                                                                     imagen='$ruta',
                                                                                     descripcion='$this->descripcion',
-                                                                                    ide_encargado='$this->ida',
-                                                                                    where num_menu='$this->num_menu'
+                                                                                    ide_encargado='$this->ida'
+                                                                                    where id_menu='$this->num_menu'
                                                                                     
                                              ";
                                              echo $update;
                                              mysqli_query($c,$update);
-                                             echo "<script> alert('El plato fue modificado en el sistema')</script>";
+                                             echo "<script> alert('El plato fue modificado en el sistema'); window.location.href='../vista/menu2.php';</script>";
                                              
                                           }
 

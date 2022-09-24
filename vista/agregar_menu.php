@@ -28,7 +28,7 @@ include("../controlador/menu_con.php");
     <link rel="stylesheet" href="./css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
-    <script src="../config/js/validacion.js"></script>
+    <script src="../config/js/validar_menu.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -123,7 +123,7 @@ include("../controlador/menu_con.php");
                 <a href="menu2.php">
                     <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                 </a>        
-                <button type="submit" name="guarda" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                <button type="submit" name="guarda" class="btn btn-primary" onclick="return validar_agregar_menu(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
             </div>
             </form>
             <br>

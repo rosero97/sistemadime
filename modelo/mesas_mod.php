@@ -24,7 +24,7 @@ class num_menu{
                                           )";
                                           echo $insertar;
                                           mysqli_query($c,$insertar);
-                                          echo "<script> alert('La mesa fue Creada en el Sistema')</script>";
+                                          echo "<script> alert('La mesa fue Creada en el Sistema'); window.location.href='../vista/mesas.php';</script>";
                                             
                                         }
                     }
@@ -45,7 +45,7 @@ class num_menu{
                                              ";
                                              echo $update;
                                              mysqli_query($c,$update);
-                                             echo "<script> alert('La mesa fue modificada en el sistema')</script>";
+                                             echo "<script> alert('La mesa fue modificada en el sistema'); window.location.href='../vista/mesas.php';</script>";
                                              
                                           }
 
