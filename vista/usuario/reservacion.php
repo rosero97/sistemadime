@@ -1,3 +1,10 @@
+<?php 
+/*
+include("../../conexion/conectar.php");
+include("../../controlador/reserva_con.php");
+*/
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -86,7 +93,7 @@
                             <div class="col-md-3" id="informacion1">
                                 Fecha
                             </div>
-                            <div class="col" id="current_date"></p>
+                            <div class="col" id="current_date"id></p>
                                 <script>
                                     date = new Date();
                                     year = date.getFullYear();
@@ -98,6 +105,12 @@
                         </div><br>
                     <tbody>
                         <tr>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="reserva" name="reserva" value="001" readonly >
+                                </div>
+                            </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Cliente</label>
                                 <div class="col-sm-10">
@@ -115,35 +128,35 @@
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" id="" value="joserosero@gmail.com" readonly >
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Observaciones</label>
-                                <div class="col-sm-10">
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                            </div>
+                            </div>                           
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Numero de mesa</label>
                                 <div class="col-sm-10">
-                                <input type="number" class="form-control" id="" min="1" max="13">
+                                <input type="number" class="form-control" id="mesa" name="mesa" min="1" max="13">
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
                                 <div class="col-sm-10">
-                                <input type="number" class="form-control" id="" min="1" max="13">
+                                <input type="number" class="form-control" id="personas" name="personas" min="1" max="13">
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
                                 <div class="col-sm-10">
-                                <input type="date" class="form-control" id="" min=<?php $hoy=date("Y-m-d"); echo $hoy;?>>
+                                <input type="date" class="form-control" id="fecha" name="fecha" min=<?php $hoy=date("Y-m-d"); echo $hoy;?>>
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Hora de la reserva</label>
                                 <div class="col-sm-10">
-                                <input type="time" class="form-control" id="" min="11:00" max="21:00">
+                                <input type="time" class="form-control" id="hora" name="hora" min="11:00" max="21:00">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Observaciones</label>
+                                <div class="col-sm-10">
+                                <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
                                 </div>
                             </div>
                         </tr>
@@ -151,7 +164,7 @@
                 </table>
                 <div class="row" style="text-align: center;">
                     <div class="col">
-                        <a href="agendar_reserva.php"><button class="btn btn-primary"><i class="fa fa-share-square-o" aria-hidden="true"> Enviar</i></button></a>
+                        <a href="agendar_reserva.php"><button class="btn btn-primary" name="guarda"><i class="fa fa-share-square-o" aria-hidden="true"> Enviar</i></button></a>
                     </div>
                     <div class="col">
                         <a href="mesas.html"><button class="btn btn-success"><i class="fa fa-table" aria-hidden="true"> Mesas</i></button></a>
