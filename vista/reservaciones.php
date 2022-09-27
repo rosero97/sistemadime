@@ -126,7 +126,7 @@ if(isset($_POST['search'])){
 							<div class="container-fluid">
 								<form class="d-flex" role="search">
 									<input class="form-control me-2" type="search" name="n_reservacion"  placeholder="Digite el Nombre o Código de la Reservacion" aria-label="Search">
-									 <button class="btn btn-outline-success" name="search"  type="submit"> Buscar</button>
+									 <button class="btn btn-outline-success" name="search"  type="submit"> Buscar</button> <button type="submit" class="btn btn-outline-success"> Listar</button>
 								</form>
 							</div>
 						</nav>
