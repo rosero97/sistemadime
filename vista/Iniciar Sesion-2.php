@@ -1,7 +1,7 @@
 <?php 
-/*
+
 include("../modelo/iniciar_admin.php")
-*/
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@ include("../modelo/iniciar_admin.php")
             <div class="container">
                 <div class="form">
                     <h2>Iniciar Sesión</h2>
-                    <!--<form action="../modelo/iniciar_admin.php" method="post">-->
+                    <form action="../modelo/iniciar_admin.php" method="post">
                     <form action="administrador.html" method="post">
                         <div class="inputBox">
                             <input type="email" name="correo" placeholder="Correo electronico" required/>

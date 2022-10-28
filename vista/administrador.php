@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['correo'])){
+	header("Location: Iniciar Sesion-2.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,14 +38,14 @@
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-						Juan Camilo Tocarruncho Ariza <br><small class="roboto-condensed-light">Administrador</small>
+						<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Administrador</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
 							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
@@ -54,7 +60,7 @@
 							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -69,7 +75,7 @@
 				<a href="#">
 					<i class="fas fa-user-cog"></i>
 				</a>
-				<a href="#" class="btn-exit-system">
+				<a href="login/logout.php" class="btn-exit-system">
 					<i class="fas fa-power-off"></i>
 				</a>
 			</nav>
@@ -105,7 +111,7 @@
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</div>
 				</a>
-				<a href="company.html" class="tile">
+				<a href="company.php" class="tile">
 					<div class="tile-tittle">Digitals Menu</div>
 					<div class="tile-icon">
 						<i class="fas fa-store-alt fa-fw"></i>
