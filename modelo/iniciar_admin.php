@@ -12,7 +12,7 @@ if(isset($_GET['cerrar_sesion'])){
 
     session_destroy();
 }
-
+/*
 if(isset($_SESSION['rol'])){
     switch($_SESSION['rol']){
         case 2:
@@ -26,7 +26,7 @@ if(isset($_SESSION['rol'])){
         default:
     }
 }
-
+*/
 if(isset($_POST['iniciar'])){
     $correo = $_REQUEST['correo'];
     $contraseña = $_REQUEST['contraseña'];
@@ -41,7 +41,7 @@ if(isset($_POST['iniciar'])){
     $fila = mysqli_fetch_assoc($resultado);
 
     $filas = mysqli_num_rows($resultado);
-
+/*
     $row = $consulta->fetch(PDO::FETCH_NUM);
     if($row == true){
         //validar rol
@@ -64,7 +64,7 @@ if(isset($_POST['iniciar'])){
         //No existe el usuario
         echo "El usuario o contraseña son incorrectos";
     }
-
+*/
     if($filas==1){
         //echo "Usted ha iniciado sesion correctamente";
 //falta poner los datos a administrador para que se muestren es el video 8, 9 y que lo redireccione ya sea a administrador o a cliente
