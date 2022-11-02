@@ -80,48 +80,10 @@
 			
             <div class="container shadow p-3 mb-5 bg-body rounded">
                 <div class="row">
-                    <a href="reservacion.php">Hacer reservacion</a>
-                </div><br>
-                <div class="row">
-                    <div class="col-md-2" id="menu">                
-                        <img src="../../imagenes/menu1.jpg" alt="" width="100%" height="auto">              
-                    </div>
-                    <div class="col-md-2">
-                        <p id="menu1">Hamburguesa<br><br>• Pan<br>• Beicon<br>• Queso <br>• Cebolla <br>• Pepinillo<br>• Tomate <br>• Lechuga</p> 
-                    </div>
-                    <div class="col-md-2" id="menu">
-                        <img src="../../imagenes/menu2.jpg" alt="" width="100%" height="auto">
-                    </div>
-                    <div class="col-md-2">
-                        <p id="menu1">Tacos<br><br> • Carne ternera<br> • Cebolla pequeña<br> • Chile verde<br> • Chile seco<br> • Orégano<br> • Cilantro<br> • Tortillas de maíz</p>
-                    </div>
-                    <div class="col-md-2" id="menu">
-                        <img src="../../imagenes/menu3.jpg" alt="" width="100%" height="auto">
-                    </div>
-                    <div class="col-md-2">
-                      <p id="menu1">Sandwich<br><br>• Pan de molde<br>• Queso<br>• Filetes de pollo<br>• Lonchas bacon<br>• Lechuga fresca<br>• Lonchas de jamón<br> cocido<br>• Rodajas tomate</p>  
-                    </div>
-                </div><br><br>
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="../../imagenes/menu4.jpg" alt="" width="100%" height="auto">
-                    </div>
-                    <div class="col-md-2">
-                        <p id="menu1">Burrito<br><br>• Tortillas de trigo<br>• Carne cerdo<br>• Pimiento verde<br>• Pimiento rojo<br>• Frijoles cocidos<br>• Queso rallado<br>• Pepinillos</p>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="../../imagenes/menu5.jpg" alt="" width="100%" height="auto">
-                    </div>
-                    <div class="col-md-2">
-                        <p id="menu1">Brazo de reina<br><br>• Huevo<br><br>• Harina de trigo<br>• Dulce de leche<br>• Arandanos<br>• Mermelada<br>• Frambuesas</p>
-                    </div>
-                    <div class="col-md-2">
-                        <img src="../../imagenes/menu6.jpg" alt="" width="100%" height="auto">
-                    </div>
-                    <div class="col-md-2">
-                        <p id="menu1">Ensalada de pollo<br><br>• Pimiento rojo<br> • Lechuga fresca<br> • Tomates cherry<br>• Pechuga de pollo <br>• Aceitunas negras<br> rebanadas.</p>
-                    </div>
-                </div>
+                    <a href="reservacion.php">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Hacer reservacion</button> 
+                    </a>
+                </div><br>          
             </div> 
         </section>
     </main>
