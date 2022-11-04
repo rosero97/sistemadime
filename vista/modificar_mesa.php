@@ -18,7 +18,7 @@ $key=$_GET['key'];
 echo $key;
 $obj = new conexion();
 $c=$obj->conectando();
-$sql="select * from num_menu where mesa_id='$key' ";
+$sql="select * from mesa where mesa_id='$key' ";
 $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
 $obj->num_mesa = $array[0];

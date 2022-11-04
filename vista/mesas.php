@@ -8,7 +8,7 @@ if(!isset($_SESSION['correo'])){
 
 $conet = new Conexion();
 $c = $conet->conectando();         
-$query = "SELECT COUNT(*) AS totalRegistros FROM num_menu";
+$query = "SELECT COUNT(*) AS totalRegistros FROM mesa";
 $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
@@ -27,11 +27,11 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="select * from num_menu where num_mesa like '%$obj->num_mesa%' limit $desde,$maximoRegistros";
+    $query2="select * from mesa where num_mesa like '%$obj->num_mesa%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
-    $query2="select * from num_menu limit $desde,$maximoRegistros ";
+    $query2="select * from mesa limit $desde,$maximoRegistros ";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }

@@ -12,12 +12,12 @@ class num_menu{
                        
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from num_menu where num_mesa = '$this->mesa'";
+                                          $query = "select * from mesa where num_mesa = '$this->mesa'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
                                              echo "<script> alert('La Mesa ya Existe en el Sistema')</script>";
                                           }else{
-                                          $insertar = "insert into num_menu value(
+                                          $insertar = "insert into mesa value(
                                                                                     '$this->num_mesa',
                                                                                     '$this->mesa'
                                                                                     
@@ -32,12 +32,12 @@ class num_menu{
                     function modificar(){
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from num_menu where mesa_id = '$this->mesa'";
+                                          $query = "select * from mesa where mesa_id = '$this->mesa'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
                                              echo "<script> alert('La Mesa ya Existe en el Sistema')</script>";
                                           }else{
-                                             $update = "update num_menu set
+                                             $update = "update mesa set
                                                                                     mesa_id='$this->num_mesa',
                                                                                     num_mesa='$this->mesa'
                                                                                     where mesa_id='$this->num_mesa'
@@ -55,12 +55,12 @@ class num_menu{
                     function eliminar(){
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from num_menu where mesa_id = '$this->num_mesa'";                                        
+                                          $query = "select * from mesa where mesa_id = '$this->num_mesa'";                                        
                                           $ejecuta = mysqli_query($c, $query);                                      
-                                          if($ejecuta==1){                                                                                     
+                                          if(mysqli_fetch_array($ejecuta)){                                                                                     
                                              echo "<script> alert('La Mesa NO se puede eliminar del Sistema, solo se puede modificar');</script>";
                                           }else{
-                                             $update = "delete from num_menu 
+                                             $update = "delete from mesa 
                                                                                     where mesa_id='$this->num_mesa'
                                              ";
                                              echo $update;

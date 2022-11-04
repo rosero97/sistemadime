@@ -13,7 +13,7 @@ if($_POST)
 }
 $conet = new Conexion();
 $c = $conet->conectando();   
-$query="SELECT COUNT(*) AS totalRegistros FROM cliente";
+$query="SELECT COUNT(*) AS totalRegistros FROM persona WHERE rolid=2";
 $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
@@ -32,11 +32,11 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="SELECT * FROM cliente c INNER JOIN persona p ON c.ide_cliente=p.ide_persona INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where t_cliente like '%$obj->t_cliente%' limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where rolid=2 like '%$obj->rolid=2%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
-    $query2="SELECT * FROM cliente c INNER JOIN persona p ON c.ide_cliente=p.ide_persona INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc limit $desde,$maximoRegistros ";
+    $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where rolid=2 limit $desde,$maximoRegistros ";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }
@@ -144,8 +144,7 @@ if(isset($_POST['search'])){
 										<td>N° Documento</td>
 										<td>Nombre Completo</td>
 										<td>Celular</td>
-										<td>Email</td>
-										<td>Codigo Cliente</td>	
+										<td>Email</td>	
 									</tr>
 										<?php
 											if($arreglo2==0){
@@ -161,11 +160,10 @@ if(isset($_POST['search'])){
 										   ?> 
 									<tr>
 										<td><?php echo $arreglo2["tipo_documento"] ?></td>
-										<td><?php echo $arreglo2["ide_persona"] ?></td>
+										<td><?php echo $arreglo2["id_persona"] ?></td>
 										<td><?php echo $arreglo2["nombre_completo"] ?></td>
 										<td><?php echo $arreglo2["celular"] ?></td>
-										<td><?php echo $arreglo2["correo"] ?></td>
-										<td><?php echo $arreglo2["t_cliente"] ?></td>							
+										<td><?php echo $arreglo2["correo"] ?></td>					
 									</tr>
 									<?php
 										}while($arreglo2 = mysqli_fetch_array($resultado2));

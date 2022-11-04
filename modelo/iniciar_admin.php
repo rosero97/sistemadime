@@ -34,7 +34,7 @@ if(isset($_POST['iniciar'])){
     $correo=mysqli_real_escape_string($con, $_POST['correo']);
     $contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
     
-    $consulta = "SELECT * FROM persona p INNER JOIN persona_has_role r  ON p.ide_persona=r.has_ide_persona WHERE correo='$correo' AND contrasena='$contraseña'";
+    $consulta = "SELECT * FROM persona  WHERE correo='$correo' AND contrasena='$contraseña'";
 
     $resultado=mysqli_query($con, $consulta ) or die(mysqli_error());
 
