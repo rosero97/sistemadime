@@ -6,6 +6,15 @@ session_start();
 if(!isset($_SESSION['correo'])){
 	header("Location: Iniciar Sesion-2.php");
 }
+/*
+$obj = new conexion();
+$c=$obj->conectando();
+$sql="select * from persona where ="($_SESSION['correo'])"";
+$rs=mysqli_query($c,$sql);
+$array=mysqli_fetch_row($rs);
+$obj->ida = $array[0];
+echo $obj->ida;
+*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -117,7 +126,8 @@ if(!isset($_SESSION['correo'])){
                             <br>
                             <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Id del administrador</span>
-                                <input type="text" id="ida" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="En este espacio se incuira su id" >    
+                                <input type="text" id="ida" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="<?php echo $_SESSION['id_persona'];?>"
+                                 >    
                             </div>
                         </tr>
                     </tbody>          

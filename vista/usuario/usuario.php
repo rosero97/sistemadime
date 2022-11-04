@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['correo'])){
+	header("Location: Iniciar Sesion-2.php");
+}/*
 include("../../conexion/conectar.php");
 
 $sql = "SELECT ide_persona, nombre_completo, correo, celular FROM persona WHERE correo = 'carlos@correo.com'";
@@ -8,7 +12,7 @@ $c=$obj->conectando();
                         
 $resultado = mysqli_query($c, $sql);
 $row = mysqli_fetch_assoc($resultado)
-
+*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,7 +50,7 @@ $row = mysqli_fetch_assoc($resultado)
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    Jose Angel Rosero Orozco <br><small class="roboto-condensed-light">Usuario</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
@@ -62,10 +66,10 @@ $row = mysqli_fetch_assoc($resultado)
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="company_usuario.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -101,7 +105,7 @@ $row = mysqli_fetch_assoc($resultado)
                     <tbody>
                         <tr>
                             <td>Nombre Completo</td>
-                            <td><?php echo $row["nombre_completo"]?></td>
+                            <td><?php echo $_SESSION['nombre_completo'];?></td>
                             <td>
                                 <a href="usuario_nombre.php">
                                     <button  class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -110,7 +114,7 @@ $row = mysqli_fetch_assoc($resultado)
                         </tr>
                         <tr>
                             <td>Identificacion</td>
-                            <td><?php echo $row["ide_persona"]?></td>
+                            <td><?php echo $_SESSION['id_persona'];?></td>
                             <td>
                                 <a href="usuario_id.php">
                                     <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -119,7 +123,7 @@ $row = mysqli_fetch_assoc($resultado)
                         </tr>
                         <tr>
                             <td>Celular</td>
-                            <td><?php echo $row["celular"]?></td>
+                            <td><?php echo $_SESSION['celular'];?></td>
                             <td>
                                 <a href="usuario_cel.php">
                                     <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -128,7 +132,7 @@ $row = mysqli_fetch_assoc($resultado)
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td><?php echo $row["correo"]?></td>
+                            <td><?php echo $_SESSION['correo'];?></td>
                             <td>
                                 <a href="usuario_email.php">
                                     <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>

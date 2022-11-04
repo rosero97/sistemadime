@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['correo'])){
+	header("Location: Iniciar Sesion-2.php");
+}
+
 include("../conexion/conectar.php");
 
 $conet = new Conexion();
@@ -69,7 +75,7 @@ if(isset($_POST['search'])){
                     <i class="far fa-times-circle show-nav-lateral"></i>
                     <img src="assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
                     <figcaption class="roboto-medium text-center">
-                    Jose Angel Rosero Orozco <br><small class="roboto-condensed-light">Usuario</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
                     </figcaption>
                 </figure>
                 <div class="full-box nav-lateral-bar"></div>

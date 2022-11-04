@@ -6,14 +6,9 @@ if(!isset($_SESSION['correo'])){
 	header("Location: Iniciar Sesion-2.php");
 }
 
-if($_POST)
-{
-    $obj->t_cliente = $_POST['t_cliente'];
-
-}
 $conet = new Conexion();
 $c = $conet->conectando();   
-$query="SELECT COUNT(*) AS totalRegistros FROM persona WHERE rolid=2";
+$query="SELECT COUNT(*) AS totalRegistros FROM persona ";
 $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
@@ -126,11 +121,11 @@ if(isset($_POST['search'])){
                 </h3>
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded " >
-					<form action="" name="numero_reservacion" method="POST">
+					<form action="" name="persona" method="POST">
 						<nav class="navbar navbar-expand-lg bg-light">
 							<div class="container-fluid">
 								<form class="d-flex" role="search">
-									<input class="form-control me-2" type="search" name="t_cliente"  placeholder="Digite el Código del usuario" aria-label="Search">
+									<input class="form-control me-2" type="search" name="id_encargado"  placeholder="Digite el Código del usuario" aria-label="Search">
 									 <button class="btn btn-outline-success" name="search"  type="submit"> Buscar</button> <button type="submit" class="btn btn-outline-success"> Listar</button>
 								</form>
 							</div>

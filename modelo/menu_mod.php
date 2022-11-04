@@ -56,7 +56,7 @@ class menu{
                                                                                     nombre='$this->nombre',
                                                                                     imagen='$ruta',
                                                                                     descripcion='$this->descripcion',
-                                                                                    ide_encargado='$this->ida'
+                                                                                    id_encargado='$this->ida'
                                                                                     where id_menu='$this->num_menu'
                                                                                     
                                              ";

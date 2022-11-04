@@ -1,4 +1,10 @@
 
+<?php
+session_start();
+if(!isset($_SESSION['correo'])){
+	header("Location: Iniciar Sesion-2.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +41,7 @@
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    Jose Angel Rosero Orozco <br><small class="roboto-condensed-light">Usuario</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
@@ -51,10 +57,10 @@
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="company_usuario.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
