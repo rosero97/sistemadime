@@ -133,7 +133,7 @@ if(isset($_POST['search'])){
                 <table class="table table-striped" style="text-align: center;">
                     <div class="columnas">
                         <?php
-                            if($arreglo==0){
+                            if($arreglo2==0){
                             //echo "No existen Registros";
                         ?>
                                 <div class="alert alert-success" role="alert">
