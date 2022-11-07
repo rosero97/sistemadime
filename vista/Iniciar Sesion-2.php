@@ -1,6 +1,6 @@
 <?php 
 
-include("../modelo/iniciar_admin.php")
+include("../modelo/iniciar_sesion.php")
 
 ?>
 
@@ -23,7 +23,7 @@ include("../modelo/iniciar_admin.php")
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="login/1.Tipo_Registro.html">Registrarse</a></li>
-                    <li><a href="login/1.tipo_iniciar.html">Iniciar Sesion</a></li>
+                    <li><a href="Iniciar Sesion-2.php">Iniciar Sesion</a></li>
                     <li><a href="inicio/Ayuda.html">ayuda</a></li>
                 </ul>
             </nav>
@@ -51,7 +51,7 @@ include("../modelo/iniciar_admin.php")
             <div class="container">
                 <div class="form">
                     <h2>Iniciar Sesión</h2>
-                    <form action="../modelo/iniciar_admin.php" method="post">
+                    <form action="../modelo/iniciar_sesion.php" method="post">
                     <form action="administrador.html" method="post">
                         <div class="inputBox">
                             <input type="email" name="correo" placeholder="Correo electronico" required/>

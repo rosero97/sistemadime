@@ -1,12 +1,14 @@
 <?php 
-
-include("../conexion/conectar.php");
-include("../controlador/menu_con.php");
-
 session_start();
 if(!isset($_SESSION['correo'])){
 	header("Location: Iniciar Sesion-2.php");
+}else{
+    if($_SESSION['rolid'] !=1){
+        header("Location: Iniciar Sesion-2.php");
+    }
 }
+include("../conexion/conectar.php");
+include("../controlador/menu_con.php");
 
 $obj = new menu();
 
@@ -111,9 +113,10 @@ echo $obj->ida;
                 <a href="#">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="#" class="btn-exit-system">
-                    <i class="fas fa-power-off"></i>
-                </a>
+                <a href="../modelo/logout.php">
+				<!-- el js del exit class="btn-exit-system" -->
+					<i class="fas fa-power-off"></i>
+				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">

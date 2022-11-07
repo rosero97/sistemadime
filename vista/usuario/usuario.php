@@ -2,17 +2,11 @@
 session_start();
 if(!isset($_SESSION['correo'])){
 	header("Location: Iniciar Sesion-2.php");
-}/*
-include("../../conexion/conectar.php");
-
-$sql = "SELECT ide_persona, nombre_completo, correo, celular FROM persona WHERE correo = 'carlos@correo.com'";
-
-$obj = new conexion();
-$c=$obj->conectando();
-                        
-$resultado = mysqli_query($c, $sql);
-$row = mysqli_fetch_assoc($resultado)
-*/
+}else{
+    if($_SESSION['rolid'] !=2){
+        header("Location: Iniciar Sesion-2.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -83,9 +77,10 @@ $row = mysqli_fetch_assoc($resultado)
                 <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="#" class="btn-exit-system">
-                    <i class="fas fa-power-off"></i>
-                </a>
+                <a href="../modelo/logout.php">
+				<!-- el js del exit class="btn-exit-system" -->
+					<i class="fas fa-power-off"></i>
+				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">

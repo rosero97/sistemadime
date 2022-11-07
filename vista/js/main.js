@@ -44,7 +44,7 @@ $(document).ready(function(){
 			cancelButtonText: 'No, cancel'
 		}).then((result) => {
 			if (result.value) {
-				window.location="../login/logout.php";
+				window.location="../../modelo/logout.php";
 			}
 		});
 	});
