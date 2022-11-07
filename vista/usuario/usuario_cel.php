@@ -76,7 +76,7 @@ if(!isset($_SESSION['correo'])){
                 <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../modelo/logout.php">
+                <a href="../../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>
