@@ -12,7 +12,7 @@ class conexion{
 }
 $obj = new conexion();
     if($obj->conectando()){
-        echo "esta conectado";
+        //echo "esta conectado";
     }
 
 

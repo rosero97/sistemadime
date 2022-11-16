@@ -16,20 +16,20 @@ $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado);
 $totalRegistros = $arreglo['totalRegistros'];
 //echo $totalRegistros;
- 
+        
 $maximoRegistros = 5;
 //echo $totalRegistros;
 if(empty($_GET['pagina'])){
-    $pagina=1;
+            $pagina=1;
 }else{
     $pagina=$_GET['pagina'];
 }
 $desde = ($pagina-1)*$maximoRegistros;
 $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 //echo $totalPaginas;
- 
+        
 if(isset($_POST['search'])){
-    echo "llegue";
+     echo "llegue";
     $query2="select * from menu where id_menu like '%$obj->num_mesa%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
@@ -45,7 +45,7 @@ if(isset($_POST['search'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Mesas</title>
+    <title>Menú</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->

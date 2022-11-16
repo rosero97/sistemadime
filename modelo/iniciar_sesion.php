@@ -16,7 +16,7 @@ if(isset($_GET['cerrar_sesion'])){
 if(isset($_POST['iniciar'])){
     $correo = $_REQUEST['correo'];
     $contraseña = $_REQUEST['contraseña'];
-   
+
     $correo=mysqli_real_escape_string($con, $_POST['correo']);
     $contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
     
@@ -30,7 +30,6 @@ if(isset($_POST['iniciar'])){
 
     if($fila['rolid']==1){
         //echo "Usted ha iniciado sesion correctamente";
-        //falta poner los datos a administrador para que se muestren es el video 8, 9 y que lo redireccione ya sea a administrador o a cliente
         $_SESSION['id']=$fila['id'];
         $_SESSION['id_persona']=$fila['id_persona'];
         $_SESSION['nombre_completo']=$fila['nombre_completo'];
@@ -43,17 +42,18 @@ if(isset($_POST['iniciar'])){
 
     }elseif($fila['rolid']==2){
 
-        $_SESSION['id']=$fila['id'];
-        $_SESSION['id_persona']=$fila['id_persona'];
-        $_SESSION['nombre_completo']=$fila['nombre_completo'];
-        $_SESSION['correo']=$fila['correo'];
-        $_SESSION['celular']=$fila['celular'];
-        $_SESSION['fcod_tipo_doc']=$fila['fcod_tipo_doc'];
-        $_SESSION['rolid']=$fila['rolid'];
-
-        header("Location: ../vista/usuario/cliente1.php");
-
-    }else{
+            $_SESSION['id']=$fila['id'];
+            $_SESSION['id_persona']=$fila['id_persona'];
+            $_SESSION['nombre_completo']=$fila['nombre_completo'];
+            $_SESSION['correo']=$fila['correo'];
+            $_SESSION['celular']=$fila['celular'];
+            $_SESSION['fcod_tipo_doc']=$fila['fcod_tipo_doc'];
+            $_SESSION['rolid']=$fila['rolid'];
+    
+            header("Location: ../vista/usuario/cliente1.php");
+    
+    }
+    else{
         echo "Usted ha cometido algun error <br> Verifique los datos de sesion";
     }
 
