@@ -261,7 +261,7 @@ table form {
 .page-content,
 .nav-lateral {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .page-content {
@@ -567,6 +567,7 @@ table form {
 .columnas {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 .menu_usuario {
@@ -578,5 +579,15 @@ table form {
 
 .img_menu {
     margin: 0 10px 0 10px;
-    width: 165px;
+    width: 41%;
+}
+
+
+@media screen and (max-width: 1350px){
+    
+
+    .columnas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
