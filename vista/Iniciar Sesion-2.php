@@ -53,16 +53,14 @@ include("../modelo/iniciar_sesion.php")
                 <div class="form">
                     <h2>Iniciar Sesión</h2>
                     <form action="../modelo/iniciar_sesion.php" method="post">
-                    <form action="administrador.html" method="post">
-                    <form action="cliente1.html">
                         <div class="inputBox">
-                            <input type="email" placeholder="Correo electronico" required/>
+                            <input type="email" name="correo" placeholder="Correo electronico" required/>
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Contraseña" required/>
+                            <input type="password" name="contraseña" placeholder="Contraseña" required/>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Iniciar Sesion" />
+                            <input type="submit" name="iniciar" value="Iniciar Sesion" />
                         </div>
                         <p class="forget">
                             ¿Has olvidado tu contraseña? <a href="recuperar.html">Recuperar contraseña</a>
