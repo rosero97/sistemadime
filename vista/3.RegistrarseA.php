@@ -1,14 +1,15 @@
-<?php 
-    include("../modelo/registro_usuario.php");
+<?php
+include("../modelo/registro_admin.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../config/styles_Rec.css">
-    <title>Registro cliente</title>
+    <link rel="stylesheet" href="../config/styles_Rea.css">
+    <title>Registro administrador</title>
 </head>
 <body>
     <section>
@@ -23,18 +24,17 @@
             <div class="square" style="--i:4;"></div>
             <div class="container">
                 <div class="form">
-                    <form action="../modelo/registro_usuario.php" method="post" action="php/registro_usuario.php">
+                    <form action="../modelo/registro_admin.php" method="post">
                         <h3>Registrate en Digital's Menú</h3>
                         <div class="inputBox">
-                            <input type="text" name ="nombres" id="nombres" placeholder="Ingrese su nombre completo" required>
-                           
+                            <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" required>
                         </div>
                         <div class="inputBox">
                             <label fot="tipodoc">Tipo de Documento:</label>
                             <select name="tipodoc">
-                                <option value="1">CC</option>
-                                <option value="2">CE</option>
-                                <option value="3">TI</option>
+                                <option value= "1">CC</option>
+                                <option value= "2">CE</option>
+                                <option value= "3">TI</option>
                             </select>
                             <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" required>
                         </div>
@@ -51,7 +51,7 @@
                             <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña"required>      
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Registrarse" name="Registrarse" id="Fregi">
+                            <input type="submit" value="Registrarse" id="Registrarse" name="Registrarse">
                         </div>
                     </form>
                 </div>
