@@ -14,14 +14,13 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #0c0707, #830404);
+    background: linear-gradient(to bottom, #0076fd, #011231);
 }
 
 section .color {
     position: absolute;
     filter: blur(150px);
 }
-
 section .color:nth-child(2) {
     top: 150px;
     left: -125px;
@@ -29,15 +28,6 @@ section .color:nth-child(2) {
     height: 120px;
     z-index: 2;
 }
-
-section .color:nth-child(3) {
-    bottom: 50px;
-    right: 100px;
-    width: 300px;
-    height: 300px;
-    background: #ff0000;
-}
-
 .box {
     position: relative;
 }
@@ -45,11 +35,11 @@ section .color:nth-child(3) {
 .box .square {
     position: absolute;
     backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(255, 0, 0, 0.1);
-    border: 1px solid rgba(248, 1, 1, 0.5);
-    border-right: 1px solid rgba(255, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 0, 0, 0.2);
-    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 156, 247, 0.1);
+    border: 1px solid rgba(0, 80, 252, 0.5);
+    border-right: 1px solid rgba(6, 10, 255, 0.2);
+    border-bottom: 1px solid rgba(47, 0, 255, 0.2);
+    background: rgba(0, 132, 255, 0.356);
     border-radius: 10px;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
@@ -73,7 +63,7 @@ section .color:nth-child(3) {
 }
 
 .box .square:nth-child(2) {
-    top: 150px;
+    top: -65px;
     left: -115px;
     width: 120px;
     height: 120px;
@@ -83,16 +73,16 @@ section .color:nth-child(3) {
 .box .square:nth-child(3) {
     bottom: 50px;
     right: -78px;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     z-index: 2;
 }
 
 .box .square:nth-child(4) {
     bottom: -80px;
-    left: 100px;
-    width: 50px;
-    height: 50px;
+    left: 70px;
+    width: 120px;
+    height: 120px;
 }
 
 .box .square:nth-child(5) {
@@ -101,31 +91,30 @@ section .color:nth-child(3) {
     width: 60px;
     height: 60px;
 }
-
-.container {
+.contenedor {
     position: relative;
-    width: 460px;
+    width: 420px;
     min-height: 400px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(55, 0, 255, 0.1);
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 25px 45px rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.tregistro {
+.form {
     position: relative;
     width: 100%;
     height: 100%;
     padding: 40px;
 }
 
-.tregistro h3 {
+.form h2 {
     position: relative;
     color: rgb(255, 255, 255);
     font-size: 24px;
@@ -134,23 +123,23 @@ section .color:nth-child(3) {
     margin-bottom: 40px;
 }
 
-.tregistro h3::before {
+.form h2::before {
     content: '';
     position: absolute;
     left: 0;
     bottom: -10px;
     width: 80px;
     height: 4px;
-    background: rgb(253, 0, 0);
+    background: rgb(0, 255, 255);
 }
 
-.tregistro .inputBox {
+.form .inputBox {
     width: 100%;
     text-align: center;
     margin-top: 20px;
 }
 
-.tregistro .inputBox input {
+.form .inputBox input {
     width: 86%;
     background: rgba(255, 255, 255, 0.2);
     border: none;
@@ -162,29 +151,42 @@ section .color:nth-child(3) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 16px;
     letter-spacing: 1px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.tregistro .inputBox input::placeholder {
-    color: rgb(0, 0, 0);
+.form .inputBox input::placeholder {
+    color: rgb(255, 255, 255);
 }
 
-.tregistro .inputBox input[type="button"] {
+.form .inputBox input[type="submit"] {
     background: #fff;
     color: #666;
     max-width: 200px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: 600px;
 }
 
-.tregistro .inputBox input[type="button"]:hover {
-    background: #f80606;
+.form .inputBox input[type="submit"]:hover {
+    background: #3206f8;
     color: #fff;
 }
 
-p{
-    color: white;
-    text-align: center;
+.forget {
+    margin-top: 5px;
+    color: rgb(255, 255, 255);
 }
+
+.forget a {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background:#999;
+ }

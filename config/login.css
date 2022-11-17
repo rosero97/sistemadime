@@ -14,7 +14,7 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #0c0707, #830404);
+    background: linear-gradient(to bottom, #0076fd, #011231);
 }
 
 section .color {
@@ -29,31 +29,23 @@ section .color:nth-child(2) {
     z-index: 2;
 }
 
-section .color:nth-child(3) {
-    bottom: 50px;
-    right: 100px;
-    width: 300px;
-    height: 300px;
-    background: #ff0000;
-}
-
 .box {
     position: relative;
 }
 
+
 .box .square {
     position: absolute;
     backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(255, 0, 0, 0.1);
-    border: 1px solid rgba(248, 1, 1, 0.5);
-    border-right: 1px solid rgba(255, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 0, 0, 0.2);
-    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 156, 247, 0.1);
+    border: 1px solid rgba(0, 80, 252, 0.5);
+    border-right: 1px solid rgba(6, 10, 255, 0.2);
+    border-bottom: 1px solid rgba(47, 0, 255, 0.2);
+    background: rgba(0, 132, 255, 0.356);
     border-radius: 10px;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
 }
-
 @keyframes animate {
     0%,
     100% {
@@ -72,7 +64,7 @@ section .color:nth-child(3) {
 }
 
 .box .square:nth-child(2) {
-    top: 150px;
+    top: -65px;
     left: -115px;
     width: 120px;
     height: 120px;
@@ -101,7 +93,7 @@ section .color:nth-child(3) {
     height: 60px;
 }
 
-.container {
+.contenedor {
     position: relative;
     width: 460px;
     min-height: 400px;
@@ -140,7 +132,7 @@ section .color:nth-child(3) {
     bottom: -10px;
     width: 80px;
     height: 4px;
-    background: rgb(253, 0, 0);
+    background: rgb(0, 139, 253);
 }
 
 .form .inputBox {
@@ -179,7 +171,7 @@ section .color:nth-child(3) {
 }
 
 .form .inputBox input[type="submit"]:hover {
-    background: #f80606;
+    background: #06f8c4;
     color: #fff;
 }
 
