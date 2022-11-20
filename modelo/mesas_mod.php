@@ -55,10 +55,13 @@ class num_menu{
                     function eliminar(){
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from mesa where mesa_id = '$this->num_mesa'";                                        
+                                          $query = "select * from numero_reservacion where mesa_id = '$this->num_mesa'";                                        
                                           $ejecuta = mysqli_query($c, $query);                                      
-                                          if(mysqli_fetch_array($ejecuta)){                                                                                     
-                                             echo "<script> alert('La Mesa NO se puede eliminar del Sistema, solo se puede modificar');</script>";
+                                          if(mysqli_fetch_array($ejecuta)){
+                                             if($query != 0){
+
+                                                echo "<script> alert('La Mesa NO se puede eliminar del Sistema, solo se puede modificar');</script>";
+                                             }                                                                                     
                                           }else{
                                              $update = "delete from mesa 
                                                                                     where mesa_id='$this->num_mesa'

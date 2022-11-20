@@ -75,14 +75,14 @@ class menu{
                                           $query = "select * from menu where id_menu = '$this->nombre'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
-                                             echo "<script> alert('La Mesa NO se puede eliminar del Sistema, solo se puede modificar')</script>";
+                                             echo "<script> alert('El plato NO se puede eliminar del Sistema, solo se puede modificar')</script>";
                                           }else{
                                              $update = "delete from menu 
                                                                                     where id_menu='$this->num_menu'
                                              ";
                                              echo $update;
                                              mysqli_query($c,$update);
-                                             echo "<script> alert('La mesa fue Eliminada del sistema'); window.location.href='../vista/menu2.php';</script>";
+                                             echo "<script> alert('El plato fue Eliminada del sistema'); window.location.href='../vista/menu2.php';</script>";
                                              
                                           }
 
