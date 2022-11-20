@@ -60,7 +60,7 @@ class num_menu{
                                           if(mysqli_fetch_array($ejecuta)){
                                              if($query != 0){
 
-                                                echo "<script> alert('La Mesa NO se puede eliminar del Sistema, solo se puede modificar');</script>";
+                                                echo "<script> alert('La Mesa NO se puede eliminar del Sistema, solo se puede modificar'); window.location.href='../vista/mesas.php';</script>";
                                              }                                                                                     
                                           }else{
                                              $update = "delete from mesa 

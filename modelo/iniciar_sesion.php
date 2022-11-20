@@ -40,8 +40,9 @@ if(isset($_POST['iniciar'])){
 
         header("Location: ../vista/administrador.php");
 
-    }elseif($fila['rolid']==2){
-
+    }else{
+        if($fila['rolid']==2){
+    
             $_SESSION['id']=$fila['id'];
             $_SESSION['id_persona']=$fila['id_persona'];
             $_SESSION['nombre_completo']=$fila['nombre_completo'];
@@ -49,13 +50,12 @@ if(isset($_POST['iniciar'])){
             $_SESSION['celular']=$fila['celular'];
             $_SESSION['fcod_tipo_doc']=$fila['fcod_tipo_doc'];
             $_SESSION['rolid']=$fila['rolid'];
-    
+        
             header("Location: ../vista/usuario/cliente1.php");
-    
+        
+        }else{
+            echo "Usted ha cometido algun error <br> Verifique los datos de sesion";
+        }
     }
-    else{
-        echo "Usted ha cometido algun error <br> Verifique los datos de sesion";
-    }
-
 }
 ?>
