@@ -9,6 +9,12 @@ if(!isset($_SESSION['correo'])){
 }
 include("../conexion/conectar.php");
 
+if($_POST)
+{
+    $obj->id_persona = $_POST['id_persona'];
+    
+}
+
 $conet = new Conexion();
 $c = $conet->conectando();   
 $query="SELECT COUNT(*) AS totalRegistros FROM persona ";
@@ -30,7 +36,7 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where rolid=2 like '%$obj->rolid=2%' limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where id_persona like '%$obj->id_persona%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
@@ -227,3 +233,4 @@ if(isset($_POST['search'])){
 	<script src="./js/main.js" ></script>
 </body>
 </html>
+
