@@ -10,6 +10,36 @@ if(!isset($_SESSION['correo'])){
 include("../conexion/conectar.php");
 include("../controlador/reserva_con.php");
 
+$conet = new Conexion();
+$c = $conet->conectando();        
+$query = "SELECT COUNT(*) AS totalRegistros FROM mesa";
+$resultado = mysqli_query($c, $query);
+$arreglo = mysqli_fetch_array($resultado);
+$totalRegistros = $arreglo['totalRegistros'];
+//echo $totalRegistros;
+
+$maximoRegistros = 200;
+//echo $totalRegistros;
+if(empty($_GET['pagina'])){
+    $pagina=1;
+}else{
+    $pagina=$_GET['pagina'];
+}
+$desde = ($pagina-1)*$maximoRegistros;
+$totalPaginas=ceil($totalRegistros/$maximoRegistros);
+//echo $totalPaginas;
+
+if(isset($_POST['search'])){
+    echo "llegue";
+    $query2="select * from mesa where mesa_id like '%$obj->mesa_id%' limit $desde,$maximoRegistros";
+    $resultado2=mysqli_query($c,$query2);
+    $arreglo2 = mysqli_fetch_array($resultado2);
+}else{
+    $query2="select * from mesa limit $desde,$maximoRegistros ";
+    $resultado2=mysqli_query($c,$query2);
+    $arreglo2 = mysqli_fetch_array($resultado2);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -54,19 +84,19 @@ include("../controlador/reserva_con.php");
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
 							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
-							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -80,7 +110,7 @@ include("../controlador/reserva_con.php");
                 <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../../modelo/logout.php">
+                <a href=" ../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>
@@ -140,14 +170,38 @@ include("../controlador/reserva_con.php");
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">N° Documento</label>
                                 <div class="col-sm-10">
-                                <input type="text" id="num_persona" name="num_persona" class="form-control" readonly value=" <?php echo $_SESSION['id_persona'];?>">
+                                <input type="text" id="num_persona" name="num_persona" class="form-control" readonly value="<?php echo $_SESSION['id_persona'];?>">
                                 </div>
-                            </div>                           
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Numero de mesa</label>
+                            </div>
+                            <div class="inputBox mb-3 row">
+                                <label fot="mesa" class="col-sm-2 col-form-label">Numero de mesa</label>
                                 <div class="col-sm-10">
-                                <input type="number" class="form-control" id="mesa" name="mesa" min="1" max="13">
+                                    <select name="mesa" class="form-control">
+                                    <?php
+                                        if($arreglo2==0){
+                                            //echo "No existen Registros";
+                                    ?>
+                                        <div class="alert alert-success" role="alert">
+                                            <?php echo "No hay registros" ?>
+                                        </div>
+                                    <?php
+                                        }  
+                                        else{
+                                            do{  
+                                    ?>
+                                        <div class="form-control">
+                                            <option value="<?php echo $arreglo2 [0]?>">Mesa <?php echo $arreglo2 [1]?></option>
+                                        </div>
+                                        </div>
+                                    <?php 
+                                        }while($arreglo2 = mysqli_fetch_array($resultado2));   
+                                
+                                        }
+                            
+                                    ?>                                     
+                                    </select>
                                 </div>
+                            </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
@@ -158,7 +212,7 @@ include("../controlador/reserva_con.php");
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
                                 <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="fecha" name="fecha">
+                                <input type="datetime-local"  min="<?php $fechaActual = date('d-m-Y H:i:s'); echo $fechaActual;?>" class="form-control" id="fecha" name="fecha">
                                 </div>
                             </div>                        
                             <div class="mb-3 row">
