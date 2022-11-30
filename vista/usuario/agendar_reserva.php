@@ -7,6 +7,41 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+
+$persona=$_SESSION['id_persona'];
+
+include("../../conexion/conectar.php");
+
+$conet = new Conexion();
+$c = $conet->conectando();   
+$query="SELECT COUNT(*) AS totalRegistros FROM numero_reservacion";
+$resultado = mysqli_query($c, $query);
+$arreglo = mysqli_fetch_array($resultado); 
+$totalRegistros = $arreglo['totalRegistros'];
+//echo $totalRegistros;
+
+$maximoRegistros = 5;
+//echo $totalRegistros;
+if(empty($_GET['pagina'])){
+    $pagina=1;
+}else{
+    $pagina=$_GET['pagina'];
+}
+$desde = ($pagina-1)*$maximoRegistros;
+$totalPaginas=ceil($totalRegistros/$maximoRegistros);
+//echo $totalPaginas;
+
+if(isset($_POST['search'])){
+    echo "llegue";
+    $query2="SELECT * FROM numero_reservacion where id_cliente=$persona limit $desde,$maximoRegistros";
+    $resultado2=mysqli_query($c,$query2);
+    $arreglo2 = mysqli_fetch_array($resultado2);
+}else{
+    $query2="SELECT * FROM numero_reservacion where id_cliente=$persona limit $desde,$maximoRegistros ";
+    $resultado2=mysqli_query($c,$query2);
+    $arreglo2 = mysqli_fetch_array($resultado2);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -88,48 +123,81 @@ if(!isset($_SESSION['correo'])){
                 <i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; RESERVACIONES
                 </h3>              
             </div>
-            <div class="container shadow p-3 mb-5 bg-body rounded">   
-                <table class="table table-striped" style="text-align: center;">
-                    <thead>
-                        <tr>
-                            <th style="color: black;">Numero de reservacion</th>
-                            <th style="color: black;">Fecha</th>
-                            <th style="color: black;">Vista</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Reserva 1</td>
-                            <td>2022/09/18</td>
-                            <td>
-                                <a href="vista_reserva.php">
-                                    <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><br> 
-                <div style="text-align: center;">
-                    <a href="cliente1.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
-                </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <div class="container shadow p-3 mb-5 bg-body rounded " >
+					<form action="" name="persona" method="POST">					
+						<div class="table-responsive">
+							<table class="table table-striped" style="text-align: center;">
+								<tbody >
+									<tr class="table-primary">
+                                        <td>Numero de reservación</td>
+										<td>Fecha y hora de la reservación</td>
+										<td>Vista completa</td>
+									</tr>
+										<?php
+											if($arreglo2==0){
+												//echo "No existen Registros";
+											?>
+											<div class="alert alert-success" role="alert">
+													<?php echo "No hay registros" ?>
+											</div>
+											<?php 
+											}   
+											 else{
+												do{   
+										   ?> 
+									<tr>
+                                        <td><?php echo $arreglo2[0] ?></td>
+										<td><?php echo $arreglo2[1] ?></td>					
+										<td>
+                                            <a href="vista_reserva.php">
+                                                <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                            </a>
+                                        </td>					
+									</tr>
+									<?php
+										}while($arreglo2 = mysqli_fetch_array($resultado2));
+									}
+									?>
+								</tbody>
+							</table>						
+						</div>    
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-end">
+								<?php 
+								if($pagina!=1){
+								?>
+								<li class="page-item ">
+									<a class="page-link" href="?pagina=<?php echo 1; ?>"><</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="?pagina=<?php echo $pagina-1; ?>"><<</a>
+								</li>
+								<?php
+								}
+								for($i=1; $i<=$totalPaginas; $i++){
+									if($i==$pagina){
+										echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
+									}
+									else{
+										echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>'; 
+									}
+								}
+								if($pagina !=$totalPaginas){
+								?>
+								
+								<li class="page-item">
+									<a class="page-link" href="?pagina=<?php echo $pagina+1; ?>">>></a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="?pagina=<?php echo $totalPaginas; ?>">></a>
+								</li>
+								<?php
+								}
+								?>
+							</ul>
+						</nav>
+					</form>
+				</div>
         </section>
     </main>
     <!--=============================================
