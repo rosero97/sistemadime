@@ -9,6 +9,12 @@ if(!isset($_SESSION['correo'])){
 }
 include("../conexion/conectar.php");
 
+if($_POST)
+{
+    $obj->n_reservacion = $_POST['n_reservacion'];
+    
+}
+
 $conet = new Conexion();
 $c = $conet->conectando();   
 $query="SELECT COUNT(*) AS totalRegistros FROM numero_reservacion";
@@ -30,7 +36,7 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente = p.id_persona INNER JOIN mesa m ON n.mesa_id=m.mesa_id where rolid=2 like '%$obj->rolid=2%' limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente = p.id_persona INNER JOIN mesa m ON n.mesa_id=m.mesa_id where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
@@ -229,3 +235,4 @@ if(isset($_POST['search'])){
 	<script src="./js/main.js" ></script>
 </body>
 </html>
+
