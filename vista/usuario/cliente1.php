@@ -54,7 +54,7 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -90,7 +90,7 @@ if(!isset($_SESSION['correo'])){
 			</div>
 			<!-- Content -->
 			<div class="full-box tile-container">
-				<a href="reservacion.php" class="tile">
+				<a href="../reservacion.php" class="tile">
 					<div class="tile-tittle">Hacer Reservacion</div>
 					<div class="tile-icon">
 					<i class="fa fa-tags" aria-hidden="true"></i>					

@@ -129,7 +129,7 @@ if(isset($_POST['search'])){
 						<nav class="navbar navbar-expand-lg bg-light">
 							<div class="container-fluid">
 								<form class="d-flex" role="search">
-									<input class="form-control me-2" type="search" name="id_encargado"  placeholder="Digite el Código del usuario" aria-label="Search">
+									<input class="form-control me-2" type="search" name="id_persona"  placeholder="Digite el Código del usuario" aria-label="Search">
 									 <button class="btn btn-outline-success" name="search"  type="submit"> Buscar</button> <button type="submit" class="btn btn-outline-success"> Listar</button>
 								</form>
 							</div>

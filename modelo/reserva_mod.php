@@ -3,28 +3,36 @@
     
 class reserva{
 
-                  public $num_mesa;
+                  public $reserva;
+                  public $fecha;
+                  public $observaciones;
                   public $mesa;
-
+                  public $personas;
+                  public $num_persona;
+                  
                     
 
                     function agregar(){
                        
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from num_menu where num_mesa = '$this->mesa'";
+                                          $query = "select * from numero_reservacion where n_reservacion = '$this->reserva'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
-                                             echo "<script> alert('La Mesa ya Existe en el Sistema')</script>";
+                                             echo "<script> alert('La Reservacion ya Existe en el Sistema')</script>";
                                           }else{
-                                          $insertar = "insert into num_menu value(
-                                                                                    '$this->num_mesa',
-                                                                                    '$this->mesa'
+                                          $insertar = "insert into numero_reservacion value(
+                                                                                    '$this->reserva',
+                                                                                    '$this->fecha',
+                                                                                    '$this->observaciones',
+                                                                                    '$this->mesa',
+                                                                                    '$this->personas',
+                                                                                    '$this->num_persona'
                                                                                     
                                           )";
                                           echo $insertar;
                                           mysqli_query($c,$insertar);
-                                          echo "<script> alert('La mesa fue Creada en el Sistema'); window.location.href='../vista/mesas.php';</script>";
+                                          echo "<script> alert('La reservacion fue Creada en el Sistema'); window.location.href='../vista/usuario/cliente1.php';</script>";
                                             
                                         }
                     }
