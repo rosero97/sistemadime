@@ -154,16 +154,13 @@ $obj->reserva = $arreglo[0];
 									?>
 								</tbody>
 							</table>						
-						</div>    
-
-					</form>
-				</div>
-            <div class="container shadow p-3 mb-5 bg-body rounded">
-                <div class="table-responsive">
-                    <div style="text-align: center;">
-                        <a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
-                    </div>
-                </div>   
+						</div> 
+					</form>				            
+			<div class="table-responsive">
+			    <div style="text-align: center;">
+				<a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+			    </div>
+			</div>   
             </div>
         </section>
     </main>
