@@ -89,7 +89,7 @@ if(isset($_POST['search'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -124,12 +124,12 @@ if(isset($_POST['search'])){
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded " >
-					<form action="" name="persona" method="POST">					
+					<form action="" method="POST" name="persona" method="POST">					
 						<div class="table-responsive">
 							<table class="table table-striped" style="text-align: center;">
 								<tbody >
 									<tr class="table-primary">
-                                        <td>Numero de reservación</td>
+                                        <td>N° Reservación</td>
 										<td>Fecha y hora de la reservación</td>
 										<td>Vista completa</td>
 									</tr>
@@ -147,12 +147,14 @@ if(isset($_POST['search'])){
 										   ?> 
 									<tr>
                                         <td><?php echo $arreglo2[0] ?></td>
-										<td><?php echo $arreglo2[1] ?></td>					
+										<td><?php echo $arreglo2[1] ?></td>
 										<td>
-                                            <a href="vista_reserva.php">
-                                                <button class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                                            </a>
-                                        </td>					
+											<a href="<?php if($arreglo2[0]<>""){
+											echo "vista_reserva.php?key=".urlencode($arreglo2[0]);
+											}?>">
+												<button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+											</a>
+										</td>					
 									</tr>
 									<?php
 										}while($arreglo2 = mysqli_fetch_array($resultado2));

@@ -65,6 +65,7 @@ if(isset($_POST['search'])){
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="../config/js/validar_reserva.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -107,7 +108,7 @@ if(isset($_POST['search'])){
                 <a href="#" class="float-left show-nav-lateral">
                     <i class="fas fa-exchange-alt"></i>
                 </a>
-                <a href="usuario.php">
+                <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
                 <a href=" ../modelo/logout.php">
@@ -226,7 +227,7 @@ if(isset($_POST['search'])){
                 </table>
                 <div class="row" style="text-align: center;">
                     <div class="col">
-                        <a href="agendar_reserva.php"><button class="btn btn-primary" name="guarda"><i class="fa fa-share-square-o" aria-hidden="true"> Enviar</i></button></a>
+                        <a href="#"><button type="submit" class="btn btn-primary" name="guarda" onclick="return validar_reserva(this.form)"><i class="fa fa-share-square-o" aria-hidden="true" > Enviar</i></button></a>
                     </div>
                     <div class="col">
                         <a href="mesas.php"><button class="btn btn-success"><i class="fa fa-table" aria-hidden="true"> Mesas</i></button></a>

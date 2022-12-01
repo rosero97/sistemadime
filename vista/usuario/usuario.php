@@ -54,7 +54,7 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -126,10 +126,19 @@ if(!isset($_SESSION['correo'])){
                             </td>
                         </tr>
                         <tr>
-                            <td>Email</td>
-                            <td><?php echo $_SESSION['correo'];?></td>
+                            <td>Tipo de documento</td>
+                            <td>Tipo de documento</td>
                             <td>
-                                <a href="usuario_email.php">
+                                <a href="usuario_tdoc.php">
+                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Contraseña</td>
+                            <td>Contraseña</td>
+                            <td>
+                                <a href="usuario_con.php">
                                     <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>

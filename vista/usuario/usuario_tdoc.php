@@ -54,7 +54,7 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -85,7 +85,7 @@ if(!isset($_SESSION['correo'])){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR CORREO
+                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR TIPO DE DOCUMENTO
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">

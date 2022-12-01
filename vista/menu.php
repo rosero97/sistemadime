@@ -89,7 +89,7 @@ if(isset($_POST['search'])){
                             <a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
                         </li>
                         <li>
-                            <a href="usuario/reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+                            <a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
                         </li>
                         <li>
                             <a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>                        
@@ -98,7 +98,7 @@ if(isset($_POST['search'])){
                             <a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>                
                         </li>
                         <li>
-                            <a href="usuario/company_usuario.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+                            <a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
                         </li>
                     </ul>
                 </nav>
@@ -120,7 +120,7 @@ if(isset($_POST['search'])){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENU
+                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENÚ
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded " >
@@ -128,7 +128,7 @@ if(isset($_POST['search'])){
                         <thead>
                             <tr>
                                 <th>
-                                    <a href="usuario/reservacion.php">
+                                    <a href="reservacion.php">
                                         <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Hacer reserva</button>                  
                                     </a>
                                 </th>

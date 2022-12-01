@@ -13,7 +13,7 @@ if(!isset($_SESSION['correo'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Company</title>
+    <title>Cambio de contraseña</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="../css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -40,7 +40,7 @@ if(!isset($_SESSION['correo'])){
 		<section class="full-box nav-lateral">
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
-				<figure class="full-box nav-lateral-avatar">
+      <figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
@@ -54,7 +54,7 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -85,35 +85,23 @@ if(!isset($_SESSION['correo'])){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-store-alt fa-fw"></i> &nbsp; DIGITALS MENU
+                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR CONTRASEÑA
                 </h3>              
             </div>
-            <div class="container shadow p-3 mb-5 bg-body rounded">
-                <div>
-                    <h1 id="nr">Nombre del restaurante</h1>
-                   
-                </div>
-                <div>
-                    <hi><h2>Slogan del restaurante</h2></hi>
-                </div><br>
-                <div>
-                    <hi>
-                        Nombre del restaurante <br><br>
-                        Direccion <br>
-                        Cll 107 # 20-36 k<br><br>
-                        Telefonos<br>
-                        Tel. 601-7584256<br>
-                        Cel. 3204508126<br><br> 
-                        Correo<br>
-                        nombre@restaurante.com<br><br>
-                        Horarios<br>
-                        De lunes a viernes de 11:30 a<br> 
-                        21:00 <br><br>
-                        Digital´s  Menu
-                    </hi>
-                </div> 
-            <div>     
-        </section>
+			<div class="container shadow p-3 mb-5 bg-body rounded">
+        <h2 style="text-align: center;">Modificar</h2>
+        <br>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Digite su correo electroico</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+        <div style="text-align:right;"> 
+          <a href="usuario.php"><button class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>        
+          <a href="usuario.php"><button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>        
+        </div>
+      </div>
+    </section>
     </main>
     <!--=============================================
 	=            Include JavaScript files           =
@@ -134,4 +122,5 @@ if(!isset($_SESSION['correo'])){
         });
     </script>
     <script src="../js/main.js"></script>
-</body></html>
+</body>
+</html>

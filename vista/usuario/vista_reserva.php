@@ -7,6 +7,27 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+
+$persona=$_SESSION['id_persona'];
+
+include("../../conexion/conectar.php");
+
+$key=$_GET['key'];
+//echo $key;
+$conet = new Conexion();
+$c = $conet->conectando();   
+$query="SELECT * FROM numero_reservacion n INNER JOIN mesa m ON n.mesa_id=m.mesa_id where id_cliente='$persona' AND n_reservacion='$key' ";
+$resultado = mysqli_query($c, $query);
+$arreglo = mysqli_fetch_array($resultado);
+$obj->reserva = $arreglo[0];
+//echo $obj->reserva;
+//echo $totalRegistros;
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -54,7 +75,7 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
@@ -88,40 +109,57 @@ if(!isset($_SESSION['correo'])){
                 <i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; RESERVACIONES
                 </h3>              
             </div>
+            <div class="container shadow p-3 mb-5 bg-body rounded " >
+					<form action="" name="persona" method="POST">					
+						<div class="table-responsive">
+							<table class="table table-striped" style="text-align: center;">
+								<tbody >
+									<tr class="table-primary">                               
+                                        <th style="color: black;">N° Reservación</th>
+                                        <th style="color: black;">Cliente</th>
+                                        <th style="color: black;">Identificacion</th>
+                                        <th style="color: black;">Celular</th>
+                                        <th style="color: black;">Correo</th>
+                                        <th style="color: black;">N° Mesa</th>
+                                        <th style="color: black;">N° Personas</th>
+                                        <th style="color: black;">Observaciones</th>
+                                        <th style="color: black;">Fecha y hora de la reservación</th>                           
+									</tr>
+										<?php
+											if($arreglo==0){
+												//echo "No existen Registros";
+											?>
+											<div class="alert alert-success" role="alert">
+													<?php echo "No hay registros" ?>
+											</div>
+											<?php 
+											}   
+											 else{
+												   
+										   ?> 
+									<tr>
+                                        <td><?php echo $obj->reserva; ?></td>
+										<td><?php echo $_SESSION['nombre_completo'];?></td>				
+										<td><?php echo $_SESSION['id_persona'];?></td>				
+										<td><?php echo $_SESSION['celular'];?></td>				
+										<td><?php echo $_SESSION['correo'];?></td>				
+										<td><?php echo $arreglo['num_mesa'] ?></td>				
+										<td><?php echo $arreglo[4] ?></td>				
+										<td><?php echo $arreglo[2] ?></td>				
+										<td><?php echo $arreglo[1] ?></td>				
+									</tr>
+									<?php
+										($arreglo = mysqli_fetch_array($resultado));
+									}
+									?>
+								</tbody>
+							</table>						
+						</div>    
+
+					</form>
+				</div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
                 <div class="table-responsive">
-                    <table class="table table-striped" style="text-align: center;">
-                        <thead>
-                            <tr>
-                                <th style="color: black;">Fecha</th>
-                                <th style="color: black;">°Reservacion</th>
-                                <th style="color: black;">Cliente</th>
-                                <th style="color: black;">Identificacion</th>
-                                <th style="color: black;">Celular</th>
-                                <th style="color: black;">Correo</th>
-                                <th style="color: black;">°Mesa</th>
-                                <th style="color: black;">°Personas</th>
-                                <th style="color: black;">Observaciones</th>
-                                <th style="color: black;">Dia de la reserva</th>
-                                <th style="color: black;">Hora de la reserva</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fecha</td>
-                                <td>001</td>
-                                <td>Jose Angel Rosero Orozco</td>
-                                <td>1001095170</td>
-                                <td>3103867812</td>
-                                <td>joserosero@gmail.com</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>Ninguna</td>
-                                <td>2022/09/18</td>
-                                <td>15:00</td>
-                            </tr>
-                        </tbody>
-                    </table><br> 
                     <div style="text-align: center;">
                         <a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
                     </div>

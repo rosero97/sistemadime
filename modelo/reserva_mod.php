@@ -32,7 +32,7 @@ class reserva{
                                           )";
                                           echo $insertar;
                                           mysqli_query($c,$insertar);
-                                          echo "<script> alert('La reservacion fue Creada en el Sistema'); window.location.href='../vista/usuario/cliente1.php';</script>";
+                                          echo "<script> alert('La reservacion fue Creada en el Sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
                                             
                                         }
                     }
