@@ -54,7 +54,7 @@ if(isset($_POST['iniciar'])){
             header("Location: ../vista/usuario/cliente1.php");
         
         }else{
-            echo "Usted ha cometido algun error <br> Verifique los datos de sesion";
+            echo "<script> alert('Usted ha cometido algun error, Verifique los datos de sesion '); window.location.href='../vista/Iniciar Sesion-2.php';</script>";
         }
     }
 }
