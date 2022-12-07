@@ -7,6 +7,10 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+
+include("../conexion/conectar.php");
+include("../controlador/usuario_celular_con.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,21 +18,21 @@ if(!isset($_SESSION['correo'])){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><title>Company</title>
   <!-- Normalize V8.0.1 -->
-  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="./css/normalize.css">
   <!-- Bootstrap V4.3 -->
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   <!-- Bootstrap Material Design V4.0 -->
-  <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
   <!-- Font Awesome V5.9.0 -->
-  <link rel="stylesheet" href="../css/all.css">
+  <link rel="stylesheet" href="./css/all.css">
   <!-- Sweet Alerts V8.13.0 CSS file -->
-  <link rel="stylesheet" href="../css/sweetalert2.min.css">
+  <link rel="stylesheet" href="./css/sweetalert2.min.css">
   <!-- Sweet Alert V8.13.0 JS file-->
-  <script src="../js/sweetalert2.min.js"></script>
+  <script src="./js/sweetalert2.min.js"></script>
   <!-- jQuery Custom Content Scroller V3.1.5 -->
-  <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
   <!-- General Styles -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
@@ -41,7 +45,7 @@ if(!isset($_SESSION['correo'])){
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
-					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
           <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
 					</figcaption>
@@ -50,19 +54,19 @@ if(!isset($_SESSION['correo'])){
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
-							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -73,10 +77,10 @@ if(!isset($_SESSION['correo'])){
                 <a href="#" class="float-left show-nav-lateral">
                     <i class="fas fa-exchange-alt"></i>
                 </a>
-                <a href="usuario.php">
+                <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../../modelo/logout.php">
+                <a href="../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>
@@ -87,14 +91,30 @@ if(!isset($_SESSION['correo'])){
         <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR CELULAR
       </h3>              
     </div>
-		<div class="container shadow p-3 mb-5 bg-body rounded">
-      <span class="input-group-text" id="inputGroup-sizing-default">Digite su numero de celular</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <div class="container shadow p-3 mb-5 bg-body rounded">
+      <h2 style="text-align: center;">Modificar</h2>
       <br>
-      <div style="text-align:right;"> 
-        <a href="usuario.php"><button class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>        
-        <a href="usuario.php"><button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>        
-      </div>
+      <form action="" method="POST">
+        <table>
+          <tbody>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">N° Identidad</span>
+              <input type="text" id="id_persona" name="id_persona" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="<?php echo $_SESSION['id_persona'];?>">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Digite su numero de celular</span>
+              <input type="text" id="celular" name="celular" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <br>
+          </tbody>
+        </table>
+          <div style="text-align:right;"> 
+            <a href="usuario/usuario.php">
+              <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+            </a>        
+            <button class="btn btn-primary" id="modifica1" name="modifica1"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
+          </div>                    
+        </form>
 	  </div>
   </section>
   </main>

@@ -3,10 +3,13 @@ session_start();
 if(!isset($_SESSION['correo'])){
 	header("Location: Iniciar Sesion-2.php");
 }else{
-    if($_SESSION['rolid'] !=1){
+    if($_SESSION['rolid'] !=2){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+
+include("../conexion/conectar.php");
+include("../controlador/usuario_con.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -40,33 +43,30 @@ if(!isset($_SESSION['correo'])){
 		<section class="full-box nav-lateral">
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
-				<figure class="full-box nav-lateral-avatar">
+      <figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Administrador</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
-							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
+							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
-						</li>
-						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -77,7 +77,7 @@ if(!isset($_SESSION['correo'])){
                 <a href="#" class="float-left show-nav-lateral">
                     <i class="fas fa-exchange-alt"></i>
                 </a>
-                <a href="admin.php">
+                <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
                 <a href="../modelo/logout.php">
@@ -88,10 +88,35 @@ if(!isset($_SESSION['correo'])){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-building fa-fw"></i> &nbsp; DIGITALS MENU
+                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR NOMBRE
                 </h3>              
             </div>
-        </section>
+			<div class="container shadow p-3 mb-5 bg-body rounded">
+                <h2 style="text-align: center;">Modificar</h2>
+                <br>
+                <form action="" method="POST">
+                    <table>
+                        <tbody>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">N° Identidad</span>
+                                <input type="text" id="id_persona" name="id_persona" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="<?php echo $_SESSION['id_persona'];?>">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite su nombre completo</span>
+                                <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <br>
+                        </tbody>
+                    </table>
+                    <div style="text-align:right;"> 
+                        <a href="usuario/usuario.php">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                        </a>        
+                        <button class="btn btn-primary" id="modifica" name="modifica"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
+                    </div>                    
+                </form>
+            </div>
+    </section>
     </main>
     <!--=============================================
 	=            Include JavaScript files           =
@@ -112,4 +137,5 @@ if(!isset($_SESSION['correo'])){
         });
     </script>
     <script src="./js/main.js"></script>
-</body></html>
+</body>
+</html>

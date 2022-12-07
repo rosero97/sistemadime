@@ -101,7 +101,7 @@ echo $obj->mesa;
                 <a href="#" class="float-left show-nav-lateral">
                     <i class="fas fa-exchange-alt"></i>
                 </a>
-                <a href="#">
+                <a href="admin.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
                 <a href="../modelo/logout.php">

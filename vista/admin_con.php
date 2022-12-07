@@ -7,6 +7,9 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+include("../conexion/conectar.php");
+include("../controlador/admin_contra_con.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,6 +33,8 @@ if(!isset($_SESSION['correo'])){
 	<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!-- Main container -->
@@ -84,45 +89,48 @@ if(!isset($_SESSION['correo'])){
 					<i class="fas fa-power-off"></i>
 				</a>
 			</nav>
-			<!-- Page header -->
-			<div class="full-box page-header">
-				<h3 class="text-left">
-					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
-				</h3>
-			</div>
 			<!-- Content -->
-			<div class="full-box tile-container">
-				<a href="usuarioadmin.php" class="tile">
-					<div class="tile-tittle">Usuarios</div>
-					<div class="tile-icon">
-						<i class="fas fa-users fa-fw"></i>					
-					</div>
-				</a>
-				<a href="reservaciones.php" class="tile">
-					<div class="tile-tittle">Reservaciones</div>
-					<div class="tile-icon">
-						<i class="fa fa-bookmark" aria-hidden="true"></i>						
-					</div>
-				</a>
-				<a href="mesas.php" class="tile">
-					<div class="tile-tittle">Mesas</div>
-					<div class="tile-icon">
-						<i class="fa fa-table" aria-hidden="true"></i>					
-					</div>
-				</a>
-				<a href="menu2.php" class="tile">
-					<div class="tile-tittle">Menu</div>
-					<div class="tile-icon">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</div>
-				</a>
-				<a href="company.php" class="tile">
-					<div class="tile-tittle">Digitals Menu</div>
-					<div class="tile-icon">
-						<i class="fas fa-store-alt fa-fw"></i>
-					</div>
-				</a>
-			</div>			
+            <div class="full-box page-header">
+                <h3 class="text-left">
+                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR CONTRASEÑA
+                </h3>              
+            </div>
+			<div class="container shadow p-3 mb-5 bg-body rounded">
+                <form action="" method="POST">
+                    <h2 style="text-align: center;">Modificar</h2>
+                    <br>
+                    <table>
+                        <tbody>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">N° Identidad</span>
+                                <input type="text" id="id_persona" name="id_persona" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="<?php echo $_SESSION['id_persona'];?>">
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite su contraseña actual</span>
+                                <input type="password" id="contrasena" name="contrasena" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite la nueva contraseña</span>
+                                <input type="password" id="contrasena1" name="contrasena1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite nuevamente la contraseña</span>
+                                <input type="password" id="contrasena2" name="contrasena2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <br>
+                        </tbody>
+                    </table>
+                    <div style="text-align:right;"> 
+                        <a href="admin.php">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                        </a>        
+                        <button type="submit" class="btn btn-primary" id="modifica2" name="modifica2" ><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
+                    </div>
+                </form>
+            </div>		
 		</section>
 	</main>	
 	<!--=============================================

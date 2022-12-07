@@ -109,7 +109,7 @@ if(isset($_POST['search'])){
                 <a href="#" class="float-left show-nav-lateral">
                     <i class="fas fa-exchange-alt"></i>
                 </a>
-                <a href="usuario.php">
+                <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
                 <a href="../modelo/logout.php">

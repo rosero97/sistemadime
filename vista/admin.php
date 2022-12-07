@@ -30,6 +30,8 @@ if(!isset($_SESSION['correo'])){
 	<link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
 	<!-- General Styles -->
 	<link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!-- Main container -->
@@ -84,45 +86,60 @@ if(!isset($_SESSION['correo'])){
 					<i class="fas fa-power-off"></i>
 				</a>
 			</nav>
-			<!-- Page header -->
-			<div class="full-box page-header">
-				<h3 class="text-left">
-					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
-				</h3>
-			</div>
 			<!-- Content -->
-			<div class="full-box tile-container">
-				<a href="usuarioadmin.php" class="tile">
-					<div class="tile-tittle">Usuarios</div>
-					<div class="tile-icon">
-						<i class="fas fa-users fa-fw"></i>					
-					</div>
-				</a>
-				<a href="reservaciones.php" class="tile">
-					<div class="tile-tittle">Reservaciones</div>
-					<div class="tile-icon">
-						<i class="fa fa-bookmark" aria-hidden="true"></i>						
-					</div>
-				</a>
-				<a href="mesas.php" class="tile">
-					<div class="tile-tittle">Mesas</div>
-					<div class="tile-icon">
-						<i class="fa fa-table" aria-hidden="true"></i>					
-					</div>
-				</a>
-				<a href="menu2.php" class="tile">
-					<div class="tile-tittle">Menu</div>
-					<div class="tile-icon">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</div>
-				</a>
-				<a href="company.php" class="tile">
-					<div class="tile-tittle">Digitals Menu</div>
-					<div class="tile-icon">
-						<i class="fas fa-store-alt fa-fw"></i>
-					</div>
-				</a>
-			</div>			
+            <div class="full-box page-header">
+                <h3 class="text-left">
+                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; CONFIGURACION
+                </h3><br>
+                <h6>Si aun no ve los cambios porfavor cierre sesion y vuelva a ingresar al sistema</h6>        
+            </div>
+			<div class="container shadow p-3 mb-5 bg-body rounded">
+                <table class="table table-striped" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th style="color: black;">Nombre del dato</th>
+                            <th style="color: black;">Datos del usuario</th>
+                            <th style="color: black;">Modificar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Nombre Completo</td>
+                            <td><?php echo $_SESSION['nombre_completo'];?></td>
+                            <td>
+                                <a href="admin_nombre.php">
+                                    <button  class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Celular</td>
+                            <td><?php echo $_SESSION['celular'];?></td>
+                            <td>
+                                <a href="admin_cel.php">
+                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                        </tr>                    
+                        <tr>
+                            <td>Contraseña</td>
+                            <td>Contraseña</td>
+                            <td>
+                                <a href="admin_con.php">
+                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br> 
+                <div style="text-align:center;">
+                    <tr>
+                        <td>
+                            <a href="administrador.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                        </td>
+                    </tr>
+                </div>
+            </div>			
 		</section>
 	</main>	
 	<!--=============================================

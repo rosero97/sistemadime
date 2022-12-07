@@ -86,7 +86,8 @@ if(!isset($_SESSION['correo'])){
             <div class="full-box page-header">
                 <h3 class="text-left">
                 <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; CONFIGURACION
-                </h3>              
+                </h3><br>
+                <h6>Si aun no ve los cambios porfavor cierre sesion y vuelva a ingresar al sistema</h6>   
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
                 <table class="table table-striped" style="text-align: center;">
@@ -102,17 +103,8 @@ if(!isset($_SESSION['correo'])){
                             <td>Nombre Completo</td>
                             <td><?php echo $_SESSION['nombre_completo'];?></td>
                             <td>
-                                <a href="usuario_nombre.php">
+                                <a href="../usuario_nombre.php">
                                     <button  class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Identificacion</td>
-                            <td><?php echo $_SESSION['id_persona'];?></td>
-                            <td>
-                                <a href="usuario_id.php">
-                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
                         </tr>
@@ -120,25 +112,16 @@ if(!isset($_SESSION['correo'])){
                             <td>Celular</td>
                             <td><?php echo $_SESSION['celular'];?></td>
                             <td>
-                                <a href="usuario_cel.php">
+                                <a href="../usuario_cel.php">
                                     <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Tipo de documento</td>
-                            <td>Tipo de documento</td>
-                            <td>
-                                <a href="usuario_tdoc.php">
-                                    <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                </a>
-                            </td>
-                        </tr>
+                        </tr>                    
                         <tr>
                             <td>Contraseña</td>
                             <td>Contraseña</td>
                             <td>
-                                <a href="usuario_con.php">
+                                <a href="../usuario_con.php">
                                     <button class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </a>
                             </td>
@@ -149,9 +132,6 @@ if(!isset($_SESSION['correo'])){
                     <tr>
                         <td>
                             <a href="cliente1.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
-                        </td>
-                        <td>
-                            <a href="cliente1.php"><button class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button></a>
                         </td>
                     </tr>
                 </div>
