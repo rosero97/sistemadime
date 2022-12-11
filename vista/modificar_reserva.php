@@ -119,29 +119,16 @@ if(isset($_POST['search'])){
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; HACER RESERVACION
+                <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; HACER RESERVACIÓN
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
             <form action="" name="reservacion" method="POST" enctype="multipart/form-data">    
                 <table>
                     <thead>
-                        <h3 style="text-align: center;">Datos de la reservacion</h3>
-                    </thead><br>           
-                        <div class="row">
-                            <div class="col-md-3" id="informacion1">
-                                Fecha
-                            </div>
-                            <div class="col" id="current_date"id></p>
-                                <script>
-                                    date = new Date();
-                                    year = date.getFullYear();
-                                    month = date.getMonth() + 1;
-                                    day = date.getDate();
-                                    document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
-                                </script>
-                            </div>
-                        </div><br>
+                        <h3 style="text-align: center;">Modificar reservación</h3>
+                    </thead>
+                    <br>
                     <tbody>
                         <tr>
                             <div class="mb-3 row">
@@ -149,60 +136,6 @@ if(isset($_POST['search'])){
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" id="reserva" name="reserva" placeholder="Este codigo lo creara el sistema automaticamente" readonly >
                                 </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Cliente</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="" value=" <?php echo $_SESSION['nombre_completo'];?>" readonly >
-                                </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Celular</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="" value=" <?php echo $_SESSION['celular'];?>" readonly >
-                                </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Correo</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="" value=" <?php echo $_SESSION['correo'];?>" readonly >
-                                </div>
-                            </div> 
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">N° Documento</label>
-                                <div class="col-sm-10">
-                                <input type="text" id="num_persona" name="num_persona" class="form-control" readonly value="<?php echo $_SESSION['id_persona'];?>">
-                                </div>
-                            </div>
-                            <div class="inputBox mb-3 row">
-                                <label fot="mesa" class="col-sm-2 col-form-label">Numero de mesa</label>
-                                <div class="col-sm-10">
-                                    <select name="mesa" class="form-control">
-                                    <?php
-                                        if($arreglo2==0){
-                                            //echo "No existen Registros";
-                                    ?>
-                                        <div class="alert alert-success" role="alert">
-                                            <?php echo "No hay registros" ?>
-                                        </div>
-                                    <?php
-                                        }  
-                                        else{
-                                            do{  
-                                    ?>
-                                        <div class="form-control">
-                                            <option value="<?php echo $arreglo2 [0]?>">Mesa <?php echo $arreglo2 [1]?></option>
-                                        </div>
-                                        </div>
-                                    <?php 
-                                        }while($arreglo2 = mysqli_fetch_array($resultado2));   
-                                
-                                        }
-                            
-                                    ?>                                     
-                                    </select>
-                                </div>
-                            </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
@@ -227,10 +160,10 @@ if(isset($_POST['search'])){
                 </table>
                 <div class="row" style="text-align: center;">
                     <div class="col">
-                        <a href="#"><button type="submit" class="btn btn-primary" name="guarda" onclick="return validar_reserva(this.form)"><i class="fa fa-share-square-o" aria-hidden="true" > Enviar</i></button></a>
+                        <a href="#"><button type="submit" class="btn btn-primary" name="guarda"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
                     </div>
                     <div class="col">
-                        <a href="usuario/cliente1.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
+                        <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
                     </div>
                 </div>
             </form>

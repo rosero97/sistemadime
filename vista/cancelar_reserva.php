@@ -3,18 +3,42 @@ session_start();
 if(!isset($_SESSION['correo'])){
 	header("Location: Iniciar Sesion-2.php");
 }else{
-    if($_SESSION['rolid'] !=1){
+    if($_SESSION['rolid'] !=2){
         header("Location: Iniciar Sesion-2.php");
     }
 }
-
 include("../conexion/conectar.php");
- 
+include("../controlador/reserva_con.php");
+
 $conet = new Conexion();
 $c = $conet->conectando();        
-$query = "SELECT * FROM  restaurante";
+$query = "SELECT COUNT(*) AS totalRegistros FROM mesa";
 $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado);
+$totalRegistros = $arreglo['totalRegistros'];
+//echo $totalRegistros;
+
+$maximoRegistros = 200;
+//echo $totalRegistros;
+if(empty($_GET['pagina'])){
+    $pagina=1;
+}else{
+    $pagina=$_GET['pagina'];
+}
+$desde = ($pagina-1)*$maximoRegistros;
+$totalPaginas=ceil($totalRegistros/$maximoRegistros);
+//echo $totalPaginas;
+
+if(isset($_POST['search'])){
+    echo "llegue";
+    $query2="select * from mesa where mesa_id like '%$obj->mesa_id%' limit $desde,$maximoRegistros";
+    $resultado2=mysqli_query($c,$query2);
+    $arreglo2 = mysqli_fetch_array($resultado2);
+}else{
+    $query2="select * from mesa limit $desde,$maximoRegistros ";
+    $resultado2=mysqli_query($c,$query2);
+    $arreglo2 = mysqli_fetch_array($resultado2);
+}
 
 ?>
 <!DOCTYPE html>
@@ -41,6 +65,7 @@ $arreglo = mysqli_fetch_array($resultado);
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="../config/js/validar_reserva.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -49,33 +74,30 @@ $arreglo = mysqli_fetch_array($resultado);
 		<section class="full-box nav-lateral">
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
-				<figure class="full-box nav-lateral-avatar">
+            <figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Administrador</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
 						</li>
 						<li>
-							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
+							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
-						</li>
-						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -86,10 +108,10 @@ $arreglo = mysqli_fetch_array($resultado);
                 <a href="#" class="float-left show-nav-lateral">
                     <i class="fas fa-exchange-alt"></i>
                 </a>
-                <a href="admin.php">
+                <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../modelo/logout.php">
+                <a href=" ../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>
@@ -97,65 +119,39 @@ $arreglo = mysqli_fetch_array($resultado);
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-building fa-fw"></i> &nbsp; DIGITALS MENU
+                <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; CANCELAR RESERVACIÓN
                 </h3>              
             </div>
-            <div class="container shadow p-3 mb-5 bg-body rounded">
+			<div class="container shadow p-3 mb-5 bg-body rounded">
+            <form action="" name="reservacion" method="POST" enctype="multipart/form-data">    
                 <table>
+                    <thead>
+                        <h3 style="text-align: center;">Cancelar reservación</h3>
+                    </thead>
+                    <br>                       
                     <tbody>
-                        <div>
-                            <tr>
-                                <td>Nombre del restaurante</td>
-                            </tr>
-                            <tr>
-                                <td><h1><?php echo $arreglo[1]?></h1></td>
-                            </tr>                
-                            <tr>
-                                <td>Nombre del restaurante</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[1]?></td>
-                            </tr>
-                            <tr>
-                                <td>Dirección</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[2]?></td>
-                            </tr>
-                            <tr>
-                                <td>Telefono</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[3]?></td>
-                            </tr>
-                            <tr>
-                                <td>Correo</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[4]?></td>
-                            </tr>
-                            <tr>
-                                <td>Horario</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[5]?></td>
-                            </tr>
-                            <tr>
-                                <td>Digital´s  Menu</td>
-                            </tr>
-                        </div>
-                    </tbody>                    
+                        <tr>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="reserva" name="reserva" placeholder="Este codigo lo creara el sistema automaticamente" readonly >
+                                </div>
+                            </div>                      
+                            <div class="mb-3 row">
+                                
+                            </div>
+                        </tr>
+                    </tbody>          
                 </table>
-                <br>
-                <div class="row" style="text-align: center;">
+                <div class="row" style="text-align: center;">                    
                     <div class="col">
-                        <a href="company_modificar.php"><button type="submit" class="btn btn-primary" name="guarda"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                        <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar reserva</i></button></a>
                     </div>
                     <div class="col">
-                        <a href="administrador.php"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                        <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
                     </div>
-                </div>            
-            <div>
+                </div>
+            </form>
         </section>
     </main>
     <!--=============================================
@@ -177,4 +173,5 @@ $arreglo = mysqli_fetch_array($resultado);
         });
     </script>
     <script src="./js/main.js"></script>
-</body></html>
+</body>
+</html>

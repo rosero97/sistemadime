@@ -9,12 +9,7 @@ if(!isset($_SESSION['correo'])){
 }
 
 include("../conexion/conectar.php");
- 
-$conet = new Conexion();
-$c = $conet->conectando();        
-$query = "SELECT * FROM  restaurante";
-$resultado = mysqli_query($c, $query);
-$arreglo = mysqli_fetch_array($resultado);
+include("../controlador/res_con.php");
 
 ?>
 <!DOCTYPE html>
@@ -101,61 +96,62 @@ $arreglo = mysqli_fetch_array($resultado);
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
+            <form action="" name="company_modificar" method="POST" enctype="multipart/form-data">    
                 <table>
+                    <thead>
+                        <h3 style="text-align: center;">Datos del restaurante</h3>
+                    </thead>
+                    <br>
                     <tbody>
-                        <div>
-                            <tr>
-                                <td>Nombre del restaurante</td>
-                            </tr>
-                            <tr>
-                                <td><h1><?php echo $arreglo[1]?></h1></td>
-                            </tr>                
-                            <tr>
-                                <td>Nombre del restaurante</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[1]?></td>
-                            </tr>
-                            <tr>
-                                <td>Dirección</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[2]?></td>
-                            </tr>
-                            <tr>
-                                <td>Telefono</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[3]?></td>
-                            </tr>
-                            <tr>
-                                <td>Correo</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[4]?></td>
-                            </tr>
-                            <tr>
-                                <td>Horario</td>
-                            </tr>
-                            <tr>
-                                <td><?php echo $arreglo[5]?></td>
-                            </tr>
-                            <tr>
-                                <td>Digital´s  Menu</td>
-                            </tr>
-                        </div>
-                    </tbody>                    
+                        <tr>                        
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Nombre del restaurante</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Dirección</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="direccion" name="direccion">
+                                </div>
+                            </div>                            
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Telefono</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="telefono" name="telefono">
+                                </div>
+                            </div>                            
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Correo</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="correo" name="correo">
+                                </div>
+                            </div>                            
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Horario</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="hora" name="hora">
+                                </div>
+                            </div>                           
+                            <div class="mb-3 row">
+                                <label for="" class="col-sm-2 col-form-label">Encargado</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="encargado" name="encargado" readonly value="<?php echo $_SESSION['id_persona'];?>">
+                                </div>
+                            </div>                           
+                        </tr>
+                    </tbody>          
                 </table>
-                <br>
                 <div class="row" style="text-align: center;">
-                    <div class="col">
-                        <a href="company_modificar.php"><button type="submit" class="btn btn-primary" name="guarda"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                <div class="col">
+                        <a href="#"><button type="submit" class="btn btn-primary" name="modifica"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
                     </div>
                     <div class="col">
-                        <a href="administrador.php"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                        <a href="company.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
                     </div>
-                </div>            
-            <div>
+                </div>
+            </form>
         </section>
     </main>
     <!--=============================================

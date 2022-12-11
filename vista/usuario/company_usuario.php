@@ -7,6 +7,15 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+
+include("../../conexion/conectar.php");
+ 
+$conet = new Conexion();
+$c = $conet->conectando();        
+$query = "SELECT * FROM  restaurante";
+$resultado = mysqli_query($c, $query);
+$arreglo = mysqli_fetch_array($resultado);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -89,29 +98,51 @@ if(!isset($_SESSION['correo'])){
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-                <div>
-                    <h1 id="nr">Nombre del restaurante</h1>
-                   
-                </div>
-                <div>
-                    <hi><h2>Slogan del restaurante</h2></hi>
-                </div><br>
-                <div>
-                    <hi>
-                        Nombre del restaurante <br><br>
-                        Direccion <br>
-                        Cll 107 # 20-36 k<br><br>
-                        Telefonos<br>
-                        Tel. 601-7584256<br>
-                        Cel. 3204508126<br><br> 
-                        Correo<br>
-                        nombre@restaurante.com<br><br>
-                        Horarios<br>
-                        De lunes a viernes de 11:30 a<br> 
-                        21:00 <br><br>
-                        Digital´s  Menu
-                    </hi>
-                </div> 
+                <table>
+                    <tbody>
+                        <div>
+                            <tr>
+                                <td>Nombre del restaurante</td>
+                            </tr>
+                            <tr>
+                                <td><h1><?php echo $arreglo[1]?></h1></td>
+                            </tr>                
+                            <tr>
+                                <td>Nombre del restaurante</td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $arreglo[1]?></td>
+                            </tr>
+                            <tr>
+                                <td>Dirección</td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $arreglo[2]?></td>
+                            </tr>
+                            <tr>
+                                <td>Telefono</td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $arreglo[3]?></td>
+                            </tr>
+                            <tr>
+                                <td>Correo</td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $arreglo[4]?></td>
+                            </tr>
+                            <tr>
+                                <td>Horario</td>
+                            </tr>
+                            <tr>
+                                <td><?php echo $arreglo[5]?></td>
+                            </tr>
+                            <tr>
+                                <td>Digital´s  Menu</td>
+                            </tr>
+                        </div>
+                    </tbody>                    
+                </table>
             <div>     
         </section>
     </main>
