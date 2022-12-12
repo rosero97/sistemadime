@@ -1,11 +1,12 @@
 <?php
-   
-    
-class reserva{
 
+
+class reserva{
+   
                   public $reserva;
                   public $fecha;
                   public $observaciones;
+                  public $id_estado=1;
                   public $mesa;
                   public $personas;
                   public $num_persona;
@@ -25,6 +26,7 @@ class reserva{
                                                                                     '$this->reserva',
                                                                                     '$this->fecha',
                                                                                     '$this->observaciones',
+                                                                                    '$this->id_estado',
                                                                                     '$this->mesa',
                                                                                     '$this->personas',
                                                                                     '$this->num_persona'

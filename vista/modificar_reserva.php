@@ -10,37 +10,19 @@ if(!isset($_SESSION['correo'])){
 include("../conexion/conectar.php");
 include("../controlador/reserva_con.php");
 
-$conet = new Conexion();
-$c = $conet->conectando();        
-$query = "SELECT COUNT(*) AS totalRegistros FROM mesa";
-$resultado = mysqli_query($c, $query);
-$arreglo = mysqli_fetch_array($resultado);
-$totalRegistros = $arreglo['totalRegistros'];
-//echo $totalRegistros;
-
-$maximoRegistros = 200;
-//echo $totalRegistros;
-if(empty($_GET['pagina'])){
-    $pagina=1;
-}else{
-    $pagina=$_GET['pagina'];
-}
-$desde = ($pagina-1)*$maximoRegistros;
-$totalPaginas=ceil($totalRegistros/$maximoRegistros);
-//echo $totalPaginas;
-
-if(isset($_POST['search'])){
-    echo "llegue";
-    $query2="select * from mesa where mesa_id like '%$obj->mesa_id%' limit $desde,$maximoRegistros";
-    $resultado2=mysqli_query($c,$query2);
-    $arreglo2 = mysqli_fetch_array($resultado2);
-}else{
-    $query2="select * from mesa limit $desde,$maximoRegistros ";
-    $resultado2=mysqli_query($c,$query2);
-    $arreglo2 = mysqli_fetch_array($resultado2);
-}
+$key=$_GET['key'];
+//echo $key;
+$obj = new conexion();
+$c=$obj->conectando();
+$sql="select * from numero_reservacion where n_reservacion='$key' ";
+$rs=mysqli_query($c,$sql);
+$array=mysqli_fetch_row($rs);
+$obj->num_reserva = $array[0];
+//echo $obj->num_reserva;
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -134,7 +116,7 @@ if(isset($_POST['search'])){
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="reserva" name="reserva" placeholder="Este codigo lo creara el sistema automaticamente" readonly >
+                                <input type="text" class="form-control" id="reserva" name="reserva" readonly value="<?php echo $obj->num_reserva?>">
                                 </div>
                             </div>
                             <div class="mb-3 row">

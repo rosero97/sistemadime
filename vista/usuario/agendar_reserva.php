@@ -158,15 +158,19 @@ if(isset($_POST['search'])){
 											</a>
 										</td>
 										<td>
-											<a href="../modificar_reserva.php">
+											<a href="<?php if($arreglo2[0]<>""){
+											echo "../modificar_reserva.php?key=".urlencode($arreglo2[0]);
+											}?>">
 												<button type="button"class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-											</a> 
-										</td>			
-										<td>
-											<a href="../cancelar_reserva.php">
-												<button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i></button>
 											</a>
 										</td>			
+										<td>
+											<a href="<?php if($arreglo2[0]<>""){
+											echo "../cancelar_reserva.php?key=".urlencode($arreglo2[0]);
+											}?>">
+												<button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i></button>
+											</a>
+										</td>
 									</tr>
 									<?php
 										}while($arreglo2 = mysqli_fetch_array($resultado2));
