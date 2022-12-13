@@ -63,7 +63,7 @@ include("../modelo/iniciar_sesion.php")
                             <input type="submit" name="iniciar" value="Iniciar Sesion" />
                         </div>
                         <p class="forget">
-                            ¿Has olvidado tu contraseña? <a href="recuperar.html">Recuperar contraseña</a>
+                            ¿Has olvidado tu contraseña? <a href="login/recuperar.html">Recuperar contraseña</a>
                         </p>
             </div>
         </div>
