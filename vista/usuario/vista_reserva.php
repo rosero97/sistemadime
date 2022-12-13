@@ -16,7 +16,7 @@ $key=$_GET['key'];
 //echo $key;
 $conet = new Conexion();
 $c = $conet->conectando();   
-$query="SELECT * FROM numero_reservacion n INNER JOIN mesa m ON n.mesa_id=m.mesa_id where id_cliente='$persona' AND n_reservacion='$key' ";
+$query="SELECT * FROM numero_reservacion n INNER JOIN mesa m ON n.mesa_id=m.mesa_id INNER JOIN estado e ON n.id_estado=e.id_estado where id_cliente='$persona' AND n_reservacion='$key' ";
 $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado);
 $obj->reserva = $arreglo[0];
@@ -123,7 +123,8 @@ $obj->reserva = $arreglo[0];
                                         <th style="color: black;">N° Mesa</th>
                                         <th style="color: black;">N° Personas</th>
                                         <th style="color: black;">Observaciones</th>
-                                        <th style="color: black;">Fecha y hora de la reservación</th>                           
+                                        <th style="color: black;">Fecha y hora de la reservación</th>
+										<th style="color: black;">Estado de la reservación</th>                           
 									</tr>
 										<?php
 											if($arreglo==0){
@@ -144,9 +145,10 @@ $obj->reserva = $arreglo[0];
 										<td><?php echo $_SESSION['celular'];?></td>				
 										<td><?php echo $_SESSION['correo'];?></td>				
 										<td><?php echo $arreglo['num_mesa'] ?></td>				
-										<td><?php echo $arreglo[4] ?></td>				
+										<td><?php echo $arreglo[5] ?></td>				
 										<td><?php echo $arreglo[2] ?></td>				
 										<td><?php echo $arreglo[1] ?></td>				
+										<td><?php echo $arreglo['nombre_estado'] ?></td>				
 									</tr>
 									<?php
 										($arreglo = mysqli_fetch_array($resultado));

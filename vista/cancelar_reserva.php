@@ -8,7 +8,7 @@ if(!isset($_SESSION['correo'])){
     }
 }
 include("../conexion/conectar.php");
-include("../controlador/reserva_con.php");
+include("../controlador/cancelar_reserva_con.php");
 
 $key=$_GET['key'];
 //echo $key;
@@ -18,7 +18,9 @@ $sql="select * from numero_reservacion where n_reservacion='$key' ";
 $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
 $obj->num_reserva = $array[0];
+$obj->id_estado = $array[3];
 //echo $obj->num_reserva;
+//echo $obj->id_estado;
 
 ?>
 <!DOCTYPE html>
@@ -103,35 +105,38 @@ $obj->num_reserva = $array[0];
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="reservacion" method="POST" enctype="multipart/form-data">    
-                <table>
-                    <thead>
-                        <h3 style="text-align: center;">Cancelar reservación</h3>
-                    </thead>
-                    <br>                       
-                    <tbody>
-                        <tr>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="reserva" name="reserva" readonly value="<?php echo $obj->num_reserva ?>">
-                                </div>
-                            </div>                      
-                            <div class="mb-3 row">
-                                
-                            </div>
-                        </tr>
-                    </tbody>          
-                </table>
-                <div class="row" style="text-align: center;">                    
-                    <div class="col">
-                        <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar reserva</i></button></a>
-                    </div>
-                    <div class="col">
-                        <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
-                    </div>
-                </div>
-            </form>
+                <?php
+                if($array[3] !=2){
+                    echo '<form action="" name="cancelar_reserva" method="POST" enctype="multipart/form-data">';    
+                    echo     '<table>';
+                    echo         '<thead>';
+                    echo             '<h3 style="text-align: center;">Cancelar reservación</h3>';
+                    echo         '</thead>';
+                    echo         '<br>';                       
+                    echo         '<tbody>';
+                    echo             '<tr>';
+                    echo                '<div class="mb-3 row">
+                                            <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
+                                            <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="reserva" name="reserva" readonly value="';?><?php echo $obj->num_reserva ?><?php echo'">
+                                            </div>
+                                        </div>'; 
+                    echo             '</tr>';
+                    echo         '</tbody>';          
+                    echo    '</table>';
+                    echo    '<div class="row" style="text-align: center;">';                    
+                    echo        '<div class="col">
+                                    <a href="usuario/agendar_reserva.php"><button type="submit" class="btn btn-danger" name="modifica"><i class="fa fa-ban" aria-hidden="true"> Cancelar reserva</i></button></a>
+                                </div>';
+                    echo        '<div class="col">
+                                    <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
+                                </div>';
+                    echo    '</div>';
+                    echo '</form>';
+                }else{
+                    echo "<script> alert('La reservacion no se puede desactivar'); window.location.href='usuario/agendar_reserva.php';</script>";
+                }
+                ?>
         </section>
     </main>
     <!--=============================================

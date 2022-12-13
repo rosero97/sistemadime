@@ -36,11 +36,11 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente = p.id_persona INNER JOIN mesa m ON n.mesa_id=m.mesa_id where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente = p.id_persona INNER JOIN mesa m ON n.mesa_id=m.mesa_id INNER JOIN estado e ON n.id_estado=e.id_estado where n_reservacion like '%$obj->n_reservacion%' limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente = p.id_persona INNER JOIN mesa m ON n.mesa_id=m.mesa_id where rolid=2 limit $desde,$maximoRegistros ";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente = p.id_persona INNER JOIN mesa m ON n.mesa_id=m.mesa_id INNER JOIN estado e ON n.id_estado=e.id_estado where rolid=2 limit $desde,$maximoRegistros ";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }
@@ -145,7 +145,8 @@ if(isset($_POST['search'])){
 							<table class="table table-striped" style="text-align: center;">
 								<tbody >
 									<tr class="table-primary">
-										<td>Reservacion N°</td>
+										<td>Estado de la reservación</td>
+										<td>Reservación N°</td>
 										<td>Fecha y Hora</td>
 										<td>Numero de mesa</td>
 										<td>Numero de personas</td>
@@ -165,6 +166,7 @@ if(isset($_POST['search'])){
 												do{   
 										   ?> 
 									<tr>
+										<td><?php echo $arreglo2['nombre_estado'] ?></td>
 										<td><?php echo $arreglo2[0] ?></td>
 										<td><?php echo $arreglo2[1] ?></td>
 										<td><?php echo $arreglo2["num_mesa"] ?></td>

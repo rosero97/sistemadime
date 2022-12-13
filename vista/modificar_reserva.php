@@ -8,7 +8,7 @@ if(!isset($_SESSION['correo'])){
     }
 }
 include("../conexion/conectar.php");
-include("../controlador/reserva_con.php");
+include("../controlador/modifica_reserva_con.php");
 
 $key=$_GET['key'];
 //echo $key;
@@ -18,7 +18,9 @@ $sql="select * from numero_reservacion where n_reservacion='$key' ";
 $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
 $obj->num_reserva = $array[0];
+$obj->id_estado = $array[3];
 //echo $obj->num_reserva;
+//echo $obj->id_estado;
 
 ?>
 
@@ -28,7 +30,7 @@ $obj->num_reserva = $array[0];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Company</title>
+    <title>Modificar reservación</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -101,54 +103,61 @@ $obj->num_reserva = $array[0];
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; HACER RESERVACIÓN
+                <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; MODIFICAR RESERVACIÓN
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="reservacion" method="POST" enctype="multipart/form-data">    
-                <table>
-                    <thead>
-                        <h3 style="text-align: center;">Modificar reservación</h3>
-                    </thead>
-                    <br>
-                    <tbody>
-                        <tr>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" id="reserva" name="reserva" readonly value="<?php echo $obj->num_reserva?>">
-                                </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
-                                <div class="col-sm-10">
-                                <input type="number" class="form-control" id="personas" name="personas" min="1" max="13">
-                                </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
-                                <div class="col-sm-10">
-                                <input type="datetime-local"  min="<?php $fechaActual = date('d-m-Y H:i:s'); echo $fechaActual;?>" class="form-control" id="fecha" name="fecha">
-                                </div>
-                            </div>                        
-                            <div class="mb-3 row">
-                                <label for="" class="col-sm-2 col-form-label">Observaciones</label>
-                                <div class="col-sm-10">
-                                <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </tr>
-                    </tbody>          
-                </table>
-                <div class="row" style="text-align: center;">
-                    <div class="col">
-                        <a href="#"><button type="submit" class="btn btn-primary" name="guarda"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
-                    </div>
-                    <div class="col">
-                        <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
-                    </div>
-                </div>
-            </form>
+                <?php
+                if($array[3] !=2){
+                    echo '<form action="" name="reservacion" method="POST" enctype="multipart/form-data">';   
+                    echo '<table>';
+                    echo        '<thead>';
+                    echo           '<h3 style="text-align: center;">Modificar reservación</h3>';
+                    echo        '</thead>';
+                    echo        '<br>';
+                    echo        '<tbody>';
+                    echo            '<tr>';
+                    echo                '<div class="mb-3 row">
+                                        <label for="" class="col-sm-2 col-form-label">Numeno de reserva</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="reserva" name="reserva" readonly value="';?><?php echo $obj->num_reserva?><?php echo'">
+                                        </div>
+                                    </div>';
+                    echo                '<div class="mb-3 row">
+                                        <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
+                                        <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="personas" name="personas" min="1" max="13">
+                                        </div>
+                                    </div>';
+                    echo                '<div class="mb-3 row">
+                                        <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
+                                        <div class="col-sm-10">
+                                        <input type="datetime-local" class="form-control" id="fecha" name="fecha">
+                                        </div>
+                                    </div>' ;                      
+                    echo                '<div class="mb-3 row">
+                                        <label for="" class="col-sm-2 col-form-label">Observaciones</label>
+                                        <div class="col-sm-10">
+                                        <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
+                                        </div>
+                                    </div>';
+                    echo            '</tr>';
+                    echo        '</tbody>';          
+                    echo    '</table>';
+                    echo    '<div class="row" style="text-align: center;">';
+                    echo        '<div class="col">
+                                <a href="#"><button type="submit" class="btn btn-primary" name="modifica"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                            </div>';
+                    echo        '<div class="col">
+                                <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
+                            </div>';
+                    echo    '</div>';
+                    echo    '</form>';
+                
+                }else{
+                    echo "<script> alert('La reservacion no se puede modificar'); window.location.href='usuario/agendar_reserva.php';</script>";
+                }
+                ?>
         </section>
     </main>
     <!--=============================================

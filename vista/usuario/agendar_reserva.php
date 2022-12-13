@@ -33,11 +33,11 @@ $totalPaginas=ceil($totalRegistros/$maximoRegistros);
 
 if(isset($_POST['search'])){
     echo "llegue";
-    $query2="SELECT * FROM numero_reservacion where id_cliente=$persona limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN estado e ON n.id_estado=e.id_estado where id_cliente=$persona limit $desde,$maximoRegistros";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }else{
-    $query2="SELECT * FROM numero_reservacion where id_cliente=$persona limit $desde,$maximoRegistros ";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN estado e ON n.id_estado=e.id_estado where id_cliente=$persona limit $desde,$maximoRegistros ";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
 }
@@ -131,6 +131,7 @@ if(isset($_POST['search'])){
 									<tr class="table-primary">
                                         <td>N° Reservación</td>
 										<td>Fecha y hora de la reservación</td>
+										<td>Estado de la reservación</td>
 										<td>Vista completa</td>
 										<td>Modificar</td>
 										<td>Cancelar</td>
@@ -150,6 +151,7 @@ if(isset($_POST['search'])){
 									<tr>
                                         <td><?php echo $arreglo2[0] ?></td>
 										<td><?php echo $arreglo2[1] ?></td>
+										<td><?php echo $arreglo2['nombre_estado'] ?></td>
 										<td>
 											<a href="<?php if($arreglo2[0]<>""){
 											echo "vista_reserva.php?key=".urlencode($arreglo2[0]);
