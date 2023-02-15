@@ -20,7 +20,8 @@ if(isset($_POST['Registrarse'])){
     $contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
         
     if($contraseña==$contraseña2){
-        $consulta="INSERT INTO persona (id_persona, nombre_completo, correo, celular, contrasena, fcod_tipo_doc, rolid) VALUES ('$numerodoc', '$nombres', '$correo', '$numerocel', '$contraseña', '$tipodoc', '$roleid')";
+        $contra_fuerte = password_hash ($contraseña, PASSWORD_DEFAULT);
+        $consulta="INSERT INTO persona (id_persona, nombre_completo, correo, celular, contrasena, fcod_tipo_doc, rolid) VALUES ('$numerodoc', '$nombres', '$correo', '$numerocel', '$contra_fuerte', '$tipodoc', '$roleid')";
 
         $verificar_correo = mysqli_query($con, "SELECT * FROM persona WHERE correo='$correo'");
 

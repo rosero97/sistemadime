@@ -17,18 +17,18 @@ if(isset($_POST['iniciar'])){
     $correo = $_REQUEST['correo'];
     $contraseña = $_REQUEST['contraseña'];
 
-    $correo=mysqli_real_escape_string($con, $_POST['correo']);
-    $contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
+    //$correo=mysqli_real_escape_string($con, $_POST['correo']);
+    //$contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
     
-    $consulta = "SELECT * FROM persona  WHERE correo='$correo' AND contrasena='$contraseña'";
+    $consulta = "SELECT * FROM persona  WHERE correo ='$correo'";
 
-    $resultado=mysqli_query($con, $consulta ) or die(mysqli_error());
+    $resultado=mysqli_query($con, $consulta );
 
     $fila = mysqli_fetch_assoc($resultado);
 
     $filas = mysqli_num_rows($resultado);
 
-    if($fila['rolid']==1){
+    if(($fila['rolid']==1) && (password_verify($contraseña, $fila['contrasena']))){
         //echo "Usted ha iniciado sesion correctamente";
         $_SESSION['id']=$fila['id'];
         $_SESSION['id_persona']=$fila['id_persona'];
@@ -41,7 +41,7 @@ if(isset($_POST['iniciar'])){
         header("Location: ../vista/administrador.php");
 
     }else{
-        if($fila['rolid']==2){
+        if(($fila['rolid']==2) && (password_verify($contraseña, $fila['contrasena']))){
     
             $_SESSION['id']=$fila['id'];
             $_SESSION['id_persona']=$fila['id_persona'];
