@@ -60,25 +60,31 @@ class usuario{
                     function modificar2(){
                                         $obj = new conexion();
                                         $c=$obj->conectando();
-                                        $query = "select * from persona where id_persona = '$this->id_persona' and contrasena = '$this->contrasena'";
+                                        $query = "select * from persona where id_persona = '$this->id_persona'";
                                         $ejecuta = mysqli_query($c, $query);
+                                        $fila = mysqli_fetch_assoc($ejecuta);
                                         if(mysqli_fetch_array($ejecuta)){
-                                            if($this->contrasena1==$this->contrasena2){
-                                                $update = "update persona set
-                                                                                    id_persona='$this->id_persona',
-                                                                                    contrasena='$this->contrasena1'
-                                                                                    where id_persona='$this->id_persona'
-                                                                                    
-                                                ";
-                                                echo $update;
-                                                mysqli_query($c,$update);
-                                                echo "<script> alert('La contraseña fue modificada en el sistema'); window.location.href='../vista/usuario/usuario.php';</script>";
-                                            }else{
-                                                echo "<script> alert('Las contraseñas no son iguales'); window.location.href='../vista/usuario_con.php';</script>";
-                                            }
+                                            echo "<script> alert('El id no coincide con la  base de datos')</script>";
                                         }else{
-                                            echo "<script> alert('La contraseña actual no coincide con la base de datos')</script>";
-                                        }
+                                            if(password_verify($this->contrasena, $fila['contrasena'])){
+                                                if($this->contrasena1==$this->contrasena2){
+                                                    $contra_fuerte = password_hash ($this->contrasena1, PASSWORD_DEFAULT);
+                                                    $update = "update persona set
+                                                                                        id_persona='$this->id_persona',
+                                                                                        contrasena='$contra_fuerte'
+                                                                                        where id_persona='$this->id_persona'
+                                                                                        
+                                                    ";
+                                                    echo $update;
+                                                    mysqli_query($c,$update);
+                                                    echo "<script> alert('La contraseña fue modificada en el sistema'); window.location.href='../vista/usuario/usuario.php';</script>";
+                                                }else{
+                                                    echo "<script> alert('Las contraseñas no son iguales'); window.location.href='../vista/usuario_con.php';</script>";
+                                                }
+                                            }else{
+                                                echo "<script> alert('La contraseña actual no coincide con la base de datos')</script>";
+                                            }
+                                        }                                         
 
                     }
 
