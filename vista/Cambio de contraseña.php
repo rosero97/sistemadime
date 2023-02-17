@@ -56,13 +56,13 @@ include("../controlador/cambio_contra_con.php");
                     <h2>Ingrese su nueva contraseña</h2>
                     <form action="" method="Post">
                         <div class="inputBox">
-                            <input type="email" placeholder="Ingrese su correo" name="correoRe"/>
+                            <input type="email" placeholder="Ingrese su correo" name="correoRe" required/>
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Ingrese su nueva contraseña" name="contrasena"/>
+                            <input type="password" placeholder="Ingrese su nueva contraseña" name="contrasena" required/>
                         </div>
                         <div class="inputBox">
-                            <input type="password" placeholder="Repita la Contraseña" name="contrasena1" />
+                            <input type="password" placeholder="Repita la Contraseña" name="contrasena1" required/>
                         </div>
                         <div class="inputBox">
                             <input type="submit" value="Finalizar" name="modificaCo"/>
