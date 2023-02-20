@@ -26,7 +26,7 @@
                         <a href="../index.html">Inicio</a>
                         <a href="login/1.Tipo_Registro.html">Registrarse</a>
                         <a href="Iniciar Sesion-2.php">Iniciar Sesion</a>
-                        <a href="../inicio/Ayuda.html">Ayuda</a>
+                        <a href="inicio/Ayuda.html">Ayuda</a>
                     </nav>
                 </section>
 
