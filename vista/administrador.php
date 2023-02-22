@@ -68,9 +68,6 @@ if(!isset($_SESSION['correo'])){
 							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
 						</li>
 						<li>
-							<a href="agregar_admin.php"><i class="bi bi-person-fill-add" aria-hidden="true"></i> &nbsp; Administrador</a>
-						</li>
-						<li>
 							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
 						</li>
 					</ul>
