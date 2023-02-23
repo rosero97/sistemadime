@@ -1,5 +1,12 @@
 <?php
 
+$charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#%$-";
+$codigo = "";
+
+for($i=0;$i<17;$i++){
+    $codigo .= substr($charset, rand(0, 66),1);
+}
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -27,7 +34,7 @@ try {
     $mail->Port       = 465;
 
     $body = <<<HTML
-        <p> De: $email </p>
+        <p> De: $email $codigo</p>
 
         HTML;
 
@@ -38,10 +45,10 @@ try {
     //Content
     $mail->isHTML(true);
     $mail->Subject ='Peticion registro administrador';
-//    $mail->Body ='Para continuar con el proceso para recuperar tu contraseña da click en el siguiente boton <a href="http://localhost/sistemadime-master/vista/Cambio%20de%20contrase%C3%B1a.php"><input type="button" value="Click aqui"></a>';
+//    $mail->Body ='Esta es otra manera para enviar el body <input type="button" value="Click aqui">';
     $mail->msgHTML($body);
     $mail->send();
-    echo "<script> alert('El correo se envio satisfactoriamente, Por favor verifique su correo.'); window.location.href='Final.html';</script>";
+    echo "<script> alert('El correo se envio satisfactoriamente, Por favor verifique su correo.'); window.location.href='cod_registro.php';</script>";
     } catch (Exception $e) {
     echo "<script> alert('Error al enviar correo. Mailer Error: {$mail->ErrorInfo}');</script>";
 }
