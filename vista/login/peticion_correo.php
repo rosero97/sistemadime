@@ -29,7 +29,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'digitalsmenu@gmail.com';
-    $mail->Password   = 'yntepcjmdzfuwesp';
+    $mail->Password   = '';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
