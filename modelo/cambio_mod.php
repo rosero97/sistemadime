@@ -13,17 +13,16 @@ class cambio{
 
                                         $obj = new conexion();
                                         $c=$obj->conectando();
-                                        $query = "select * from persona where correo = '$this->correoRe'";
+                                        $query = "SELECT * FROM persona WHERE correo = '$this->correoRe'";
                                         $ejecuta = mysqli_query($c, $query);
-                                        $fila = mysqli_fetch_assoc($ejecuta);
-                                        if(mysqli_fetch_array($ejecuta)){                                            
+                                        if(mysqli_fetch_array($ejecuta)){
                                             if($this->contrasena==$this->contrasena1){
                                                 $contra_fuerte = password_hash ($this->contrasena, PASSWORD_DEFAULT);
                                                 $update = "update persona set
-                                                                                            correo='$this->correoRe',
-                                                                                            contrasena='$contra_fuerte'
-                                                                                            where correo='$this->correoRe'
-                                                    
+                                                                                        correo='$this->correoRe',
+                                                                                        contrasena='$contra_fuerte'
+                                                                                        where correo='$this->correoRe'
+
                                                 ";
                                                 echo $update;
                                                 mysqli_query($c,$update);
@@ -34,7 +33,12 @@ class cambio{
                                         }else{
                                             echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
                                         }
-                                        
+                                        else{
+                                            echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
+                                        }
+
+
                     }
 }
+
 ?>

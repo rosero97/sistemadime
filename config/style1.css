@@ -104,7 +104,7 @@ body {
 .cont-menu {
     width: 100%;
     max-width: 215px;
-    background: #00a2ff;
+    background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
     height: 100vh;
     position: absolute;
     transition: all 500ms ease;

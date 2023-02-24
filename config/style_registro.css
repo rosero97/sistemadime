@@ -14,7 +14,8 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #0076fd, #011231);
+    background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+
 }
 
 section .color {
@@ -36,11 +37,11 @@ section .color:nth-child(2) {
 .box .square {
     position: absolute;
     backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(0, 119, 255, 0.1);
-    border: 1px solid rgba(1, 137, 248, 0.5);
+    box-shadow: 0 25px 45px rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(1, 248, 153, 0.61);
     border-right: 1px solid rgba(0, 2, 94, 0.2);
     border-bottom: 1px solid rgba(0, 153, 255, 0.2);
-    background: rgba(0, 204, 255, 0.1);
+    background: #00fa92a8(0, 255, 200, 0.486);
     border-radius: 10px;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
@@ -124,7 +125,6 @@ section .color:nth-child(2) {
     letter-spacing: 1px;
     margin-bottom: 40px;
 }
-
 .tregistro h3::before {
     content: '';
     position: absolute;
@@ -132,7 +132,22 @@ section .color:nth-child(2) {
     bottom: -10px;
     width: 80px;
     height: 4px;
-    background: rgb(0, 194, 253);
+    background: rgba(0, 253, 126, 0.411);
+}
+.tregistro {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.tregistro h4 {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
 }
 
 .tregistro .inputBox {
@@ -240,3 +255,28 @@ p{
     cursor: pointer;
     font-size: 18px;
 }
+.sci
+  {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translatey(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .sci li
+  {
+    list-style: none;
+    
+  }
+
+  .sci li a
+  {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    filter:invert(1);
+  }

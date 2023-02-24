@@ -48,13 +48,12 @@
                     <h3>Registrate en Digital's Menú</h3>
                     <h4>Administrador</h4>
                     <br>
-                    <p>Para registrarse como administrador se pedira un codigo de verificación</p>
-                    <form action="../3.RegistrarseA.php" method="post">
+                    <form action="peticion_correo.php" method="post">
                         <div class="inputBox">
-                            <input type="password" name="verificacion" id="verificacion" placeholder=" Ingrese su codigo de verificación" required>
+                            <input type="email" name="enviar_email" id="enviar_email" placeholder=" Ingrese su correo electronico" required>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" value="Registrarse" id="Registro">
+                            <input type="submit" value="Enviar petición" id="Enviar_petición">
                         </div>
                     </form>
                 </div>

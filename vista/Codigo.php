@@ -34,7 +34,7 @@ if(mysqli_fetch_array($ejecuta)){
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'digitalsmenu@gmail.com';
-            $mail->Password   = 'yntepcjmdzfuwesp';
+            $mail->Password   = '';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;
 
@@ -51,7 +51,7 @@ if(mysqli_fetch_array($ejecuta)){
             //Content
             $mail->isHTML(true);
             $mail->Subject ='Recuperar Password';
-            $mail->Body ='Para continuar con el proceso para recuperar tu contraseña da click en el siguiente boton <a href="http://localhost/sistemadime-master/vista/Cambio%20de%20contrase%C3%B1a.php"><input type="button" value="Click aqui"></a>';
+            $mail->Body ='Hola! <br><br> Recibimos tu solicitud para recuperar tu contraseña, para continuar con este proceso da click en el siguiente boton: <br><br><a href="http://localhost/sistemadime-master/vista/Cambio%20de%20contrase%C3%B1a.php"><input type="button" style=" color: blue; background: white; border-radius: 5px; border: solid blue 1px; " value="Click aqui"></a> <br><br> Atentamente los desarrolladores de Digital menú';
 //            $mail->msgHTML($body);
             $mail->send();
             echo "<script> alert('El correo se envio satisfactoriamente, Por favor verifique su correo.'); window.location.href='../vista/recuperar.php';</script>";
@@ -64,71 +64,3 @@ if(mysqli_fetch_array($ejecuta)){
     echo "<script> alert('El correo no se encontro en nuestro sistema'); window.location.href='../vista/recuperar.php';</script>";
 
 }
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <div class="form">
-        <h2>Digital's Menu</h2>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Menu de Navegación</title>
-        <link rel="stylesheet" href="../config/style1.css">
-
-<body>
-    </div>
-    <header class="header">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰</label>
-    </header>
-    <div class="capa">
-        <input type="checkbox" id="btn-menu">
-        <div class="container-menu">
-            <div class="cont-menu">
-                <section>
-                    <nav>
-                        <a href="../index.html">Inicio</a>
-                        <a href="login/1.Tipo_Registro.html">Registrarse</a>
-                        <a href="Iniciar Sesion-2.php">Iniciar Sesion</a>
-                        <a href="../inicio/Ayuda.html">Ayuda</a>
-                    </nav>
-                </section>
-
-</body>
-</div>
-</div>
-</header>
-</head>
-
-<body>
-    <section>
-        <link rel="stylesheet" href="../config/recuperar.css">
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="box">
-            <div class="square" style="--i:0;"></div>
-            <div class="square" style="--i:1;"></div>
-            <div class="square" style="--i:2;"></div>
-            <div class="square" style="--i:3;"></div>
-            <div class="square" style="--i:4;"></div>
-            <div class="contenedor">
-                <div class="form">
-                    <h2>Porfavor ingrese el codigo enviado a su Correo</h2>
-                    <form action="Cambio de contraseña" method="Post">
-                        <div class="inputBox">
-                            <input type="email" value= ""/>
-                        </div>
-                        <div class="inputBox">
-                            <input type="submit" value="Enviar"/>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
