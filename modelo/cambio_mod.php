@@ -17,8 +17,6 @@ class cambio{
                                         $ejecuta = mysqli_query($c, $query);
                                         $fila = mysqli_fetch_assoc($ejecuta);
                                         if(mysqli_fetch_array($ejecuta)){                                            
-                                            echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
-                                        }else{
                                             if($this->contrasena==$this->contrasena1){
                                                 $contra_fuerte = password_hash ($this->contrasena, PASSWORD_DEFAULT);
                                                 $update = "update persona set
@@ -33,6 +31,8 @@ class cambio{
                                             }else{
                                                 echo "<script> alert('Las contraseñas no son iguales'); window.location.href='../vista/Cambio de contraseña.php';</script>";
                                             }
+                                        }else{
+                                            echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
                                         }
                                         
                     }
