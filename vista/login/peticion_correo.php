@@ -34,7 +34,11 @@ try {
     $mail->Port       = 465;
 
     $body = <<<HTML
-        <p> De: $email $codigo</p>
+        <p> Hola!
+        <br>Estamos recibiendo una peticion para registrarse como administrador del siguiente correo: $email
+        <br>Verifica que el correo sea el adecuado, si lo es, enviale el codigo de registro, si no lo es, ignora este correo.
+        <br>
+        <br>Este es el codigo de registro: <strong> $codigo </strong></p>
 
         HTML;
 
@@ -48,7 +52,7 @@ try {
 //    $mail->Body ='Esta es otra manera para enviar el body <input type="button" value="Click aqui">';
     $mail->msgHTML($body);
     $mail->send();
-    echo "<script> alert('El correo se envio satisfactoriamente, Por favor verifique su correo.'); window.location.href='cod_registro.php';</script>";
+    echo "<script> alert('La petición de registro fue enviada correctamente'); window.location.href='cod_registro.php';</script>";
     } catch (Exception $e) {
     echo "<script> alert('Error al enviar correo. Mailer Error: {$mail->ErrorInfo}');</script>";
 }
