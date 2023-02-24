@@ -96,15 +96,10 @@ include("../controlador/res_con.php");
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="company_modificar" method="POST" enctype="multipart/form-data">    
+            <form action="" name="company_agregar" method="POST" enctype="multipart/form-data">    
                 <table>
-                    <div>
-                        <a href="company_agregar.php">
-                            <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button> 
-                        </a>
-                    </div>
                     <thead>
-                        <h3 style="text-align: center;">Datos del restaurante</h3>
+                        <h3 style="text-align: center;">Agregar datos del restaurante</h3>
                     </thead>
                     <br>
                     <tbody>
@@ -150,10 +145,14 @@ include("../controlador/res_con.php");
                 </table>
                 <div class="row" style="text-align: center;">
                 <div class="col">
-                        <a href="#"><button type="submit" class="btn btn-primary" name="modifica"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                        
+                            <button type="submit" name="agregar" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                        
                     </div>
                     <div class="col">
-                        <a href="company.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
+                        <a href="company_modificar.php">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                        </a>
                     </div>
                 </div>
             </form>

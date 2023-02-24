@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+/*body{
+    background: url(https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}*/
+.capa{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+    top: 0;left: 0;
+}
+/*Estilos para el encabezado*/
+.header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;left: 0;
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+.container .btn-menu, .logo{
+    float: left;
+    line-height:100px;
+}
+.container .btn-menu label{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+.logo h1{
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    margin-left: 10px;
+}
+.container .menu{
+    float: right;
+    line-height: 100px;
+}
+.container .menu a{
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.container .menu a:hover{
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+/*Fin de Estilos para el encabezado*/
+
+/*Menù lateral*/
+#btn-menu{
+    display: none;
+    color: #fff;
+}
+.container-menu{
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.cont-menu{
+    width: 100%;
+    max-width: 250px;
+    /*background: #1c1c1c;*//*Este es el color del menu*/
+    background: linear-gradient(#00fdfd00, #03b7bda8);
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+}
+.cont-menu nav{
+    transform: translateY(15%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #fff;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+.cont-menu nav a:hover{
+    border-left: 5px solid #fff;
+    /*background: #1f1f1f;*/
+    background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+}
+.cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+/*Fin de Menù lateral*/
+
+
+
+/* Probando 2 */
+
+* {
+margin: 0;
+padding: 0;
+font-family: 'Poppings', sans-serif;
+}
+
+body {
+overflow: hidden;
+}
+
+section {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+}
+
+section .color {
+position: absolute;
+filter: blur(150px);
+}
+
+section .color:nth-child(2) {
+top: 150px;
+left: -125px;
+width: 120px;
+height: 120px;
+z-index: 2;
+}
+.box {
+position: relative;
+}
+
+.box .square {
+position: absolute;
+backdrop-filter: blur(5px);
+box-shadow: 0 25px 45px rgba(0, 119, 255, 0.1);
+border: 1px solid rgba(1, 137, 248, 0.5);
+border-right: 1px solid rgba(0, 2, 94, 0.2);
+border-bottom: 1px solid rgba(0, 153, 255, 0.2);
+background: rgba(0, 204, 255, 0.1);
+border-radius: 10px;
+animation: animate 10s linear infinite;
+animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+0%,
+100% {
+    transform: translateY(-40px);
+}
+50% {
+    transform: translateY(40px);
+}
+}
+
+.box .square:nth-child(1) {
+top: -50px;
+right: -95px;
+width: 100px;
+height: 100px;
+}
+
+.box .square:nth-child(2) {
+top: -150px;
+left: -115px;
+width: 120px;
+height: 120px;
+z-index: 2;
+}
+
+.box .square:nth-child(3) {
+bottom: 50px;
+right: -78px;
+width: 80px;
+height: 80px;
+z-index: 2;
+}
+
+.box .square:nth-child(4) {
+bottom: -80px;
+left: 100px;
+width: 50px;
+height: 50px;
+}
+
+.box .square:nth-child(5) {
+top: -80px;
+left: 100px;
+width: 60px;
+height: 60px;
+}
+
+.contenedor {
+position: relative;
+width: 460px;
+min-height: 400px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(5px);
+box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.5);
+border-right: 1px solid rgba(255, 255, 255, 0.2);
+border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tregistro {
+position: relative;
+width: 100%;
+height: 100%;
+padding: 40px;
+}
+
+.tregistro h3 {
+position: relative;
+color: rgb(255, 255, 255);
+font-size: 24px;
+font-weight: 600;
+letter-spacing: 1px;
+margin-bottom: 40px;
+}
+
+.tregistro h3::before {
+content: '';
+position: absolute;
+left: 0;
+bottom: -10px;
+width: 80px;
+height: 4px;
+background: rgb(0, 194, 253);
+}
+
+.tregistro .inputBox {
+width: 100%;
+text-align: center;
+margin-top: 20px;
+}
+
+.tregistro .inputBox input {
+width: 86%;
+background: rgba(255, 255, 255, 0.2);
+border: none;
+outline: none;
+padding: 10px 20px;
+border-radius: 35px;
+border: 1px solid rgba(255, 255, 255, 0.5);
+border-right: 1px solid rgba(255, 255, 255, 0.2);
+border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+font-size: 16px;
+letter-spacing: 1px;
+color: rgb(0, 0, 0);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tregistro .inputBox input::placeholder {
+color: rgb(0, 0, 0);
+}
+
+.tregistro .inputBox input[type="button"] {
+background: #fff;
+color: #666;
+max-width: 200px;
+cursor: pointer;
+margin-bottom: 10px;
+font-weight: 600px;
+}
+
+.tregistro .inputBox input[type="button"]:hover {
+background: #06f8f8;
+color: #fff;
+}
+
+p{
+color: white;
+text-align: center;
+}
+
+footer {
+text-align: center;
+padding: 3px;
+background-color: DarkSalmon;
+color: white;
+position: absolute;
+bottom: 0;
+width: 100%;
+}

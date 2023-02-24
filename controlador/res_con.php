@@ -14,4 +14,7 @@ if($_POST){
 if(isset($_POST['modifica'])){
     $obj->modificar();
 }
+if(isset($_POST['agregar'])){
+    $obj->agrega();
+}
 ?>
