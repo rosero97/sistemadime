@@ -1,5 +1,11 @@
 <?php
 include("../modelo/registro_admin.php");
+
+session_start();
+if(!isset($_SESSION['codigo'])){
+    header("Location: login/2.RAdmin.html");
+}
+
 ?>
 
 <!DOCTYPE html>
