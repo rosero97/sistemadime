@@ -41,7 +41,7 @@ class codigo {
             $cod_name .= substr($cod_charset, rand(0, 10),1);
         }    
 
-        //Primero acticar los eventos en phpmyadmin
+        //Primero activar los eventos en phpmyadmin
         //SET GLOBAL event_scheduler= "ON"
         
         $evento = "CREATE EVENT `$cod_name`
