@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../config/styles_Rec.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Registro cliente</title>
 </head>
 <body>
@@ -49,6 +50,9 @@
                         </div>
                         <div class="inputBox">
                             <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña"required>      
+                        </div>
+                        <div class="captcha">
+                            <br><div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
                         </div>
                         <div class="inputBox">
                             <input type="submit" value="Registrarse" name="Registrarse" id="Fregi">
