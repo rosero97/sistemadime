@@ -14,6 +14,18 @@ if(isset($_POST['Registrarse'])){
     $contraseña = $_POST['contraseña'];
     $contraseña2 = $_POST['contraseña2'];
     $roleid = 2;
+    
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $captcha = $_POST['g-recaptcha-response'];
+    $secretkey = "";
+
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
+
+    $atributos = json_decode($verify, TRUE);
+
+    if(!$atributos['success']){
+        echo "<script 'text/javascript'>alert('El captcha es obligatorio'); window.location.href='../vista/4.RegistrarseC.php';</script>";
+    }
 
     $tipodoc=mysqli_real_escape_string($con, $_POST['tipodoc']);
     $correo=mysqli_real_escape_string($con, $_POST['correo']);
@@ -26,7 +38,7 @@ if(isset($_POST['Registrarse'])){
         $verificar_correo = mysqli_query($con, "SELECT * FROM persona WHERE correo='$correo'");
 
         if(mysqli_num_rows ($verificar_correo) >0 ){
-            echo "<script 'text/javascript'>alert('El correo esta registrado, porfavor intente con otro.'); window.location.href='../vista/3.RegistrarseA.php';</script>";
+            echo "<script 'text/javascript'>alert('El correo esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseC.php';</script>";
             exit();
         }
         
