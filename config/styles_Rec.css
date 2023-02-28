@@ -217,3 +217,9 @@ select{
     width: 406px;
     height: 15px;
 }
+
+.g-recaptcha{
+    position: relative;
+    left: 0%;
+    right: 0%;
+}
