@@ -14,7 +14,19 @@ if(isset($_POST['Registrarse'])){
     $contraseña = $_POST['contraseña'];
     $contraseña2 = $_POST['contraseña2'];
     $roleid = 1;
+    
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $captcha = $_POST['g-recaptcha-response'];
+    $secretkey = "";
 
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
+
+    $atributos = json_decode($verify, TRUE);
+
+    if(!$atributos['success']){
+        echo "<script 'text/javascript'>alert('El captcha es obligatorio'); window.location.href='../vista/3.RegistrarseA.php';</script>";
+    }
+    
     $tipodoc=mysqli_real_escape_string($con, $_POST['tipodoc']);
     $correo=mysqli_real_escape_string($con, $_POST['correo']);
     $contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
