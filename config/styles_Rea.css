@@ -225,6 +225,7 @@ label{
 
 .g-recaptcha{
     position: relative;
-    left: 0%;
-    right: 0%;
+    left: 21%;
+    transform: scale(0.84);
+    transform-origin: 0 0;
 }
