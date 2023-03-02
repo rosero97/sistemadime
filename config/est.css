@@ -21,7 +21,7 @@
 .header{
     width: 100%;
     height: 100px;
-    position: fixed;
+    position:fixed;
     top: 0;left: 0;
 }
 .container{
@@ -44,6 +44,7 @@
     font-size: 22px;
     margin-left: 10px;
 }
+
 .container .menu{
     float: right;
     line-height: 100px;
@@ -103,10 +104,11 @@
 .cont-menu nav a{
     display: block;
     text-decoration: none;
-    padding: 20px;
+    padding: 35px;
     color: #fff;
     border-left: 5px solid transparent;
     transition: all 400ms ease;
+    font-size: 18px;
 }
 .cont-menu nav a:hover{
     border-left: 5px solid #fff;
@@ -126,12 +128,6 @@
 
 
 /* Probando 2 */
-
-* {
-margin: 0;
-padding: 0;
-font-family: 'Poppings', sans-serif;
-}
 
 body {
 overflow: hidden;
@@ -162,18 +158,17 @@ position: relative;
 }
 
 .box .square {
-position: absolute;
-backdrop-filter: blur(5px);
-box-shadow: 0 25px 45px rgba(0, 119, 255, 0.1);
-border: 1px solid rgba(1, 137, 248, 0.5);
-border-right: 1px solid rgba(0, 2, 94, 0.2);
-border-bottom: 1px solid rgba(0, 153, 255, 0.2);
-background: rgba(0, 204, 255, 0.1);
-border-radius: 10px;
-animation: animate 10s linear infinite;
-animation-delay: calc(-1s * var(--i));
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(1, 248, 153, 0.61);
+    border-right: 1px solid rgba(0, 2, 94, 0.2);
+    border-bottom: 1px solid rgba(0, 153, 255, 0.2);
+    background: #00fa92a8(0, 255, 200, 0.486);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
 }
-
 @keyframes animate {
 0%,
 100% {
@@ -260,7 +255,7 @@ left: 0;
 bottom: -10px;
 width: 80px;
 height: 4px;
-background: rgb(0, 194, 253);
+background: rgba(0, 253, 126, 0.411);
 }
 
 .tregistro .inputBox {
@@ -281,7 +276,7 @@ border-right: 1px solid rgba(255, 255, 255, 0.2);
 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 font-size: 16px;
 letter-spacing: 1px;
-color: rgb(0, 0, 0);
+color: white;
 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -308,12 +303,33 @@ color: white;
 text-align: center;
 }
 
-footer {
-text-align: center;
-padding: 3px;
-background-color: DarkSalmon;
-color: white;
-position: absolute;
-bottom: 0;
-width: 100%;
+.tregistro p .forget a{
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
 }
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+    color: white;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    visibility: visible;
+    
+}
+
+footer img{
+    filter: invert(1);
+    margin: 10px;
+}
+

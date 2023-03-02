@@ -100,42 +100,121 @@ $arreglo = mysqli_fetch_array($resultado);
             <div class="container shadow p-3 mb-5 bg-body rounded">
                 <table>
                     <tbody>
-                        <div>
+                    <div>
                             <tr>
                                 <td>Nombre del restaurante</td>
                             </tr>
                             <tr>
-                                <td><h1><?php echo $arreglo[1]?></h1></td>
-                            </tr>                
+                                <?php
+                                    if($arreglo==0){
+                                    //echo "No existen Registros";
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo "No hay registros" ?>
+                                    </div>
+                                <?php 
+                                    }else{
+                                ?>
+                                    <td><h1><?php echo $arreglo[1]?></h1></td>
+                                <?php
+                                    }
+                                ?> 
+                            </tr>
                             <tr>
                                 <td>Nombre del restaurante</td>
                             </tr>
                             <tr>
-                                <td><?php echo $arreglo[1]?></td>
+                                <?php
+                                    if($arreglo==0){
+                                    //echo "No existen Registros";
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo "No hay registros" ?>
+                                    </div>
+                                <?php 
+                                    }else{
+                                ?>
+                                    <td><?php echo $arreglo[1]?></td>
+                                <?php
+                                    }
+                                ?> 
                             </tr>
+                            </div>
                             <tr>
                                 <td>Dirección</td>
                             </tr>
                             <tr>
-                                <td><?php echo $arreglo[2]?></td>
+                                <?php
+                                    if($arreglo==0){
+                                    //echo "No existen Registros";
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo "No hay registros" ?>
+                                    </div>
+                                <?php 
+                                    }else{
+                                ?>
+                                    <td><?php echo $arreglo[2]?></td>
+                                <?php
+                                    }
+                                ?> 
                             </tr>
                             <tr>
                                 <td>Telefono</td>
                             </tr>
                             <tr>
-                                <td><?php echo $arreglo[3]?></td>
+                                <?php
+                                    if($arreglo==0){
+                                    //echo "No existen Registros";
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo "No hay registros" ?>
+                                    </div>
+                                <?php 
+                                    }else{
+                                ?>
+                                    <td><?php echo $arreglo[3]?></td>
+                                <?php
+                                    }
+                                ?> 
                             </tr>
                             <tr>
                                 <td>Correo</td>
                             </tr>
                             <tr>
-                                <td><?php echo $arreglo[4]?></td>
+                                <?php
+                                    if($arreglo==0){
+                                    //echo "No existen Registros";
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo "No hay registros" ?>
+                                    </div>
+                                <?php 
+                                    }else{
+                                ?>
+                                    <td><?php echo $arreglo[4]?></td>
+                                <?php
+                                    }
+                                ?> 
                             </tr>
                             <tr>
                                 <td>Horario</td>
                             </tr>
                             <tr>
-                                <td><?php echo $arreglo[5]?></td>
+                                <?php
+                                    if($arreglo==0){
+                                    //echo "No existen Registros";
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?php echo "No hay registros" ?>
+                                    </div>
+                                <?php 
+                                    }else{
+                                ?>
+                                    <td><?php echo $arreglo[5]?></td>
+                                <?php
+                                    }
+                                ?> 
                             </tr>
                             <tr>
                                 <td>Digital´s  Menu</td>
