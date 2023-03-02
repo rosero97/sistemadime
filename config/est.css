@@ -30,8 +30,11 @@
     margin: auto;
 }
 .container .btn-menu, .logo{
-    float: left;
+    position: fixed;
+    left: 5px;
     line-height:100px;
+
+
 }
 .container .btn-menu label{
     color: #fff;
@@ -39,10 +42,11 @@
     cursor: pointer;
 }
 .logo h1{
+    position: fixed;
+    left: 30px;   
     color: #fff;
     font-weight: 400;
     font-size: 22px;
-    margin-left: 10px;
 }
 
 .container .menu{
@@ -138,7 +142,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
-background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+background: linear-gradient(to bottom, #00fdfd21, #03b7bda8);
 }
 
 section .color {
@@ -164,11 +168,12 @@ position: relative;
     border: 1px solid rgba(1, 248, 153, 0.61);
     border-right: 1px solid rgba(0, 2, 94, 0.2);
     border-bottom: 1px solid rgba(0, 153, 255, 0.2);
-    background: #00fa92a8(0, 255, 200, 0.486);
+    background: #00fa92a8 (0, 255, 200, 0.486);
     border-radius: 10px;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
 }
+
 @keyframes animate {
 0%,
 100% {
@@ -258,6 +263,16 @@ height: 4px;
 background: rgba(0, 253, 126, 0.411);
 }
 
+.tregistro h4 {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    }
+    
+
 .tregistro .inputBox {
 width: 100%;
 text-align: center;
@@ -265,23 +280,25 @@ margin-top: 20px;
 }
 
 .tregistro .inputBox input {
-width: 86%;
-background: rgba(255, 255, 255, 0.2);
-border: none;
-outline: none;
-padding: 10px 20px;
-border-radius: 35px;
-border: 1px solid rgba(255, 255, 255, 0.5);
-border-right: 1px solid rgba(255, 255, 255, 0.2);
-border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-font-size: 16px;
-letter-spacing: 1px;
-color: white;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    color: white;
+    width: 86%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+                               
+
 .tregistro .inputBox input::placeholder {
-color: rgb(0, 0, 0);
+color: white;
 }
 
 .tregistro .inputBox input[type="button"] {
@@ -298,14 +315,28 @@ background: #06f8f8;
 color: #fff;
 }
 
+.tregistro .inputBox input[type="submit"] {
+    background: #fff;
+    color: #666;
+    max-width: 200px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 600px;
+}
+    
+.tregistro .inputBox input[type="submit"]:hover {
+    background: #06f8f8;
+    color: #fff;
+}
+
 p{
 color: white;
 text-align: center;
 }
 
-.tregistro p .forget a{
+.tregistro p{
     display: inline-block;
-    padding: 15px;
+    padding: 5px;
     line-height: normal;
     text-decoration: none;
     color: #fff;
@@ -313,6 +344,14 @@ text-align: center;
     border-bottom: 2px solid transparent;
     font-size: 15px;
     margin-right: 5px;
+}
+
+.tregistro a{
+    padding: 5px;
+    color: rgb(25, 72, 94);
+    font-size: 17px;
+    margin-right: 5px;
+    cursor: pointer;
 }
 
 footer {
