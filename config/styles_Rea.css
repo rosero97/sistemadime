@@ -222,3 +222,10 @@ label{
     color: white;
     font-size: 14px;
 }
+
+.g-recaptcha{
+    position: relative;
+    left: 21%;
+    transform: scale(0.84);
+    transform-origin: 0 0;
+}
