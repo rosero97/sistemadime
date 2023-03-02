@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Menù Lateral con Css</title>
 	<link rel="stylesheet" href="../../config/est.css">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 	<header class="header">
@@ -38,6 +39,10 @@
                                     <div class="inputBox">
                                         <input type="email" name="enviar_email" id="enviar_email" placeholder=" Ingrese su correo electronico" required>
                                     </div>
+				    <div class="captcha">
+					<br>
+					<div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
+				    </div>
                                     <div class="inputBox">
                                         <input type="submit" value="Enviar petición" id="enviar_peticion" name="enviar_peticion" >
                                     </div>
