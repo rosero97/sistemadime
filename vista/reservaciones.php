@@ -140,7 +140,15 @@ if(isset($_POST['search'])){
 								</form>
 							</div>
 						</nav>
-						<br>
+						<div class="reportes">
+							<abbr title="Descargar reporte en Excel">
+								<a href="../reportes/reservas_reporte.php">
+									<button class="btn-excel" vtype="submit">	
+										<i class="excel bi bi-file-earmark-excel-fill"></i>
+									</button>
+								</a>
+							</abbr>
+						</div>
 						<div class="table-responsive">
 							<table class="table table-striped" style="text-align: center;">
 								<tbody >
