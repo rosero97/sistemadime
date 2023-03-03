@@ -592,3 +592,16 @@ table form {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.btn-excel{
+    border: 0px;
+    background-color: rgb(6, 131, 6);
+}
+
+.btn-excel:hover{
+    background-color: rgb(31, 207, 31);
+}
+
+.excel{
+    color: white;
+}
