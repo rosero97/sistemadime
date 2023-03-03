@@ -33,12 +33,14 @@
                                     
                                     </div>
                                     <div class="inputBox">
-                                        <label fot="tipodoc">Tipo de Documento:</label>
+                                        <label fot="tipodoc" style="color:white">Tipo de Documento:</label>
                                         <select name="tipodoc">
                                             <option value="1">CC</option>
                                             <option value="2">CE</option>
                                             <option value="3">TI</option>
                                         </select>
+                                    </div>    
+                                    <div class="inputBox">
                                         <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" required>
                                     </div>
                                     <div class="inputBox">
@@ -53,9 +55,9 @@
                                     <div class="inputBox">
                                         <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña"required>      
                                     </div>
-				    <div class="captcha">
-                            		<br><div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
-                        	    </div>
+				                    <div class="captcha">
+                            		    <br><div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
+                        	        </div>
                                     <div class="inputBox">
                                         <input type="submit" value="Registrarse" name="Registrarse" id="Fregi">
                                     </div>

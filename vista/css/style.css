@@ -25,8 +25,8 @@
     --color-three: rgb(29, 59, 63);
     /*--color-three: #0366D6;*/
     --form-color: #14111A;
-    --accent-color: #253556;
-    /*--accent-color: #455A64;*/
+    /*--accent-color: #253556;*/
+    --accent-color: #455A64;
     --border-color: #D8D8D8;
 }
 
@@ -281,8 +281,8 @@ table form {
     left: 0;
     z-index: 1;
     transition: all .2s ease-in-out;
-    /*background-image: url('../assets/img/nav-font.jpg');*/
-    background: linear-gradient(#3f5e5e, #20dae09a);
+    background-image: url('../assets/img/nav-font.jpg');
+    /*background: linear-gradient(#3f5e5e, #20dae09a);*/
     background-position: center center;
     background-size: cover;
 }
@@ -294,7 +294,7 @@ table form {
 .nav-lateral-content {
     max-width: 300px;
     height: 100%;
-    /*background-color: rgba(36, 41, 46, .8);*/
+    background-color: rgba(36, 41, 46, .8);
 }
 
 .nav-lateral-bar {
