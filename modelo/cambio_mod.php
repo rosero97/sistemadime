@@ -33,11 +33,6 @@ class cambio{
                                         }else{
                                             echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
                                         }
-                                        else{
-                                            echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
-                                        }
-
-
                     }
 }
 
