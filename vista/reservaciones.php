@@ -181,7 +181,7 @@ if(isset($_POST['search'])){
 										<td><?php echo $arreglo2[0] ?></td>
 										<td><?php echo $arreglo2[1] ?></td>
 										<td><?php echo $arreglo2["num_mesa"] ?></td>
-										<td><?php echo $arreglo2[4] ?></td>
+										<td><?php echo $arreglo2[5] ?></td>
 										<td><?php echo $arreglo2[2] ?></td>
 										<td><?php echo $arreglo2["id_persona"] ?></td>							
 									</tr>
