@@ -128,7 +128,7 @@ include("../controlador/menu_con.php");
                         </tr>
                     </tbody>          
                 </table>
-            <div style="text-align:right;"> 
+            <div class="col" style="text-align:right;"> 
                 <a href="menu2.php">
                     <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                 </a>        

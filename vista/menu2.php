@@ -64,6 +64,7 @@ if(isset($_POST['search'])){
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="./js/java.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -126,28 +127,24 @@ if(isset($_POST['search'])){
             <div class="container shadow p-3 mb-5 bg-body rounded " >
             <!--CONTENT-->  
                 <form action="" name="num_menu" method="POST">
-                    <table class="table ">
+                    <div class="col">
+                        <a href="agregar_menu.php">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>                  
+                        </a>
+                    </div>                               
+                    <table class="table table-dark" style="text-align: center;">
                         <thead>
-                            <tr>
-                                <th>
-                                    <a href="agregar_menu.php">
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>                  
-                                    </a>
-                                </th>
+                            <tr >
+                                <th>ID<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
+                                <th>Nombre<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
+                                <th>Imagen</th>
+                                <th>Descripción<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
+                                <th>Encargado<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
-                    </table>
-                    <table class="table table-striped" style="text-align: center;">
-                        <tbody>
-                            <tr class="table-primary">
-                                <th style="color: black;">ID</th>
-                                <th style="color: black;">Nombre</th>
-                                <th style="color: black;">Imagen</th>
-                                <th style="color: black;">Descripción</th>
-                                <th style="color: black;">Encargado</th>
-                                <th style="color: black;">Modificar</th>
-                                <th style="color: black;">Eliminar</th>
-                            </tr>
+                        <tbody class="table-secondary">
                             <?php
                                 if($arreglo2==0){
                                 //echo "No existen Registros";
@@ -190,6 +187,32 @@ if(isset($_POST['search'])){
                        
                         </tbody>
                     </table>
+                    <script>
+								$(document).ready(() => {
+									$('th').each(function(columna) {
+										$(this).hover(function() {
+											$(this).addClass('resaltar');
+										}, function() {
+											$(this).removeClass('resaltar');
+										});
+
+										$(this).click(function() {
+											let registros = $('table').find('tbody > tr').get();
+
+											registros.sort(function(a, b) {
+												let valor1 = $(a).children('td').eq(columna).text().toUpperCase();
+												let valor2 = $(b).children('td').eq(columna).text().toUpperCase();
+
+												return valor1 < valor2 ? -1 : valor1 > valor2 ? 1 : 0;
+											});
+
+											$.each(registros, function(indice, elemento) {
+												$('tbody').append(elemento);
+											});
+										});
+									});
+								});
+							</script>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-end">
                             <?php

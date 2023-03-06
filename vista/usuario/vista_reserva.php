@@ -35,20 +35,8 @@ $obj->reserva = $arreglo[0];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Company</title>
-    <!-- Normalize V8.0.1 -->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <!-- Bootstrap V4.3 -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <!-- Bootstrap Material Design V4.0 -->
+    <!-- Bootstrap Material Design V4.0 ESTE ES EL QUE DAÑA LOS BOTONES DEL NAV PERO TAMBIEN EL DE CERRAR Y ABIR EL MENU-->
     <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
-    <!-- Font Awesome V5.9.0 -->
-    <link rel="stylesheet" href="../css/all.css">
-    <!-- Sweet Alerts V8.13.0 CSS file -->
-    <link rel="stylesheet" href="../css/sweetalert2.min.css">
-    <!-- Sweet Alert V8.13.0 JS file-->
-    <script src="../js/sweetalert2.min.js"></script>
-    <!-- jQuery Custom Content Scroller V3.1.5 -->
-    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -112,20 +100,21 @@ $obj->reserva = $arreglo[0];
             <div class="container shadow p-3 mb-5 bg-body rounded " >
 					<form action="" name="persona" method="POST">					
 						<div class="table-responsive">
-							<table class="table table-striped" style="text-align: center;">
-								<tbody >
-									<tr class="table-primary">                               
-                                        <th style="color: black;">N° Reservación</th>
-                                        <th style="color: black;">Cliente</th>
-                                        <th style="color: black;">Identificacion</th>
-                                        <th style="color: black;">Celular</th>
-                                        <th style="color: black;">Correo</th>
-                                        <th style="color: black;">N° Mesa</th>
-                                        <th style="color: black;">N° Personas</th>
-                                        <th style="color: black;">Observaciones</th>
-                                        <th style="color: black;">Fecha y hora de la reservación</th>
-										<th style="color: black;">Estado de la reservación</th>                           
+							<table class="table table-dark table-sm"style="text-align: center;">
+								<thead>                               
+                                        <th>N° Reservación</th>
+                                        <th>Cliente</th>
+                                        <th>Identificacion</th>
+                                        <th>Celular</th>
+                                        <th>Correo</th>
+                                        <th>N° Mesa</th>
+                                        <th>N° Personas</th>
+                                        <th>Observaciones</th>
+                                        <th>Fecha y hora de la reservación</th>
+										<th>Estado de la reservación</th>                           
 									</tr>
+								</thead>
+								<tbody class="table-secondary">
 										<?php
 											if($arreglo==0){
 												//echo "No existen Registros";
@@ -159,7 +148,7 @@ $obj->reserva = $arreglo[0];
 						</div> 
 					</form>				            
 			<div class="table-responsive">
-			    <div style="text-align: center;">
+			    <div class="col" style="text-align: center;">
 				<a href="agendar_reserva.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
 			    </div>
 			</div>   
@@ -169,16 +158,10 @@ $obj->reserva = $arreglo[0];
     <!--=============================================
 	=            Include JavaScript files           =
 	==============================================-->
-    <!-- jQuery V3.4.1 -->
+    <!-- jQuery V3.4.1 ESTE ES EL MENU LATERAL-->
     <script src="../js/jquery-3.4.1.min.js"></script>
-    <!-- popper -->
-    <script src="../js/popper.min.js"></script>
-    <!-- Bootstrap V4.3 -->
-    <script src="../js/bootstrap.min.js"></script>
     <!-- jQuery Custom Content Scroller V3.1.5 -->
     <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- Bootstrap Material Design V4.0 -->
-    <script src="../js/bootstrap-material-design.min.js"></script>
     <script>
         $(document).ready(function() {
             $('body').bootstrapMaterialDesign();

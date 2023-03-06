@@ -21,17 +21,16 @@
 
 :root {
     --color-one: #F5F5F5;
-    --color-two: #24292E;
-    --color-three: rgb(29, 59, 63);
-    /*--color-three: #0366D6;*/
-    --form-color: #14111A;
-    /*--accent-color: #253556;*/
-    --accent-color: #455A64;
+	--color-two: #24292E;
+	--color-three: #EC5252;
+	/*--color-three: #0366D6;*/
+	--form-color: #14111A;
+	--accent-color: #253556;
+	/*--accent-color: #455A64;*/
     --border-color: #D8D8D8;
 }
 
-body,
-html {
+body, html {
     font-family: 'roboto_condensed_light';
     width: 100vw;
     height: 100vh;
@@ -79,8 +78,7 @@ html {
     margin-bottom: 30px;
 }
 
-.page-nav-tabs li,
-.page-nav-tabs li a {
+.page-nav-tabs li, .page-nav-tabs li a {
     height: 40px;
     line-height: 40px;
 }
@@ -120,33 +118,48 @@ html {
     background-color: transparent;
 }
 
-.form-control:focus,
-.form-control:active {
+.form-control:focus, .form-control:active {
     outline: none;
     box-shadow: none;
     border: none;
 }
 
-.form-control-file:active,
-.form-control-file:focus {
+.form-control-file:active, .form-control-file:focus {
     outline: none;
 }
 
-.table .btn {
-    margin-bottom: 0;
+.table .btn-info {
+    background-color: rgb(0, 183, 255);
+    color: white;
+    margin-bottom: 0px;
 }
 
-.table thead th {
-    color: #FFF;
+.table .btn-primary {
+    background-color: rgb(0, 128, 107);
+    color: white;
+    margin-bottom: 0px;
+}
+
+.table .btn-danger {
+    background-color: rgb(197, 50, 40);
+    color: white;
+    margin-bottom: 0px;
+}
+
+.table thead th{
+    cursor: pointer;
+    color: white;
+}
+.table thead th:hover{
+    color: gray;
 }
 
 .table tbody tr {
-    color: #333;
+    color: black;
     transition: all .2s ease-in-out;
 }
 
-.table-dark,
-.table {
+.table-dark, .table {
     background-color: #fff;
 }
 
@@ -158,10 +171,8 @@ html {
     background-color: var(--accent-color);
 }
 
-.table-dark td,
-.table-dark thead th,
-.table-dark th {
-    border: none;
+.table-dark td, .table-dark thead th, .table-dark th {
+    border: 0px;	
 }
 
 .table-dark tr:hover {
@@ -591,4 +602,33 @@ table form {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.col .btn-info {
+    background-color: rgb(0, 183, 255);
+    color: white;
+    margin-bottom: 0px;
+}
+
+.col .btn-primary {
+    background-color: rgb(0, 128, 107);
+    color: white;
+    margin-bottom: 0px;
+}
+
+.col .btn-danger {
+    background-color: rgb(197, 50, 40);
+    color: white;
+    margin-bottom: 0px;
+}
+
+button#inconfundible{
+    background-color: rgb(0, 128, 107);
+    color: white;
+    cursor: pointer;
+}
+
+button#inconfundible:hover{
+    background-color: white ;
+    color: rgb(0, 128, 107);
 }
