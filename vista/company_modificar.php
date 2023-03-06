@@ -98,7 +98,7 @@ include("../controlador/res_con.php");
             <div class="container shadow p-3 mb-5 bg-body rounded">
             <form action="" name="company_modificar" method="POST" enctype="multipart/form-data">    
                 <table>
-                    <div>
+                    <div class="col">
                         <a href="company_agregar.php">
                             <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button> 
                         </a>
