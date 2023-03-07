@@ -213,7 +213,8 @@ if(isset($_POST['search'])){
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
                                 <div class="col-sm-10">
-                                <input type="datetime-local"  min="<?php $fechaActual = date('d-m-Y H:i:s'); echo $fechaActual;?>" class="form-control" id="fecha" name="fecha">
+                                <?php $fechaActual = date('Y-m-d H:i');?>
+                                <input type="datetime-local"  min="<?php echo $fechaActual;?>" class="form-control" id="fecha" name="fecha">
                                 </div>
                             </div>                        
                             <div class="mb-3 row">
