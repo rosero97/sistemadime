@@ -18,10 +18,10 @@ class reserva{
                        
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from numero_reservacion where n_reservacion = '$this->reserva'";
+                                          $query = "SELECT * FROM numero_reservacion WHERE fecha_hora = '$this->fecha' AND id_estado = '$this->id_estado' AND mesa_id = '$this->mesa'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
-                                             echo "<script> alert('La Reservacion ya Existe en el Sistema')</script>";
+                                             echo "<script> alert('La Reservacion ya existe en el Sistema, porfavor intente otra vez')</script>";
                                           }else{
                                           $insertar = "insert into numero_reservacion value(
                                                                                     '$this->reserva',
