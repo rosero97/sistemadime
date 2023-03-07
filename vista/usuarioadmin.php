@@ -23,27 +23,11 @@ $arreglo = mysqli_fetch_array($resultado);
 $totalRegistros = $arreglo['totalRegistros'];
 //echo $totalRegistros;
 
-$maximoRegistros = 5;
-//echo $totalRegistros;
-if(empty($_GET['pagina'])){
-    $pagina=1;
-}else{
-    $pagina=$_GET['pagina'];
-}
-$desde = ($pagina-1)*$maximoRegistros;
-$totalPaginas=ceil($totalRegistros/$maximoRegistros);
-//echo $totalPaginas;
 
-if(isset($_POST['search'])){
-    echo "llegue";
-    $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where id_persona like '%$obj->id_persona%' limit $desde,$maximoRegistros";
-    $resultado2=mysqli_query($c,$query2);
-    $arreglo2 = mysqli_fetch_array($resultado2);
-}else{
-    $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where rolid=2 limit $desde,$maximoRegistros ";
-    $resultado2=mysqli_query($c,$query2);
-    $arreglo2 = mysqli_fetch_array($resultado2);
-}
+$query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where id_persona";
+$resultado2=mysqli_query($c,$query2);
+$arreglo2 = mysqli_fetch_array($resultado2);
+
 
 ?>
 
@@ -53,25 +37,30 @@ if(isset($_POST['search'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Usuarios</title>
-    <!-- Normalize V8.0.1 -->
-    <link rel="stylesheet" href="./css/normalize.css">
-    <!-- Bootstrap V4.3 -->
-    <!--<link rel="stylesheet" href="./css/bootstrap.min.css">-->
-    <!-- Bootstrap Material Design V4.0 -->
+    <!-- Bootstrap Material Design V4.0 Conflicto con boostrap-->
     <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
-    <!-- Font Awesome V5.9.0 -->
-    <!--<link rel="stylesheet" href="./css/all.css">-->
-    <!-- Sweet Alerts V8.13.0 CSS file -->
-    <link rel="stylesheet" href="./css/sweetalert2.min.css">
-    <!-- Sweet Alert V8.13.0 JS file-->
-    <script src="./js/sweetalert2.min.js"></script>
-    <!-- jQuery Custom Content Scroller V3.1.5 -->
-    <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="./css/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Este es el link de bootstrap de internet -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <!--Esta parte nos trae los iconos de configuracion -->
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
-	<script src="js/java.js"></script>
+    <!--Esta parte nos hacearreglar las tablas alfabeticamente <script src="js/java.js"></script>-->
+	
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="table/bootstrap/css/bootstrap.min.css">
+    <!-- CSS personalizado --> 
+    <link rel="stylesheet" href="table/datatables/config/main.css">  
+      
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="table/datatables/datatables.min.css"/>
+    <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="table/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+           
+    <!--font awesome con CDN-->  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
+
 </head>
 <body>
     <!-- Main container -->
@@ -131,29 +120,21 @@ if(isset($_POST['search'])){
 					<i class="fas fa-users fa-fw"></i> &nbsp; USUARIOS
                 </h3>
             </div>
-			<div class="container shadow p-3 mb-5 bg-body rounded " >
-					<form action="" name="persona" method="POST">
-						<nav class="navbar navbar-expand-lg bg-light">
-							<div class="container-fluid">
-								<form class="d-flex" role="search">
-									<input class="form-control me-2" type="search" name="id_persona"  placeholder="Digite el Código del usuario" aria-label="Search">
-									 <button id="inconfundible" class="btn btn-outline-success" name="search"  type="submit"> Buscar</button> <button id="inconfundible" type="submit" class="btn btn-outline-success"> Listar</button>
-								</form>
-							</div>
-						</nav>
-						<br>
-						<div class="table-responsive">
-							<table class="table table-dark" style="text-align: center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">    
+							<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" style="text-align: center;">
 									<thead>
 										<tr>
-											<th>Tipo de Documento<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-											<th>N° Documento<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-											<th>Nombre Completo<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-											<th>Celular<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-											<th>Email<i class="fa fa-arrows-v" aria-hidden="true"></i></th>	
+											<th>Tipo de Documento</th>
+											<th>N° Documento</i></th>
+											<th>Nombre Completo</th>
+											<th>Celular</th>
+											<th>Email</th>	
 										</tr>
 									</thead>
-									<tbody class="table-secondary">
+									<tbody>
 										<?php
 											if($arreglo2==0){
 												//echo "No existen Registros";
@@ -178,87 +159,37 @@ if(isset($_POST['search'])){
 									}
 									?>
 								</tbody>
-							</table>
-							<script>
-								$(document).ready(() => {
-									$('th').each(function(columna) {
-										$(this).hover(function() {
-											$(this).addClass('resaltar');
-										}, function() {
-											$(this).removeClass('resaltar');
-										});
-
-										$(this).click(function() {
-											let registros = $('table').find('tbody > tr').get();
-
-											registros.sort(function(a, b) {
-												let valor1 = $(a).children('td').eq(columna).text().toUpperCase();
-												let valor2 = $(b).children('td').eq(columna).text().toUpperCase();
-
-												return valor1 < valor2 ? -1 : valor1 > valor2 ? 1 : 0;
-											});
-
-											$.each(registros, function(indice, elemento) {
-												$('tbody').append(elemento);
-											});
-										});
-									});
-								});
-							</script>						
-						</div>    
-						<nav aria-label="Page navigation example">
-							<ul class="pagination justify-content-end">
-								<?php 
-								if($pagina!=1){
-								?>
-								<li class="page-item ">
-									<a class="page-link" href="?pagina=<?php echo 1; ?>"><</a>
-								</li>
-								<li class="page-item">
-									<a class="page-link" href="?pagina=<?php echo $pagina-1; ?>"><<</a>
-								</li>
-								<?php
-								}
-								for($i=1; $i<=$totalPaginas; $i++){
-									if($i==$pagina){
-										echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
-									}
-									else{
-										echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>'; 
-									}
-								}
-								if($pagina !=$totalPaginas){
-								?>
-								
-								<li class="page-item">
-									<a class="page-link" href="?pagina=<?php echo $pagina+1; ?>">>></a>
-								</li>
-								<li class="page-item">
-									<a class="page-link" href="?pagina=<?php echo $totalPaginas; ?>">></a>
-								</li>
-								<?php
-								}
-								?>
-							</ul>
-						</nav>
-					</form>
-				</div>	
+							</table>												
+						</div>
+                    </div>
+                </div>
+			</div>	
         </section>
     </main>  	
 	<!--=============================================
 	=            Include JavaScript files           =
 	==============================================-->
-	<!-- jQuery V3.4.1 -->
-	<script src="./js/jquery-3.4.1.min.js" ></script>
-	<!-- popper -->
-	<script src="./js/popper.min.js" ></script>
-	<!-- Bootstrap V4.3 -->
-	<!--<script src="./js/bootstrap.min.js" ></script>-->
-	<!-- jQuery Custom Content Scroller V3.1.5 -->
-	<script src="./js/jquery.mCustomScrollbar.concat.min.js" ></script>
-	<!-- Bootstrap Material Design V4.0 -->
-	<!--<script src="./js/bootstrap-material-design.min.js" ></script>
-	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>-->
+    
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="table/jquery/jquery-3.3.1.min.js"></script>
+    <script src="table/popper/popper.min.js"></script>
+    <script src="table/bootstrap/js/bootstrap.min.js"></script>
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="table/datatables/datatables.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="table/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="table/datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="table/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="table/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="table/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+     
+    <!-- código JS propìo-->    
+    <script type="text/javascript" src="table/datatables/config/main.js"></script>
+
+    <!--Esta parte nos da la funcionalidad del menu -->
 	<script src="./js/main.js" ></script>
 </body>
 </html>

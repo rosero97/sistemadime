@@ -20,27 +20,11 @@ $arreglo = mysqli_fetch_array($resultado);
 $totalRegistros = $arreglo['totalRegistros'];
 //echo $totalRegistros;
 
-$maximoRegistros = 5;
-//echo $totalRegistros;
-if(empty($_GET['pagina'])){
-    $pagina=1;
-}else{
-    $pagina=$_GET['pagina'];
-}
-$desde = ($pagina-1)*$maximoRegistros;
-$totalPaginas=ceil($totalRegistros/$maximoRegistros);
-//echo $totalPaginas;
 
-if(isset($_POST['search'])){
-    echo "llegue";
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN estado e ON n.id_estado=e.id_estado where id_cliente=$persona limit $desde,$maximoRegistros";
+    $query2="SELECT * FROM numero_reservacion n INNER JOIN estado e ON n.id_estado=e.id_estado where id_cliente=$persona";
     $resultado2=mysqli_query($c,$query2);
     $arreglo2 = mysqli_fetch_array($resultado2);
-}else{
-    $query2="SELECT * FROM numero_reservacion n INNER JOIN estado e ON n.id_estado=e.id_estado where id_cliente=$persona limit $desde,$maximoRegistros ";
-    $resultado2=mysqli_query($c,$query2);
-    $arreglo2 = mysqli_fetch_array($resultado2);
-}
+
 
 ?>
 <!DOCTYPE html>
@@ -49,13 +33,29 @@ if(isset($_POST['search'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Reservaciones</title>
-    <!-- Bootstrap Material Design V4.0 ESTE ES EL QUE DAÑA LOS BOTONES DEL NAV PERO TAMBIEN EL DE CERRAR Y ABIR EL MENU-->
-    <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+	<!-- Bootstrap Material Design V4.0 Conflicto con boostrap-->
+	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Este es el link de bootstrap de internet -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <!--Esta parte nos trae los iconos de configuracion -->
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
-	<script src="../js/java.js"></script>
+    <!--Esta parte nos hacearreglar las tablas alfabeticamente <script src="js/java.js"></script>-->
+	
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../table/bootstrap/css/bootstrap.min.css">
+    <!-- CSS personalizado --> 
+    <link rel="stylesheet" href="../table/datatables/config/main.css">  
+      
+    <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="../table/datatables/datatables.min.css"/>
+    <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="../table/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+           
+    <!--font awesome con CDN-->  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
     <!-- Main container -->
@@ -112,143 +112,96 @@ if(isset($_POST['search'])){
                 <i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; RESERVACIONES
                 </h3>              
             </div>
-            <div class="container shadow p-3 mb-5 bg-body rounded " >
-					<form action="" method="POST" name="persona" method="POST">					
-						<div class="table-responsive">
-							<table class="table table-dark" style="text-align: center;">
-								<thead>	
-									<tr>
-                                        <th>N° Reservación<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-										<th>Fecha y hora de la reservación<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-										<th>Estado de la reservación<i class="fa fa-arrows-v" aria-hidden="true"></i></th>
-										<th>Vista completa</th>
-										<th>Modificar</th>
-										<th>Cancelar</th>
-									</tr>							
-								</thead>
-								<tbody class="table-secondary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="table-responsive">    
+							<form action="" method="POST" name="persona" method="POST">					
+								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" style="text-align: center;">
+									<thead>	
+										<tr>
+											<th>N° Reservación</th>
+											<th>Fecha y hora de la reservación</th>
+											<th>Estado de la reservación</th>
+											<th>Vista completa</th>
+											<th>Modificar</th>
+											<th>Cancelar</th>
+										</tr>							
+									</thead>
+									<tbody>
+											<?php
+												if($arreglo2==0){
+													//echo "No existen Registros";
+												?>
+												<div class="alert alert-success" role="alert">
+														<?php echo "No hay registros"; ?>
+												</div>
+												<?php 
+												}   
+												else{
+													do{   
+											?> 
+										<tr>
+											<td><?php echo $arreglo2[0] ?></td>
+											<td><?php echo $arreglo2[1] ?></td>
+											<td><?php echo $arreglo2['nombre_estado'] ?></td>
+											<td>
+												<a href="<?php if($arreglo2[0]<>""){
+												echo "vista_reserva.php?key=".urlencode($arreglo2[0]);
+												}?>">
+													<button type="button" class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></button>
+												</a>
+											</td>
+											<td>
+												<a href="<?php if($arreglo2[0]<>""){
+												echo "../modificar_reserva.php?key=".urlencode($arreglo2[0]);
+												}?>">
+													<button type="button"class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+												</a>
+											</td>			
+											<td>
+												<a href="<?php if($arreglo2[0]<>""){
+												echo "../cancelar_reserva.php?key=".urlencode($arreglo2[0]);
+												}?>">
+													<button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i></button>
+												</a>
+											</td>
+										</tr>
 										<?php
-											if($arreglo2==0){
-												//echo "No existen Registros";
-											?>
-											<div class="alert alert-success" role="alert">
-													<?php echo "No hay registros"; ?>
-											</div>
-											<?php 
-											}   
-											 else{
-												do{   
-										   ?> 
-									<tr>
-                                        <td><?php echo $arreglo2[0] ?></td>
-										<td><?php echo $arreglo2[1] ?></td>
-										<td><?php echo $arreglo2['nombre_estado'] ?></td>
-										<td>
-											<a href="<?php if($arreglo2[0]<>""){
-											echo "vista_reserva.php?key=".urlencode($arreglo2[0]);
-											}?>">
-												<button type="button" class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></button>
-											</a>
-										</td>
-										<td>
-											<a href="<?php if($arreglo2[0]<>""){
-											echo "../modificar_reserva.php?key=".urlencode($arreglo2[0]);
-											}?>">
-												<button type="button"class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-											</a>
-										</td>			
-										<td>
-											<a href="<?php if($arreglo2[0]<>""){
-											echo "../cancelar_reserva.php?key=".urlencode($arreglo2[0]);
-											}?>">
-												<button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"></i></button>
-											</a>
-										</td>
-									</tr>
-									<?php
-										}while($arreglo2 = mysqli_fetch_array($resultado2));
-									}
-									?>
-								</tbody>
-							</table>
-							<script>
-								$(document).ready(() => {
-									$('th').each(function(columna) {
-										$(this).hover(function() {
-											$(this).addClass('resaltar');
-										}, function() {
-											$(this).removeClass('resaltar');
-										});
-
-										$(this).click(function() {
-											let registros = $('table').find('tbody > tr').get();
-
-											registros.sort(function(a, b) {
-												let valor1 = $(a).children('td').eq(columna).text().toUpperCase();
-												let valor2 = $(b).children('td').eq(columna).text().toUpperCase();
-
-												return valor1 < valor2 ? -1 : valor1 > valor2 ? 1 : 0;
-											});
-
-											$.each(registros, function(indice, elemento) {
-												$('tbody').append(elemento);
-											});
-										});
-									});
-								});
-							</script>						
-						</div>    
-						<nav aria-label="Page navigation example">
-							<ul class="pagination justify-content-end">
-								<?php 
-								if($pagina!=1){
-								?>
-								<li class="page-item ">
-									<a class="page-link" href="?pagina=<?php echo 1; ?>"><</a>
-								</li>
-								<li class="page-item">
-									<a class="page-link" href="?pagina=<?php echo $pagina-1; ?>"><<</a>
-								</li>
-								<?php
-								}
-								for($i=1; $i<=$totalPaginas; $i++){
-									if($i==$pagina){
-										echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
-									}
-									else{
-										echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>'; 
-									}
-								}
-								if($pagina !=$totalPaginas){
-								?>
-								
-								<li class="page-item">
-									<a class="page-link" href="?pagina=<?php echo $pagina+1; ?>">>></a>
-								</li>
-								<li class="page-item">
-									<a class="page-link" href="?pagina=<?php echo $totalPaginas; ?>">></a>
-								</li>
-								<?php
-								}
-								?>
-							</ul>
-						</nav>
-					</form>
+											}while($arreglo2 = mysqli_fetch_array($resultado2));
+										}
+										?>
+									</tbody>
+								</table>							
+							</form>
+						</div>
+					</div>
 				</div>
+			</div>
         </section>
     </main>
     <!--=============================================
 	=            Include JavaScript files           =
 	==============================================-->
-    <!-- jQuery V3.4.1 ESTE ES EL MENU LATERAL-->
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <!-- jQuery Custom Content Scroller V3.1.5 -->
-    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('body').bootstrapMaterialDesign();
-        });
-    </script>
-    <script src="../js/main.js"></script>
+   <!-- jQuery, Popper.js, Bootstrap JS -->
+   <script src="../table/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../table/popper/popper.min.js"></script>
+    <script src="../table/bootstrap/js/bootstrap.min.js"></script>
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="../table/datatables/datatables.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="../table/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="../table/datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="../table/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="../table/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="../table/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+     
+    <!-- código JS propìo-->    
+    <script type="text/javascript" src="../table/datatables/config/main.js"></script>
+
+    <!--Esta parte nos da la funcionalidad del menu -->
+	<script src="../js/main.js" ></script>
 </body>
 </html>
