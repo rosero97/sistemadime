@@ -35,6 +35,22 @@ class reserva{
                                           )";
                                           echo $insertar;
                                           mysqli_query($c,$insertar);
+                                             
+                                          $cod_charset = "1234567890";
+                                          $cod_name = "";
+
+                                          for($i=0;$i<11;$i++){
+                                             $cod_name .= substr($cod_charset, rand(0, 10),1);
+                                          }
+
+                                          $evento = "CREATE EVENT `$cod_name`
+                                                      ON SCHEDULE AT '$this->fecha' + INTERVAL 61 MINUTE 
+                                                      ON COMPLETION NOT PRESERVE ENABLE
+                                                      DO UPDATE numero_reservacion SET id_estado = 2 
+                                                      WHERE fecha_hora < NOW() - INTERVAL 60 MINUTE";
+                                          
+                                          mysqli_query($c,$evento);
+                                             
                                           echo "<script> alert('La reservacion fue Creada en el Sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
                                             
                                         }
