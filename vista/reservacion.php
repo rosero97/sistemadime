@@ -124,7 +124,7 @@ if(isset($_POST['search'])){
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="reservacion" method="POST" enctype="multipart/form-data">    
+            <form action="" name="reservacion" method="POST" enctype="multipart/form-data" onsubmit="return validate();">    
                 <table class="table-responsive">
                     <thead>
                         <h3 style="text-align: center;">Datos de la reservacion</h3>
@@ -219,7 +219,7 @@ if(isset($_POST['search'])){
                                 	$fechaActual = date('Y-m-d H:i');
                                 	$horaRecomendada = strtotime ( '+2 hour' , strtotime ($fechaActual));
                                 	$fechaRecomendada = date ( 'Y-m-d H:i' , $horaRecomendada);
-				;?>
+				?>
                                 <input type="datetime-local"  min="<?php echo $fechaRecomendada;?>" class="form-control" id="fecha" name="fecha">
                                 </div>
                             </div>                        
@@ -241,6 +241,19 @@ if(isset($_POST['search'])){
                     </div>
                 </div>
             </form>
+	<script type="text/javascript">
+                function validate() {
+                    var fecha = document.getElementById('fecha').value;
+                    var hora = fecha.substring(11);
+                    console.log(hora);
+                    if (hora >= '10:00' && hora <= '20:00') {
+                        return true;
+                    } else {
+                        alert('Hora incorrecta');
+                        return false;
+                    }
+                }
+	</script>
         </section>
     </main>
     <!--=============================================
