@@ -45,7 +45,7 @@ echo $obj->ida;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Agregar mesa</title>
+    <title>Eliminar Plato</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -157,7 +157,7 @@ echo $obj->ida;
                         </tr>
                     </tbody>          
                 </table>
-            <div style="text-align:right;"> 
+            <div class="col" style="text-align:right;"> 
                 <a href="menu2.php">
                     <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                 </a>        

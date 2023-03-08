@@ -13,7 +13,7 @@ include("../modelo/cod_mod.php")
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Codigo Admin</title>
+        <title>Codigo Registro Administrador</title>
         <link rel="stylesheet" href="../config/style1.css">
    <body>
         </div>

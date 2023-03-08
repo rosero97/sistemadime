@@ -34,7 +34,7 @@ $obj->reserva = $arreglo[0];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Company</title>
+    <title>Reservación Completa</title>
     <!-- Bootstrap Material Design V4.0 ESTE ES EL QUE DAÑA LOS BOTONES DEL NAV PERO TAMBIEN EL DE CERRAR Y ABIR EL MENU-->
     <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
     <!-- General Styles -->

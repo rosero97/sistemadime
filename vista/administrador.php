@@ -13,7 +13,7 @@ if(!isset($_SESSION['correo'])){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Administrador</title>
+	<title>Inicio Administrador</title>
 	<!-- Bootstrap Material Design V4.0 Conflicto con boostrap-->
 	<link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
     <!-- General Styles -->

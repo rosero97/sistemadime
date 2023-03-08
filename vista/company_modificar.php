@@ -29,7 +29,7 @@ if($array==0){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Company</title>
+    <title>Modificar Datos Del Restaurante</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -48,6 +48,7 @@ if($array==0){
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="../config/js/cerrar.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -96,7 +97,7 @@ if($array==0){
                 <a href="admin.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../modelo/logout.php">
+                <a onclick="return validar_cerrar (this.form)" href="../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>

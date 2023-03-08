@@ -408,11 +408,12 @@ footer img{
     margin: 10px;
 }
 
-.g-recaptcha{
+div.captcha div.g-recaptcha{
     position: relative;
-    left: 17%;
+    left: 8.5%;
     transform: scale(0.84);
     transform-origin: 0 0;
+    text-align: center;
 }
 
 .columns {

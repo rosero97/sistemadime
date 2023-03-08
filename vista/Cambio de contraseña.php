@@ -8,7 +8,7 @@ include("../controlador/cambio_contra_con.php");
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Menù Lateral con Css</title>
+	<title>Cambio De Contraseña</title>
 	<link rel="stylesheet" href="../config/est.css">
 </head>
 <body>

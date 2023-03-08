@@ -12,7 +12,7 @@ if(!isset($_SESSION['codigo'])){
 <head>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Menù Lateral con Css</title>
+	<title>Registro Administrador</title>
 	<link rel="stylesheet" href="../config/est.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>

@@ -6,7 +6,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Menù Lateral con Css</title>
+	<title>Registro Usuario</title>
 	<link rel="stylesheet" href="../config/est.css">
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -54,9 +54,9 @@
                                     </div>
                                     <div class="inputBox">
                                         <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña"required>      
-                                    </div>
+                                    </div><br>
 				                    <div class="captcha">
-                            		    <br><div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
+                            		    <div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
                         	        </div>
                                     <div class="inputBox">
                                         <input type="submit" value="Registrarse" name="Registrarse" id="Fregi">
