@@ -216,9 +216,11 @@ if(isset($_POST['search'])){
                                 <div class="col-sm-10">
                                 <?php
 					date_default_timezone_set('America/Bogota');
-					$fechaActual = date('Y-m-d H:i');
+                                	$fechaActual = date('Y-m-d H:i');
+                                	$horaRecomendada = strtotime ( '+2 hour' , strtotime ($fechaActual));
+                                	$fechaRecomendada = date ( 'Y-m-d H:i' , $horaRecomendada);
 				;?>
-                                <input type="datetime-local"  min="<?php echo $fechaActual;?>" class="form-control" id="fecha" name="fecha">
+                                <input type="datetime-local"  min="<?php echo $fechaRecomendada;?>" class="form-control" id="fecha" name="fecha">
                                 </div>
                             </div>                        
                             <div class="mb-3 row">
