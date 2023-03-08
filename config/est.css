@@ -7,6 +7,12 @@
 
 body {
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background: linear-gradient(to bottom, #00fdfd21, #03b7bda8);
+    background: rgba(0,0,0,0.5);
 }
 
 
@@ -15,16 +21,21 @@ body {
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
 }*/
+
+/* Agregar el color de fondo a body */
 .capa{
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, #00fdfd21, #03b7bda8);
     z-index: -1;
     top: 0;
     left: 0;
     overflow-y: scroll;
-
+    /* Eliminar el color gris del scroll */
+    /*scrollbar-color: #03b7bda8 #00fdfd21;*/
+    scrollbar-width: thin;
 }
+
 /*Estilos para el encabezado*/
 .header{
     width: 100%;
@@ -78,6 +89,7 @@ body {
 }
 /*Fin de Estilos para el encabezado*/
 
+
 /*Menù lateral*/
 #btn-menu{
     display: none;
@@ -110,6 +122,7 @@ body {
 #btn-menu:checked ~ .container-menu .cont-menu{
     transform: translateX(0%);
 }
+
 .cont-menu nav{
     transform: translateY(15%);
 }
@@ -247,22 +260,25 @@ border-right: 1px solid rgba(255, 255, 255, 0.2);
 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.tregistro {
-position: relative;
-width: 100%;
-height: 100%;
-padding: 40px;
+.tregistro{
+    position: relative;
+    width: 460px;
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tregistro h3 {
-position: relative;
-color: rgb(255, 255, 255);
-font-size: 24px;
-font-weight: 600;
-letter-spacing: 1px;
-margin-bottom: 40px;
+    color: white;
 }
-
 .tregistro h3::before {
 content: '';
 position: absolute;
@@ -271,6 +287,7 @@ bottom: -10px;
 width: 80px;
 height: 4px;
 background: rgba(0, 253, 126, 0.411);
+color: white;
 }
 
 .tregistro h4 {
@@ -404,3 +421,22 @@ footer img{
     padding: 10px;
     box-sizing: border-box;
 }
+
+.registro-unico {
+    border: none;
+    box-shadow: none;
+  }
+
+ /* ::-webkit-scrollbar {
+    display: none;
+}*/
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #c3c3a7;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #615454;
+}
+
