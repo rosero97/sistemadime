@@ -66,6 +66,7 @@ if(isset($_POST['search'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
     <script src="../config/js/validar_reserva.js"></script>
+    <script src="../config/js/cerrar.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -111,7 +112,7 @@ if(isset($_POST['search'])){
                 <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href=" ../modelo/logout.php">
+                <a onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>
@@ -124,7 +125,7 @@ if(isset($_POST['search'])){
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
             <form action="" name="reservacion" method="POST" enctype="multipart/form-data">    
-                <table>
+                <table class="table-responsive">
                     <thead>
                         <h3 style="text-align: center;">Datos de la reservacion</h3>
                     </thead><br>           

@@ -54,6 +54,7 @@ $totalRegistros = $arreglo['totalRegistros'];
            
     <!--font awesome con CDN-->  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
+    <script src="../config/js/cerrar.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -102,7 +103,7 @@ $totalRegistros = $arreglo['totalRegistros'];
                 <a href="admin.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../modelo/logout.php">
+                <a onclick="return validar_cerrar (this.form)" href="../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>

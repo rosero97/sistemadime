@@ -11,6 +11,18 @@ if(!isset($_SESSION['correo'])){
 include("../conexion/conectar.php");
 include("../controlador/res_con.php");
 
+
+$obj = new conexion();
+$c=$obj->conectando();
+$sql="select * from restaurante where id_res=1";
+$rs=mysqli_query($c,$sql);
+$array=mysqli_fetch_row($rs);
+if($array==0){
+    //echo "No hay registros";
+}else{
+    $obj->imagen = $array[7];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -118,12 +130,13 @@ include("../controlador/res_con.php");
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Dirección</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="direccion" name="direccion">
+                                    <input type="text" class="form-control" id="direccion" name="direccion">
                                 </div>
                             </div>                            
                             <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Telefono</label>
                                 <div class="col-sm-10">
+                                    
                                 <input type="text" class="form-control" id="telefono" name="telefono">
                                 </div>
                             </div>                            
@@ -144,7 +157,30 @@ include("../controlador/res_con.php");
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" id="encargado" name="encargado" readonly value="<?php echo $_SESSION['id_persona'];?>">
                                 </div>
-                            </div>                           
+                            </div>
+                            <div class="mb-3 row">
+                                        <span for="" class="col-sm-2 col-form-label">Inserte la imagen</span>
+                                        <div class="col-sm-10" >
+                                            <input type="file" id="imagen" value=" <?php echo $obj->imagen?>" name="imagen" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                        </div><br>
+                                        <div  class="col-sm-12" style="text-align: center;">
+                                            <?php
+                                                if($array==0){
+                                                //echo "No existen Registros";
+                                            ?>
+                                                <div class="alert alert-success" role="alert">
+                                                    <?php echo "No hay registros" ?>
+                                                </div>
+                                            <?php 
+                                                }else{
+                                            ?>
+                                                <td><img width="100" src="<?php echo $obj->imagen; ?>"></td>
+                                            <?php
+                                                }
+                                            ?> 
+                                             
+                                        </div>
+                                    </div>                           
                         </tr>
                     </tbody>          
                 </table>

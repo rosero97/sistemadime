@@ -28,6 +28,8 @@ $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente
 $resultado2=mysqli_query($c,$query2);
 $arreglo2 = mysqli_fetch_array($resultado2);
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +42,6 @@ $arreglo2 = mysqli_fetch_array($resultado2);
 	<link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="./css/style.css">
-    <!--Este es el link de bootstrap de internet -->
-	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <!--Esta parte nos trae los iconos de configuracion -->
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
     <!--Esta parte nos hacearreglar las tablas alfabeticamente <script src="js/java.js"></script>-->
@@ -59,6 +59,7 @@ $arreglo2 = mysqli_fetch_array($resultado2);
            
     <!--font awesome con CDN-->  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<script src="../config/js/cerrar.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -69,7 +70,7 @@ $arreglo2 = mysqli_fetch_array($resultado2);
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<i class="far fa-times-circle show-nav-lateral"></i>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="avatar">
 					<figcaption class="roboto-medium text-center">
 					<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Administrador</small>
 					</figcaption>
@@ -107,7 +108,7 @@ $arreglo2 = mysqli_fetch_array($resultado2);
                 <a href="admin.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a href="../modelo/logout.php">
+                <a onclick="return validar_cerrar (this.form)" href="../modelo/logout.php">
 				<!-- el js del exit class="btn-exit-system" -->
 					<i class="fas fa-power-off"></i>
 				</a>
@@ -134,7 +135,7 @@ $arreglo2 = mysqli_fetch_array($resultado2);
 										<th>Cliente</th>	
 									</tr>									
 								</thead>
-								<tbody class="table-secondary">
+								<tbody>
 										<?php
 											if($arreglo2==0){
 												//echo "No existen Registros";
