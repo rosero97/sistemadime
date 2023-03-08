@@ -124,7 +124,7 @@ include("../controlador/admin_contra_con.php");
                             <br>
                         </tbody>
                     </table>
-                    <div style="text-align:right;"> 
+                    <div class="col" style="text-align:right;"> 
                         <a href="admin.php">
                             <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                         </a>        

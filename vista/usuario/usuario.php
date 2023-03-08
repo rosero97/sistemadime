@@ -129,7 +129,7 @@ if(!isset($_SESSION['correo'])){
                         </tr>
                     </tbody>
                 </table><br> 
-                <div style="text-align:center;">
+                <div class="col" style="text-align:center;">
                     <tr>
                         <td>
                             <a href="cliente1.php"><button class="btn btn-danger"><i class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</i></button></a>
