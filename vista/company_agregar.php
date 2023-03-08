@@ -111,6 +111,12 @@ include("../controlador/res_con.php");
                                 </div>
                             </div>
                             <div class="mb-3 row">
+                                <span for="" class="col-sm-2 col-form-label">Inserte la imagen</span>
+                                <div class="col-sm-10">
+                                    <input type="file" id="imagen" name="imagen" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> 
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
                                 <label for="" class="col-sm-2 col-form-label">Dirección</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control" id="direccion" name="direccion">

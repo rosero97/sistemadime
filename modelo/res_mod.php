@@ -4,6 +4,7 @@
 class restaurante{
 
                   public $nombre;
+                  public $imagen;
                   public $direccion;
                   public $telefono;
                   public $correo;            
@@ -21,6 +22,10 @@ class restaurante{
                                       if(mysqli_fetch_array($ejecuta)){
                                           echo "<script> alert('No se puede crear nuevos datos del restaurante, solo se pueden modificar');window.location.href='../vista/company_modificar.php';</script>";
                                       }else{
+                                          $conet = new Conexion();
+                                          $c = $conet->conectando(); 
+                                          $ruta = '../vista/assets/avatar/'.$_FILES['imagen']['name'];
+                                          move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta); 
                                           $insertar = "insert into restaurante values(
                                                                               
                                                                               '$this->id',
@@ -29,7 +34,8 @@ class restaurante{
                                                                               '$this->telefono',
                                                                               '$this->correo',
                                                                               '$this->hora',
-                                                                              '$this->encargado'
+                                                                              '$this->encargado',
+                                                                              '$ruta'
                                                                               
                                           )";
                                           echo $insertar;
@@ -48,6 +54,10 @@ class restaurante{
                                         if(mysqli_fetch_array($ejecuta)){
                                             echo "<script> alert('El nombre ya Existe en el Sistema')</script>";
                                         }else{
+                                            $conet = new Conexion();
+                                             $c = $conet->conectando(); 
+                                             $ruta = '../vista/assets/avatar/'.$_FILES['imagen']['name'];
+                                             move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta);
                                             $update = "update restaurante set
                                                                                 id_res=1,
                                                                                 nombre_res='$this->nombre',
@@ -55,7 +65,8 @@ class restaurante{
                                                                                 telefono='$this->telefono',
                                                                                 correo='$this->correo',
                                                                                 horario='$this->hora',
-                                                                                id_encargado='$this->encargado'
+                                                                                id_encargado='$this->encargado',
+                                                                                slogan='$ruta'
                                                                                 where id_res=1
                                                                                 
                                             ";
