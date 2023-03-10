@@ -20,8 +20,16 @@ if(!isset($_SESSION['codigo'])){
     <!-- Sweet Alert V8.13.0 JS file-->
     <script src="js/sweetalert2.min.js"></script>
     <script src="../config/js/validar_form.js"></script>
+	<script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<header class="header">
+		<div class="container">			
+      		<nav class="menu">
+				<a href="inicio/Ayuda.html"><i class="fa fa-question-circle fa-4x" aria-hidden="true"></i></a>
+			</nav>		
+		</div>
+	</header>
 	<div class="capa">
 		<section>
 			<div class="color"></div>
@@ -79,9 +87,9 @@ if(!isset($_SESSION['codigo'])){
 		<footer>
 			<ul class="footer-content" >
             <div class="columns">
-					<a href="https://www.facebook.com/profile.php?id=100090155486140"><img src="imagenes/facebook.png"></a>     
-					<a href="https://twitter.com/petrogustavo"><img src="imagenes/twitter.png"></a> 
-					<a href="https://www.instagram.com/digitalsmenu/"><img src="imagenes/instagram.png"></a> 
+					<a href="https://www.facebook.com/profile.php?id=100090155486140"><img src="../imagenes/facebook.png"></a>     
+					<a href="https://twitter.com/petrogustavo"><img src="../imagenes/twitter.png"></a> 
+					<a href="https://www.instagram.com/digitalsmenu/"><img src="../imagenes/instagram.png"></a> 
 				</div>
 				<div class="columns">
 					<p>Digitals'Menu Todos los derechos reservados ®</p>

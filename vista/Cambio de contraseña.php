@@ -10,16 +10,20 @@ include("../controlador/cambio_contra_con.php");
 	<meta charset="UTF-8">
 	<title>Menù Lateral con Css</title>
 	<link rel="stylesheet" href="../config/est.css">
+	<script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<header class="header">
+<header class="header">
 		<div class="container">
-		<div class="btn-menu">
-			<label for="btn-menu">☰</label>
-		</div>
+			<div class="btn-menu">
+				<label for="btn-menu">☰</label>
+			</div>
 			<div class="logo">
 				<h1>Digital´s Menu</h1>
-			</div>			
+			</div>	
+      <nav class="menu">
+				<a href="inicio/Ayuda.html"><i class="fa fa-question-circle fa-4x" aria-hidden="true"></i></a>
+			</nav>		
 		</div>
 	</header>
 	<div class="capa">
@@ -72,11 +76,10 @@ include("../controlador/cambio_contra_con.php");
 <div class="container-menu">
 	<div class="cont-menu">
 	<nav>
-			<a href="index.html"><img src="../../sistemadime-master/imagenes/house.jpg" style="width: 30px; width: 30px; margin-right: 10px;">Inicio</a>
-            <a href="vista/Iniciar Sesion-2.php" ><img src="../../sistemadime-master/imagenes/sesion.jpg" style="width: 30px; width: 30px; margin-right: 10px;">Iniciar Sesion</a>
-            <a href="vista/login/1.Tipo_Registro.html"><img src="../../sistemadime-master/imagenes/registrarse-2.png" style="width: 25px; margin-right: 10px;">Registrarse</a>
-            <a href="vista/inicio/Ayuda.html"><img src="../../sistemadime-master/imagenes/ayuda.jpg" style="width: 30px; width: 30px; margin-right: 10px;">Ayuda</a>
-		</nav>
+		<a id="fa" href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+      	<a id="fa" href="Iniciar Sesion-2.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sesion</a>
+      	<a id="fa" href="login/1.Tipo_Registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a>
+	</nav>
 		<label for="btn-menu">✖️</label>
 	</div>
 </div>

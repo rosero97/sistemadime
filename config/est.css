@@ -75,15 +75,15 @@ body {
     padding: 15px;
     line-height: normal;
     text-decoration: none;
-    color: #fff;
+    color: rgb(13, 69, 82);
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
     font-size: 15px;
     margin-right: 5px;
+    cursor: pointer;
 }
 .container .menu a:hover{
-    border-bottom: 2px solid #fff;
-    padding-bottom: 5px;
+    color: white;
 }
 /*Fin de Estilos para el encabezado*/
 
@@ -124,22 +124,24 @@ body {
 .cont-menu nav{
     transform: translateY(15%);
 }
-.cont-menu nav a{
+.cont-menu nav a#fa{
     display: block;
     text-decoration: none;
     padding: 35px;
-    color: rgb(0, 0, 0);
+    color: rgba(1, 22, 27, 0.966);
     border-left: 5px solid transparent;
     transition: all 400ms ease;
     font-size: 20px;
 }
 
 
-.cont-menu nav a:hover{
+.cont-menu nav a#fa:hover{
     border-left: 5px solid #fff;
     /*background: #1f1f1f;*/
     background: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+    color: white;
 }
+
 .cont-menu label{
     position: absolute;
     right: 5px;
@@ -450,22 +452,7 @@ footer img{
     padding: 10px;
     box-sizing: border-box;
 }
-.help-button {
-    position: fixed;
-    top: 90px;
-    right: 200px;
-    margin: 5px;
-    z-index: 3;
-    width: 45px;
-    min-height: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
+
   
   .help-toggle {
     background-color:  #06f8f800;
@@ -475,30 +462,5 @@ footer img{
     cursor: pointer;
   }
   
-  .help-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 0;
-    background-color: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
-    padding: 8px 16px;
-    width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  }
   
-  .help-button:hover .help-content {
-    display: block;
-  }
-  .help-content .answer {
-    display: none;
-  }
-  .help-content ul {
-    margin-top: 0;
-    padding-left: 20px;
-}
-
-.help-content li {
-    margin-bottom: 10px;
-}
 
