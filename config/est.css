@@ -31,8 +31,6 @@ body {
     top: 0;
     left: 0;
     overflow-y: scroll;
-    /* Eliminar el color gris del scroll */
-    /*scrollbar-color: #03b7bda8 #00fdfd21;*/
     scrollbar-width: thin;
 }
 
@@ -56,16 +54,16 @@ body {
 
 }
 .container .btn-menu label{
-    color: #fff;
+    color: rgb(13, 69, 82);
     font-size: 25px;
     cursor: pointer;
 }
 .logo h1{
     position: fixed;
     left: 30px;   
-    color: #fff;
+    color: rgb(13, 69, 82);
     font-weight: 400;
-    font-size: 22px;
+    font-size: 35px;
 }
 
 .container .menu{
@@ -130,11 +128,13 @@ body {
     display: block;
     text-decoration: none;
     padding: 35px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     border-left: 5px solid transparent;
     transition: all 400ms ease;
-    font-size: 18px;
+    font-size: 20px;
 }
+
+
 .cont-menu nav a:hover{
     border-left: 5px solid #fff;
     /*background: #1f1f1f;*/
@@ -277,7 +277,9 @@ border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tregistro h3 {
-    color: white;
+    color: rgb(18, 66, 77);
+    font-size: 40px;
+    text-align: center;
 }
 .tregistro h3::before {
 content: '';
@@ -286,8 +288,9 @@ left: 0;
 bottom: -10px;
 width: 80px;
 height: 4px;
-background: rgba(0, 253, 126, 0.411);
-color: white;
+/*background: rgba(0, 253, 126, 0.411);*/
+color: rgb(13, 69, 82);
+justify-content: center;
 }
 
 .tregistro h4 {
@@ -408,12 +411,11 @@ footer img{
     margin: 10px;
 }
 
-div.captcha div.g-recaptcha{
+.g-recaptcha{
     position: relative;
-    left: 8.5%;
+    left: 8%;
     transform: scale(0.84);
     transform-origin: 0 0;
-    text-align: center;
 }
 
 .columns {
@@ -439,5 +441,64 @@ div.captcha div.g-recaptcha{
 
 ::-webkit-scrollbar-thumb {
     background-color: #615454;
+}
+
+
+.columns {
+    width: 33.33%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.help-button {
+    position: fixed;
+    top: 90px;
+    right: 200px;
+    margin: 5px;
+    z-index: 3;
+    width: 45px;
+    min-height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+  
+  .help-toggle {
+    background-color:  #06f8f800;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .help-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    background-color: linear-gradient(to bottom, #00fdfd00, #03b7bda8);
+    padding: 8px 16px;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .help-button:hover .help-content {
+    display: block;
+  }
+  .help-content .answer {
+    display: none;
+  }
+  .help-content ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+.help-content li {
+    margin-bottom: 10px;
 }
 
