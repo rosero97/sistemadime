@@ -8,7 +8,7 @@ include("../controlador/cambio_contra_con.php");
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Cambio De Contraseña</title>
+	<title>Menù Lateral con Css</title>
 	<link rel="stylesheet" href="../config/est.css">
 </head>
 <body>
@@ -71,11 +71,11 @@ include("../controlador/cambio_contra_con.php");
 <input type="checkbox" id="btn-menu">
 <div class="container-menu">
 	<div class="cont-menu">
-		<nav>
-            <a href="../index.html">Inicio</a>
-            <a href="Iniciar Sesion-2.php">Iniciar Sesion</a>
-            <a href="login/1.Tipo_Registro.html">Registrarse</a>
-            <a href="inicio/Ayuda.html">Ayuda</a>
+	<nav>
+			<a href="index.html"><img src="../../sistemadime-master/imagenes/house.jpg" style="width: 30px; width: 30px; margin-right: 10px;">Inicio</a>
+            <a href="vista/Iniciar Sesion-2.php" ><img src="../../sistemadime-master/imagenes/sesion.jpg" style="width: 30px; width: 30px; margin-right: 10px;">Iniciar Sesion</a>
+            <a href="vista/login/1.Tipo_Registro.html"><img src="../../sistemadime-master/imagenes/registrarse-2.png" style="width: 25px; margin-right: 10px;">Registrarse</a>
+            <a href="vista/inicio/Ayuda.html"><img src="../../sistemadime-master/imagenes/ayuda.jpg" style="width: 30px; width: 30px; margin-right: 10px;">Ayuda</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
 	</div>
