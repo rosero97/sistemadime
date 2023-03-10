@@ -46,6 +46,10 @@ $arreglo2 = mysqli_fetch_array($resultado2);
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
     <!--Esta parte nos hacearreglar las tablas alfabeticamente <script src="js/java.js"></script>-->
 	
+	<!-- Sweet Alerts V8.13.0 CSS file -->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <!-- Sweet Alert V8.13.0 JS file-->
+    <script src="js/sweetalert2.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="table/bootstrap/css/bootstrap.min.css">
@@ -108,8 +112,8 @@ $arreglo2 = mysqli_fetch_array($resultado2);
                 <a href="admin.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href="../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system">
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>

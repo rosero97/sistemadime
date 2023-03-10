@@ -39,10 +39,15 @@ $obj->reserva = $arreglo[0];
     <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="../css/style.css">
+
+	<!-- Sweet Alerts V8.13.0 CSS file -->
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <!-- Sweet Alert V8.13.0 JS file-->
+    <script src="../js/sweetalert2.min.js"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 	<script src="../../config/js/cerrar.js"></script>
-	onclick="return validar_cerrar (this.form)"
 </head>
 <body>
     <!-- Main container -->
@@ -88,8 +93,8 @@ $obj->reserva = $arreglo[0];
                 <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href="../../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system">
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../../modelo/logout.php"-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>

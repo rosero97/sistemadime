@@ -3,7 +3,7 @@
 function validar_agregar_mesa(form){
 
     if(form.mesa.value.length==0){
-        alert("Digite el numero de mesa");
+        swal.fire('Digite el numero de mesa','', 'error');
         form.mesa.focus();
         return(false);
     }
@@ -26,7 +26,7 @@ function validar_agregar_mesa(form){
             }
         if(!valida)
             {
-                alert("Digite solo numeros en el campo");
+                swal.fire('Digite solo numeros en el campo','', 'error')
                 form.mesa.focus();
                 return(false);
             }
@@ -43,7 +43,7 @@ function validar_agregar_mesa(form){
 function validar_modificar_mesa(form){
 
     if(form.mesa.value.length==0){
-        alert("Digite el nuevo numero de mesa");
+        swal.fire('Digite el nuevo numero de mesa','', 'error');
         form.mesa.focus();
         return(false);
     }
@@ -66,7 +66,7 @@ function validar_modificar_mesa(form){
             }
         if(!valida)
             {
-                alert("Digite solo numeros en el campo");
+                swal.fire('Digite solo numeros en el campo','', 'error')
                 form.mesa.focus();
                 return(false);
             }

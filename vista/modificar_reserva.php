@@ -96,8 +96,8 @@ $obj->id_estado = $array[3];
                 <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system">
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php"-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>
@@ -147,7 +147,7 @@ $obj->id_estado = $array[3];
                     echo    '</table>';
                     echo    '<div class="row" style="text-align: center;">';
                     echo        '<div class="col">
-                                <a href="#"><button type="submit" class="btn btn-primary" name="modifica"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                                <a href="#"><button type="submit" class="btn btn-primary" name="modifica" onclick="return validar_modificar_reserva(this.form)"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
                             </div>';
                     echo        '<div class="col">
                                 <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>

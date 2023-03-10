@@ -81,8 +81,8 @@ include("../controlador/usuario_con.php");
                 <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href="../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system">
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>

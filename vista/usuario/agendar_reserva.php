@@ -35,6 +35,10 @@ $totalRegistros = $arreglo['totalRegistros'];
     <title>Reservaciones</title>
 	<!-- Bootstrap Material Design V4.0 Conflicto con boostrap-->
 	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+	<!-- Sweet Alerts V8.13.0 CSS file -->
+    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <!-- Sweet Alert V8.13.0 JS file-->
+    <script src="../js/sweetalert2.min.js"></script>
     <!-- General Styles -->
     <link rel="stylesheet" href="../css/style.css">
     <!--Este es el link de bootstrap de internet -->
@@ -102,8 +106,8 @@ $totalRegistros = $arreglo['totalRegistros'];
                 <a href="usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href="../../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system" >
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)href="../../modelo/logout.php""-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>

@@ -9,6 +9,11 @@
 	<title>Registro Usuario</title>
 	<link rel="stylesheet" href="../config/est.css">
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<!-- Sweet Alerts V8.13.0 CSS file -->
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <!-- Sweet Alert V8.13.0 JS file-->
+    <script src="js/sweetalert2.min.js"></script>
+	<script src="../config/js/validar_form.js"></script>
 </head>
 <body>
 	<div class="capa">
@@ -29,7 +34,7 @@
                                 <form action="../modelo/registro_usuario.php" method="post" action="php/registro_usuario.php">
                                     <h3>Registrate en Digital's Menú</h3>
                                     <div class="inputBox">
-                                        <input type="text" name ="nombres" id="nombres" placeholder="Ingrese su nombre completo" required>
+                                        <input type="text" name ="nombres" id="nombres" placeholder="Ingrese su nombre completo" >
                                     
                                     </div>
                                     <div class="inputBox">
@@ -41,25 +46,25 @@
                                         </select>
                                     </div>    
                                     <div class="inputBox">
-                                        <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" required>
+                                        <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" >
                                     </div>
                                     <div class="inputBox">
-                                        <input type="email" name ="correo" id="correo" placeholder=" Ingrese su correo" required>
+                                        <input type="email" name ="correo" id="correo" placeholder=" Ingrese su correo" >
                                     </div>
                                     <div class="inputBox">
                                         <input type="tel" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" required>
+                                        <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" >
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña"required>      
+                                        <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña">      
                                     </div><br>
 				                    <div class="captcha">
                             		    <div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
                         	        </div>
                                     <div class="inputBox">
-                                        <input type="submit" value="Registrarse" name="Registrarse" id="Fregi">
+                                        <input type="submit" value="Registrarse" name="Registrarse" id="Fregi" onclick="return validar_usuario(this.form)">
                                     </div>
                                 </form>
                             </div>
