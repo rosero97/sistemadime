@@ -51,7 +51,7 @@ if(mysqli_fetch_array($ejecuta)){
             //Content
             $mail->isHTML(true);
             $mail->Subject ='Recuperar Password';
-            $mail->Body ='Hola! <br><br> Recibimos tu solicitud para recuperar tu contraseña, para continuar con este proceso da click en el siguiente boton: <br><br><a href="http://localhost/sistemadime-master/vista/Cambio%20de%20contrase%C3%B1a.php"><input type="button" style=" color: blue; background: white; border-radius: 5px; border: solid blue 1px; " value="Click aqui"></a> <br><br> Atentamente los desarrolladores de Digital menú';
+            $mail->Body ='Hola! <br><br> Recibimos tu solicitud para recuperar tu contraseña, para continuar con este proceso da click en el siguiente boton: <br><br><a href="localhost/variado/sistema/sistemadime/vista/Cambio%20de%20contrase%C3%B1a.php"><input type="button" style=" color: blue; background: white; border-radius: 5px; border: solid blue 1px; " value="Click aqui"></a> <br><br> Atentamente los desarrolladores de Digital menú';
 //            $mail->msgHTML($body);
             $mail->send();
             echo "<script> alert('El correo se envio satisfactoriamente, Por favor verifique su correo.'); window.location.href='../vista/recuperar.php';</script>";

@@ -34,19 +34,55 @@
 				<div class="contenedor">
 					<div class="tregistro">
 					    <div class="center">                           
-                            <div class="inputBox">         
-                                <h3>Bienvenido al servicio de ayuda de digital menu</h3>
-                                <p class="forget">
-                                Has olvidado tu contraseña? <a href="Ayuda contraseña.html">Recuperar contraseña</a></p>
-                                <p class="forget">
-                                como me puedo registrar en la pagina <a href="Ayuda Registro.html">Registro</a>
-                                <p class="forget">
-                                Como puedo Iniciar sesión <a href="Ayuda inisiar Sesion.html">Iniciar sesión</a>
-                                <p class="forget">
-                                como puedo hacer un reservacion <a href="Ayuda Reservacion.html">reservacion</a>
-                                <p class="forget">
-                                Soporte <a href="Ayuda contacto.html">Contacto</a></p>
-                            </div>
+							<div class="inputBox">
+								<h3>Bienvenido al servicio de ayuda de digital menu</h3>
+								<p class="forget">
+									¿Has olvidado tu contraseña? <a href="#" onclick="mostrarRespuesta('respuesta1')">Recuperar contraseña</a>
+								</p>
+								<div id="respuesta1" style="display:none">
+									<p> Para restablecer tu contraseña, ve a la página de inicio de sesión y haz clic en "Olvidé mi contraseña". Se te pedirá que ingreses tu dirección de correo electrónico asociada a tu cuenta y se te enviará un correo electrónico con instrucciones sobre cómo restablecer tu contraseña.</p>
+								</div>
+								<p class="forget">
+									¿Cómo me puedo registrar en la página? <a href="#" onclick="mostrarRespuesta('respuesta2')">Registro</a>
+								</p>
+								<div id="respuesta2" style="display:none">
+									<p> Para registrarte en nuestra página, haz clic en "Registrarse" en la página de inicio y sigue las instrucciones para completar el formulario de registro. Asegúrate de proporcionar una dirección de correo electrónico válida para que podamos enviarte un correo electrónico de confirmación de registro.</p>
+								</div>
+								<p class="forget">
+									¿Cómo puedo iniciar sesión? <a href="#" onclick="mostrarRespuesta('respuesta3')">Iniciar sesión</a>
+								</p>
+								<div id="respuesta3" style="display:none">
+									<p>  Para iniciar sesión primero que todo debe de estar registrado en nuestra pagina, le recomendamos que se registre, ya que es vital para iniciar sesion, si aun no sabe como hacerlo de click  Luego de estar registrado correctamente en nuestra pagina debera seguir los siguientes pasos, primero que todo debe dar click en el boton superior rojo denominado “Iniciar Sesión”, luego debera elegir si quiere iniciar sesión como cliente o como administrador,
+										seguido de esto se abrira un panel en el cual le pediran su correo electronico y su contraseña, debera digitar estos datos y por ultimo debe dar click en el boton “ingresar”.
+									</p>
+								</div>
+								<p class="forget">
+									¿Cómo puedo hacer una reserva? <a href="#" onclick="mostrarRespuesta('respuesta4')">Reserva</a>
+								</p>
+								<div id="respuesta4" style="display:none">
+									<p>  Para hacer una reservacion tiene que estar previamente registrado, al ingresar al menu inicio podra encontrar en la parte derecha un boton con la palabra “Hacer Reservacion” le da clic en el boton, hay lo llevara hasta le pagina dode podra hacer una reservacion,
+                                    encontrara sus datos y un calendario con el horario de atencion del restaurante e donde podra seleccionar el dia y la hora para hecer la reservacion al terminar de elegir un dia y la hora en especificas le damos clic en el
+                                    boton “Agendar Reservacion” lo enviara a la siguiente pagina en donde le mostrara si su reservacion fue generada con exito o no.</p>
+								</div>
+								<p class="forget">
+									Soporte <a href="Ayuda contacto.html" onclick="mostrarRespuesta('respuesta5')">Contacto</a>
+								</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<script>
+					function mostrarRespuesta(id) {
+						var respuesta = document.getElementById(id);
+						if (respuesta.style.display === "none") {
+							respuesta.style.display = "block";
+						} else {
+							respuesta.style.display = "none";
+						}
+					}
+				</script>
 				        </div>
 			        </div>
 			    </div>
@@ -84,3 +120,4 @@
 </div>
 </body>
 </html>
+

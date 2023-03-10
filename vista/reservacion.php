@@ -243,7 +243,7 @@ if(isset($_POST['search'])){
                     </div>
                 </div>
             </form>
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
                 function validate() {
                     var fecha = document.getElementById('fecha').value;
                     var hora = fecha.substring(11);
@@ -255,7 +255,7 @@ if(isset($_POST['search'])){
                         return false;
                     }
                 }
-	</script>
+	</script>-->
         </section>
     </main>
     <!--=============================================
