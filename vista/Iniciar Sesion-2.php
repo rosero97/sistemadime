@@ -7,7 +7,7 @@ include("../modelo/iniciar_sesion.php")
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Iniciar Sesión</title>
+	<title>Menù Lateral con Css</title>
 	<link rel="stylesheet" href="../config/est.css">
 </head>
 <body>
@@ -54,11 +54,20 @@ include("../modelo/iniciar_sesion.php")
 			        </div>
 		</section>
 		<footer>
-			<ul class="sci">
-                <p>Digitals'Menu Todos los derechos reservados ®<br><br>               
-                <a href="https://www.facebook.com/profile.php?id=100090155486140"><img src="../imagenes/facebook.png"></a>     
-                <a href="https://twitter.com/petrogustavo"><img src="../imagenes/twitter.png"></a> 
-                <a href="https://www.instagram.com/digitalsmenu/"><img src="../imagenes/instagram.png"></a> 
+			<ul class="footer-content" >
+            <div class="columns">
+					<a href="https://www.facebook.com/profile.php?id=100090155486140"><img src="../imagenes/facebook.png"></a>     
+					<a href="https://twitter.com/petrogustavo"><img src="../imagenes/twitter.png"></a> 
+					<a href="https://www.instagram.com/digitalsmenu/"><img src="../imagenes/instagram.png"></a> 
+				</div>
+				<div class="columns">
+					<p>Digitals'Menu Todos los derechos reservados ®</p>
+				</div>
+				<div class="columns">
+					<p>Somos Digital's menu, el mejor sitio para la reserva de tu mesa</p>
+					<p>con la mejor comodidad</p>
+				</div>
+			</div>
             </ul>
 		</footer>
 
@@ -67,12 +76,12 @@ include("../modelo/iniciar_sesion.php")
 <input type="checkbox" id="btn-menu">
 <div class="container-menu">
 	<div class="cont-menu">
-		<nav>
-            <a href="../index.html">Inicio</a>
-            <a href="Iniciar Sesion-2.php">Iniciar Sesion</a>
-            <a href="login/1.Tipo_Registro.html">Registrarse</a>
-            <a href="inicio/Ayuda.html">Ayuda</a>
-		</nav>
+	<nav>
+		<a href="../index.html"><img src="../../sistemadime-master/imagenes/house.jpg" style="width: 20px; margin-right: 10px;">Inicio</a>
+        <a href="../vista/Iniciar Sesion-2.php" ><img src="../../sistemadime-master/imagenes/sesion.jpg" style=" width: 20px; margin-right: 10px;">Iniciar Sesion</a>
+        <a href="../vista/login/1.Tipo_Registro.html"><img src="../../sistemadime-master/imagenes/registrarse-2.png" style="width: 20px; margin-right: 10px;">Registrarse</a>
+        <a href="../vista/inicio/Ayuda.html"><img src="../../sistemadime-master/imagenes/ayuda.jpg" style=" width: 20px; margin-right: 10px;">Ayuda</a>
+	</nav>
 		<label for="btn-menu">✖️</label>
 	</div>
 </div>
