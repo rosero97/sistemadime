@@ -57,6 +57,10 @@ $arreglo2 = mysqli_fetch_array($resultado2);
     <link rel="stylesheet" type="text/css" href="table/datatables/datatables.min.css"/>
     <!--datables estilo bootstrap 4 CSS-->  
     <link rel="stylesheet"  type="text/css" href="table/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+
+	<!-- Alertas-->
+	<script src="js/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="css/sweetalert2.min.css">
            
     <!--font awesome con CDN-->  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
@@ -109,8 +113,8 @@ $arreglo2 = mysqli_fetch_array($resultado2);
                 <a href="admin.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href="../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system" >
+				<!-- el js del exit class="btn-exit-system" href="../modelo/logout.php"-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>
@@ -188,6 +192,8 @@ $arreglo2 = mysqli_fetch_array($resultado2);
      
     <!-- código JS propìo-->    
     <script type="text/javascript" src="table/datatables/config/main.js"></script>
+
+
 
     <!--Esta parte nos da la funcionalidad del menu -->
 	<script src="./js/main.js" ></script>

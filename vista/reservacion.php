@@ -112,8 +112,8 @@ if(isset($_POST['search'])){
                 <a href="usuario/usuario.php">
                     <i class="fas fa-user-cog"></i>
                 </a>
-                <a onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php">
-				<!-- el js del exit class="btn-exit-system" -->
+                <a class="btn-exit-system">
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php"-->
 					<i class="fas fa-power-off"></i>
 				</a>
             </nav>
@@ -215,12 +215,14 @@ if(isset($_POST['search'])){
                                 <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
                                 <div class="col-sm-10">
                                 <?php
+
 					date_default_timezone_set('America/Bogota');
                                 	$fechaActual = date('Y-m-d H:i');
                                 	$horaRecomendada = strtotime ( '+2 hour' , strtotime ($fechaActual));
                                 	$fechaRecomendada = date ( 'Y-m-d H:i' , $horaRecomendada);
 				?>
                                 <input type="datetime-local"  min="<?php echo $fechaRecomendada;?>" class="form-control" id="fecha" name="fecha">
+
                                 </div>
                             </div>                        
                             <div class="mb-3 row">

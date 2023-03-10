@@ -2,7 +2,7 @@
 function validar_agregar_menu(form){
 
     if(form.nombre.value.length==0){
-        alert("Digite el nombre del plato");
+        swal.fire('Digite el nombre del plato','', 'error')
         form.nombre.focus();
         return(false);
     }
@@ -25,19 +25,19 @@ function validar_agregar_menu(form){
             }
         if(!valida)
             {
-                alert("Digite solo letras en el campo del nombre");
+                swal.fire('Digite solo letras en el campo del nombre','', 'error')
                 form.nombre.focus();
                 return(false);
             }
 
     else if(form.imagen.value.length==0){
-        alert("Inserte una imagen en el campo");
+        swal.fire('Inserte una imagen en el campo','', 'error')
         form.imagen.focus();
         return(false);
     }
 
     else if(form.descripcion.value.length==0){
-        alert("Digite la descripcion del plato");
+        swal.fire('Digite la descripcion del plato','', 'error')
         form.descripcion.focus();
         return(false);
     }
@@ -58,21 +58,20 @@ function validar_agregar_menu(form){
                     break;
                 }
             }
-                    
-    var confirmar=confirm("Desea realizar los cambios [Aceptar] o [Cancelar]");
+   var confirmar=confirm("Desea realizar los cambios [Aceptar] o [Cancelar]");
     if(confirmar==false)
     {
         return(false);
     }
         return(true);
-
+    
 }
 
 //validacion de modificar menu
 function validar_modificar_menu(form){
 
     if(form.nombre.value.length==0){
-        alert("Modifique el nombre del plato");
+        swal.fire('Modifique el nombre del plato','', 'error')
         form.nombre.focus();
         return(false);
     }
@@ -95,13 +94,13 @@ function validar_modificar_menu(form){
             }
         if(!valida)
             {
-                alert("Digite solo letras en el campo del nombre");
+                swal.fire('Digite solo letras en el campo del nombre','', 'error')
                 form.nombre.focus();
                 return(false);
             }
 
     else if(form.imagen.value.length==0){
-        alert("Inserte una imagen en el campo");
+        swal.fire('Inserte una imagen en el campo','', 'error')
         form.imagen.focus();
         return(false);
     }
