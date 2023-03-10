@@ -18,57 +18,29 @@
 	</header>
 	<div class="capa">
 		<section>
-			<div class="columns">
-                <div class="help-button">
-                  <button class="help-toggle" id="boton-1"><i class="fas fa-question-circle"></i></button>
-                  <div class="help-content" id="contenido-1">
-                    <ul>
-                      <li>
-                        <div class="question">¿Has olvidado tu contraseña?</div>
-                        <div class="answer">Para restablecer tu contraseña, ve a la página de inicio de sesión y haz clic en "Olvidé mi contraseña". Se te pedirá que ingreses tu dirección de correo electrónico asociada a tu cuenta y se te enviará un correo electrónico con instrucciones sobre cómo restablecer tu contraseña.</div>
-                      </li>
-                      <li>
-                        <div class="question">¿Cómo puedo registrarme en la página?</div>
-                        <div class="answer">Para registrarte en nuestra página, haz clic en "Registrarse" en la página de inicio y sigue las instrucciones para completar el formulario de registro. Asegúrate de proporcionar una dirección de correo electrónico válida para que podamos enviarte un correo electrónico de confirmación de registro.</div>
-                      </li>
-                    </ul>
-                    
-                  </div>
-                </div>
-                <script >
-                  const questions = document.querySelectorAll(".question");
-                  questions.forEach((question) => {
-                    question.addEventListener("click", () => {
-                      question.classList.toggle("active");
-                      const answer = question.nextElementSibling;
-                      if (answer.style.display === "block") {
-                        answer.style.display = "none";
-                      } else {
-                        answer.style.display = "block";
-                      }
-                    });
-                  });
-              
-                  const helpButtons = document.querySelectorAll(".help-toggle");
-                  helpButtons.forEach((button) => {
-                    button.addEventListener("click", () => {
-                      const content = button.nextElementSibling;
-                      const answer = content.querySelector(".answer");
-                      if (answer.style.display === "block") {
-                        answer.style.display = "none";
-                      } else {
-                        answer.style.display = "block";
-                      }
-                      questions.forEach((question) => {
-                        const questionContent = question.nextElementSibling;
-                        if (questionContent !== content) {
-                          question.classList.remove("active");
-                          questionContent.querySelector(".answer").style.display = "none";
-                        }
-                      });
-                    });
-                  });
-                </script>
+        <div class="columns">
+          <div class="help-button">
+            <button class="help-toggle" id="boton-1"><i class="fas fa-question-circle"></i></button>
+            <div class="help-content" id="contenido-1">
+            <ul>
+              <li>
+              <div class="question">¿Has olvidado tu contraseña?</div>
+              </li>
+              <li>
+              <div class="question">¿Cómo puedo registrarme en la página?</div>
+              </li>
+            </ul>
+            </div>
+          </div>
+          <script>
+            const helpButtons = document.querySelectorAll(".help-toggle");
+            helpButtons.forEach((button) => {
+              button.addEventListener("click", () => {
+              window.location.href = "vista/inicio/Ayuda.html";
+              });
+            });
+            </script>
+          </div>
 			<div class="color"></div>
 			<div class="color"></div>
 			<div class="color"></div>
