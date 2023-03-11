@@ -5,7 +5,7 @@ function validar_administrador(form){
         swal.fire('Digite su nombre completo','','error')
         form.nombres.focus();
         return(false);
-    }
+    }/*
         var letra="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
         var cadena=form.nombres.value;
         var valida=true;
@@ -28,7 +28,7 @@ function validar_administrador(form){
                 swal.fire('Digite solo letras en el campo','','error')
                 form.nombres.focus();
                 return(false);
-            }
+            }*/
     
     else if(form.tipodoc.value.length==0){
         swal.fire('Seleccione su tipo de documento','','error')
@@ -93,34 +93,7 @@ function validar_administrador(form){
                 form.numerodoc.focus();
                 return(false);
             }
-else if(form.numerodoc.value.length==0){
-        swal.fire('Digite su numero de documento','','error')
-        form.numerodoc.focus();
-        return(false);
-    }
-        var letra="1234567890";
-        var cadena=form.numerodoc.value;
-        var valida=true;
 
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }
-        if(!valida)
-            {
-                swal.fire('Digite solo numeros en el campo','','error')
-                form.numerodoc.focus();
-                return(false);
-            }     
     var confirmar=confirm("Desea realizar la reservación [Aceptar] o [Cancelar]");
     if(confirmar==false)
     {
@@ -137,7 +110,7 @@ function validar_usuario(form){
         swal.fire('Digite su nombre completo','','error')
         form.nombres.focus();
         return(false);
-    }
+    }/*
         var letra="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
         var cadena=form.nombres.value;
         var valida=true;
@@ -160,7 +133,7 @@ function validar_usuario(form){
                 swal.fire('Digite solo letras en el campo','','error')
                 form.nombres.focus();
                 return(false);
-            }
+            }*/
     
     else if(form.tipodoc.value.length==0){
         swal.fire('Seleccione su tipo de documento','','error')
@@ -195,7 +168,7 @@ function validar_usuario(form){
                 swal.fire('Digite solo numeros en el campo','','error')
                 form.numerodoc.focus();
                 return(false);
-            }
+            }/*
 
     else if(form.numerodoc.value.length==0){
         swal.fire('Digite su numero de documento','','error')
@@ -252,7 +225,7 @@ else if(form.numerodoc.value.length==0){
                 swal.fire('Digite solo numeros en el campo','','error')
                 form.numerodoc.focus();
                 return(false);
-            }
+            }*/
  /*   
     else if(form.correo.value.length==0){
         swal.fire('Digite su dirección de correo electronico','','error')
