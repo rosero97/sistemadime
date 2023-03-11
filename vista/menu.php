@@ -155,7 +155,7 @@ if(isset($_POST['search'])){
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
                                 <p>Descrpcion del plato</p>
-                                <button id="open-modal-btn" class="open-btn">ver mas</button>
+                                <button id="open-modal-btn" class="open-modal-btn">ver mas</button>
                                 <div id="myModal" class="modal">
                                   <div class="modal-content" style="width: 80%;">
                                     <span class="close">&times;</span>
@@ -231,39 +231,34 @@ if(isset($_POST['search'])){
     </script>
     <script src="./js/main.js"></script>
 	<script>
-		var openModalBtn = document.getElementById("open-modal-btn");
+		var openModalBtns = document.querySelectorAll(".open-modal-btn");
 		var modal = document.getElementById("myModal");
-
-		// Obtener el botón para cerrar el modal
 		var closeModalBtn = document.getElementsByClassName("close")[0];
 
-		// Cuando el usuario hace clic en el botón, abre el modal
-		openModalBtn.onclick = function() {
-		  // Ajusta el tiempo de espera y la transición
-		  modal.style.display = "block";
-		  setTimeout(function(){
-		    modal.classList.add('show');
-		  }, 100);
-		};
+		openModalBtns.forEach(function(btn) {
+		    btn.onclick = function(){
+			modal.style.display = "block";
+			setTimeout(function(){
+			    modal.classList.add('show');
+			}, 100);
+		    }
+		});
 
-		// Cuando el usuario hace clic en el botón de cerrar, cierra el modal
 		closeModalBtn.onclick = function() {
-		  modal.classList.remove('show');
-		  setTimeout(function(){
-		    modal.style.display = "none";
-		  }, 1000);
-		};
-
-		// Si el usuario hace clic fuera del modal, ciérralo también
-		window.onclick = function(event) {
-		  if (event.target == modal) {
 		    modal.classList.remove('show');
 		    setTimeout(function(){
-		      modal.style.display = "none";
-		    }, 1000);
-		  }
+			modal.style.display = "none";
+		    }, 10);
 		};
 
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+			modal.classList.remove('show');
+			setTimeout(function(){
+			    modal.style.display = "none";
+			}, 10);
+		    }
+		};
 	    </script>
 </body>
 </html>
