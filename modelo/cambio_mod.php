@@ -19,7 +19,6 @@ class cambio{
                                             if($this->contrasena==$this->contrasena1){
                                                 $contra_fuerte = password_hash ($this->contrasena, PASSWORD_DEFAULT);
                                                 $update = "update persona set
-                                                                                        correo='$this->correoRe',
                                                                                         contrasena='$contra_fuerte'
                                                                                         where correo='$this->correoRe'
 
