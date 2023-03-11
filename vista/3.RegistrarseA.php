@@ -24,10 +24,7 @@ if(!isset($_SESSION['codigo'])){
 </head>
 <body>
 <header class="header">
-		<div class="container">			
-      		<nav class="menu">
-				<a href="inicio/Ayuda.html"><i class="fa fa-question-circle fa-4x" aria-hidden="true"></i></a>
-			</nav>		
+		<div class="container">	
 		</div>
 	</header>
 	<div class="capa">
@@ -84,22 +81,37 @@ if(!isset($_SESSION['codigo'])){
 				        </div>
 			        </div>
 		</section>
-		<footer>
-			<ul class="footer-content" >
-            <div class="columns">
-					<a href="https://www.facebook.com/profile.php?id=100090155486140"><img src="../imagenes/facebook.png"></a>     
-					<a href="https://twitter.com/petrogustavo"><img src="../imagenes/twitter.png"></a> 
-					<a href="https://www.instagram.com/digitalsmenu/"><img src="../imagenes/instagram.png"></a> 
+		<footer class="pie-pagina">
+			<div class="grupo-1">
+				<div class="box">
+					<figure>
+						<a href="">
+							<img src="../imagenes/Logo.png" alt="logo de digitalsmenu">
+						</a>
+					</figure>
 				</div>
-				<div class="columns">
-					<p>Digitals'Menu Todos los derechos reservados ®</p>
+				<div class="box">
+					<h2>SOBRE NOSOTROS</h2>
+					<p>Digital's Menu, el mejor sitio para la reserva de tu mesa sin filas y con la mejor comodidad.</p>
 				</div>
-				<div class="columns">
-					<p>Somos Digital's menu, el mejor sitio para la reserva de tu mesa</p>
-					<p>con la mejor comodidad</p>
+				<div class="box">
+					<h2>SIGUENOS</h2>
+					<div class="red-social">
+						<a href="https://www.facebook.com/profile.php?id=100090155486140"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+						<a href="https://www.instagram.com/digitalsmenu/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+					</div>
 				</div>
+				<div class="box">
+					<h2>AYUDA</h2>
+					<div class="ayuda">
+						<a id="fa" href="../vista/inicio/Ayuda.html"><i class="fa fa-question-circle fa-4x" aria-hidden="true"></i></a>
+					</div>
+				</div>				
 			</div>
-            </ul>
+			<div class="grupo-2">
+				<small>&copy; 2023 <b>Digital´s Menu</b> - Todos los Derechos Reservados.</small>
+			</div>
 		</footer>
 	</div>
 </body>
