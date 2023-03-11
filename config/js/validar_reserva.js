@@ -44,24 +44,7 @@ function validar_reserva(form){
         swal.fire('Escriba si tiene observaciones de lo contario escriba ninguna','','error')
         form.observaciones.focus();
         return(false);
-    }/*
-        var letra="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
-        var cadena=form.observaciones.value;
-        var valida=true;
-
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }*/
+    }
                     
     var confirmar=confirm("Desea realizar la reservación [Aceptar] o [Cancelar]");
     if(confirmar==false)
@@ -113,24 +96,7 @@ function validar_modificar_reserva(form){
         swal.fire('Escriba si tiene observaciones de lo contario escriba ninguna','','error')
         form.observaciones.focus();
         return(false);
-    }/*
-        var letra="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
-        var cadena=form.observaciones.value;
-        var valida=true;
-
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }*/
+    }
                     
     var confirmar=confirm("Desea realizar la reservación [Aceptar] o [Cancelar]");
     if(confirmar==false)
