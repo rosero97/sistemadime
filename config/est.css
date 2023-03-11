@@ -480,3 +480,32 @@ footer.pie-pagina .grupo-2 small{
         padding: 35px 0px;
     }
 }
+
+summary {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  summary:focus, summary:hover {
+    background-color: #4d6ecf;
+  }
+  
+  summary::marker {
+    content: "\25B6"; /* Agrega un triángulo como indicador de estado */
+    color: #333;
+    font-size: 1.2em;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  details[open] summary::marker {
+    content: "\25BC"; /* Cambia el triángulo al estado abierto */
+  }
+
