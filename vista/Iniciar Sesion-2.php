@@ -7,7 +7,7 @@ include("../modelo/iniciar_sesion.php")
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Menù Lateral con Css</title>
+	<title>Iniciar Sesión</title>
 	<link rel="stylesheet" href="../config/est.css">
 	<script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>

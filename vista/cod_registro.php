@@ -9,7 +9,7 @@ include("../modelo/cod_mod.php")
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Menù Lateral con Css</title>
+	<title>Codigo Registro</title>
 	<link rel="stylesheet" href="../config/est.css">
 	<script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
