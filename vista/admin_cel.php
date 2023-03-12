@@ -36,6 +36,7 @@ include("../controlador/admin_cel_con.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 	<script src="../config/js/cerrar.js"></script>
+	<script src="../config/js/validar_form.js"></script>
 </head>
 <body>
 	<!-- Main container -->
@@ -117,7 +118,7 @@ include("../controlador/admin_cel_con.php");
                         <a href="admin.php">
                         <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                         </a>        
-                        <button class="btn btn-primary" id="modifica1" name="modifica1"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
+                        <button class="btn btn-primary" id="modifica1" name="modifica1" onclick="return validar_celular_admin(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
                     </div>                    
                 </form>
 	        </div>		

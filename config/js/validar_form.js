@@ -5,30 +5,7 @@ function validar_administrador(form){
         swal.fire('Digite su nombre completo','','error')
         form.nombres.focus();
         return(false);
-    }/*
-        var letra="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
-        var cadena=form.nombres.value;
-        var valida=true;
-
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }
-            if(!valida)
-            {
-                swal.fire('Digite solo letras en el campo','','error')
-                form.nombres.focus();
-                return(false);
-            }*/
+    }
     
     else if(form.tipodoc.value.length==0){
         swal.fire('Seleccione su tipo de documento','','error')
@@ -64,10 +41,16 @@ function validar_administrador(form){
                 form.numerodoc.focus();
                 return(false);
             }
+    
+    else if(form.correo.value.length==0){
+        swal.fire('Digite su correo electronico','','error')
+        form.correo.focus();
+        return(false);
+    }
 
-    else if(form.numerodoc.value.length==0){
-        swal.fire('Digite su numero de documento','','error')
-        form.numerodoc.focus();
+    else if(form.numerocel.value.length==0){
+        swal.fire('Digite su numero de contacto','','error')
+        form.numerocel.focus();
         return(false);
     }
         var letra="1234567890";
@@ -93,8 +76,20 @@ function validar_administrador(form){
                 form.numerodoc.focus();
                 return(false);
             }
+    
+    else if(form.contraseña.value.length==0){
+        swal.fire('Digite su contraseña','','error')
+        form.contraseña.focus();
+        return(false);
+    }
 
-    var confirmar=confirm("Desea realizar la reservación [Aceptar] o [Cancelar]");
+    else if(form.contraseña2.value.length==0){
+        swal.fire('Digite nuevamente su contraseña','','error')
+        form.contraseña2.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea registrarse en el sistema [Aceptar] o [Cancelar]");
     if(confirmar==false)
     {
         return(false);
@@ -110,30 +105,7 @@ function validar_usuario(form){
         swal.fire('Digite su nombre completo','','error')
         form.nombres.focus();
         return(false);
-    }/*
-        var letra="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890";
-        var cadena=form.nombres.value;
-        var valida=true;
-
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }
-            if(!valida)
-            {
-                swal.fire('Digite solo letras en el campo','','error')
-                form.nombres.focus();
-                return(false);
-            }*/
+    }
     
     else if(form.tipodoc.value.length==0){
         swal.fire('Seleccione su tipo de documento','','error')
@@ -168,101 +140,21 @@ function validar_usuario(form){
                 swal.fire('Digite solo numeros en el campo','','error')
                 form.numerodoc.focus();
                 return(false);
-            }/*
-
-    else if(form.numerodoc.value.length==0){
-        swal.fire('Digite su numero de documento','','error')
-        form.numerodoc.focus();
-        return(false);
-    }
-        var letra="1234567890";
-        var cadena=form.numerodoc.value;
-        var valida=true;
-
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
             }
-        if(!valida)
-            {
-                swal.fire('Digite solo numeros en el campo','','error')
-                form.numerodoc.focus();
-                return(false);
-            }
-else if(form.numerodoc.value.length==0){
-        swal.fire('Digite su numero de documento','','error')
-        form.numerodoc.focus();
-        return(false);
-    }
-        var letra="1234567890";
-        var cadena=form.numerodoc.value;
-        var valida=true;
-
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }
-        if(!valida)
-            {
-                swal.fire('Digite solo numeros en el campo','','error')
-                form.numerodoc.focus();
-                return(false);
-            }*/
- /*   
+    
     else if(form.correo.value.length==0){
-        swal.fire('Digite su dirección de correo electronico','','error')
+        swal.fire('Digite su correo electronico','','error')
         form.correo.focus();
         return(false);
     }
-        var letra="";
-        var cadena=form.correo.value;
-        var valida=true;
 
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }
-        if(!valida)
-            {
-                swal.fire('Digite un correo electronico valido','','error')
-                form.correo.focus();
-                return(false);
-            }
-    
     else if(form.numerocel.value.length==0){
-        swal.fire('Digite su numero de celular','','error')
+        swal.fire('Digite su numero de contacto','','error')
         form.numerocel.focus();
         return(false);
     }
         var letra="1234567890";
-        var cadena=form.numerocel.value;
+        var cadena=form.numerodoc.value;
         var valida=true;
 
         for(i=0;i<cadena.length;i++)
@@ -281,7 +173,7 @@ else if(form.numerodoc.value.length==0){
         if(!valida)
             {
                 swal.fire('Digite solo numeros en el campo','','error')
-                form.numerocel.focus();
+                form.numerodoc.focus();
                 return(false);
             }
     
@@ -290,37 +182,49 @@ else if(form.numerodoc.value.length==0){
         form.contraseña.focus();
         return(false);
     }
-        var letra="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$";
-        var cadena=form.contraseña.value;
-        var valida=true;
 
-        for(i=0;i<cadena.length;i++)
-            {
-                ch=cadena.charAt(i);
-                for(j=0; j<letra.length; j++)
-                if(ch==letra.charAt(j))
-                break;
-                if(j==letra.length)
-                {
-                    valida = false;
-                    break;
-                    break;
-                }
-            }
-        if(!valida)
-            {
-                swal.fire('Digite una contraseña valida','La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. NO puede tener otros símbolos. Ejemplo: w3Unpocodet0d0','error')
-                form.contraseña.focus();
-                return(false);
-            }
-    
     else if(form.contraseña2.value.length==0){
-        swal.fire('Digite su contraseña','','error')
+        swal.fire('Digite nuevamente su contraseña','','error')
         form.contraseña2.focus();
         return(false);
     }
-        var letra="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$";
-        var cadena=form.contraseña2.value;
+
+    var confirmar=confirm("Desea registrarse en el sistema [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+
+//validacion del nombre del usuario
+function validar_nombre_usuario(form){
+
+    if(form.nombre.value.length==0){
+        swal.fire('Digite su nombre completo','','error')
+        form.nombre.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea realizar el cambio del nombre [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion del celular del usuario
+function validar_celular_usuario(form){
+
+    if(form.celular.value.length==0){
+        swal.fire('Digite su numero de contacto','','error')
+        form.celular.focus();
+        return(false);
+    }
+        var letra="1234567890";
+        var cadena=form.celular.value;
         var valida=true;
 
         for(i=0;i<cadena.length;i++)
@@ -338,11 +242,208 @@ else if(form.numerodoc.value.length==0){
             }
         if(!valida)
             {
-                swal.fire('Digite una contraseña valida','La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. NO puede tener otros símbolos. Ejemplo: w3Unpocodet0d0','error')
-                form.contraseña2.focus();
+                swal.fire('Digite solo numeros en el campo','','error')
+                form.celular.focus();
                 return(false);
-            } */    
-    var confirmar=confirm("Desea realizar la reservación [Aceptar] o [Cancelar]");
+            }
+    
+    var confirmar=confirm("Desea cambiar su numero de contacto [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion de la contraseña del usuario
+function validar_contra_usuario(form){
+
+     if(form.contrasena.value.length==0){
+        swal.fire('Digite su contraseña actual','','error')
+        form.contrasena.focus();
+        return(false);
+    }
+    else if(form.contrasena1.value.length==0){
+        swal.fire('Digite su nueva contraseña','','error')
+        form.contrasena1.focus();
+        return(false);
+    }
+    else if(form.contrasena2.value.length==0){
+        swal.fire('Digite nuevamente su contraseña','','error')
+        form.contrasena2.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea cambiar su contraseña [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion del nombre del administrador
+function validar_nombre_admin(form){
+
+    if(form.nombre.value.length==0){
+        swal.fire('Digite su nombre completo','','error')
+        form.nombre.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea realizar el cambio del nombre [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion del celular del administrador
+function validar_celular_admin(form){
+
+    if(form.celular.value.length==0){
+        swal.fire('Digite su numero de contacto','','error')
+        form.celular.focus();
+        return(false);
+    }
+        var letra="1234567890";
+        var cadena=form.celular.value;
+        var valida=true;
+
+        for(i=0;i<cadena.length;i++)
+            {
+                ch=cadena.charAt(i);
+                for(j=0; j<letra.length; j++)
+                if(ch==letra.charAt(j))
+                break;
+                if(j==letra.length)
+                {
+                    valida = false;
+                    break;
+                    break;
+                }
+            }
+        if(!valida)
+            {
+                swal.fire('Digite solo numeros en el campo','','error')
+                form.celular.focus();
+                return(false);
+            }
+    
+    var confirmar=confirm("Desea cambiar su numero de contacto [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion de la contraseña del administrador
+function validar_contra_admin(form){
+
+    if(form.contrasena.value.length==0){
+        swal.fire('Digite su contraseña actual','','error')
+        form.contrasena.focus();
+        return(false);
+    }
+    else if(form.contrasena1.value.length==0){
+        swal.fire('Digite su nueva contraseña','','error')
+        form.contrasena1.focus();
+        return(false);
+    }
+    else if(form.contrasena2.value.length==0){
+        swal.fire('Digite nuevamente su contraseña','','error')
+        form.contrasena2.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea cambiar su contraseña [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+
+//validacion de agregar restaurante
+function validar_agregar_company(form){
+
+    if(form.nombre.value.length==0){
+        swal.fire('Digite el nombre del restaurante','','error')
+        form.nombre.focus();
+        return(false);
+    }
+    else if(form.imagen.value.length==0){
+        swal.fire('Inserte una imagen o slogan del restaurante','','error')
+        form.imagen.focus();
+        return(false);
+    }
+    else if(form.direccion.value.length==0){
+        swal.fire('Digite la dirección del restaurante','','error')
+        form.direccion.focus();
+        return(false);
+    }
+    else if(form.telefono.value.length==0){
+        swal.fire('Digite el numero de contacto del restaurante','','error')
+        form.telefono.focus();
+        return(false);
+    }
+    else if(form.correo.value.length==0){
+        swal.fire('Digite el correo del restaurante','','error')
+        form.correo.focus();
+        return(false);
+    }
+    else if(form.hora.value.length==0){
+        swal.fire('Digite el horario de atencion del restaurante','','error')
+        form.hora.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea registrar su restaurante con esos datos [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion del modificar restaurante
+function validar_modificar_company(form){
+
+    if(form.nombre.value.length==0){
+        swal.fire('Digite el nombre del restaurante','','error')
+        form.nombre.focus();
+        return(false);
+    }
+    else if(form.direccion.value.length==0){
+        swal.fire('Digite la dirección del restaurante','','error')
+        form.direccion.focus();
+        return(false);
+    }
+    else if(form.telefono.value.length==0){
+        swal.fire('Digite el numero de contacto del restaurante','','error')
+        form.telefono.focus();
+        return(false);
+    }
+    else if(form.correo.value.length==0){
+        swal.fire('Digite el correo del restaurante','','error')
+        form.correo.focus();
+        return(false);
+    }
+    else if(form.hora.value.length==0){
+        swal.fire('Digite el horario de atencion del restaurante','','error')
+        form.hora.focus();
+        return(false);
+    }
+    else if(form.imagen.value.length==0){
+        swal.fire('Inserte una imagen o slogan del restaurante','','error')
+        form.imagen.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea guardar los cambios del restaurante [Aceptar] o [Cancelar]");
     if(confirmar==false)
     {
         return(false);

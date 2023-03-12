@@ -36,6 +36,7 @@ include("../controlador/res_con.php");
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="../config/js/validar_form.js"></script>
     <script src="../config/js/cerrar.js"></script>
 </head>
 <body>
@@ -153,7 +154,7 @@ include("../controlador/res_con.php");
                 <div class="row" style="text-align: center;">
                 <div class="col">
                         
-                            <button type="submit" name="agregar" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                            <button type="submit" name="agregar" class="btn btn-primary" onclick="return validar_agregar_company(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
                         
                     </div>
                     <div class="col">
