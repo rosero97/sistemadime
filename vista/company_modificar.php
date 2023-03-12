@@ -48,6 +48,7 @@ if($array==0){
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
+    <script src="../config/js/validar_form.js"></script>
     <script src="../config/js/cerrar.js"></script>
 </head>
 <body>
@@ -187,7 +188,7 @@ if($array==0){
                 </table>
                 <div class="row" style="text-align: center;">
                 <div class="col">
-                        <a href="#"><button type="submit" class="btn btn-primary" name="modifica"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                        <a href="#"><button type="submit" class="btn btn-primary" name="modifica" onclick="return validar_modificar_company(this.form)"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
                     </div>
                     <div class="col">
                         <a href="company.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>

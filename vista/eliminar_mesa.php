@@ -136,7 +136,7 @@ echo $obj->mesa;
                         <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
                     </a>
                     <a href="mesas.php">
-                        <button type="submit" name="elimina" class="btn btn-primary" onclick="return validar_eliminar_mesa(this.form)" ><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+                        <button name="elimina" class="btn btn-primary formulario_eliminar"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
                     </a>       
                 </div>
             </form>
@@ -159,5 +159,27 @@ echo $obj->mesa;
 	<script src="./js/bootstrap-material-design.min.js" ></script>
 	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 	<script src="./js/main.js" ></script>
+    <script>
+        $('.formulario_eliminar').submit(function(e){
+          /*  e.preventDefault();*/
+            Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+            }
+            })
+        });
+    </script>
 </body>
 </html>
