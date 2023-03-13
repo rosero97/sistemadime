@@ -161,7 +161,7 @@ if(isset($_POST['search'])){
                                     <span id="close-modal-btn-<?php echo $arreglo2 ['id_menu']?>" class="close">&times;</span>
                                     <img class="img_menu" src="<?php echo $arreglo2 [2]?>">
                                     <h2 style="position: absolute; left: 45%; top: 10%;"><?php echo $arreglo2 [1]?></h2>
-                                    <p style="position: absolute; left: 45%; top: 20%;"><?php echo $arreglo2 [3]?></p>
+                                    <p style="position: absolute; left: 45%; top: 120px;"><?php echo $arreglo2 [3]?></p>
                                   </div>
                                 </div>
                             </div>
