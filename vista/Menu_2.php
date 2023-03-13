@@ -76,13 +76,52 @@ if(isset($_POST['search'])){
                                 else{
                                     do{  
                             ?>
-                        <div class="menu_usuario">
-                            <img class="img_menu" src="<?php echo $arreglo2 [2]?>">
+                        <div class="table-responsive menu_usuario">
+                            <img class="img_menu" src="<?php echo $arreglo2 [2];?>">
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
-                                <p><?php echo $arreglo2 [3]?></p>
+                                <p>Descripcion del plato</p>
+                                <button id="open-modal-btn-<?php echo $arreglo2 ['id_menu'];?>" class="open-modal-btn">ver mas</button>
+                                <div id="myModal-<?php echo $arreglo2 ['id_menu']?>" class="modal">
+                                  <div class="modal-content" style="width: 80%;">
+                                    <span id="close-modal-btn-<?php echo $arreglo2 ['id_menu']?>" class="close">&times;</span>
+                                    <img class="img_menu" src="<?php echo $arreglo2 [2]?>">
+                                    <h2 style="position: absolute; left: 45%; top: 10%;"><?php echo $arreglo2 [1]?></h2>
+                                    <p style="position: absolute; left: 45%; top: 20%;"><?php echo $arreglo2 [3]?></p>
+                                  </div>
+                                </div>
                             </div>
                         </div>
+                        <script>
+                            var openModalBtn_<?php echo $arreglo2 ['id_menu']?> = document.getElementById("open-modal-btn-<?php echo $arreglo2 ['id_menu']?>");
+                            var modal_<?php echo $arreglo2 ['id_menu']?> = document.getElementById("myModal-<?php echo $arreglo2 ['id_menu']?>");
+
+                            var closeModalBtn_<?php echo $arreglo2 ['id_menu']?> = document.getElementById("close-modal-btn-<?php echo $arreglo2 ['id_menu']?>");
+
+                            openModalBtn_<?php echo $arreglo2 ['id_menu']?>.onclick = function() {
+                                modal_<?php echo $arreglo2 ['id_menu']?>.style.display = "block";
+                                setTimeout(function(){
+                                    modal_<?php echo $arreglo2 ['id_menu']?>.classList.add('show');
+                                }, 100);
+                            };
+
+                            closeModalBtn_<?php echo $arreglo2 ['id_menu']?>.onclick = function() {
+                                modal_<?php echo $arreglo2 ['id_menu']?>.classList.remove('show');
+                                setTimeout(function(){
+                                    modal_<?php echo $arreglo2 ['id_menu']?>.style.display ="none";
+                                }, 10);
+                            };
+
+                            window.onclick = function(event) {
+                                if (event.target == modal_<?php echo $arreglo2 ['id_menu']?>) {
+                                    modal_<?php echo $arreglo2 ['id_menu']?>.classList.remove('show');
+                                    setTimeout(function(){
+                                        modal_<?php echo $arreglo2 ['id_menu']?>.style.display = "none";
+                                    }, 10);
+                                }
+                            };
+                                                
+                        </script>
                         <?php 
                                 }while($arreglo2 = mysqli_fetch_array($resultado2));   
                                 
