@@ -586,8 +586,8 @@ table form {
     box-shadow: 2px 2px 2px 2px #F5F5F5;
     margin-top: 25px;
     display: flex;
-    width: 400px;
-    min-height: 100%;
+    width: 100%;
+    min-height: auto;
 }
 
 .img_menu {
@@ -647,21 +647,21 @@ button#inconfundible:hover{
 }
 
 .modal {
-    display: none; /* Oculta el modal por defecto */
-    position: fixed; /* Posición fija */
-    z-index: 1; /* Muestra el modal por encima del contenido */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Permite hacer scroll en el modal si es necesario */
-    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
   }
   
   /* Estilos para el contenido del modal */
   .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* Centra el contenido verticalmente */
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     animation-name: fadeIn;
