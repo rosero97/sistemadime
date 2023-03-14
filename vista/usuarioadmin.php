@@ -120,10 +120,12 @@ $arreglo2 = mysqli_fetch_array($resultado2);
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
+				
                 <h3 class="text-left">
 					<i class="fas fa-users fa-fw"></i> &nbsp; USUARIOS
                 </h3>
             </div>
+			
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
