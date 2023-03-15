@@ -110,7 +110,10 @@ $(document).ready(function() {
 				extend:    'print',
 				text:      '<i class="fa fa-print"></i> ',
 				titleAttr: 'Imprimir',
-				className: 'btn btn-info'
+				className: 'btn btn-info',
+				customize: function (window) {
+					$(window.document.body).children().eq(0).after('<h1 style="position: absolute; right: 10px; top: 0%;"><strong>Digital´s</strong><strong style="color: red;"> Menu </strong></h1>')
+				  }		
 			},
 		]	        
     });     
