@@ -9,11 +9,11 @@
 <body>
 <header class="header">
 		<div class="container">
-			<div class="btn-menu">
-				<label for="btn-menu">☰</label>
+		<div class="btn-menu">
+				<label for="btn-menu"><b>☰</b></label>
 			</div>
 			<div class="logo">
-				<h1>Digital´s Menu</h1>
+				<h1><b>Digital's Menu</b></h1>	
 			</div>
 		</div>
 	</header>
@@ -75,7 +75,7 @@
 				</div>				
 			</div>
 			<div class="grupo-2">
-				<small>&copy; 2023 <b>Digital´s Menu</b> - Todos los Derechos Reservados.</small>
+				<small>&copy; 2023 <b>Digital's Menu</b> - Todos los Derechos Reservados.</small>
 			</div>
 		</footer>
 
@@ -86,7 +86,7 @@
 	<div class="cont-menu">
 	<nav>
 		<a id="fa" href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
-      	<a id="fa" href="Iniciar Sesion-2.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sesion</a>
+      	<a id="fa" href="Iniciar Sesion-2.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sesión</a>
       	<a id="fa" href="login/1.Tipo_Registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a>
 	</nav>
 		<label for="btn-menu">✖️</label>

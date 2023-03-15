@@ -106,7 +106,7 @@
 				</div>				
 			</div>
 			<div class="grupo-2">
-				<small>&copy; 2023 <b>Digital´s Menu</b> - Todos los Derechos Reservados.</small>
+				<small>&copy; 2023 <b>Digital's Menu</b> - Todos los Derechos Reservados.</small>
 			</div>
 		</footer>
 	</div>

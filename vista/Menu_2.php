@@ -47,7 +47,7 @@ if(isset($_POST['search'])){
  <body>
  <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENU
+                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENÚ
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded " >
@@ -80,7 +80,7 @@ if(isset($_POST['search'])){
                             <img class="img_menu" src="<?php echo $arreglo2 [2];?>">
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
-                                <p>Descripcion del plato</p>
+                                <p>Descripción</p>
                                 <button id="open-modal-btn-<?php echo $arreglo2 ['id_menu'];?>" class="open-modal-btn">ver mas</button>
                                 <div id="myModal-<?php echo $arreglo2 ['id_menu']?>" class="modal">
                                   <div class="modal-content" style="width: 80%;">

@@ -44,7 +44,7 @@ if(!isset($_SESSION['correo'])){
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Usuario</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>USUARIO</b></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
@@ -54,16 +54,16 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -91,7 +91,7 @@ if(!isset($_SESSION['correo'])){
 			<!-- Content -->
 			<div class="full-box tile-container">
 				<a href="../reservacion.php" class="tile">
-					<div class="tile-tittle">Hacer Reservacion</div>
+					<div class="tile-tittle">Hacer Reservación</div>
 					<div class="tile-icon">
 					<i class="fa fa-tags" aria-hidden="true"></i>					
 					</div>
@@ -103,13 +103,13 @@ if(!isset($_SESSION['correo'])){
 					</div>
 				</a>
 				<a href="../menu.php" class="tile">
-					<div class="tile-tittle">Menu</div>
+					<div class="tile-tittle">Menú</div>
 					<div class="tile-icon">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</div>
 				</a>
 				<a href="company_usuario.php" class="tile">
-					<div class="tile-tittle">Digitals Menu</div>
+					<div class="tile-tittle">Digital's Menu</div>
 					<div class="tile-icon">
 						<i class="fas fa-store-alt fa-fw"></i>
 					</div>

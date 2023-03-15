@@ -52,7 +52,7 @@ if(!isset($_SESSION['correo'])){
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-						<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Administrador</small>
+						<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>ADMINISTRADOR</b></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
@@ -71,10 +71,10 @@ if(!isset($_SESSION['correo'])){
 							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -121,13 +121,13 @@ if(!isset($_SESSION['correo'])){
 					</div>
 				</a>
 				<a href="menu2.php" class="tile">
-					<div class="tile-tittle">Menu</div>
+					<div class="tile-tittle">Menú</div>
 					<div class="tile-icon">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</div>
 				</a>
 				<a href="company.php" class="tile">
-					<div class="tile-tittle">Digitals Menu</div>
+					<div class="tile-tittle">Digital's Menu</div>
 					<div class="tile-icon">
 						<i class="fas fa-store-alt fa-fw"></i>
 					</div>

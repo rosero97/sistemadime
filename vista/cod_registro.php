@@ -17,10 +17,10 @@ include("../modelo/cod_mod.php")
 <header class="header">
 		<div class="container">
 			<div class="btn-menu">
-				<label for="btn-menu">☰</label>
+				<label for="btn-menu"><b>☰</b></label>
 			</div>
 			<div class="logo">
-				<h1>Digital´s Menu</h1>
+				<h1><b>Digital's Menu</b></h1>	
 			</div>	
 		</div>
 	</header>
@@ -81,7 +81,7 @@ include("../modelo/cod_mod.php")
 				</div>				
 			</div>
 			<div class="grupo-2">
-				<small>&copy; 2023 <b>Digital´s Menu</b> - Todos los Derechos Reservados.</small>
+				<small>&copy; 2023 <b>Digital's Menu</b> - Todos los Derechos Reservados.</small>
 			</div>
 		</footer>
 

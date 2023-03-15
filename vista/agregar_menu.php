@@ -49,7 +49,7 @@ include("../controlador/menu_con.php");
 					<i class="far fa-times-circle show-nav-lateral"></i>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light">Administrador</small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>ADMINISTRADOR</b></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
@@ -68,10 +68,10 @@ include("../controlador/menu_con.php");
 							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>				
+							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -93,7 +93,7 @@ include("../controlador/menu_con.php");
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; AGREGAR PLATO
+                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; AGREGAR MENÚ
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
@@ -102,12 +102,12 @@ include("../controlador/menu_con.php");
                     <tbody>
                         <tr>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Este es el ID del plato</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Este es el ID</span>
                                 <input type="text" id="num_menu" name="num_menu" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="Este codigo lo creara el sistema automaticamente">
                             </div>
                             <br>
                             <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nombre del plato</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nombre</span>
                                 <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
                             </div>
                             <br>
@@ -117,7 +117,7 @@ include("../controlador/menu_con.php");
                             </div>
                             <br>
                             <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite la descripcion del plato</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite la descripción</span>
                                 <input type="text" id="descripcion" name="descripcion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
                             </div>
                             <br>
