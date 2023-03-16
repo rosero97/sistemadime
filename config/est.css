@@ -299,12 +299,12 @@ justify-content: center;
 }
 
 .tregistro h4 {
-    position: relative;
     color: rgb(255, 255, 255);
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 5px;
+    text-align: center;
     }
     
 

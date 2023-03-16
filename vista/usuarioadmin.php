@@ -17,14 +17,14 @@ if($_POST)
 
 $conet = new Conexion();
 $c = $conet->conectando();   
-$query="SELECT COUNT(*) AS totalRegistros FROM persona ";
+$query="SELECT COUNT(*) AS totalRegistros FROM persona WHERE rolid=2";
 $resultado = mysqli_query($c, $query);
 $arreglo = mysqli_fetch_array($resultado); 
 $totalRegistros = $arreglo['totalRegistros'];
 //echo $totalRegistros;
 
 
-$query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where id_persona";
+$query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=t.cod_tipo_doc where id_persona AND rolid=2";
 $resultado2=mysqli_query($c,$query2);
 $arreglo2 = mysqli_fetch_array($resultado2);
 

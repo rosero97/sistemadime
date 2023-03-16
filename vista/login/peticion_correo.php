@@ -102,7 +102,7 @@ class codigo {
                 //Content
                 $mail->isHTML(true);
                 $mail->Subject ='Peticion registro administrador';
-                //$mail->Body ='Esta es otra manera para enviar el body <input type="button" value="Click aqui">';    
+                //$mail->Body ='Esta es otra manera para enviar el body <input type="button" value="Clik aqui">';    
                 $mail->msgHTML($body);
                 $mail->send();
                 echo "<script> alert('La petición de registro fue enviada correctamente'); window.location.href='../cod_registro.php';</script>";

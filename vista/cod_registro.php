@@ -42,7 +42,7 @@ include("../modelo/cod_mod.php")
                             <h4>Administrador</h4>
                             <form action="" method="post">
                                 <div class="inputBox">
-                                    <p style="text-align: left;">El equipo de Digital Menú esta analizando la petición de registro, si su correo es el indicado en unos momentos se le enviara a dicho correo el codigo para que pueda continuar con el registro.</p><br>
+                                    <p>El equipo de Digital Menú esta analizando la petición de registro, si su correo es el indicado en unos momentos se le enviara a dicho correo el codigo para que pueda continuar con el registro.</p><br>
                                     <input type="text" name="codigo" id="codigo" placeholder="Ingrese el codigo de verificación" required>
                                 </div>
                                 <div class="inputBox">
