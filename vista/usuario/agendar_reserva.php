@@ -148,7 +148,7 @@ $totalRegistros = $arreglo['totalRegistros'];
 											?> 
 										<tr>
 											<td><?php echo $arreglo2[0] ?></td>
-											<td><?php echo $arreglo2[1] ?></td>
+											<td><?php echo $arreglo2[1]," ",$arreglo2[2] ?></td>
 											<td><?php echo $arreglo2['nombre_estado'] ?></td>
 											<td>
 												<a href="<?php if($arreglo2[0]<>""){
