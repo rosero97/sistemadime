@@ -49,7 +49,12 @@ use Greew\OAuth2\Client\Provider\Azure;
 
 if (!isset($_GET['code']) && !isset($_POST['provider'])) {
     ?>
-<html>
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+    <head>
+        <title>Config</title>
+        <meta content="text/html; charset=utf-8" />
+    </head>
 <body>
 <form method="post">
     <h1>Select Provider</h1>
@@ -75,7 +80,7 @@ if (!isset($_GET['code']) && !isset($_POST['provider'])) {
     exit;
 }
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 session_start();
 

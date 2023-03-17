@@ -1,5 +1,5 @@
 <?php
-include('../modelo/menu_mod.php');
+include_once('../modelo/menu_mod.php');
 $obj = new menu();
 
 if($_POST){

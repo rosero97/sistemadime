@@ -9,7 +9,7 @@ if(!isset($_SESSION['correo'])){
     }
 }
 
-include("../conexion/conectar.php");
+include_once("../conexion/conectar.php");
 
 $conet = new Conexion();
 $c = $conet->conectando();        
@@ -77,29 +77,29 @@ if(isset($_POST['search'])){
             <div class="full-box nav-lateral-bg show-nav-lateral"></div>
             <div class="full-box nav-lateral-content">
             <figure class="full-box nav-lateral-avatar">
-                    <i class="far fa-times-circle show-nav-lateral"></i>
+                    <em class="far fa-times-circle show-nav-lateral"></em>
                     <img src="assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
                     <figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>USUARIO</b></small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
                     </figcaption>
                 </figure>
                 <div class="full-box nav-lateral-bar"></div>
                 <nav class="full-box nav-lateral-menu">
                     <ul>
                         <li>
-                            <a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+                            <a href="usuario/cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
                         </li>
                         <li>
-                            <a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservación</a>
+                            <a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
                         </li>
                         <li>
-                            <a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>                        
+                            <a href="usuario/agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>                        
                         </li>
                         <li>
-                            <a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>                
+                            <a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>                
                         </li>
                         <li>
-                            <a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+                            <a href="usuario/company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
                         </li>
                     </ul>
                 </nav>
@@ -108,35 +108,30 @@ if(isset($_POST['search'])){
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
                 <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
+                    <em class="fas fa-exchange-alt"></em>
                 </a>
                 <a href="usuario/usuario.php">
-                    <i class="fas fa-user-cog"></i>
+                    <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENÚ
+                <em class="fa fa-bars" aria-hidden="true"></em> &nbsp; MENÚ
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded " >
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <a href="reservacion.php">
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Hacer reserva</button>                  
-                                    </a>
-                                </th>
-                            </tr>
-                        </thead>
-                    </table>
+                   <div class="col">
+                       <a href="reservacion.php">
+                           <button type="button" class="btn btn-primary"><em class="fa fa-plus" aria-hidden="true"></em> Hacer reserva</button>                  
+                       </a>
+                   </div>                               
                 <table class="table table-striped" style="text-align: center;">
+                <thead><th></th></thead>
                     <div class="columnas">
                         <?php
                             if($arreglo2==0){
@@ -151,7 +146,7 @@ if(isset($_POST['search'])){
                                     do{  
                             ?>
                         <div class="table-responsive menu_usuario">
-                            <img class="img_menu" src="<?php echo $arreglo2 [2];?>">
+                            <img class="img_menu" src="<?php echo $arreglo2 [2];?>" alt="">
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
                                 <p>Descripción</p>
@@ -159,7 +154,7 @@ if(isset($_POST['search'])){
                                 <div id="myModal-<?php echo $arreglo2 ['id_menu']?>" class="modal">
                                   <div class="modal-content" style="width: 80%;">
                                     <span id="close-modal-btn-<?php echo $arreglo2 ['id_menu']?>" class="close">&times;</span>
-                                    <img class="img_menu" src="<?php echo $arreglo2 [2]?>">
+                                    <img class="img_menu" src="<?php echo $arreglo2 [2]?>" alt="">
                                     <h2 style="position: absolute; left: 45%; top: 10%;"><?php echo $arreglo2 [1]?></h2>
                                     <p style="position: absolute; left: 45%; top: 120px;"><?php echo $arreglo2 [3]?></p>
                                   </div>
@@ -216,12 +211,12 @@ if(isset($_POST['search'])){
                             </li>
                             <?php
                             }
-                            for($i=1; $i<=$totalPaginas; $i++){
-                                if($i==$pagina){
-                                    echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
+                            for($em=1; $em<=$totalPaginas; $em++){
+                                if($em==$pagina){
+                                    echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$em.'">'.$em.'</a></li>';    
                                 }
                                 else{
-                                    echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';
+                                    echo'<li class="page-item "><a class="page-link" href="?pagina='.$em.'">'.$em.'</a></li>';
                                 }
                             }
                             if($pagina !=$totalPaginas){

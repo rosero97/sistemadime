@@ -8,8 +8,8 @@ if(!isset($_SESSION['correo'])){
     }
 }
 
-include("../conexion/conectar.php");
-include("../controlador/usuario_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/usuario_con.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,29 +46,29 @@ include("../controlador/usuario_con.php");
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
       <figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>USUARIO</b></small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="usuario/cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservación</a>
+							<a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
-							<a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="usuario/agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="usuario/company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -77,20 +77,20 @@ include("../controlador/usuario_con.php");
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
                 <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
+                    <em class="fas fa-exchange-alt"></em>
                 </a>
                 <a href="usuario.php">
-                    <i class="fas fa-user-cog"></i>
+                    <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR NOMBRE
+                <em class="fa fa-cog" aria-hidden="true"></em> &nbsp; MODIFICAR NOMBRE
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
@@ -98,6 +98,7 @@ include("../controlador/usuario_con.php");
                 <br>
                 <form action="" method="POST">
                     <table>
+                    <thead><th></th></thead>
                         <tbody>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">N° Identidad</span>
@@ -112,9 +113,9 @@ include("../controlador/usuario_con.php");
                     </table>
                     <div class="col" style="text-align:right;"> 
                         <a href="usuario/usuario.php">
-                            <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                            <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                         </a>        
-                        <button class="btn btn-primary" id="modifica" name="modifica" onclick="return validar_nombre_usuario(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
+                        <button class="btn btn-primary" id="modifica" name="modifica" onclick="return validar_nombre_usuario(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>        
                     </div>                    
                 </form>
             </div>

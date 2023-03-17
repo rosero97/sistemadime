@@ -1,6 +1,6 @@
 <?php
-include("../conexion/conectar.php");
-include("../controlador/cambio_contra_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/cambio_contra_con.php");
 
 ?>
 
@@ -16,11 +16,11 @@ include("../controlador/cambio_contra_con.php");
 <header class="header">
 		<div class="container">
 		<div class="btn-menu">
-				<label for="btn-menu"><b>☰</b></label>
+				<label for="btn-menu"><strong>☰</strong></label>
 			</div>
 			<div class="logo">
-				<h1><b>Digital's Menu</b></h1>	
-			</div>	
+				<h1><strong>Digital's Menu</strong></h1>	
+			</div>
 		</div>
 	</header>
 	<div class="capa">
@@ -29,11 +29,11 @@ include("../controlador/cambio_contra_con.php");
 			<div class="color"></div>
 			<div class="color"></div>
 			<div class="box">
-				<div class="square" style="--i:0;"></div>
-				<div class="square" style="--i:1;"></div>
-				<div class="square" style="--i:2;"></div>
-				<div class="square" style="--i:3;"></div>
-				<div class="square" style="--i:4;"></div>
+				<div class="square" style="--em:0;"></div>
+				<div class="square" style="--em:1;"></div>
+				<div class="square" style="--em:2;"></div>
+				<div class="square" style="--em:3;"></div>
+				<div class="square" style="--em:4;"></div>
 				<div class="contenedor">
 					<div class="tregistro">
 					    <div class="center">                           
@@ -74,20 +74,20 @@ include("../controlador/cambio_contra_con.php");
 				<div class="box">
 					<h2>SIGUENOS</h2>
 					<div class="red-social">
-						<a href="https://www.facebook.com/profile.php?id=100090155486140"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-						<a href="https://www.instagram.com/digitalsmenu/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+						<a href="https://www.facebook.com/profile.php?id=100090155486140"><em class="fa fa-facebook-official" aria-hidden="true"></em></a>
+						<a href="#"><em class="fa fa-twitter-square" aria-hidden="true"></em></a>
+						<a href="https://www.instagram.com/digitalsmenu/"><em class="fa fa-instagram" aria-hidden="true"></em></a>
 					</div>
 				</div>
 				<div class="box">
 					<h2>AYUDA</h2>
 					<div class="ayuda">
-						<a id="fa" href="../vista/inicio/Ayuda.html"><i class="fa fa-question-circle fa-4x" aria-hidden="true"></i></a>
+						<a id="fa" href="../vista/inicio/Ayuda.html"><em class="fa fa-question-circle fa-4x" aria-hidden="true"></em></a>
 					</div>
 				</div>				
 			</div>
 			<div class="grupo-2">
-				<small>&copy; 2023 <b>Digital's Menu</b> - Todos los Derechos Reservados.</small>
+				<small>&copy; 2023 <strong>Digital's Menu</strong> - Todos los Derechos Reservados.</small>
 			</div>
 		</footer>
 
@@ -97,9 +97,9 @@ include("../controlador/cambio_contra_con.php");
 <div class="container-menu">
 	<div class="cont-menu">
 	<nav>
-		<a id="fa" href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
-      	<a id="fa" href="Iniciar Sesion-2.php" ><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sesión</a>
-      	<a id="fa" href="login/1.Tipo_Registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a>
+		<a id="fa" href="../index.html"><em class="fa fa-home" aria-hidden="true"></em> Inicio</a>
+      	<a id="fa" href="Iniciar Sesion-2.php" ><em class="fa fa-sign-in" aria-hidden="true"></em> Iniciar Sesión</a>
+      	<a id="fa" href="login/1.Tipo_Registro.html"><em class="fa fa-user-plus" aria-hidden="true"></em> Registrarse</a>
 	</nav>
 		<label for="btn-menu">✖️</label>
 	</div>

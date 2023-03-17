@@ -7,8 +7,8 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
-include("../conexion/conectar.php");
-include("../controlador/modifica_reserva_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/modifica_reserva_con.php");
 
 $key=$_GET['key'];
 //echo $key;
@@ -60,29 +60,29 @@ $obj->id_estado = $array[3];
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
             <figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>USUARIO</b></small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="usuario/cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservación</a>
+							<a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
-							<a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="usuario/agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="usuario/company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -91,20 +91,20 @@ $obj->id_estado = $array[3];
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
                 <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
+                    <em class="fas fa-exchange-alt"></em>
                 </a>
                 <a href="usuario/usuario.php">
-                    <i class="fas fa-user-cog"></i>
+                    <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; MODIFICAR RESERVACIÓN
+                <em class="fa fa-tags" aria-hidden="true"></em> &nbsp; MODIFICAR RESERVACIÓN
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
@@ -147,10 +147,10 @@ $obj->id_estado = $array[3];
                     echo    '</table>';
                     echo    '<div class="row" style="text-align: center;">';
                     echo        '<div class="col">
-                                <a href="#"><button type="submit" class="btn btn-primary" name="modifica" onclick="return validar_modificar_reserva(this.form)"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</i></button></a>
+                                <a href="#"><button type="submit" class="btn btn-primary" name="modifica" onclick="return validar_modificar_reserva(this.form)"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button></a>
                             </div>';
                     echo        '<div class="col">
-                                <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
+                                <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button></a>
                             </div>';
                     echo    '</div>';
                     echo    '</form>';

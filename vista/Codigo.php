@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-include("../conexion/conectar.php");
+include_once("../conexion/conectar.php");
 
 
 $correo=$_POST['correo'];
@@ -19,9 +19,9 @@ if(mysqli_fetch_array($ejecuta)){
 
 
 
-        require 'PHPMailer/src/Exception.php';
-        require 'PHPMailer/src/PHPMailer.php';
-        require 'PHPMailer/src/SMTP.php';
+        require_once 'PHPMailer/src/Exception.php';
+        require_once 'PHPMailer/src/PHPMailer.php';
+        require_once 'PHPMailer/src/SMTP.php';
 
 
         $mail = new PHPMailer(true);

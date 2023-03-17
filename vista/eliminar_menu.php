@@ -7,8 +7,8 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
-include("../conexion/conectar.php");
-include("../controlador/menu_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/menu_con.php");
 
 $obj = new menu();
 
@@ -75,32 +75,32 @@ echo $obj->ida;
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>ADMINISTRADOR</b></small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="administrador.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><em class="fas fa-users fa-fw"></em> &nbsp; Usuarios</a>
 						</li>
 						<li>
-							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="reservaciones.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
+							<a href="mesas.php"><em class="fa fa-table" aria-hidden="true"></em> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="menu2.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="company.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -109,25 +109,26 @@ echo $obj->ida;
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
                 <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
+                    <em class="fas fa-exchange-alt"></em>
                 </a>
                 <a href="admin.php">
-                    <i class="fas fa-user-cog"></i>
+                    <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; ELIMINAR MENÚ
+                    <em class="fas fa-clipboard-list fa-fw"></em> &nbsp; ELIMINAR MENÚ
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
             <form action="" name="agregar_menu" method="POST" enctype="multipart/form-data">
                 <table>
+                <thead><th></th></thead>
                     <tbody>
                     <tr>
                             <div class="input-group mb-3">
@@ -142,7 +143,7 @@ echo $obj->ida;
                             <br>
                             <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Inserte la imagen</span>
-                                <img width="100" src="<?php echo $obj->imagen; ?>"> 
+                                <img width="100" src="<?php echo $obj->imagen; ?>" alt=""> 
                             </div>
                             <br>
                             <div>
@@ -159,9 +160,9 @@ echo $obj->ida;
                 </table>
             <div class="col" style="text-align:right;"> 
                 <a href="menu2.php">
-                    <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                    <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                 </a>        
-                <button type="submit" name="elimina" class="btn btn-primary" onclick="return validar_eliminar_menu(this.form)"><i class="fa fa-trash-o" aria-hidden="true"> Eliminar</i></button>
+                <button type="submit" name="elimina" class="btn btn-primary" onclick="return validar_eliminar_menu(this.form)"><em class="fa fa-trash-o" aria-hidden="true"> Eliminar</em></button>
             </div>
             </form>
             <br>

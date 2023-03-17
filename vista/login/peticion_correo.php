@@ -1,6 +1,6 @@
 <?php
 
-include("../../conexion/conectar.php");
+include_once("../../conexion/conectar.php");
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -67,9 +67,9 @@ class codigo {
             $email=$_POST['enviar_email'];
 
 
-            require '../PHPMailer/src/Exception.php';
-            require '../PHPMailer/src/PHPMailer.php';
-            require '../PHPMailer/src/SMTP.php';
+            require_once '../PHPMailer/src/Exception.php';
+            require_once '../PHPMailer/src/PHPMailer.php';
+            require_once '../PHPMailer/src/SMTP.php';
 
 
             $mail = new PHPMailer(true);

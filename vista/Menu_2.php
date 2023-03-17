@@ -1,6 +1,6 @@
 <?php
 
-include("../conexion/conectar.php");
+include_once("../conexion/conectar.php");
 
 $conet = new Conexion();
 $c = $conet->conectando();        
@@ -47,22 +47,19 @@ if(isset($_POST['search'])){
  <body>
  <div class="full-box page-header">
                 <h3 class="text-left">
-                <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; MENÚ
+                <em class="fa fa-bars" aria-hidden="true"></em> &nbsp; MENÚ
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded " >
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <a href="Iniciar Sesion-2.php">
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Hacer reserva</button>                  
-                                    </a>
-                                </th>
-                            </tr>
-                        </thead>
-                    </table>
+                    <div class="col">
+                        <a href="Iniciar Sesion-2.php">
+                            <button type="button" class="btn btn-primary"><em class="fa fa-plus" aria-hidden="true"></em> Hacer reserva</button>                  
+                        </a>
+                    </div><br>
                 <table class="table-striped" style="text-align: center;">
+                <thead>
+                    <th></th>
+                </thead>
                     <div class="columnas">
                         <?php
                             if($arreglo2==0){
@@ -77,7 +74,7 @@ if(isset($_POST['search'])){
                                     do{  
                             ?>
                         <div class="table-responsive menu_usuario">
-                            <img class="img_menu" src="<?php echo $arreglo2 [2];?>">
+                            <img class="img_menu" src="<?php echo $arreglo2 [2];?>" alt="">
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
                                 <p>Descripción</p>
@@ -85,7 +82,7 @@ if(isset($_POST['search'])){
                                 <div id="myModal-<?php echo $arreglo2 ['id_menu']?>" class="modal">
                                   <div class="modal-content" style="width: 80%;">
                                     <span id="close-modal-btn-<?php echo $arreglo2 ['id_menu']?>" class="close">&times;</span>
-                                    <img class="img_menu" src="<?php echo $arreglo2 [2]?>">
+                                    <img class="img_menu" src="<?php echo $arreglo2 [2]?>" alt="">
                                     <h2 style="position: absolute; left: 45%; top: 10%;"><?php echo $arreglo2 [1]?></h2>
                                     <p style="position: absolute; left: 45%; top: 20%;"><?php echo $arreglo2 [3]?></p>
                                   </div>
@@ -142,12 +139,12 @@ if(isset($_POST['search'])){
                             </li>
                             <?php
                             }
-                            for($i=1; $i<=$totalPaginas; $i++){
-                                if($i==$pagina){
-                                    echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';    
+                            for($em=1; $em<=$totalPaginas; $em++){
+                                if($em==$pagina){
+                                    echo'<li class="page-item active" aria-current="page"><a class="page-link" href="?pagina='.$em.'">'.$em.'</a></li>';    
                                 }
                                 else{
-                                    echo'<li class="page-item "><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';
+                                    echo'<li class="page-item "><a class="page-link" href="?pagina='.$em.'">'.$em.'</a></li>';
                                 }
                             }
                             if($pagina !=$totalPaginas){

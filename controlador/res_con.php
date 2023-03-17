@@ -1,5 +1,5 @@
 <?php
-include('../modelo/res_mod.php');
+include_once('../modelo/res_mod.php');
 $obj = new restaurante();
 
 if($_POST){

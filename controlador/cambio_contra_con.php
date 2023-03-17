@@ -1,5 +1,5 @@
 <?php
-include('../modelo/cambio_mod.php');
+include_once('../modelo/cambio_mod.php');
 $obj = new cambio();
 
 if($_POST){

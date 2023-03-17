@@ -1,5 +1,5 @@
 <?php
-include('../modelo/reserva_mod.php');
+include_once('../modelo/reserva_mod.php');
 $obj = new reserva();
 
 if($_POST){

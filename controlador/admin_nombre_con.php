@@ -1,5 +1,5 @@
 <?php
-include('../modelo/admin_mod.php');
+include_once('../modelo/admin_mod.php');
 $obj = new admin();
 
 if($_POST){

@@ -17,7 +17,7 @@ if(!isset($_SESSION['correo'])){
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="../css/normalize.css">
     <!-- Bootstrap V4.3 -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="./css/bootstrap.min.css">-->
     <!-- Bootstrap Material Design V4.0 -->
     <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
     <!-- Font Awesome V5.9.0 -->
@@ -25,14 +25,14 @@ if(!isset($_SESSION['correo'])){
     <!-- Sweet Alerts V8.13.0 CSS file -->
     <link rel="stylesheet" href="../css/sweetalert2.min.css">
     <!-- Sweet Alert V8.13.0 JS file-->
-    <script src="../js/sweetalert2.min.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
     <!-- jQuery Custom Content Scroller V3.1.5 -->
     <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
     <!-- General Styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
-	<script src="../../config/js/cerrar.js"></script></head>
+    <script src="../../config/js/cerrar.js"></script>
 <body>
     <!-- Main container -->
     <main class="full-box main-container">
@@ -41,29 +41,29 @@ if(!isset($_SESSION['correo'])){
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
 			<figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>USUARIO</b></small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="../reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservación</a>
+							<a href="../reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
-							<a href="agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="../menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="../menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -72,20 +72,20 @@ if(!isset($_SESSION['correo'])){
         <section class="full-box page-content">
 			<nav class="full-box navbar-info">
 				<a href="#" class="float-left show-nav-lateral">
-					<i class="fas fa-exchange-alt"></i>
+					<em class="fas fa-exchange-alt"></em>
 				</a>
 				<a href="usuario.php">
-					<i class="fas fa-user-cog"></i>
+					<em class="fas fa-user-cog"></em>
 				</a>
 				<a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
 			</nav>
 			<!-- Page header -->
 			<div class="full-box page-header">
 				<h3 class="text-left">
-					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
+					<em class="fab fa-dashcube fa-fw"></em> &nbsp; DASHBOARD
 				</h3>
 			</div>
 			<!-- Content -->
@@ -93,25 +93,25 @@ if(!isset($_SESSION['correo'])){
 				<a href="../reservacion.php" class="tile">
 					<div class="tile-tittle">Hacer Reservación</div>
 					<div class="tile-icon">
-					<i class="fa fa-tags" aria-hidden="true"></i>					
+					<em class="fa fa-tags fa-6x" aria-hidden="true"></em>					
 					</div>
 				</a>
 				<a href="agendar_reserva.php" class="tile">
 					<div class="tile-tittle">Reservaciones</div>
 					<div class="tile-icon">
-						<i class="fa fa-bookmark" aria-hidden="true"></i>						
+						<em class="fa fa-bookmark fa-6x" aria-hidden="true"></em>						
 					</div>
 				</a>
 				<a href="../menu.php" class="tile">
 					<div class="tile-tittle">Menú</div>
 					<div class="tile-icon">
-						<i class="fa fa-bars" aria-hidden="true"></i>
+						<em class="fa fa-bars fa-6x" aria-hidden="true"></em>
 					</div>
 				</a>
 				<a href="company_usuario.php" class="tile">
 					<div class="tile-tittle">Digital's Menu</div>
 					<div class="tile-icon">
-						<i class="fas fa-store-alt fa-fw"></i>
+						<em class="fas fa-store-alt fa-6x"></em>
 					</div>
 				</a>
 			</div>	

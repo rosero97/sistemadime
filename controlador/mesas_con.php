@@ -1,5 +1,5 @@
 <?php
-include('../modelo/mesas_mod.php');
+include_once('../modelo/mesas_mod.php');
 $obj = new num_menu();
 
 if($_POST){

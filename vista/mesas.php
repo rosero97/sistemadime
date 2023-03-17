@@ -7,7 +7,7 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
-include("../conexion/conectar.php");
+include_once("../conexion/conectar.php");
 
 $conet = new Conexion();
 $c = $conet->conectando();         
@@ -69,32 +69,32 @@ $totalRegistros = $arreglo['totalRegistros'];
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-					<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>ADMINISTRADOR</b></small>
+					<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="administrador.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><em class="fas fa-users fa-fw"></em> &nbsp; Usuarios</a>
 						</li>
 						<li>
-							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp; Reservaciones</a>						
+							<a href="reservaciones.php"><em class="fa fa-bookmark" aria-hidden="true"></em>&nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
+							<a href="mesas.php"><em class="fa fa-table" aria-hidden="true"></em> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="menu2.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="company.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -103,25 +103,25 @@ $totalRegistros = $arreglo['totalRegistros'];
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
                 <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
+                    <em class="fas fa-exchange-alt"></em>
                 </a>
                 <a href="admin.php">
-                    <i class="fas fa-user-cog"></i>
+                    <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
 				<!-- el js del exit onclick="return validar_cerrar (this.form)" href="../modelo/logout.php" -->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->	
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-clipboard-list fa-fw"></i> &nbsp; MODIFICAR MESAS
+                    <em class="fas fa-clipboard-list fa-fw"></em> &nbsp; MODIFICAR MESAS
                 </h3>              
             </div>
 			<div class="col">
 						<a href="agregar_mesa.php">
-							<button type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>                   
+							<button type="button" class="btn btn-primary"><em class="fa fa-plus" aria-hidden="true"></em> Agregar</button>                   
 						</a>							
 					</div><br>
 			<div class="container">
@@ -160,14 +160,14 @@ $totalRegistros = $arreglo['totalRegistros'];
 										<a href="<?php if($arreglo2[0]<>""){
 										echo "modificar_mesa.php?key=".urlencode($arreglo2[0]);
 										}?>">
-											<button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"> </i></button>
+											<button type="button" class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"> </em></button>
 										</a>
 									</td>
 									<td>
 										<a href="<?php if($arreglo2[0]<>""){
 										echo "eliminar_mesa.php?key=".urlencode($arreglo2[0]);
 										}?>">
-											<button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"> </i></button>
+											<button type="button" class="btn btn-danger"><em class="fa fa-trash-o" aria-hidden="true"> </em></button>
 										</a>
 									</td>
 								</tr>

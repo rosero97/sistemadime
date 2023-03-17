@@ -8,8 +8,8 @@ if(!isset($_SESSION['correo'])){
     }
 }
 
-include("../conexion/conectar.php");
-include("../controlador/res_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/res_con.php");
 
 ?>
 <!DOCTYPE html>
@@ -47,32 +47,32 @@ include("../controlador/res_con.php");
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>ADMINISTRADOR</b></small>
+                    <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="administrador.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><em class="fas fa-users fa-fw"></em> &nbsp; Usuarios</a>
 						</li>
 						<li>
-							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="reservaciones.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
+							<a href="mesas.php"><em class="fa fa-table" aria-hidden="true"></em> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="menu2.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="company.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -81,26 +81,26 @@ include("../controlador/res_con.php");
         <section class="full-box page-content">
             <nav class="full-box navbar-info">
                 <a href="#" class="float-left show-nav-lateral">
-                    <i class="fas fa-exchange-alt"></i>
+                    <em class="fas fa-exchange-alt"></em>
                 </a>
                 <a href="admin.php">
-                    <i class="fas fa-user-cog"></i>
+                    <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fas fa-building fa-fw"></i> &nbsp; DIGITAL'S MENU
+                    <em class="fas fa-building fa-fw"></em> &nbsp; DIGITAL'S MENU
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
             <form action="" name="company_agregar" method="POST" enctype="multipart/form-data">    
                 <table>
-                    <thead>
+                    <thead><th></th>
                         <h3 style="text-align: center;">Agregar datos del restaurante</h3>
                     </thead>
                     <br>
@@ -154,12 +154,12 @@ include("../controlador/res_con.php");
                 <div class="row" style="text-align: center;">
                 <div class="col">
                         
-                            <button type="submit" name="agregar" class="btn btn-primary" onclick="return validar_agregar_company(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>
+                            <button type="submit" name="agregar" class="btn btn-primary" onclick="return validar_agregar_company(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
                         
                     </div>
                     <div class="col">
                         <a href="company_modificar.php">
-                            <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                            <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                         </a>
                     </div>
                 </div>

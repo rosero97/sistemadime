@@ -7,8 +7,8 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
-include("../conexion/conectar.php");
-include("../controlador/admin_cel_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/admin_cel_con.php");
 
 ?>
 <!DOCTYPE html>
@@ -46,32 +46,32 @@ include("../controlador/admin_cel_con.php");
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
-					<i class="far fa-times-circle show-nav-lateral"></i>
+					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
-						<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>ADMINISTRADOR</b></small>
+						<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>
 				</figure>
 				<div class="full-box nav-lateral-bar"></div>
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="administrador.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+							<a href="administrador.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="usuarioadmin.php"><i class="fas fa-users fa-fw"></i> &nbsp; Usuarios</a>
+							<a href="usuarioadmin.php"><em class="fas fa-users fa-fw"></em> &nbsp; Usuarios</a>
 						</li>
 						<li>
-							<a href="reservaciones.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>						
+							<a href="reservaciones.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="mesas.php"><i class="fa fa-table" aria-hidden="true"></i> &nbsp; Mesas</a>					
+							<a href="mesas.php"><em class="fa fa-table" aria-hidden="true"></em> &nbsp; Mesas</a>					
 						</li>
 						<li>
-							<a href="menu2.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menú</a>				
+							<a href="menu2.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="company.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digital's Menu</a>
+							<a href="company.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -81,20 +81,20 @@ include("../controlador/admin_cel_con.php");
 		<section class="full-box page-content">
 			<nav class="full-box navbar-info">
 				<a href="#" class="float-left show-nav-lateral">
-					<i class="fas fa-exchange-alt"></i>
+					<em class="fas fa-exchange-alt"></em>
 				</a>
 				<a href="admin.php">
-					<i class="fas fa-user-cog"></i>
+					<em class="fas fa-user-cog"></em>
 				</a>
 				<a class="btn-exit-system">
 				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
-					<i class="fas fa-power-off"></i>
+					<em class="fas fa-power-off"></em>
 				</a>
 			</nav>
 			<!-- Content -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; MODIFICAR CELULAR
+                    <em class="fa fa-cog" aria-hidden="true"></em> &nbsp; MODIFICAR CELULAR
                 </h3>              
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
@@ -102,6 +102,7 @@ include("../controlador/admin_cel_con.php");
                 <br>
                 <form action="" method="POST">
                     <table>
+						<thead><th></th></thead>
                         <tbody>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">N° Identidad</span>
@@ -116,9 +117,9 @@ include("../controlador/admin_cel_con.php");
                     </table>
                     <div class="col" style="text-align:right;"> 
                         <a href="admin.php">
-                        <button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button>
+                        <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                         </a>        
-                        <button class="btn btn-primary" id="modifica1" name="modifica1" onclick="return validar_celular_admin(this.form)"><i class="fa fa-floppy-o" aria-hidden="true"> Guardar</i></button>        
+                        <button class="btn btn-primary" id="modifica1" name="modifica1" onclick="return validar_celular_admin(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>        
                     </div>                    
                 </form>
 	        </div>		

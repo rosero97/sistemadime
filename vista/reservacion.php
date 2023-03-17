@@ -7,8 +7,8 @@ if(!isset($_SESSION['correo'])){
        header("Location: Iniciar Sesion-2.php");
    }
 }
-include("../conexion/conectar.php");
-include("../controlador/reserva_con.php");
+include_once("../conexion/conectar.php");
+include_once("../controlador/reserva_con.php");
 
 
 $conet = new Conexion();
@@ -80,29 +80,29 @@ if(isset($_POST['search'])){
            <div class="full-box nav-lateral-bg show-nav-lateral"></div>
            <div class="full-box nav-lateral-content">
            <figure class="full-box nav-lateral-avatar">
-                   <i class="far fa-times-circle show-nav-lateral"></i>
+                   <em class="far fa-times-circle show-nav-lateral"></em>
                    <img src="assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
                    <figcaption class="roboto-medium text-center">
-                   <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><b>USUARIO</b></small>
+                   <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
                    </figcaption>
                </figure>
                <div class="full-box nav-lateral-bar"></div>
                <nav class="full-box nav-lateral-menu">
                    <ul>
                        <li>
-                           <a href="usuario/cliente1.php"><i class="fab fa-dashcube fa-fw"></i> &nbsp; Dashboard</a>
+                           <a href="usuario/cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
                        </li>
                        <li>
-                           <a href="reservacion.php"><i class="fa fa-tags" aria-hidden="true"></i> &nbsp; Hacer Reservacion</a>
+                           <a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservacion</a>
                        </li>
                        <li>
-                           <a href="usuario/agendar_reserva.php"><i class="fa fa-bookmark" aria-hidden="true"></i> &nbsp; Reservaciones</a>
+                           <a href="usuario/agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>
                        </li>
                        <li>
-                           <a href="menu.php"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Menu</a>
+                           <a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menu</a>
                        </li>
                        <li>
-                           <a href="usuario/company_usuario.php"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Digitals Menu</a>
+                           <a href="usuario/company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digitals Menu</a>
                        </li>
                    </ul>
                </nav>
@@ -111,26 +111,26 @@ if(isset($_POST['search'])){
        <section class="full-box page-content">
            <nav class="full-box navbar-info">
                <a href="#" class="float-left show-nav-lateral">
-                   <i class="fas fa-exchange-alt"></i>
+                   <em class="fas fa-exchange-alt"></em>
                </a>
                <a href="usuario/usuario.php">
-                   <i class="fas fa-user-cog"></i>
+                   <em class="fas fa-user-cog"></em>
                </a>
                <a onclick="return validar_cerrar (this.form)" href=" ../modelo/logout.php">
                <!-- el js del exit class="btn-exit-system" -->
-                   <i class="fas fa-power-off"></i>
+                   <em class="fas fa-power-off"></em>
                </a>
            </nav>
            <!-- Page header -->
            <div class="full-box page-header">
                <h3 class="text-left">
-               <i class="fa fa-tags" aria-hidden="true"></i> &nbsp; HACER RESERVACION
+               <em class="fa fa-tags" aria-hidden="true"></em> &nbsp; HACER RESERVACION
                </h3>
            </div>
            <div class="container shadow p-3 mb-5 bg-body rounded">
            <form action="" name="reservacion" method="POST" enctype="multipart/form-data" onsubmit="return validate();">
                <table class="table-responsive">
-                   <thead>
+                   <thead><th></th>
                        <h3 style="text-align: center;">Datos de la reservacion</h3>
                    </thead><br>
                        <div class="row">
@@ -244,10 +244,10 @@ if(isset($_POST['search'])){
                </table>
                <div class="row" style="text-align: center;">
                    <div class="col">
-                       <a href="#"><button type="submit" class="btn btn-primary" name="guarda" onclick="return validar_reserva(this.form)"><i class="fa fa-share-square-o" aria-hidden="true" > Enviar</i></button></a>
+                       <a href="#"><button type="submit" class="btn btn-primary" name="guarda" onclick="return validar_reserva(this.form)"><em class="fa fa-share-square-o" aria-hidden="true" > Enviar</em></button></a>
                    </div>
                    <div class="col">
-                       <a href="usuario/cliente1.php"><button type="button" class="btn btn-danger"><i class="fa fa-ban" aria-hidden="true"> Cancelar</i></button></a>
+                       <a href="usuario/cliente1.php"><button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button></a>
                    </div>
                </div>
            </form>
