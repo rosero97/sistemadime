@@ -16,11 +16,9 @@ class usuario{
                        
                                         $obj = new conexion();
                                         $c=$obj->conectando();
-                                        $query = "select * from persona where nombre_completo = '$this->nombre'";
+                                        $query = "select * from persona where id_persona = '$this->id_persona'";
                                         $ejecuta = mysqli_query($c, $query);
                                         if(mysqli_fetch_array($ejecuta)){
-                                            echo "<script> alert('El nombre ya Existe en el Sistema')</script>";
-                                        }else{
                                             $update = "update persona set
                                                                                 id_persona='$this->id_persona',
                                                                                 nombre_completo='$this->nombre'
@@ -29,7 +27,9 @@ class usuario{
                                             ";
                                             echo $update;
                                             mysqli_query($c,$update);
-                                            echo "<script> alert('El nombre fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/usuario/usuario.php';</script>";
+                                            echo "<script> alert('El nombre fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/usuario.php';</script>";
+                                        }else{
+                                            echo "<script> alert('El nombre no se pudo cambiar del Sistema')</script>";
                                         
                                         }
                     }
@@ -37,20 +37,20 @@ class usuario{
                     function modificar1(){
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from persona where celular = '$this->celular'";
+                                          $query = "select * from persona where id_persona = '$this->id_persona'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
-                                             echo "<script> alert('El numero de celular ya Existe en el Sistema')</script>";
-                                          }else{
-                                             $update = "update persona set
-                                                                                    id_persona='$this->id_persona',
-                                                                                    celular='$this->celular'
-                                                                                    where id_persona='$this->id_persona'
-                                                                                    
-                                             ";
-                                             echo $update;
-                                             mysqli_query($c,$update);
-                                             echo "<script> alert('El numero de celular fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/usuario/usuario.php';</script>";
+                                              $update = "update persona set
+                                                                                     id_persona='$this->id_persona',
+                                                                                     celular='$this->celular'
+                                                                                     where id_persona='$this->id_persona'
+                                                                                     
+                                              ";
+                                              echo $update;
+                                              mysqli_query($c,$update);
+                                              echo "<script> alert('El numero de celular fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/usuario.php';</script>";
+                                        }else{
+                                              echo "<script> alert('El numero de celular no se pudo cambiar del Sistema')</script>";
                                              
                                           }
 
@@ -77,7 +77,7 @@ class usuario{
                                                     ";
                                                     echo $update;
                                                     mysqli_query($c,$update);
-                                                    echo "<script> alert('La contraseña fue modificada en el sistema'); window.location.href='../vista/usuario/usuario.php';</script>";
+                                                    echo "<script> alert('La contraseña fue modificada en el sistema'); window.location.href='../vista/usuario.php';</script>";
                                                 }else{
                                                     echo "<script> alert('Las contraseñas no son iguales'); window.location.href='../vista/usuario_con.php';</script>";
                                                 }
@@ -87,6 +87,28 @@ class usuario{
                                         }                                         
 
                     }
+                    function modificar3(){
+                                            $obj = new conexion();
+                                            $c=$obj->conectando();
+                                            $query = "select * from persona where id_persona = '$this->id_persona'";
+                                            $ejecuta = mysqli_query($c, $query);
+                                            if(mysqli_fetch_array($ejecuta)){
+                                                $update = "update persona set
+                                                                                        id_persona='$this->id_persona',
+                                                                                        correo='$this->correo'
+                                                                                        where id_persona='$this->id_persona'
+                                                                                        
+                                                ";
+                                                echo $update;
+                                                mysqli_query($c,$update);
+                                                echo "<script> alert('El correo fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/usuario.php';</script>";
+                                            }else{
+                                                echo "<script> alert('El correo no se pudo modificar')</script>";
+                                            
+                                            }
+
+
+                    } 
 
                     
     }

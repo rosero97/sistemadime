@@ -30,16 +30,16 @@ if(isset($_POST['Registrarse'])){
         $correo=mysqli_real_escape_string($con, $_POST['correo']);
         $contraseña=mysqli_real_escape_string($con, $_POST['contraseña']);
 
+        $verificar_id = mysqli_query($con, "SELECT * FROM persona WHERE id_persona='$numerodoc'");
+
+        if(mysqli_num_rows ($verificar_id) >0 ){
+            echo "<script 'text/javascript'>alert('El numero de documento ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseC.php';</script>";
+            exit();
+        }
+
         if($contraseña==$contraseña2){
             $contra_fuerte = password_hash ($contraseña, PASSWORD_DEFAULT);
-            $consulta="INSERT INTO persona (id_persona, nombre_completo, correo, celular, contrasena, fcod_tipo_doc, rolid) VALUES ('$numerodoc', '$nombres', '$correo', '$numerocel', '$contra_fuerte', '$tipodoc', '$roleid')";
-
-            $verificar_correo = mysqli_query($con, "SELECT * FROM persona WHERE correo='$correo'");
-
-            if(mysqli_num_rows ($verificar_correo) >0 ){
-                echo "<script 'text/javascript'>alert('El correo esta registrado, porfavor intente con otro.'); window.location.href='../vista/3.RegistrarseA.php';</script>";
-                exit();
-            }
+            $consulta="INSERT INTO persona (id_persona, nombre_completo, correo, celular, contrasena, fcod_tipo_doc, rolid) VALUES ('$numerodoc', '$nombres', '$correo', '$numerocel', '$contra_fuerte', '$tipodoc', '$roleid')";            
 
             $resultado=mysqli_query($con, $consulta);
 
