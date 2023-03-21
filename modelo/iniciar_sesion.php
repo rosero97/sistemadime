@@ -51,7 +51,7 @@ if(isset($_POST['iniciar'])){
             $_SESSION['fcod_tipo_doc']=$fila['fcod_tipo_doc'];
             $_SESSION['rolid']=$fila['rolid'];
         
-            header("Location: ../vista/usuario/cliente1.php");
+            header("Location: ../vista/cliente1.php");
         
         }else{
             echo "<script> alert('Usted ha cometido algun error, Verifique los datos de sesion '); window.location.href='../vista/Iniciar Sesion-2.php';</script>";

@@ -57,19 +57,19 @@ include_once("../controlador/usuario_contra_con.php");
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="usuario/cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
+							<a href="cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
 							<a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
-							<a href="usuario/agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
+							<a href="agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
 							<a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="usuario/company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
+							<a href="company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -124,7 +124,7 @@ include_once("../controlador/usuario_contra_con.php");
                         </tbody>
                     </table>
                     <div class="col" style="text-align:right;"> 
-                        <a href="usuario/usuario.php">
+                        <a href="usuario.php">
                             <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                         </a>        
                         <button type="submit" class="btn btn-primary" id="modifica2" name="modifica2" onclick="return validar_contra_usuario(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>        

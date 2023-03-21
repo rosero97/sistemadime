@@ -4,7 +4,7 @@ $obj = new cambio();
 
 if($_POST){
 
-    $obj->correoRe = $_POST['correoRe'];
+    $obj->id = $_POST['id'];
     $obj->contrasena = $_POST['contrasena'];
     $obj->contrasena1 = $_POST['contrasena1'];
 }

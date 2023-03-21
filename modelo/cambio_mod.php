@@ -3,7 +3,7 @@
 
 class cambio{
 
-                  public $correoRe;
+                  public $id;
                   public $contrasena;
                   public $contrasena1;
 
@@ -13,7 +13,7 @@ class cambio{
 
                                         $obj = new conexion();
                                         $c=$obj->conectando();
-                                        $query = "SELECT * FROM persona WHERE correo = '$this->correoRe'";
+                                        $query = "SELECT * FROM persona WHERE id_persona = '$this->id'";
                                         $ejecuta = mysqli_query($c, $query);
                                         if(mysqli_fetch_array($ejecuta)){
                                             if($this->contrasena==$this->contrasena1){
@@ -30,7 +30,7 @@ class cambio{
                                                 echo "<script> alert('Las contraseñas no son iguales'); window.location.href='../vista/Cambio de contraseña.php';</script>";
                                             }
                                         }else{
-                                            echo "<script> alert('El correo actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
+                                            echo "<script> alert('El numero de documento actual no coincide con la base de datos'); window.location.href='../vista/Cambio de contraseña.php';</script>";
                                         }
                     }
 }

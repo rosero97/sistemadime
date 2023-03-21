@@ -41,7 +41,7 @@ include_once("../controlador/cambio_contra_con.php");
                             <h3>Ingrese su nueva contraseña</h3>
                                 <form action="" method="Post">
                                     <div class="inputBox">
-                                        <input type="email" placeholder="Ingrese su correo" name="correoRe" required/>
+                                        <input type="number" placeholder="Ingrese su numero de documento" name="id" required/>
                                     </div>
                                     <div class="inputBox">
                                         <input type="password" placeholder="Ingrese su nueva contraseña" name="contrasena" required/>

@@ -70,19 +70,19 @@ $obj->id_estado = $array[3];
 				<nav class="full-box nav-lateral-menu">
 					<ul>
 						<li>
-							<a href="usuario/cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
+							<a href="cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
 							<a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
-							<a href="usuario/agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
+							<a href="agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
 							<a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
-							<a href="usuario/company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
+							<a href="company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
 						</li>
 					</ul>
 				</nav>
@@ -93,7 +93,7 @@ $obj->id_estado = $array[3];
                 <a href="#" class="float-left show-nav-lateral">
                     <em class="fas fa-exchange-alt"></em>
                 </a>
-                <a href="usuario/usuario.php">
+                <a href="usuario.php">
                     <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
@@ -150,13 +150,13 @@ $obj->id_estado = $array[3];
                                 <a href="#"><button type="submit" class="btn btn-primary" name="modifica" onclick="return validar_modificar_reserva(this.form)"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button></a>
                             </div>';
                     echo        '<div class="col">
-                                <a href="usuario/agendar_reserva.php"><button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button></a>
+                                <a href="agendar_reserva.php"><button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button></a>
                             </div>';
                     echo    '</div>';
                     echo    '</form>';
                 
                 }else{
-                    echo "<script> alert('La reservación no se puede modificar'); window.location.href='usuario/agendar_reserva.php';</script>";
+                    echo "<script> alert('La reservación no se puede modificar'); window.location.href='agendar_reserva.php';</script>";
                 }
                 ?>
         </section>

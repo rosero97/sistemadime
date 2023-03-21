@@ -317,7 +317,7 @@ table form {
     padding: 40px 0;
 }
 
-.nav-lateral-avatar i {
+.nav-lateral-avatar em {
     display: none;
 }
 
@@ -484,7 +484,7 @@ table form {
     padding-top: 22px;
 }
 
-.tile-icon>i {
+.tile-icon>em {
     font-size: 80px;
 }
 
@@ -494,7 +494,7 @@ table form {
     line-height: 35px;
 }
 
-.tile:hover .tile-icon>i,
+.tile:hover .tile-icon>em,
 .tile:hover .tile-icon>p {
     color: var(--color-three);
 }
@@ -533,7 +533,7 @@ table form {
     .nav-lateral.active .nav-lateral-content {
         transform: translateX(0);
     }
-    .nav-lateral-avatar i {
+    .nav-lateral-avatar em {
         height: 50px;
         width: 50px;
         line-height: 50px;
@@ -547,7 +547,7 @@ table form {
         display: block;
         transition: all .2s ease-out;
     }
-    .nav-lateral-avatar i:hover {
+    .nav-lateral-avatar em:hover {
         color: var(--color-three);
     }
     .page-content {

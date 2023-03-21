@@ -117,7 +117,7 @@ body {
     width: 100%;
     max-width: 250px;
     /*background: #1c1c1c;*//*Este es el color del menu*/
-    background: linear-gradient(#00fdfd00, #03b7bda8);
+    background: linear-gradient(#095252, #03b7bda8);
     height: 100vh;
     position: relative;
     transition: all 500ms ease;
@@ -199,6 +199,7 @@ position: relative;
     border-radius: 10px;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
+    z-index: -1;
   }
 
   @keyframes animate {

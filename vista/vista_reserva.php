@@ -10,7 +10,7 @@ if(!isset($_SESSION['correo'])){
 
 $persona=$_SESSION['id_persona'];
 
-include_once("../../conexion/conectar.php");
+include_once("../conexion/conectar.php");
 
 $key=$_GET['key'];
 //echo $key;
@@ -36,18 +36,18 @@ $obj->reserva = $arreglo[0];
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Reservación Completa</title>
     <!-- Bootstrap Material Design V4.0 ESTE ES EL QUE DAÑA LOS BOTONES DEL NAV PERO TAMBIEN EL DE CERRAR Y ABIR EL MENU-->
-    <link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
     <!-- General Styles -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 	<!-- Sweet Alerts V8.13.0 CSS file -->
-    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
     <!-- Sweet Alert V8.13.0 JS file-->
-    <script src="../js/sweetalert2.min.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
-	<script src="../../config/js/cerrar.js"></script>
+	<script src="../config/js/cerrar.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -58,7 +58,7 @@ $obj->reserva = $arreglo[0];
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
                     <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
 					</figcaption>
@@ -70,13 +70,13 @@ $obj->reserva = $arreglo[0];
 							<a href="cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="../reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
+							<a href="./reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="../menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
+							<a href="./menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
 							<a href="company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
@@ -166,14 +166,14 @@ $obj->reserva = $arreglo[0];
 	=            Include JavaScript files           =
 	==============================================-->
     <!-- jQuery V3.4.1 ESTE ES EL MENU LATERAL-->
-    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <!-- jQuery Custom Content Scroller V3.1.5 -->
-    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
         $(document).ready(function() {
             $('body').bootstrapMaterialDesign();
         });
     </script>
-    <script src="../js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

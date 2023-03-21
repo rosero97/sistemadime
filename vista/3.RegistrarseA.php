@@ -43,7 +43,7 @@ if(!isset($_SESSION['codigo'])){
 					    <div class="center">                         
                             <div class="inputBox">         
                                 <form action="../modelo/registro_admin.php" method="post">
-                                    <h3>Registrate en Digital's Menú</h3>
+                                    <h3>Registrate en Digital's Menu</h3>
                                     <div class="inputBox">
                                         <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" >
                                     </div>
