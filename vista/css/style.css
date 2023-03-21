@@ -699,3 +699,13 @@ button#inconfundible:hover{
       top:10%;
       left:30%;
   }
+/* Estilos de los campos invalidos*/
+#contrasena2:invalid,
+#contrasena1:invalid,
+#correo:invalid,
+#celular:invalid,
+#nombre:invalid{
+    background-color: #ff9a9acc;
+    border: 1px solid red;
+    color: black;
+}

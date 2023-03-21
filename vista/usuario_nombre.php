@@ -106,7 +106,7 @@ include_once("../controlador/usuario_con.php");
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite su nombre completo</span>
-                                <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" pattern="[A-Z a-z]{2,75}" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <br>
                         </tbody>

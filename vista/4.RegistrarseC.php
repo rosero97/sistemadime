@@ -54,10 +54,10 @@
                                         <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento">
                                     </div>
                                     <div class="inputBox">
-                                        <input type="email" name ="correo" id="correo" placeholder=" Ingrese su correo" >
+                                        <input type="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" name ="correo" id="correo" placeholder=" Ingrese su correo" >
                                     </div>
                                     <div class="inputBox">
-                                        <input type="number" pattern="[0-9]{10}" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
+                                        <input type="tel" pattern="[0-9]{10}" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
                                     </div>
                                     <div class="inputBox">
                                         <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" minlength="8" maxlength="14">

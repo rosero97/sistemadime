@@ -116,12 +116,12 @@ include_once("../controlador/admin_contra_con.php");
                             <br>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite la nueva contraseña</span>
-                                <input type="password" id="contrasena1" name="contrasena1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="password" minlength="8" maxlength="14" id="contrasena1" name="contrasena1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <br>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite nuevamente la contraseña</span>
-                                <input type="password" id="contrasena2" name="contrasena2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="password" minlength="8" maxlength="14" id="contrasena2" name="contrasena2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <br>
                         </tbody>

@@ -516,6 +516,7 @@ summary {
 #contraseña2:invalid,
 #correo:invalid,
 #numerocel:invalid,
+#numerodoc:invalid,
 #nombres:invalid{
     background-color: #ff9a9acc;
     border: 1px solid red;
