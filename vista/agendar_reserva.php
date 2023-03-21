@@ -10,7 +10,7 @@ if(!isset($_SESSION['correo'])){
 
 $persona=$_SESSION['id_persona'];
 
-include_once("../../conexion/conectar.php");
+include_once("../conexion/conectar.php");
 
 $conet = new Conexion();
 $c = $conet->conectando();   
@@ -34,13 +34,13 @@ $totalRegistros = $arreglo['totalRegistros'];
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Reservaciones</title>
 	<!-- Bootstrap Material Design V4.0 Conflicto con boostrap-->
-	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+	<link rel="stylesheet" href="./css/bootstrap-material-design.min.css">
 	<!-- Sweet Alerts V8.13.0 CSS file -->
-    <link rel="stylesheet" href="../css/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
     <!-- Sweet Alert V8.13.0 JS file-->
-    <script src="../js/sweetalert2.min.js"></script>
+    <script src="./js/sweetalert2.min.js"></script>
     <!-- General Styles -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!--Este es el link de bootstrap de internet -->
 	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <!--Esta parte nos trae los iconos de configuracion -->
@@ -49,18 +49,18 @@ $totalRegistros = $arreglo['totalRegistros'];
 	
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../table/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./table/bootstrap/css/bootstrap.min.css">
     <!-- CSS personalizado --> 
-    <link rel="stylesheet" href="../table/datatables/config/main.css">  
+    <link rel="stylesheet" href="./table/datatables/config/main.css">  
       
     <!--datables CSS básico-->
-    <link rel="stylesheet" type="text/css" href="../table/datatables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./table/datatables/datatables.min.css"/>
     <!--datables estilo bootstrap 4 CSS-->  
-    <link rel="stylesheet"  type="text/css" href="../table/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"  type="text/css" href="./table/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
            
     <!--font awesome con CDN-->  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<script src="../../config/js/cerrar.js"></script>
+	<script src="../config/js/cerrar.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -71,7 +71,7 @@ $totalRegistros = $arreglo['totalRegistros'];
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="../assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
                     <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>USUARIO</strong></small>
 					</figcaption>
@@ -83,13 +83,13 @@ $totalRegistros = $arreglo['totalRegistros'];
 							<a href="cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="../reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
+							<a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="../menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
+							<a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
 							<a href="company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
@@ -159,14 +159,14 @@ $totalRegistros = $arreglo['totalRegistros'];
 											</td>
 											<td>
 												<a href="<?php if($arreglo2[0]<>""){
-												echo "../modificar_reserva.php?key=".urlencode($arreglo2[0]);
+												echo "./modificar_reserva.php?key=".urlencode($arreglo2[0]);
 												}?>">
 													<button type="button"class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"></em></button>
 												</a>
 											</td>			
 											<td>
 												<a href="<?php if($arreglo2[0]<>""){
-												echo "../cancelar_reserva.php?key=".urlencode($arreglo2[0]);
+												echo "./cancelar_reserva.php?key=".urlencode($arreglo2[0]);
 												}?>">
 													<button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"></em></button>
 												</a>
@@ -189,24 +189,24 @@ $totalRegistros = $arreglo['totalRegistros'];
 	=            Include JavaScript files           =
 	==============================================-->
    <!-- jQuery, Popper.js, Bootstrap JS -->
-   <script src="../table/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../table/popper/popper.min.js"></script>
-    <script src="../table/bootstrap/js/bootstrap.min.js"></script>
+   <script src="./table/jquery/jquery-3.3.1.min.js"></script>
+    <script src="./table/popper/popper.min.js"></script>
+    <script src="./table/bootstrap/js/bootstrap.min.js"></script>
       
     <!-- datatables JS -->
-    <script type="text/javascript" src="../table/datatables/datatables.min.js"></script>    
+    <script type="text/javascript" src="./table/datatables/datatables.min.js"></script>    
      
     <!-- para usar botones en datatables JS -->  
-    <script src="../table/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
-    <script src="../table/datatables/JSZip-2.5.0/jszip.min.js"></script>    
-    <script src="../table/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
-    <script src="../table/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
-    <script src="../table/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+    <script src="./table/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="./table/datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="./table/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="./table/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="./table/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
      
     <!-- código JS propìo-->    
-    <script type="text/javascript" src="../table/datatables/config/main.js"></script>
+    <script type="text/javascript" src="./table/datatables/config/main.js"></script>
 
     <!--Esta parte nos da la funcionalidad del menu -->
-	<script src="../js/main.js" ></script>
+	<script src="./js/main.js" ></script>
 </body>
 </html>

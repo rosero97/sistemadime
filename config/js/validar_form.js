@@ -46,7 +46,7 @@ function validar_administrador(form){
         swal.fire('Digite su correo electronico','','error')
         form.correo.focus();
         return(false);
-    }
+    }        
 
     else if(form.numerocel.value.length==0){
         swal.fire('Digite su numero de contacto','','error')
@@ -146,7 +146,7 @@ function validar_usuario(form){
         swal.fire('Digite su correo electronico','','error')
         form.correo.focus();
         return(false);
-    }
+    }        
 
     else if(form.numerocel.value.length==0){
         swal.fire('Digite su numero de contacto','','error')

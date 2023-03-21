@@ -36,28 +36,28 @@
 					<div class="tregistro">
 					    <div class="center">                           
                             <div class="inputBox">         
-                                <form action="../modelo/registro_usuario.php" method="post" action="php/registro_usuario.php">
-                                    <h3>Registrate en Digital's Menú</h3>
+                                <form action="../modelo/registro_usuario.php" method="post">
+                                    <h3>Registrate en Digital's Menu</h3>
                                     <div class="inputBox">
                                         <input type="text" name ="nombres" id="nombres" placeholder="Ingrese su nombre completo" >
                                     
                                     </div>
                                     <div class="inputBox">
                                         <label fot="tipodoc" style="color:white">Tipo de Documento:</label>
-                                        <select name="tipodoc">
+                                        <select name="tipodoc" id="tipodoc">
                                             <option value="1">CC</option>
                                             <option value="2">CE</option>
                                             <option value="3">TI</option>
                                         </select>
                                     </div>    
                                     <div class="inputBox">
-                                        <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento" >
+                                        <input type="number" name ="numerodoc" id="numerodoc" placeholder=" Número de documento">
                                     </div>
                                     <div class="inputBox">
                                         <input type="email" name ="correo" id="correo" placeholder=" Ingrese su correo" >
                                     </div>
                                     <div class="inputBox">
-                                        <input type="tel" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
+                                        <input type="number" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
                                     </div>
                                     <div class="inputBox">
                                         <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" >
@@ -69,7 +69,7 @@
                             		    <div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
                         	        </div>
                                     <div class="inputBox">
-                                        <input type="submit" value="Registrarse" name="Registrarse" id="Fregi" onclick="return validar_usuario(this.form)">
+                                        <input type="submit" value="Registrarse" id="Registrarse" name="Registrarse" onclick="return validar_administrador(this.form)">
                                     </div>
                                 </form>
                             </div>
