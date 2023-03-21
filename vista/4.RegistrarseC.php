@@ -39,7 +39,7 @@
                                 <form action="../modelo/registro_usuario.php" method="post">
                                     <h3>Registrate en Digital's Menu</h3>
                                     <div class="inputBox">
-                                        <input type="text" name ="nombres" id="nombres" placeholder="Ingrese su nombre completo" >
+                                        <input type="text" pattern="[A-Z a-z]{2,75}" name ="nombres" id="nombres" placeholder="Ingrese su nombre completo" >
                                     
                                     </div>
                                     <div class="inputBox">
@@ -57,13 +57,13 @@
                                         <input type="email" name ="correo" id="correo" placeholder=" Ingrese su correo" >
                                     </div>
                                     <div class="inputBox">
-                                        <input type="number" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
+                                        <input type="number" pattern="[0-9]{10}" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" >
+                                        <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" minlength="8" maxlength="14">
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña">      
+                                        <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña" minlength="8" maxlength="14">      
                                     </div><br>
 				                    <div class="captcha">
                             		    <div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
