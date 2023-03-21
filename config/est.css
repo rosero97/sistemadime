@@ -50,11 +50,11 @@ body {
 }
 .container .btn-menu, .logo{
     position: absolute;
+    width: 280px;
     left: 5px;
     line-height:100px;
-
-
 }
+
 .container .btn-menu label{
     color: rgb(13, 69, 82);
     font-size: 25px;
