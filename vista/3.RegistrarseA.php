@@ -45,7 +45,7 @@ if(!isset($_SESSION['codigo'])){
                                 <form action="../modelo/registro_admin.php" method="post">
                                     <h3>Registrate en Digital's Menu</h3>
                                     <div class="inputBox">
-                                        <input type="text" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" >
+                                        <input type="text" pattern="[A-Z a-z]{2,75}" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" >
                                     </div>
                                     <div class="inputBox">
                                         <label fot="tipodoc" style="color:white">Tipo de Documento:</label>
@@ -62,13 +62,13 @@ if(!isset($_SESSION['codigo'])){
                                         <input type="email" name ="correo" id="correo" placeholder=" Ingrese su correo" >
                                     </div>
                                     <div class="inputBox">
-                                        <input type="tel" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
+                                        <input type="tel" pattern="[0-9]{10}" name ="numerocel" id="numerocel" placeholder=" Ingrese su número de celular">
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" >
+                                        <input type="password" name ="contraseña" id="contraseña" placeholder=" Ingrese su contraseña" minlength="8" maxlength="14">
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña">      
+                                        <input type="password" name ="contraseña2" id="contraseña2" placeholder=" Vuelva a ingresar su contraseña" minlength="8" maxlength="14">      
                                     </div>
                                     <div class="captcha">
                                         <br><div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
