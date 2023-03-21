@@ -215,6 +215,23 @@ function validar_nombre_usuario(form){
         return(true);
 
 }
+//validacion del correo del usuario
+function validar_correo_usuario(form){
+
+    if(form.correo.value.length==0){
+        swal.fire('Digite su correo electronico','','error')
+        form.correo.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea realizar el cambio del nombre [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
 //validacion del celular del usuario
 function validar_celular_usuario(form){
 
@@ -288,6 +305,23 @@ function validar_nombre_admin(form){
     if(form.nombre.value.length==0){
         swal.fire('Digite su nombre completo','','error')
         form.nombre.focus();
+        return(false);
+    }
+
+    var confirmar=confirm("Desea realizar el cambio del nombre [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
+
+}
+//validacion del correo del admin
+function validar_correo_admin(form){
+
+    if(form.correo.value.length==0){
+        swal.fire('Digite su correo electronico','','error')
+        form.correo.focus();
         return(false);
     }
 

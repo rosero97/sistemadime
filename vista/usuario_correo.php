@@ -7,13 +7,16 @@ if(!isset($_SESSION['correo'])){
         header("Location: Iniciar Sesion-2.php");
     }
 }
+
+include_once("../conexion/conectar.php");
+include_once("../controlador/usuario_correo_con.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>configuración Usuario</title>
+    <title>Modificar Correo Usuario</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -33,6 +36,7 @@ if(!isset($_SESSION['correo'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
     <script src="../config/js/cerrar.js"></script>
+    <script src="../config/js/validar_form.js"></script>
 </head>
 <body>
     <!-- Main container -->
@@ -41,7 +45,7 @@ if(!isset($_SESSION['correo'])){
 		<section class="full-box nav-lateral">
 			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
 			<div class="full-box nav-lateral-content">
-				<figure class="full-box nav-lateral-avatar">
+      <figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
 					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
@@ -55,13 +59,13 @@ if(!isset($_SESSION['correo'])){
 							<a href="cliente1.php"><em class="fab fa-dashcube fa-fw"></em> &nbsp; Dashboard</a>
 						</li>
 						<li>
-							<a href="./reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
+							<a href="reservacion.php"><em class="fa fa-tags" aria-hidden="true"></em> &nbsp; Hacer Reservación</a>
 						</li>
 						<li>
 							<a href="agendar_reserva.php"><em class="fa fa-bookmark" aria-hidden="true"></em> &nbsp; Reservaciones</a>						
 						</li>
 						<li>
-							<a href="./menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
+							<a href="menu.php"><em class="fa fa-bars" aria-hidden="true"></em> &nbsp; Menú</a>				
 						</li>
 						<li>
 							<a href="company_usuario.php"><em class="fas fa-store-alt fa-fw"></em> &nbsp; Digital's Menu</a>
@@ -79,74 +83,43 @@ if(!isset($_SESSION['correo'])){
                     <em class="fas fa-user-cog"></em>
                 </a>
                 <a class="btn-exit-system">
-				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../../modelo/logout.php"-->
+				<!-- el js del exit  onclick="return validar_cerrar (this.form)" href="../modelo/logout.php"-->
 					<em class="fas fa-power-off"></em>
 				</a>
             </nav>
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                <em class="fa fa-cog" aria-hidden="true"></em> &nbsp; CONFIGURACIÓN
-                </h3><br>
-                <h6>Si aun no ve los cambios porfavor cierre sesión y vuelva a ingresar al sistema</h6>   
+                <em class="fa fa-cog" aria-hidden="true"></em> &nbsp; MODIFICAR CORREO
+                </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-                <table class="table table-striped" style="text-align: center;">
-                    <thead>
-                        <tr>
-                            <th style="color: black;">Nombre del dato</th>
-                            <th style="color: black;">Datos del usuario</th>
-                            <th style="color: black;">Modificar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Nombre Completo</td>
-                            <td><?php echo $_SESSION['nombre_completo'];?></td>
-                            <td>
-                                <a href="./usuario_nombre.php">
-                                    <button  class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"></em></button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Correo</td>
-                            <td><?php echo $_SESSION['correo'];?></td>
-                            <td>
-                                <a href="./usuario_correo.php">
-                                    <button class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"></em></button>
-                                </a>
-                            </td>
-                        </tr>                    
-                        <tr>
-                            <td>Celular</td>
-                            <td><?php echo $_SESSION['celular'];?></td>
-                            <td>
-                                <a href="./usuario_cel.php">
-                                    <button class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"></em></button>
-                                </a>
-                            </td>
-                        </tr>                    
-                        <tr>
-                            <td>Contraseña</td>
-                            <td>Contraseña</td>
-                            <td>
-                                <a href="./usuario_con.php">
-                                    <button class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"></em></button>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><br> 
-                <div class="col" style="text-align:center;">
-                    <tr>
-                        <td>
-                            <a href="cliente1.php"><button class="btn btn-danger"><em class="fa fa-arrow-circle-left" aria-hidden="true"> Volver</em></button></a>
-                        </td>
-                    </tr>
-                </div>
+                <h2 style="text-align: center;">Modificar</h2>
+                <br>
+                <form action="" method="POST">
+                    <table>
+                    <thead><th></th></thead>
+                        <tbody>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">N° Identidad</span>
+                                <input type="text" id="id_persona" name="id_persona" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly value="<?php echo $_SESSION['id_persona'];?>">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite su correo</span>
+                                <input type="email" id="correo" name="correo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <br>
+                        </tbody>
+                    </table>
+                    <div class="col" style="text-align:right;"> 
+                        <a href="usuario.php">
+                            <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
+                        </a>        
+                        <button class="btn btn-primary" id="modifica3" name="modifica3" onclick="return validar_correo_usuario(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>        
+                    </div>                    
+                </form>
             </div>
-        </section>
+    </section>
     </main>
     <!--=============================================
 	=            Include JavaScript files           =
