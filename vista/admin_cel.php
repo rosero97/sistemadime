@@ -110,7 +110,7 @@ include_once("../controlador/admin_cel_con.php");
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite su numero de celular</span>
-                                <input type="text" id="celular" name="celular" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="tel" pattern="[0-9]{10}" id="celular" name="celular" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <br>
                         </tbody>

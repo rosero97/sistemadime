@@ -44,10 +44,10 @@ include_once("../controlador/cambio_contra_con.php");
                                         <input type="number" placeholder="Ingrese su numero de documento" name="id" required/>
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" placeholder="Ingrese su nueva contraseña" name="contrasena" required/>
+                                        <input type="password" minlength="8" maxlength="14" placeholder="Ingrese su nueva contraseña" id="contraseña" name="contrasena" required/>
                                     </div>
                                     <div class="inputBox">
-                                        <input type="password" placeholder="Repita la Contraseña" name="contrasena1" required/>
+                                        <input type="password" minlength="8" maxlength="14" placeholder="Repita la Contraseña" id="contraseña2" name="contrasena1" required/>
                                     </div>
                                     <div class="inputBox">
                                         <input type="submit" value="Finalizar" name="modificaCo"/>
