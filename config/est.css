@@ -40,7 +40,7 @@ body {
 .header{
     width: 100%;
     height: 100px;
-    position:fixed;
+    position: absolute;
     top: 0;left: 0;
 }
 .container{
@@ -49,7 +49,7 @@ body {
     margin: auto;
 }
 .container .btn-menu, .logo{
-    position: fixed;
+    position: absolute;
     left: 5px;
     line-height:100px;
 
@@ -63,7 +63,7 @@ body {
 
 
 .logo h1{
-    position: fixed;
+    position: absolute;
     left: 30px;   
     color: rgb(13, 69, 82);
     font-weight: 400;
@@ -190,6 +190,7 @@ position: relative;
 
 .box .square {
     position: absolute;
+    z-index: -1;
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0, 255, 136, 0.1);
     border: 1px solid rgba(1, 248, 153, 0.61);
@@ -511,3 +512,12 @@ summary {
     content: "\25BC"; /* Cambia el triángulo al estado abierto */
   }
 
+#contraseña:invalid,
+#contraseña2:invalid,
+#correo:invalid,
+#numerocel:invalid,
+#nombres:invalid{
+    background-color: #ff9a9acc;
+    border: 1px solid red;
+    color: black;
+}
