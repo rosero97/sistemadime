@@ -8,6 +8,18 @@ if(!isset($_SESSION['correo'])){
     }
 }
 include_once("../conexion/conectar.php");
+include_once("../controlador/menu_con_nombre.php");
+
+
+
+$obj = new menu();
+
+if($_POST){
+
+    $obj->num_menu = $_POST['num_menu'];
+    $obj->nombre = $_POST['nombre'];
+    $obj->ida = $_POST['ida'];
+}
 
 $key=$_GET['key'];
 //echo $key;
@@ -33,7 +45,7 @@ $obj->ida = $array[4];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Modificar Menú</title>
+    <title>Modificar Nombre Menú</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -110,10 +122,11 @@ $obj->ida = $array[4];
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <em class="fas fa-clipboard-list fa-fw"></em> &nbsp; MODIFICAR MENÚ
+                    <em class="fas fa-clipboard-list fa-fw"></em> &nbsp; MODIFICAR NOMBRE DEL MENÚ
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
+            <form action="" name="modificar_menu_nombre" method="POST" enctype="multipart/form-data">
                 <table>
                 <thead><th></th></thead>
                     <tbody>
@@ -124,53 +137,24 @@ $obj->ida = $array[4];
                             </div>
                             <br>
                             <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Modificar el nombre</span>
-                                <span class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->nombre?></span>   
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nombre</span>
+                                <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
                             </div>
-                            <div class="col" style="text-align:right;">
-                                <a href="<?php if($obj->num_menu<>""){
-                                echo "modificar_menu_nombre.php?key=".urlencode($obj->num_menu);
-                                }?>">
-                                    <button type="submit" name="modifica" class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>
-                                </a>
-                            </div>
-                            <br>
-                            <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Modificar la imagen</span>                                
-                                <img width="100" src="<?php echo $obj->imagen; ?>" alt="">
-                            </div>
-                            <div class="col" style="text-align:right;">
-                                <a href="<?php if($obj->num_menu<>""){
-                                echo "modificar_menu_imagen.php?key=".urlencode($obj->num_menu);
-                                }?>">
-                                    <button type="submit" name="modifica" class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>
-                                </a>
-                            </div>
-                            <br>
-                            <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Modificar la descripción</span>
-                                <span class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->descripcion?></span>  
-                            </div>
-                            <div class="col" style="text-align:right;">
-                                <a href="<?php if($obj->num_menu<>""){
-                                echo "modificar_menu_descripcion.php?key=".urlencode($obj->num_menu);
-                                }?>">
-                                    <button type="submit" name="modifica" class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>
-                                </a>
-                            </div>
-                            <br>
+                            <br>                            
                             <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Id del administrador</span>
-                                <input type="text" id="ida" value="<?php echo $obj->ida?>" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="En este espacio se incuira su id" >  
+                                <input type="text" id="ida" value="<?php echo $_SESSION['id_persona'];?>" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="En este espacio se incuira su id" >    
                             </div>                          
                         </tr>
                     </tbody>          
                 </table>
             <div class="col" style="text-align:right;"> 
-                <a href="menu2.php">
+                <a href="modificar_menu.php">
                     <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
-                </a>     
+                </a>    
+                <button type="submit" name="modifica" class="btn btn-primary"  onclick="return validar_modificar_menu_nombre (this.form)" ><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>      
             </div>
+            </form>
             <br>
             </div>
         </section>
