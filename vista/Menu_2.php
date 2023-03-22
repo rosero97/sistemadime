@@ -74,17 +74,21 @@ if(isset($_POST['search'])){
                                     do{  
                             ?>
                         <div class="table-responsive menu_usuario">
-                            <img class="img_menu" src="<?php echo $arreglo2 [2];?>" alt="">
+                            <div class="img_menu">
+                                <img src="<?php echo $arreglo2 [2];?>" alt="">
+                            </div>
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
                                 <p>Descripción</p>
                                 <button id="open-modal-btn-<?php echo $arreglo2 ['id_menu'];?>" class="open-modal-btn">ver mas</button>
                                 <div id="myModal-<?php echo $arreglo2 ['id_menu']?>" class="modal">
-                                  <div class="modal-content" style="width: 80%;">
+                                  <div class="modal-content">
                                     <span id="close-modal-btn-<?php echo $arreglo2 ['id_menu']?>" class="close">&times;</span>
-                                    <img class="img_menu" src="<?php echo $arreglo2 [2]?>" alt="">
-                                    <h2 style="position: absolute; left: 45%; top: 10%;"><?php echo $arreglo2 [1]?></h2>
-                                    <p style="position: absolute; left: 45%; top: 20%;"><?php echo $arreglo2 [3]?></p>
+                                    <div class="modal_img">
+                                     <img src="<?php echo $arreglo2 [2]?>" alt="">
+                                    </div>
+                                    <h2 class="nombre_menu"><?php echo $arreglo2 [1]?></h2>
+                                    <p class="des_menu"><?php echo $arreglo2 [3]?></p>
                                   </div>
                                 </div>
                             </div>
