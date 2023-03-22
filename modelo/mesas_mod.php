@@ -22,7 +22,7 @@ class num_menu{
                                                                                     '$this->mesa'
                                                                                     
                                           )";
-                                          echo $insertar;
+                                          //echo $insertar;
                                           mysqli_query($c,$insertar);
                                           echo "<script> alert('La mesa fue Creada en el Sistema'); window.location.href='../vista/mesas.php';</script>";
                                             
@@ -43,7 +43,7 @@ class num_menu{
                                                                                     where mesa_id='$this->num_mesa'
                                                                                     
                                              ";
-                                             echo $update;
+                                             //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('La mesa fue modificada en el sistema'); window.location.href='../vista/mesas.php';</script>";
                                              
@@ -66,7 +66,7 @@ class num_menu{
                                              $update = "delete from mesa 
                                                                                     where mesa_id='$this->num_mesa'
                                              ";
-                                             echo $update;
+                                             //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('La mesa fue Eliminada del sistema'); window.location.href='../vista/mesas.php';</script>";
                                              

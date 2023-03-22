@@ -17,7 +17,7 @@ if($_POST){
     $obj->mesa = $_POST['mesa'];
 }
 $key=$_GET['key'];
-echo $key;
+//echo $key;
 $obj = new conexion();
 $c=$obj->conectando();
 $sql="select * from mesa where mesa_id='$key' ";
@@ -25,8 +25,12 @@ $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
 $obj->num_mesa = $array[0];
 $obj->mesa = $array[1];
-echo $obj->num_mesa;
-echo $obj->mesa;
+//echo $obj->num_mesa;
+//echo $obj->mesa;
+
+$slo="SELECT * FROM restaurante";
+$consul = mysqli_query($c, $slo);
+$restau = mysqli_fetch_array($consul);
 
 ?>
 
@@ -66,7 +70,7 @@ echo $obj->mesa;
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="<?php echo $restau["slogan"] ?>" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
                     <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>

@@ -34,6 +34,10 @@ $obj->ida = $array[4];
 //echo $obj->num_menu;
 //echo $obj->descripcion;
 
+$slo="SELECT * FROM restaurante";
+$consul = mysqli_query($c, $slo);
+$restau = mysqli_fetch_array($consul);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -71,7 +75,7 @@ $obj->ida = $array[4];
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="<?php echo $restau["slogan"] ?>" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
                     <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>

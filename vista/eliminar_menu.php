@@ -22,7 +22,7 @@ if($_POST){
 }
 
 $key=$_GET['key'];
-echo $key;
+//echo $key;
 $obj = new conexion();
 $c=$obj->conectando();
 $sql="select * from menu where id_menu='$key' ";
@@ -33,11 +33,15 @@ $obj->nombre = $array[1];
 $obj->imagen = $array[2];
 $obj->descripcion = $array[3];
 $obj->ida = $array[4];
-echo $obj->num_menu;
-echo $obj->nombre;
-echo $obj->imagen;
-echo $obj->descripcion;
-echo $obj->ida;
+//echo $obj->num_menu;
+//echo $obj->nombre;
+//echo $obj->imagen;
+//echo $obj->descripcion;
+//echo $obj->ida;
+
+$slo="SELECT * FROM restaurante";
+$consul = mysqli_query($c, $slo);
+$restau = mysqli_fetch_array($consul);
 
 ?>
 <!DOCTYPE html>
@@ -76,7 +80,7 @@ echo $obj->ida;
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="<?php echo $restau["slogan"] ?>" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
                     <?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>

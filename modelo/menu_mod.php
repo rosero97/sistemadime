@@ -32,7 +32,7 @@ class menu{
                                                                                     '$this->ida'
                                                                                     
                                           )";
-                                          echo $insertar;
+                                          //echo $insertar;
                                           mysqli_query($c,$insertar);
                                           echo "<script> alert('El plato fue Creado en el Sistema'); window.location.href='../vista/menu2.php';</script>";
                                             
@@ -52,7 +52,7 @@ class menu{
                                                                                     where id_menu='$this->num_menu'
                                                                                     
                                              ";
-                                             echo $update;
+                                             //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('El nombre fue modificado del sistema'); window.location.href='../vista/menu2.php';</script>";
                                           }else{
@@ -79,7 +79,7 @@ class menu{
                                                                                     where id_menu='$this->num_menu'
                                                                                     
                                              ";
-                                             echo $update;
+                                             //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('La imagen fue modificada del sistema'); window.location.href='../vista/menu2.php';</script>";
                                           }else{
@@ -102,7 +102,7 @@ class menu{
                                                                                     where id_menu='$this->num_menu'
                                                                                     
                                              ";
-                                             echo $update;
+                                             //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('La descripción fue modificada del sistema'); window.location.href='../vista/menu2.php';</script>";
                                           }else{
@@ -124,7 +124,7 @@ class menu{
                                              $update = "delete from menu 
                                                                                     where id_menu='$this->num_menu'
                                              ";
-                                             echo $update;
+                                             //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('El plato fue Eliminada del sistema'); window.location.href='../vista/menu2.php';</script>";
                                              

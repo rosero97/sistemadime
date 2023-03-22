@@ -38,7 +38,7 @@ class restaurante{
                                                                               '$ruta'
                                                                               
                                           )";
-                                          echo $insertar;
+                                          //echo $insertar;
                                           mysqli_query($c, $insertar);
                                           echo "<script> alert('Los datos del restaurante se han agregado en el sistema, si no se han actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/company.php';</script>";
                                       
@@ -70,7 +70,7 @@ class restaurante{
                                                                                 where id_res=1
                                                                                 
                                             ";
-                                            echo $update;
+                                            //echo $update;
                                             mysqli_query($c,$update);
                                             echo "<script> alert('Los datos del restaurante se han modificado en el sistema, si no se han actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/company.php';</script>";
                                         

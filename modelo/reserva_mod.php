@@ -43,7 +43,7 @@ class reserva{
 
 
                                          )";
-                                         echo $insertar;
+                                         //echo $insertar;
                                          mysqli_query($c,$insertar);
 
 
@@ -92,7 +92,7 @@ class reserva{
 
 
                                             ";
-                                            echo $update;
+                                            //echo $update;
                                             mysqli_query($c,$update);
                                             echo "<script> alert('La reservación fue modificada en el sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
 
@@ -120,7 +120,7 @@ class reserva{
 
 
                                             ";
-                                            echo $update;
+                                            //echo $update;
                                             mysqli_query($c,$update);
                                             echo "<script> alert('La reservación se desactivo del sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
 

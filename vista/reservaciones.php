@@ -28,6 +28,9 @@ $query2="SELECT * FROM numero_reservacion n INNER JOIN persona p ON n.id_cliente
 $resultado2=mysqli_query($c,$query2);
 $arreglo2 = mysqli_fetch_array($resultado2);
 
+$slo="SELECT * FROM restaurante";
+$consul = mysqli_query($c, $slo);
+$restau = mysqli_fetch_array($consul);
 
 
 ?>
@@ -74,7 +77,7 @@ $arreglo2 = mysqli_fetch_array($resultado2);
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="avatar">
+					<img src="<?php echo $restau["slogan"] ?>" class="img-fluid" alt="avatar">
 					<figcaption class="roboto-medium text-center">
 					<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>

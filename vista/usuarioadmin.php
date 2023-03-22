@@ -28,6 +28,9 @@ $query2="SELECT * FROM persona p INNER JOIN tipo_documento t ON p.fcod_tipo_doc=
 $resultado2=mysqli_query($c,$query2);
 $arreglo2 = mysqli_fetch_array($resultado2);
 
+$slo="SELECT * FROM restaurante";
+$consul = mysqli_query($c, $slo);
+$restau = mysqli_fetch_array($consul);
 
 ?>
 
@@ -75,7 +78,7 @@ $arreglo2 = mysqli_fetch_array($resultado2);
 			<div class="full-box nav-lateral-content">
 				<figure class="full-box nav-lateral-avatar">
 					<em class="far fa-times-circle show-nav-lateral"></em>
-					<img src="./assets/avatar/Avatar.png" class="img-fluid" alt="Avatar">
+					<img src="<?php echo $restau["slogan"] ?>" class="img-fluid" alt="Avatar">
 					<figcaption class="roboto-medium text-center">
 					<?php echo $_SESSION['nombre_completo'];?> <br><small class="roboto-condensed-light"><strong>ADMINISTRADOR</strong></small>
 					</figcaption>

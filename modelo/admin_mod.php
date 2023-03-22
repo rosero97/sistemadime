@@ -26,7 +26,7 @@ class admin{
                                                                                 where id_persona='$this->id_persona'
                                                                                 
                                             ";
-                                            echo $update;
+                                            //echo $update;
                                             mysqli_query($c,$update);
                                             echo "<script> alert('El nombre fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/admin.php';</script>";
                                         }else{
@@ -47,7 +47,7 @@ class admin{
                                                                                      where id_persona='$this->id_persona'
                                                                                      
                                               ";
-                                              echo $update;
+                                              //echo $update;
                                               mysqli_query($c,$update);
                                               echo "<script> alert('El numero de celular fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/admin.php';</script>";
                                         }else{
@@ -76,7 +76,7 @@ class admin{
                                                                                             where id_persona='$this->id_persona'
                                                                                             
                                                         ";
-                                                        echo $update;
+                                                        //echo $update;
                                                         mysqli_query($c,$update);
                                                         echo "<script> alert('La contraseña fue modificada en el sistema'); window.location.href='../vista/admin.php';</script>";
                                                     }else{
@@ -100,7 +100,7 @@ class admin{
                                                                                         where id_persona='$this->id_persona'
                                                                                         
                                                 ";
-                                                echo $update;
+                                                //echo $update;
                                                 mysqli_query($c,$update);
                                                 echo "<script> alert('El correo fue modificado en el sistema, si no se ha actualizado cierre sesión y vuelva a ingresar'); window.location.href='../vista/admin.php';</script>";
                                             }else{
