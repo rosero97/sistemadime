@@ -135,8 +135,8 @@ $restau = mysqli_fetch_array($consul);
 						<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" style="text-align: center;">
 							<thead>
 								<tr>
-									<th>Numero</th>
-									<th>Mesa</th>
+									<th>Numero de mesa</th>
+									<th>Numero de personas</th>
 									<th>Modificar</th>
 									<th>Eliminar</th>
 								</tr>
@@ -155,8 +155,8 @@ $restau = mysqli_fetch_array($consul);
 										do{   
 								?> 
 								<tr>
-									<td><?php echo $arreglo2[0] ?></td>
 									<td><?php echo $arreglo2[1] ?></td>
+									<td><?php echo $arreglo2[2] ?></td>
 									<td>
 										<a href="<?php if($arreglo2[0]<>""){
 										echo "modificar_mesa.php?key=".urlencode($arreglo2[0]);

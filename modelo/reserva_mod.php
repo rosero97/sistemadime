@@ -13,7 +13,6 @@ class reserva{
                  public $observaciones;
                  public $id_estado=1;
                  public $mesa;
-                 public $personas;
                  public $num_persona;
                  public $cancelar=2;
 
@@ -38,7 +37,6 @@ class reserva{
                                                                                    '$this->observaciones',
                                                                                    '$this->id_estado',
                                                                                    '$this->mesa',
-                                                                                   '$this->personas',
                                                                                    '$this->num_persona'
 
 
@@ -66,7 +64,7 @@ class reserva{
                                          mysqli_query($c,$evento);
 
 
-                                         echo "<script> alert('La reservacion fue Creada en el Sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
+                                         echo "<script> alert('La reservacion fue Creada en el Sistema'); window.location.href='../vista/agendar_reserva.php';</script>";
 
 
                                        }
@@ -83,7 +81,6 @@ class reserva{
                                          }else{
                                             $update = "update numero_reservacion set
                                                                                    n_reservacion='$this->reserva',
-                                                                                   num_personas='$this->personas',
                                                                                    fecha='$this->fecha',
                                                                                    hora_inicio='$this->hora_inicio',
                                                                                    hora_fin='$this->hora_fin',
@@ -94,7 +91,7 @@ class reserva{
                                             ";
                                             //echo $update;
                                             mysqli_query($c,$update);
-                                            echo "<script> alert('La reservación fue modificada en el sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
+                                            echo "<script> alert('La reservación fue modificada en el sistema'); window.location.href='../vista/agendar_reserva.php';</script>";
 
 
                                          }
@@ -122,7 +119,7 @@ class reserva{
                                             ";
                                             //echo $update;
                                             mysqli_query($c,$update);
-                                            echo "<script> alert('La reservación se desactivo del sistema'); window.location.href='../vista/usuario/agendar_reserva.php';</script>";
+                                            echo "<script> alert('La reservación se desactivo del sistema'); window.location.href='../vista/agendar_reserva.php';</script>";
 
 
                                          }

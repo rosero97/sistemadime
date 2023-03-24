@@ -199,7 +199,7 @@ $restau = mysqli_fetch_array($consul);
                                            do{
                                    ?>
                                        <div class="form-control">
-                                           <option value="<?php echo $arreglo2 [0]?>">Mesa <?php echo $arreglo2 [1]?></option>
+                                           <option value="<?php echo $arreglo2 [0]?>">Mesa <?php echo $arreglo2 [1]?> N° Personas <?php echo $arreglo2 [2]?> </option>
                                        </div>
                                        </div>
                                    <?php
@@ -213,12 +213,6 @@ $restau = mysqli_fetch_array($consul);
                                    </select>
                                </div>
                            </div>
-                           </div>
-                           <div class="mb-3 row">
-                               <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
-                               <div class="col-sm-10">
-                               <input type="number" class="form-control" id="personas" name="personas" min="1" max="13">
-                               </div>
                            </div>
                            <div class="mb-3 row">
                                <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>

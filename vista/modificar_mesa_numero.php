@@ -8,48 +8,41 @@ if(!isset($_SESSION['correo'])){
     }
 }
 include_once("../conexion/conectar.php");
-include_once("../controlador/menu_con_nombre.php");
+include_once("../controlador/mesas_con_numero.php");
 
 
-
-$obj = new menu();
-
+$obj = new num_menu();
 if($_POST){
 
-    $obj->num_menu = $_POST['num_menu'];
-    $obj->nombre = $_POST['nombre'];
-    $obj->ida = $_POST['ida'];
+    $obj->num_mesa = $_POST['num_mesa'];
+    $obj->mesa = $_POST['mesa'];
 }
 
 $key=$_GET['key'];
 //echo $key;
 $obj = new conexion();
 $c=$obj->conectando();
-$sql="select * from menu where id_menu='$key' ";
+$sql="select * from mesa where mesa_id='$key' ";
 $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
-$obj->num_menu = $array[0];
-$obj->nombre = $array[1];
-$obj->imagen = $array[2];
-$obj->descripcion = $array[3];
-$obj->ida = $array[4];
-//echo $obj->num_menu;
-//echo $obj->nombre;
-//echo $obj->imagen;
-//echo $obj->descripcion;
-//echo $obj->ida;
+$obj->num_mesa = $array[0];
+$obj->mesa = $array[1];
+$obj->personas = $array[2];
+//echo $obj->num_mesa;
+//echo $obj->mesa;
 
 $slo="SELECT * FROM restaurante";
 $consul = mysqli_query($c, $slo);
 $restau = mysqli_fetch_array($consul);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Modificar Nombre Menú</title>
+    <title>Modificar Numero Mesa</title>
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->
@@ -68,7 +61,7 @@ $restau = mysqli_fetch_array($consul);
     <link rel="stylesheet" href="./css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
-    <script src="../config/js/validar_menu.js"></script>
+    <script src="../config/js/validacion.js"></script>
     <script src="../config/js/cerrar.js"></script>
 </head>
 <body>
@@ -126,41 +119,35 @@ $restau = mysqli_fetch_array($consul);
             <!-- Page header -->
             <div class="full-box page-header">
                 <h3 class="text-left">
-                    <em class="fas fa-clipboard-list fa-fw"></em> &nbsp; MODIFICAR NOMBRE DEL MENÚ
+                    <em class="fas fa-clipboard-list fa-fw"></em> &nbsp; MODIFICAR NUMERO DE MESA
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="modificar_menu_nombre" method="POST" enctype="multipart/form-data">
+            <form action="" name="modificar_mesa_numero" method="POST" >
                 <table>
                 <thead><th></th></thead>
                     <tbody>
-                        <tr>                            
-                        <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Este es el ID</span>
-                                <input type="text" id="num_menu" value="<?php echo $obj->num_menu?>" name="num_menu" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="Este codigo lo creara el sistema automaticamente">
+                        <tr>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Este es el numero de id de la mesa</span>
+                                <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
                             </div>
                             <br>
                             <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nombre</span>
-                                <input type="text" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
-                            </div>
-                            <br>                            
-                            <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Id del administrador</span>
-                                <input type="text" id="ida" value="<?php echo $_SESSION['id_persona'];?>" name="ida" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="En este espacio se incuira su id" >    
-                            </div>                          
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
+                                <input type="number" id="mesa" name="mesa" value="<?php echo $obj->mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>                            
                         </tr>
                     </tbody>          
                 </table>
-            <div class="col" style="text-align:right;"> 
-                <a href="menu2.php">
-                    <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
-                </a>    
-                <button type="submit" name="modifica" class="btn btn-primary"  onclick="return validar_modificar_menu_nombre (this.form)" ><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>      
+                <div class="col" style="text-align:right;"> 
+                    <a href="mesas.php">
+                        <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
+                    </a>        
+                    <button type="submit" name="modifica" class="btn btn-primary" onclick="return validar_modificar_mesa_numero (this.form)" ><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
+                </div>
             </div>
             </form>
-            <br>
-            </div>
         </section>
     </main>  	
 	<!--=============================================
