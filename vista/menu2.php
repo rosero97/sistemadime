@@ -133,7 +133,6 @@ $restau = mysqli_fetch_array($consul);
                                 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" style="text-align: center;">
                                     <thead>
                                         <tr >
-                                            <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Imagen</th>
                                             <th>Descripción</th>
@@ -157,7 +156,6 @@ $restau = mysqli_fetch_array($consul);
                                         ?>
                                         <tr>
                                         
-                                            <td><?php echo $arreglo2[0] ?></td>
                                             <td><?php echo $arreglo2[1] ?></td>
                                             <td><img width="100" src="<?php echo $arreglo2[2]; ?>" alt=""></td>
                                             <td><?php echo $arreglo2[3] ?></td>

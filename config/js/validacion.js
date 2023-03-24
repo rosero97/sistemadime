@@ -139,6 +139,13 @@ function validar_modificar_mesa_numero(form){
                 form.mesa.focus();
                 return(false);
             }  
+        
+    var confirmar=confirm("Desea realizar los cambios [Aceptar] o [Cancelar]");
+    if(confirmar==false)
+    {
+        return(false);
+    }
+        return(true);
     
 
 }

@@ -142,7 +142,7 @@ $restau = mysqli_fetch_array($consul);
                         <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                     </a>
                     <a href="mesas.php">
-                        <button name="elimina" class="btn btn-primary formulario_eliminar"><em class="fa fa-trash-o" aria-hidden="true"> Eliminar</em></button>
+                        <button name="elimina" class="btn btn-primary formulario_eliminar"><em class="fa fa-trash-o" aria-hidden="true" onclick="return validar_eliminar_mesa(this.form)"> Eliminar</em></button>
                     </a>       
                 </div>
             </form>

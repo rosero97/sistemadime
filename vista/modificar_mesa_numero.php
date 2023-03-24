@@ -144,7 +144,7 @@ $restau = mysqli_fetch_array($consul);
                     <a href="mesas.php">
                         <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                     </a>        
-                    <button type="submit" name="modifica" class="btn btn-primary" onclick="return validar_modificar_mesa_numero (this.form)" ><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
+                    <button type="submit" name="modifica" class="btn btn-primary" onclick="return validar_modificar_mesa_numero(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
                 </div>
             </div>
             </form>

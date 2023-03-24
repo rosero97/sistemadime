@@ -122,7 +122,7 @@ $restau = mysqli_fetch_array($consul);
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="modificar_mesa" method="POST" >
+            <form action="" name="modificar_mesa_personas" method="POST" >
                 <table>
                 <thead><th></th></thead>
                     <tbody>
@@ -143,7 +143,7 @@ $restau = mysqli_fetch_array($consul);
                     <a href="mesas.php">
                         <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                     </a>        
-                    <button type="submit" name="modifica2" class="btn btn-primary" onclick="return validar_modificar_mesa_personas (this.form)" ><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
+                    <button type="submit" name="modifica2" class="btn btn-primary" onclick="return validar_modificar_mesa_personas(this.form)"><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
                 </div>
             </div>
             </form>

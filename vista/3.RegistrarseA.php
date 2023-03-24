@@ -45,7 +45,7 @@ if(!isset($_SESSION['codigo'])){
                                 <form action="../modelo/registro_admin.php" method="post">
                                     <h3>Registrate en Digital's Menu</h3>
                                     <div class="inputBox">
-                                        <input type="text" pattern="[A-Z a-z]{2,75}" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" >
+                                        <input type="text" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,75}" name ="nombres" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" >
                                     </div>
                                     <div class="inputBox">
                                         <label fot="tipodoc" style="color:white">Tipo de Documento:</label>
@@ -98,7 +98,6 @@ if(!isset($_SESSION['codigo'])){
 					<h2>SIGUENOS</h2>
 					<div class="red-social">
 						<a href="https://www.facebook.com/profile.php?id=100090155486140"><em class="fa fa-facebook-official" aria-hidden="true"></em></a>
-						<a href="#"><em class="fa fa-twitter-square" aria-hidden="true"></em></a>
 						<a href="https://www.instagram.com/digitalsmenu/"><em class="fa fa-instagram" aria-hidden="true"></em></a>
 					</div>
 				</div>

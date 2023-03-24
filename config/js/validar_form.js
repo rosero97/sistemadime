@@ -89,13 +89,6 @@ function validar_administrador(form){
         return(false);
     }
 
-    var confirmar=confirm("Desea registrarse en el sistema [Aceptar] o [Cancelar]");
-    if(confirmar==false)
-    {
-        return(false);
-    }
-        return(true);
-
 }
 
 //validacion del registro usuario
@@ -188,13 +181,6 @@ function validar_usuario(form){
         form.contraseña2.focus();
         return(false);
     }
-
-    var confirmar=confirm("Desea registrarse en el sistema [Aceptar] o [Cancelar]");
-    if(confirmar==false)
-    {
-        return(false);
-    }
-        return(true);
 
 }
 

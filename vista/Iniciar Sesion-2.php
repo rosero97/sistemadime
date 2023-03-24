@@ -71,7 +71,6 @@ include_once("../modelo/iniciar_sesion.php")
 					<h2>SIGUENOS</h2>
 					<div class="red-social">
 						<a href="https://www.facebook.com/profile.php?id=100090155486140"><em class="fa fa-facebook-official" aria-hidden="true"></em></a>
-						<a href="#"><em class="fa fa-twitter-square" aria-hidden="true"></em></a>
 						<a href="https://www.instagram.com/digitalsmenu/"><em class="fa fa-instagram" aria-hidden="true"></em></a>
 					</div>
 				</div>
