@@ -69,7 +69,7 @@
                             		    <div class="g-recaptcha" data-sitekey="6Lc3VrgkAAAAAOWG62EL7rNcIxlMKO-eRaR9dl_W"></div>
                         	        </div>
                                     <div class="inputBox">
-                                        <input type="submit" value="Registrarse" id="Registrarse" name="Registrarse" onclick="return validar_administrador(this.form)">
+                                        <input type="submit" value="Registrarse" id="Registrarse" name="Registrarse" onclick="return validar_usuario(this.form)">
                                     </div>
                                 </form>
                             </div>

@@ -8,7 +8,7 @@ if(!isset($_SESSION['correo'])){
     }
 }
 include_once("../conexion/conectar.php");
-include_once("../controlador/mesas_con.php");
+include_once("../controlador/mesas_con_eliminar.php");
 
 $obj = new num_menu();
 if($_POST){
@@ -129,6 +129,7 @@ $restau = mysqli_fetch_array($consul);
                                 <span class="input-group-text" id="inputGroup-sizing-default">Este es el numero de id de la mesa</span>
                                 <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
                             </div>
+                            <br>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Quiere eliminar este numero de mesa</span>
                                 <input type="text" id="mesa" name="mesa" value="<?php echo $obj->mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>

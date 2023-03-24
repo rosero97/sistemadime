@@ -10,7 +10,6 @@ if($_POST){
     $obj->hora_fin = date('H:i', strtotime($obj->hora_inicio . ' +1 hour'));
     $obj->observaciones = $_POST['observaciones'];
     $obj->mesa = $_POST['mesa'];
-    $obj->personas = $_POST['personas'];
     $obj->num_persona = $_POST['num_persona'];
 }
 

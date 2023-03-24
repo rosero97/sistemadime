@@ -140,7 +140,7 @@ $restau = mysqli_fetch_array($consul);
 										<td><?php echo $_SESSION['celular'];?></td>				
 										<td><?php echo $_SESSION['correo'];?></td>				
 										<td><?php echo $arreglo['num_mesa'] ?></td>				
-										<td><?php echo $arreglo[7] ?></td>				
+										<td><?php echo $arreglo['num_personas'] ?></td>				
 										<td><?php echo $arreglo[4] ?></td>				
 										<td><?php echo $arreglo[1]," ", $arreglo[2]  ?></td>				
 										<td><?php echo $arreglo['nombre_estado'] ?></td>				

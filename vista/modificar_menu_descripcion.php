@@ -148,7 +148,7 @@ $restau = mysqli_fetch_array($consul);
                     </tbody>          
                 </table>
             <div class="col" style="text-align:right;"> 
-                <a href="modificar_menu.php">
+                <a href="menu2.php">
                     <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
                 </a>    
                 <button type="submit" name="modifica3" class="btn btn-primary"  onclick="return validar_modificar_menu_descripcion (this.form)" ><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>      

@@ -5,6 +5,7 @@ class num_menu{
 
                   public $num_mesa;
                   public $mesa;
+                  public $personas;
 
                     
 
@@ -19,7 +20,8 @@ class num_menu{
                                           }else{
                                           $insertar = "insert into mesa value(
                                                                                     '$this->num_mesa',
-                                                                                    '$this->mesa'
+                                                                                    '$this->mesa',
+                                                                                    '$this->personas'
                                                                                     
                                           )";
                                           //echo $insertar;
@@ -32,7 +34,7 @@ class num_menu{
                     function modificar(){
                                           $obj = new conexion();
                                           $c=$obj->conectando();
-                                          $query = "select * from mesa where mesa_id = '$this->mesa'";
+                                          $query = "select * from mesa where num_mesa = '$this->mesa'";
                                           $ejecuta = mysqli_query($c, $query);
                                           if(mysqli_fetch_array($ejecuta)){
                                              echo "<script> alert('La Mesa ya Existe en el Sistema')</script>";
@@ -46,6 +48,29 @@ class num_menu{
                                              //echo $update;
                                              mysqli_query($c,$update);
                                              echo "<script> alert('La mesa fue modificada en el sistema'); window.location.href='../vista/mesas.php';</script>";
+                                             
+                                          }
+
+
+                    }   
+
+                    function modificar2(){
+                                          $obj = new conexion();
+                                          $c=$obj->conectando();
+                                          $query = "select * from mesa where mesa_id = '$this->num_mesa'";
+                                          $ejecuta = mysqli_query($c, $query);
+                                          if(mysqli_fetch_array($ejecuta)){
+                                             $update = "update mesa set
+                                                                                    mesa_id='$this->num_mesa',
+                                                                                    num_personas='$this->personas'
+                                                                                    where mesa_id='$this->num_mesa'
+                                                                                    
+                                             ";
+                                             //echo $update;
+                                             mysqli_query($c,$update);
+                                             echo "<script> alert('El numero de personas se modifico del sistema'); window.location.href='../vista/mesas.php';</script>";
+                                          }else{
+                                             echo "<script> alert('El numero de personas no se pudo modificar del sistema')</script>";
                                              
                                           }
 

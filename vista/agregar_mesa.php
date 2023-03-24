@@ -14,6 +14,7 @@ $obj = new num_menu();
 if($_POST){
 
     $obj->mesa = $_POST['mesa'];
+    $obj->personas = $_POST['personas'];
 }
 
 $conet = new Conexion();
@@ -120,9 +121,15 @@ $restau = mysqli_fetch_array($consul);
                                 <span class="input-group-text" id="inputGroup-sizing-default">Este es el numero de id de la mesa</span>
                                 <input type="text" id="num_mesa" name="num_mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly placeholder="Este codigo lo creara el sistema automaticamente">
                             </div>
+                            <br>
                             <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Digite el numero de mesa</span>
-                                <input type="text" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+                                <input type="number" id="mesa" name="mesa" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+                            </div>
+                            <br>
+                            <div>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el numero maximo de personas</span>
+                                <input type="number" id="personas" name="personas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
                             </div>
                         </tr>
                     </tbody>          

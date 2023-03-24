@@ -129,12 +129,6 @@ $restau = mysqli_fetch_array($consul);
                                         </div>
                                     </div>';
                     echo                '<div class="mb-3 row">
-                                        <label for="" class="col-sm-2 col-form-label">Numero de personas</label>
-                                        <div class="col-sm-10">
-                                        <input type="number" class="form-control" id="personas" name="personas" min="1" max="13">
-                                        </div>
-                                    </div>';
-                    echo                '<div class="mb-3 row">
                                         <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
                                         <div class="col-sm-10">
                                         <input type="datetime-local" class="form-control" id="fecha" name="fecha">

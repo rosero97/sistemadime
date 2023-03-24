@@ -8,15 +8,7 @@ if(!isset($_SESSION['correo'])){
     }
 }
 include_once("../conexion/conectar.php");
-include_once("../controlador/mesas_con.php");
 
-
-$obj = new num_menu();
-if($_POST){
-
-    $obj->num_mesa = $_POST['num_mesa'];
-    $obj->mesa = $_POST['mesa'];
-}
 $key=$_GET['key'];
 //echo $key;
 $obj = new conexion();
@@ -26,6 +18,7 @@ $rs=mysqli_query($c,$sql);
 $array=mysqli_fetch_row($rs);
 $obj->num_mesa = $array[0];
 $obj->mesa = $array[1];
+$obj->personas = $array[2];
 //echo $obj->num_mesa;
 //echo $obj->mesa;
 
@@ -121,30 +114,47 @@ $restau = mysqli_fetch_array($consul);
                 </h3>
             </div>
             <div class="container shadow p-3 mb-5 bg-body rounded">
-            <form action="" name="modificar_mesa" method="POST" >
                 <table>
                 <thead><th></th></thead>
                     <tbody>
                         <tr>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Este es el numero de id de la mesa</span>
-                                <input type="text" id="num_mesa" name="num_mesa" value="<?php echo $obj->num_mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
-                            </div>
+                                <span class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->num_mesa?></span>
+                            </div>                           
+                            <br>
                             <div>
-                                <span class="input-group-text" id="inputGroup-sizing-default">Digite el nuevo numero de mesa</span>
-                                <input type="text" id="mesa" name="mesa" value="<?php echo $obj->mesa?>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Modificar el numero de mesa</span>
+                                <span class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->mesa?></span>
+                            </div>
+                            <div class="col" style="text-align:right;">
+                            <a href="<?php if($obj->num_mesa<>""){
+                                echo "modificar_mesa_numero.php?key=".urlencode($obj->num_mesa);
+                                }?>">
+                                    <button type="submit" name="modifica" class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>
+                                </a>
+                            </div>
+                            <br>
+                            <div>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Modificar el numero maximo de personas</span>
+                                <span class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->personas?></span>
+                            </div>
+                            <div class="col" style="text-align:right;">
+                                <a href="<?php if($obj->num_mesa<>""){
+                                echo "modificar_mesa_personas.php?key=".urlencode($obj->num_mesa);
+                                }?>">
+                                    <button type="submit" name="modifica" class="btn btn-primary"><em class="fa fa-pencil-square-o" aria-hidden="true"> Modificar</em></button>
+                                </a>
                             </div>
                         </tr>
                     </tbody>          
                 </table>
-                <div class="col" style="text-align:right;"> 
+                <div class="col"> 
                     <a href="mesas.php">
                         <button type="button" class="btn btn-danger"><em class="fa fa-ban" aria-hidden="true"> Cancelar</em></button>
-                    </a>        
-                    <button type="submit" name="modifica" class="btn btn-primary" onclick="return validar_modificar_mesa (this.form)" ><em class="fa fa-floppy-o" aria-hidden="true"> Guardar</em></button>
+                    </a>
                 </div>
             </div>
-            </form>
         </section>
     </main>  	
 	<!--=============================================
