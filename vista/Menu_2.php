@@ -79,8 +79,8 @@ if(isset($_POST['search'])){
                             </div>
                             <div class="descripcion_menu">
                                 <h5><?php echo $arreglo2 [1]?></h5>
-                                <p>Descripción</p>
-                                <button id="open-modal-btn-<?php echo $arreglo2 ['id_menu'];?>" class="open-modal-btn">ver mas</button>
+                                <p class="previa-menu"><?php echo $arreglo2 [3]?></p>
+                                <button id="open-modal-btn-<?php echo $arreglo2 ['id_menu'];?>" class="btn btn-primary open-modal-btn">Ver más <em class="fa-solid fa-angles-right"></em></button>
                                 <div id="myModal-<?php echo $arreglo2 ['id_menu']?>" class="modal">
                                   <div class="modal-content">
                                     <span id="close-modal-btn-<?php echo $arreglo2 ['id_menu']?>" class="close">&times;</span>
