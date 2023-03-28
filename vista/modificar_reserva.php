@@ -26,6 +26,12 @@ $slo="SELECT * FROM restaurante";
 $consul = mysqli_query($c, $slo);
 $restau = mysqli_fetch_array($consul);
 
+
+$consulta = "SELECT * FROM mesa";
+$row_mesa = mysqli_query($c,$consulta);
+$numero_mesa = mysqli_fetch_array($row_mesa);
+
+
 ?>
 
 
@@ -112,9 +118,11 @@ $restau = mysqli_fetch_array($consul);
                 </h3>              
             </div>
 			<div class="container shadow p-3 mb-5 bg-body rounded">
-                <?php
+            <?php
                 if($array[3] !=2){
-                    echo '<form action="" name="reservacion" method="POST" enctype="multipart/form-data">';   
+                    date_default_timezone_set('America/Bogota');
+                    $fechaActual = date('Y-m-d');
+                    echo '<form action="" name="reservacion" method="POST" enctype="multipart/form-data">';
                     echo '<table>';
                     echo        '<thead>';
                     echo           '<h3 style="text-align: center;">Modificar reservación</h3>';
@@ -127,13 +135,35 @@ $restau = mysqli_fetch_array($consul);
                                         <div class="col-sm-10">
                                         <input type="text" class="form-control" id="reserva" name="reserva" readonly value="';?><?php echo $obj->num_reserva?><?php echo'">
                                         </div>
-                                    </div>';
+                                    </div>
+                                <div class="inputBox mb-3 row">
+                                <label fot="mesa" class="col-sm-2 col-form-label">Numero de mesa</label>
+                                <div class="col-sm-10">
+                                    <select name="mesa" class="form-control">';
+                                    ?><?php while($numero_mesa = mysqli_fetch_array($row_mesa)){?><?php
+                    echo'           <div class="form-control">
+                                        <option value="';?> <?php echo $numero_mesa [0]?><?php echo'">Mesa';?> <?php echo $numero_mesa [1]?> <?php echo 'N° Personas';?> <?php echo $numero_mesa [2]?> <?php echo '</option>
+                                    </div>';?>
+                                    <?php 
+                                        }
+
+                                    ?><?php
+
+                    echo            '</select>
+                                </div>
+                                </div>';
                     echo                '<div class="mb-3 row">
                                         <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
                                         <div class="col-sm-10">
-                                        <input type="datetime-local" class="form-control" id="fecha" name="fecha">
+                                        <input type="date" class="form-control" id="fecha" name="fecha" min="';?><?php echo $fechaActual ?><?php echo'">
                                         </div>
-                                    </div>' ;                      
+                                    </div>' ;
+                    echo                '<div class="mb-3 row">
+                                        <label for="" class="col-sm-2 col-form-label">Dia de la reserva</label>
+                                        <div class="col-sm-10">
+                                        <input type="time" class="form-control" id="hora" name="hora">
+                                        </div>
+                                    </div>' ;
                     echo                '<div class="mb-3 row">
                                         <label for="" class="col-sm-2 col-form-label">Observaciones</label>
                                         <div class="col-sm-10">
@@ -141,7 +171,7 @@ $restau = mysqli_fetch_array($consul);
                                         </div>
                                     </div>';
                     echo            '</tr>';
-                    echo        '</tbody>';          
+                    echo        '</tbody>';
                     echo    '</table>';
                     echo    '<div class="row" style="text-align: center;">';
                     echo        '<div class="col">
@@ -152,7 +182,7 @@ $restau = mysqli_fetch_array($consul);
                             </div>';
                     echo    '</div>';
                     echo    '</form>';
-                
+
                 }else{
                     echo "<script> alert('La reservación no se puede modificar'); window.location.href='agendar_reserva.php';</script>";
                 }
