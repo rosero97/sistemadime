@@ -13,6 +13,7 @@ class reserva{
                  public $observaciones;
                  public $id_estado=1;
                  public $mesa;
+                 public $personas;
                  public $num_persona;
                  public $cancelar=2;
 
@@ -37,6 +38,7 @@ class reserva{
                                                                                    '$this->observaciones',
                                                                                    '$this->id_estado',
                                                                                    '$this->mesa',
+                                                                                   '$this->personas',
                                                                                    '$this->num_persona'
 
 
@@ -74,23 +76,53 @@ class reserva{
                    function modificar(){
                                          $obj = new conexion();
                                          $c=$obj->conectando();
-                                         $query = "select * from numero_reservacion where fecha = '$this->fecha' and hora_inicio = '$this->hora_inicio'";
+                                         $query = "SELECT * FROM numero_reservacion WHERE n_reservacion != '$this->reserva' AND mesa_id = '$this->mesa' AND fecha = '$this->fecha' AND id_estado = '$this->id_estado' AND ((hora_inicio >= '$this->hora_inicio' AND hora_inicio < '$this->hora_fin') OR (hora_fin > '$this->hora_inicio' AND hora_fin <= '$this->hora_fin'));";
                                          $ejecuta = mysqli_query($c, $query);
+
                                          if(mysqli_fetch_array($ejecuta)){
                                             echo "<script> alert('La reservación ya Existe en el Sistema')</script>";
                                          }else{
+                                            $sql = "SELECT * FROM numero_reservacion WHERE n_reservacion = '$this->reserva'";
+                                            $ejecuta_sql = mysqli_query($c, $sql);
+                                            $row_sql = mysqli_fetch_assoc($ejecuta_sql);
+                                            $fechaAntigua = $row_sql["fecha"];
+                                            $horaAntigua = $row_sql["hora_inicio"];
+
                                             $update = "update numero_reservacion set
                                                                                    n_reservacion='$this->reserva',
                                                                                    fecha='$this->fecha',
                                                                                    hora_inicio='$this->hora_inicio',
                                                                                    hora_fin='$this->hora_fin',
                                                                                    observaciones='$this->observaciones',
+                                                                                   mesa_id='$this->mesa'
                                                                                    where n_reservacion='$this->reserva'
 
 
                                             ";
-                                            //echo $update;
+                                            echo $update;
                                             mysqli_query($c,$update);
+
+                                            $buscar_evento = "SELECT EVENT_NAME
+                                                               FROM information_schema.EVENTS
+                                                               WHERE EVENT_SCHEMA = 'digitals_menu'
+                                                               AND EXECUTE_AT = '$fechaAntigua $horaAntigua' + INTERVAL 61 MINUTE";
+
+                                            $resultado_evento = mysqli_query($c,$buscar_evento);
+                                            $row_evento = mysqli_fetch_assoc($resultado_evento);
+                                            $nombre_evento = $row_evento["EVENT_NAME"];
+
+                                            $borrar_evento = "DROP EVENT IF EXISTS `$nombre_evento`";
+
+                                            mysqli_query($c,$borrar_evento);
+
+                                            $mod_evento = "CREATE EVENT `$nombre_evento`
+                                                            ON SCHEDULE AT '$this->fecha $this->hora_inicio' + INTERVAL 61 MINUTE
+                                                            ON COMPLETION NOT PRESERVE ENABLE
+                                                            DO UPDATE numero_reservacion SET id_estado = 2
+                                                            WHERE fecha = '$this->fecha' AND hora_inicio < NOW() - INTERVAL 60 MINUTE";
+
+                                            mysqli_query($c,$mod_evento);
+
                                             echo "<script> alert('La reservación fue modificada en el sistema'); window.location.href='../vista/agendar_reserva.php';</script>";
 
 
