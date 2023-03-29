@@ -13,7 +13,6 @@ class reserva{
                  public $observaciones;
                  public $id_estado=1;
                  public $mesa;
-                 public $personas;
                  public $num_persona;
                  public $cancelar=2;
 
@@ -38,7 +37,6 @@ class reserva{
                                                                                    '$this->observaciones',
                                                                                    '$this->id_estado',
                                                                                    '$this->mesa',
-                                                                                   '$this->personas',
                                                                                    '$this->num_persona'
 
 
