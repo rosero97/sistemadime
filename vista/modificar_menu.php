@@ -153,7 +153,7 @@ $restau = mysqli_fetch_array($consul);
                             <br>
                             <div>
                                 <span class="input-group-text" id="inputGroup-sizing-default">Modificar la descripción</span>
-                                <span class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->descripcion?></span>  
+                                <textarea rows="4" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly><?php echo $obj->descripcion?></textarea>  
                             </div>
                             <div class="col" style="text-align:right;">
                                 <a href="<?php if($obj->num_menu<>""){
