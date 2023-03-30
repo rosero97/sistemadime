@@ -48,7 +48,7 @@ if(!isset($_SESSION['codigo'])){
                                         <input type="text" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,75}" name ="nombres" name ="nombres" id="nombres" placeholder=" Ingrese su nombre completo" >
                                     </div>
                                     <div class="inputBox">
-                                        <label fot="tipodoc" style="color:white">Tipo de Documento:</label>
+                                        <label fot="tipodoc" style="color:rgb(13, 69, 82)">Tipo de Documento:</label>
                                         <select name="tipodoc">
                                             <option value= "1">CC</option>
                                             <option value= "2">CE</option>
