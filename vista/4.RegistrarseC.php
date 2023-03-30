@@ -43,7 +43,7 @@
                                     
                                     </div>
                                     <div class="inputBox">
-                                        <label fot="tipodoc" style="color:white">Tipo de Documento:</label>
+                                        <label fot="tipodoc" style="color:rgb(13, 69, 82)">Tipo de Documento:</label>
                                         <select name="tipodoc" id="tipodoc">
                                             <option value="1">CC</option>
                                             <option value="2">CE</option>
