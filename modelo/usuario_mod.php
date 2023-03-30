@@ -92,6 +92,12 @@ class usuario{
                                             $c=$obj->conectando();
                                             $query = "select * from persona where id_persona = '$this->id_persona'";
                                             $ejecuta = mysqli_query($c, $query);
+                                            $verificar_correo = mysqli_query($c, "SELECT * FROM persona WHERE correo='$this->correo'");
+
+                                            if(mysqli_num_rows ($verificar_correo) >0 ){
+                                                echo "<script 'text/javascript'>alert('El correo electronico ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/usuario.php';</script>";
+                                                exit();
+                                            }
                                             if(mysqli_fetch_array($ejecuta)){
                                                 $update = "update persona set
                                                                                         id_persona='$this->id_persona',

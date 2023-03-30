@@ -33,7 +33,13 @@ if(isset($_POST['Registrarse'])){
         $verificar_id = mysqli_query($con, "SELECT * FROM persona WHERE id_persona='$numerodoc'");
 
         if(mysqli_num_rows ($verificar_id) >0 ){
-            echo "<script 'text/javascript'>alert('El numero de documento ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseC.php';</script>";
+            echo "<script 'text/javascript'>alert('El numero de documento ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseA.php';</script>";
+            exit();
+        }
+        $verificar_correo = mysqli_query($con, "SELECT * FROM persona WHERE correo='$correo'");
+
+        if(mysqli_num_rows ($verificar_correo) >0 ){
+            echo "<script 'text/javascript'>alert('El correo electronico ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseA.php';</script>";
             exit();
         }
 
