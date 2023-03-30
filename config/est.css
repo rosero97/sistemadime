@@ -64,7 +64,7 @@ body {
 
 .logo h1{
     position: absolute;
-    left: 30px;   
+    left: 30px;
     color: rgb(13, 69, 82);
     font-weight: 400;
     font-size: 35px;
@@ -87,7 +87,7 @@ body {
     cursor: pointer;
 }
 .container .menu a:hover{
-    color: white;
+    color: rgb(13, 69, 82);
 }
 /*Fin de Estilos para el encabezado*/
 
@@ -97,7 +97,7 @@ body {
 
 #btn-menu{
     display: none;
-    color: #fff;
+    color:rgb(13, 69, 82);
 }
 .container-menu{
     position: absolute;
@@ -227,7 +227,7 @@ position: relative;
     height: 80px;
     --i: 2;
   }
-  
+
   .box .square:nth-child(3) {
     top: -130px;
     left: -105px;
@@ -243,7 +243,7 @@ position: relative;
     height: 70px;
     --i: 4;
   }
-  
+
   .box .square:nth-child(5) {
     bottom: -140px;
     left: -70px;
@@ -301,14 +301,14 @@ justify-content: center;
 }
 
 .tregistro h4 {
-    color: rgb(255, 255, 255);
+    color: rgb(13, 69, 82);
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 5px;
     text-align: center;
     }
-    
+
 
 .tregistro .inputBox {
 width: 100%;
@@ -317,7 +317,7 @@ margin-top: 20px;
 }
 
 .tregistro .inputBox input {
-    color: white;
+    color: rgb(13, 69, 82);
     width: 86%;
     background: rgba(255, 255, 255, 0.2);
     border: none;
@@ -332,10 +332,10 @@ margin-top: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-                               
+
 
 .tregistro .inputBox input::placeholder {
-color: white;
+color: rgb(13, 69, 82);
 }
 
 .tregistro .inputBox input[type="button"] {
@@ -349,7 +349,7 @@ font-weight: 600px;
 
 .tregistro .inputBox input[type="button"]:hover {
 background: #06f8f8;
-color: #fff;
+color: rgb(13, 69, 82);
 }
 
 .tregistro .inputBox input[type="submit"] {
@@ -360,14 +360,14 @@ color: #fff;
     margin-bottom: 10px;
     font-weight: 600px;
 }
-    
+
 .tregistro .inputBox input[type="submit"]:hover {
     background: #06f8f8;
-    color: #fff;
+    color: rgb(13, 69, 82);
 }
 
 p{
-color: white;
+color: rgb(13, 69, 82);
 text-align: center;
 }
 
@@ -376,7 +376,7 @@ text-align: center;
     padding: 5px;
     line-height: normal;
     text-decoration: none;
-    color: #fff;
+    color: rgb(13, 69, 82);
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
     font-size: 15px;
@@ -438,7 +438,7 @@ footer.pie-pagina .grupo-1 .box p{
 }
 
 footer.pie-pagina .grupo-1 .box .ayuda a#fa{
-    text-decoration: none;    
+    text-decoration: none;
     color: white;
 }
 
@@ -476,7 +476,7 @@ footer.pie-pagina .grupo-2 small{
 
 @media screen and (max-widt:800px){
     footer.pie-pagina .grupo-1{
-        width: 90%;        
+        width: 90%;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 30px;
         padding: 35px 0px;
@@ -494,12 +494,12 @@ summary {
     padding: 10px;
     cursor: pointer;
   }
-  
+
   summary:focus, summary:hover {
     background-color: rgb(12, 44, 51);
     color: white;
   }
-  
+
   summary::marker {
     content: "\25B6"; /* Agrega un triángulo como indicador de estado */
     color: #333;
@@ -507,7 +507,7 @@ summary {
     float: left;
     margin-right: 10px;
   }
-  
+
   details[open] summary::marker {
     content: "\25BC"; /* Cambia el triángulo al estado abierto */
   }
