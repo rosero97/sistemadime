@@ -36,6 +36,12 @@ if(isset($_POST['Registrarse'])){
             echo "<script 'text/javascript'>alert('El numero de documento ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseC.php';</script>";
             exit();
         }
+        $verificar_correo = mysqli_query($con, "SELECT * FROM persona WHERE correo='$correo'");
+
+        if(mysqli_num_rows ($verificar_correo) >0 ){
+            echo "<script 'text/javascript'>alert('El correo electronico ya  esta registrado, porfavor intente con otro.'); window.location.href='../vista/4.RegistrarseC.php';</script>";
+            exit();
+        }
 
         if($contraseña==$contraseña2){
             $contra_fuerte = password_hash ($contraseña, PASSWORD_DEFAULT);
