@@ -512,6 +512,31 @@ summary {
     content: "\25BC"; /* Cambia el triángulo al estado abierto */
   }
 
+.ver-manual{
+    background: #fff;
+    max-width: 200px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 600px;
+    color: rgb(13, 69, 82);
+    width: 86%;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.ver-manual:hover{
+    background: #06f8f8;
+    color: rgb(13, 69, 82);
+}
+
 #contraseña:invalid,
 #contraseña2:invalid,
 #correo:invalid,
