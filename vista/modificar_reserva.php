@@ -26,12 +26,10 @@ $slo="SELECT * FROM restaurante";
 $consul = mysqli_query($c, $slo);
 $restau = mysqli_fetch_array($consul);
 
-
 $consulta = "SELECT * FROM mesa";
 $row_mesa = mysqli_query($c,$consulta);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -121,7 +119,7 @@ $row_mesa = mysqli_query($c,$consulta);
                 if($array[3] !=2){
                     date_default_timezone_set('America/Bogota');
                     $fechaActual = date('Y-m-d');
-                    echo '<form action="" name="reservacion" method="POST" enctype="multipart/form-data">';
+                    echo '<form action="" name="reservacion" method="POST" enctype="multipart/form-data" onsubmit="return validate();">';
                     echo '<table>';
                     echo        '<thead>';
                     echo           '<h3 style="text-align: center;">Modificar reservación</h3>';
@@ -163,6 +161,34 @@ $row_mesa = mysqli_query($c,$consulta);
                                         <input type="time" class="form-control" id="hora" name="hora">
                                         </div>
                                     </div>' ;
+		    echo '<script type="text/javascript">
+                               function validate() {
+                                   var hora = document.getElementById("hora").value;
+                                   var fecha = document.getElementById("fecha").value;
+                                   var minimumTime = "";
+
+                                   if (fecha == "';?><?php echo date('Y-m-d');?><?php echo '") {
+                                       var now = new Date();
+                                       now.setHours(now.getHours() + 2);
+                                       minimumTime = now.getHours() + ":" + now.getMinutes();
+                                   } else {
+                                       minimumTime = "00:00";
+                                   }
+
+                                   if (hora >= minimumTime && hora >= "11:00" && hora <= "20:00") {
+                                       return true;
+                                   } else {
+                                       Swal.fire({
+                                           icon: "error",
+                                           title: "¡ERROR!",
+                                           text: "El restaurante solo admite reservas desde las 11:00 hasta las 20:00 y con al menos 2 horas de anticipación a partir de la hora actual si se reserva para hoy (" + minimumTime + ")",
+                                           showConfirmButton: true,
+                                           confirmButtonText: "ACEPTAR"
+                                       });
+                                       return false;
+                                   }
+                               }
+                           </script>';
                     echo                '<div class="mb-3 row">
                                         <label for="" class="col-sm-2 col-form-label">Observaciones</label>
                                         <div class="col-sm-10">
