@@ -29,8 +29,6 @@ $restau = mysqli_fetch_array($consul);
 
 $consulta = "SELECT * FROM mesa";
 $row_mesa = mysqli_query($c,$consulta);
-$numero_mesa = mysqli_fetch_array($row_mesa);
-
 
 ?>
 
@@ -141,14 +139,14 @@ $numero_mesa = mysqli_fetch_array($row_mesa);
                                 <label fot="mesa" class="col-sm-2 col-form-label">Numero de mesa</label>
                                 <div class="col-sm-10">
                                     <select name="mesa" class="form-control">';
-                                    ?><?php while($numero_mesa = mysqli_fetch_array($row_mesa)){?><?php
+                                    ?><?php while($numero_mesa = mysqli_fetch_assoc($row_mesa)){?><?php
                     echo'           <div class="form-control">
-                                        <option value="';?> <?php echo $numero_mesa [0]?><?php echo'">Mesa';?> <?php echo $numero_mesa [1]?> <?php echo 'N° Personas';?> <?php echo $numero_mesa [2]?> <?php echo '</option>
+                                        <option value="';?> <?php echo $numero_mesa ["mesa_id"]?><?php echo'">Mesa';?> <?php echo $numero_mesa ["num_mesa"]?> <?php echo 'N° Personas';?> <?php echo $numero_mesa ["num_personas"]?> <?php echo '</option>
                                     </div>';?>
                                     <?php 
                                         }
-
-                                    ?><?php
+                                    ?>
+				    <?php
 
                     echo            '</select>
                                 </div>
