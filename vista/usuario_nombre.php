@@ -25,6 +25,7 @@ $restau = mysqli_fetch_array($consul);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Modificar Nombre Usuario</title>
+    <link rel="icon" type="image/png" href="../imagenes/slogan.png">
     <!-- Normalize V8.0.1 -->
     <link rel="stylesheet" href="./css/normalize.css">
     <!-- Bootstrap V4.3 -->

@@ -13,6 +13,7 @@ if(!isset($_SESSION['codigo'])){
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Registro Administrador</title>
+	<link rel="icon" type="image/png" href="../imagenes/slogan.png">
 	<link rel="stylesheet" href="../config/est.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Sweet Alerts V8.13.0 CSS file -->

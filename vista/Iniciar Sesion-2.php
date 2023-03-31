@@ -8,6 +8,7 @@ include_once("../modelo/iniciar_sesion.php")
 <head>
 	<meta charset="UTF-8">
 	<title>Iniciar Sesión</title>
+	<link rel="icon" type="image/png" href="../imagenes/slogan.png">
 	<link rel="stylesheet" href="../config/est.css">
 	<script src="https://kit.fontawesome.com/8606130a5f.js" crossorigin="anonymous"></script>
 </head>
